@@ -1096,7 +1096,7 @@ $pdss = ProductData::where('in_stock',"new")->get();
 $pdss = $pdss->sortByDesc('created_at');	
 $pds = $pdss->chunk(24);
 #dd($pds);
-if($pds != null)
+if($pds != null && $pds->count() > 0)
 {
  foreach($pds[0] as $p)
  {
@@ -1116,7 +1116,7 @@ $pdss = ProductData::where('in_stock',"new")->get();
 $pdss = $pdss->sortByDesc('created_at');	
 $pds = $pdss->chunk(24);
 #dd($pds);
-if($pds != null)
+if($pds != null && $pds->count() > 0)
 {
  foreach($pds[0] as $p)
  {

@@ -1,395 +1,245 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="zxx">
+  <?php
+   $contact = [
+    'phone' => "09048166902",
+    'email' => "fairyskintreatmentsorders@gmail.com"
+   ];
+
+   $currencies = ['NGN'];
+   $languages = [
+    ['img' => 'assets/images/language/english.png','value' => 'English']
+  ];
+
+  $categories = [
+    ['name' => 'Category 1','url' => '#'],
+    ['name' => 'Category 2','url' => '#'],
+    ['name' => 'Category 3','url' => '#'],
+    ['name' => 'Category 4','url' => '#'],
+    ['name' => 'Category 5','url' => '#'],
+  ];
+
+  ?>
+
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="facebook-domain-verification" content="l1zv5af26nl57l9wu9nf2w4kihldv3" />
-<meta name="facebook-domain-verification" content="l1zv5af26nl57l9wu9nf2w4kihldv3" />
-<meta property="og:description" content="Buy the most glamorous earrings, bracelets, brooches and more from Ace Luxury Store.">
-<meta property="og:image" content="<?php echo e(asset('images/logoo.png')); ?>">
-<meta property="og:url" content="<?php echo e(url('/')); ?>">
-<meta property="og:type" content="website">
-<?php echo $__env->yieldContent('metas'); ?>
-<title><?php echo $__env->yieldContent('title'); ?> | Ace Luxury Store - Online Luxury Fashion Accessories Store in Lagos, Nigeria</title>
-<!-- Google fonts -->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-<!-- Ionicons font -->
-<link href="<?php echo e(asset('css/ionicons.min.css')); ?>" rel="stylesheet">
-<!-- Font icons -->
-<link rel="stylesheet" href="<?php echo e(asset('icon-fonts/font-awesome/css/font-awesome.min.css')); ?>"/><!-- Fontawesome icons css -->
-<!-- Bootstrap styles-->
-<link href="<?php echo e(asset('css/bootstrap.min.css')); ?>" rel="stylesheet">
-<!--custom styles-->
-<link href="<?php echo e(asset('css/custom.css')); ?>" rel="stylesheet" />
-<link href="<?php echo e(asset('css/custom-pink.css')); ?>" rel="stylesheet"/>
-<link href="<?php echo e(asset('css/custom-turquoise.css')); ?>" rel="stylesheet" />
-<link href="<?php echo e(asset('css/custom-purple.css')); ?>" rel="stylesheet" />
-<link href="<?php echo e(asset('css/custom-orange.css')); ?>" rel="stylesheet" />
-<link href="<?php echo e(asset('css/custom-blue.css')); ?>" rel="stylesheet" />
-<link href="<?php echo e(asset('css/custom-green.css')); ?>" rel="stylesheet" />
-<link href="<?php echo e(asset('css/custom-red.css')); ?>" rel="stylesheet" />
-<link href="<?php echo e(asset('css/custom-gold.css')); ?>" rel="stylesheet" id="style">
-<!--tooltiop-->
-<link href="<?php echo e(asset('css/hint.css')); ?>" rel="stylesheet">
-<!-- animation -->
-<link href="<?php echo e(asset('css/animate.css')); ?>" rel="stylesheet" />
-<!--select-->
-<link href="<?php echo e(asset('css/bootstrap-select.min.css')); ?>" rel="stylesheet">
-<!--color picker-->
-<link href="<?php echo e(asset('css/jquery.simplecolorpicker.css')); ?>" rel="stylesheet">
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-      <script src="js/html5shiv.min.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
-<!-- favicon -->
-
-<link rel="icon" type="image/png" href="<?php echo e(asset('images/favicon.png')); ?>" sizes="16x16">
-
-<style type="text/css">
-.overlay-effect {
- width: 100%;
- height: 100%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  z-index: 1000;
-  left: 0;
-  right: 0;
-  opacity: 1;
-  transition: .5s ease;
-  background-color: rgba(0, 0, 0, 0.7);
-  overflow:hidden;
-}
-
-#banner {
-	
-}
-
-</style>
-<?php echo $__env->yieldContent('styles'); ?>
-
-<!-- DO NOT EDIT!! start of plugins -->
-<?php $__currentLoopData = $plugins; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $p): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-  <?php echo $p['value']; ?>
-
-<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-<!-- DO NOT EDIT!! end of plugins -->
-
-<!--jQuery--> 
-<script src="<?php echo e(asset('js/jquery.min.js')); ?>"></script> 
-<!--SweetAlert--> 
-<link href="<?php echo e(asset('lib/sweet-alert/sweetalert2.css')); ?>" rel="stylesheet">
-<script src="<?php echo e(asset('lib/sweet-alert/sweetalert2.js')); ?>"></script>
-<!--wow animation--> 
-<script src="<?php echo e(asset('js/wow.min.js')); ?>"></script> 
-<!--Bootstrap js--> 
-<script src="<?php echo e(asset('js/bootstrap.min.js')); ?>"></script> 
-<!--pagination js--> 
-<script src="<?php echo e(asset('js/pagination.js')); ?>"></script>
-<!--custom js--> 
-<script src="<?php echo e(asset('js/custom.js').'?ver='.rand(99,9999)); ?>"></script> 
-
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title><?php echo $__env->yieldContent('title'); ?> | Fairyskin - Specialists in Skin and Skincare Products</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:url" content="<?php echo e(url('/')); ?>">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Buy the most glamorous earrings, bracelets, brooches and more from Ace Luxury Store.">
+    <?php echo $__env->yieldContent('metas'); ?>
+    <!-- Place favicon.ico in the root directory -->
+    <link href="assets/images/favicon.ico" type="img/x-icon" rel="shortcut icon">
+    <!-- All css files are included here. -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/iconfont.min.css">
+    <link rel="stylesheet" href="assets/css/plugins.css">
+    <link rel="stylesheet" href="assets/css/helper.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
 </head>
 <body>
 
-<!--start of loader-->
-<div id="preloader">
-  <div id="status"></div>
-</div>
-<!--end of loader-->
+<div id="main-wrapper">
+  <!--Header section start-->
+  <header class="header header-transparent header-sticky">
+            <div class="header-top bg-dark">
+                <div class="container-fluid pl-75 pr-75 pl-lg-15 pr-lg-15 pl-md-15 pr-md-15 pl-sm-15 pr-sm-15 pl-xs-15 pr-xs-15">
+                    <div class="row align-items-center">
 
-<!--start of top sec-->
-<div class="top-sec">
-  <nav class="navbar navbar-static-top line-navbar-one">
-    <div class="container">
-      <div class="navbar-header"> 
-        <!-- Top navbar button -->
-        <button type="button" class="navbar-toggle collapsed ion-android-menu" data-toggle="collapse" data-target="#line-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <!--<span class="fa fa-ellipsis-v"></span>--> </button>
-        <!-- Cart button --> 
-        <a class="lno-cart" href="#"> <span class="glyphicon glyphicon-shopping-cart"></span> <span class="cart-item-quantity"></span> </a> 
-        <!-- left navbar button -->
-        <button class="lno-btn-toggle"> <span class="fa fa-bars"></span> </button>
-      </div>
-      <div class="row">
-	   <script>
-		   let gid = getCookie("gid");
-
-		  if(gid){
-			  console.log("gid is set");		  
-		  }
-		  else{
-			  console.log("gid is not set");
-			  gid = generateRandomString(20);
-			  setCookie("gid",gid);
-		  }
-		  
-		  //let ggid = getParameterByName("gid");
-		  console.log("gid: ",getCookie('gid'));
-		  
-         /**		 
-		 if(!ggid){
-			  let uu = new URL(window.location.href);
-			  uu.searchParams.append("gid",gid);
-			   window.location =  uu;
-		  }
-		 **/
-	</script>
-	  <?php
-	  
-	  if(is_null($user))
-	  {
-		$welcomeText = "Welcome to our online store!";
-	  }
-	  else
-	  {
-		 $welcomeText = "Welcome back, ".$user->fname."!";
-	  }
-	  ?>
-        <div class="col-sm-4 welcome-msg wmsg hidden-xs"><?php echo e($welcomeText); ?></div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="col-sm-8 collapse navbar-collapse navbar-right" id="line-navbar-collapse-1">
-          <ul class="nav navbar-nav top-menu">
-		   <?php
-			$cc = (isset($cart)) ? count($cart) : 0;
-		   ?>
-            <li class="dropdown lnt-shopping-cart visible-lg visible-md"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="ion-bag bag-icn"></span> <span class="cart-item-quantity badge cart-badge" id="cart-badge"><?php echo e($cc); ?></span> </a>
-              <ul role="menu" class="dropdown-menu" id="cart-menu">
-                <?php
-				for($a = 0; $a < $cc; $a++)
-				{
-					$item = $cart[$a]['product'];
-					$qty = $cart[$a]['qty'];
-					$itemAmount = $item['pd']['amount'];
-				?>
-                <li>
-                  <div class="lnt-cart-products text-success"><i class="ion-android-checkmark-circle icon"></i> <?php echo e($item['sku']); ?> <b>x<?php echo e($qty); ?></b><span class="lnt-cart-total">&#8358;<?php echo e(number_format($itemAmount * $qty, 2)); ?></span> </div>
-                </li>
-               <?php
-			   }
-			   ?>
-                <li class="lnt-cart-actions text-center"> <a class="btn btn-default btn-lg hvr-underline-from-center-default" href="<?php echo e(url('cart')); ?>">View cart</a> <a class="btn btn-primary hvr-underline-from-center-primary" href="<?php echo e(url('checkout')); ?>">Checkout</a> </li>
-              </ul>
-            </li>
-			 <li><a href="<?php echo e(url('orders')); ?>">Orders</a></li>
-           <?php if(is_null($user)): ?>
-            <li><a class="login" href="javascript:void(0)" data-toggle="modal" data-target="#login-box"> my account</a></li>
-		   <?php else: ?>
-            <li><a href="<?php echo e(url('dashboard')); ?>">Dashboard</a></li>
-		   <?php endif; ?>
-		
-            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">More <span class="ion-android-arrow-dropdown"></span></a>
-			   
-              <ul class="dropdown-menu" role="menu">
-			  <li><a href="<?php echo e(url('reviews')); ?>">Reviews</a></li>
-                <li> <a href="javascript:void(0)">NGN <span class="ion-checkmark"></span></a></li>
-                <li> <a href="javascript:void(0)"><img width="16" height="12" alt="" src="images/ng.png"> <span class="ion-checkmark"></span></a></li>
-              </ul>
-            </li>
-			
-			<?php if(!is_null($user)): ?>
-			<li><a href="<?php echo e(url('signout')); ?>">Sign out</a></li>
-			<?php endif; ?>
-          </ul>
-          <form class="navbar-form navbar-left lno-search-form visible-xs" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-xs btn-search"><span class="fa fa-search"></span></button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <div class="line-navbar-left">
-    <p class="lnl-nav-title">Categories</p>
-    <ul class="lnl-nav">
-      <!-- The list will be automatically cloned from mega menu via jQuery -->
-    </ul>
-  </div>
-</div>
-<!--end of top sec--> 
-
-<!--start of content wrap (This is necessary for the menu effect)-->
-<div class="content-wrap" data-effect="lnl-push"> 
-  
-  <!--start of header-->
-  <header>
-    <div class="container">
-      <div class="row"> <!--start of logo-->
-        
-        <!--end of logo--> <!--start of features-->
-        <div class="col-sm-12 col-md-5 col-lg-5 feature hidden-xs">
-          <div class="row">
-            <div class="col-sm-12 feature-box ion-chatbubble-working">
-              <dl  class="text-primary text-capitalize">
-                <dt>Online Support</dt>
-                <dd class="text-muted">24/7 if you need any help</dd>
-              </dl>
-            </div>
-          </div>		  
-        </div>
-		<div class="col-sm-12 col-md-2 col-lg-2 ">
-		   <a href="<?php echo e(url('/')); ?>" class="navbar-brand"></a>
-		</div>
-		<div class="col-sm-12 col-md-5 col-lg-5 feature hidden-xs">
-          <div class="row pull-right">
-			<div class="col-sm-12 feature-box ion-lock-combination">
-              <dl  class="text-primary text-capitalize">
-                <dt>Secure Payment</dt>
-                <dd class="text-muted">We don't store your details</dd>
-              </dl>
-            </div>
-          </div>
-        </div>
-        <!--end of features--> 
-      </div>
-    </div>
-  </header>
-  <!--end of header--> 
-  <?php
- 
-  $special = ['hot' => "rings", 'popular' => "earrings", 'trending' => "bracelets"];
-  ?>
-  <!-- strat of navigation -->
-  <nav class="navbar navbar-default navbar-static-top line-navbar-two">
-    <div class="container"> 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="line-navbar-collapse-2">
-        <ul class="nav navbar-nav lnt-nav-mega">
-          <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="fa fa-dot-circle-o"></span> Categories <span class="ion-android-arrow-dropdown"></span> </a>
-            <div class="dropdown-menu" role="menu">
-              <div class="lnt-dropdown-mega-menu"> 
-                <!-- List of categories -->
-                <ul class="lnt-category list-unstyled">
-				<?php
-				 $i = 0;
-				 if(is_array($c) && count($c) > 0)
-				 {
-				 foreach($c as $cc)
-				 {
-					 $ccu = url('shop')."?category=".$cc['category'];
-					 #$ccu = "javascript:void(0)";
-					 $catt = ucwords($cc['category']);
-					 #$catt = "Category";
-					 $cl = ($i == 0) ? ' class="active"' : '';
-					 ++$i;
-					 $spp = "";
-					 
-					 if($cc['special'] == "hot" || $cc['special'] == "special" || $cc['special'] == "trending")
-					 {
-						 if($cc['special'] == "hot") $spp = '<span class="label label-danger">Hot</span></a>';
-						 if($cc['special'] == "special") $spp = '<span class="label label-info">Popular</span></a>';
-						 if($cc['special'] == "trending") $spp = '<span class="label label-primary">Trending</span></a>';
-					 }
-					 
-				?>
-                  <li<?php echo e($cl); ?>><a href="<?php echo e($ccu); ?>"><?php echo e($catt); ?> <?php echo $spp; ?></a></li>
-				<?php
-				 }
-				 }
-				 else 
-				 {
-				?>
-				<li>Categories</li>
-				<?php
-				 }
-				?>
-                </ul>
-                <!-- Subcategory and carousel wrap -->
-                <div class="lnt-subcategroy-carousel-wrap container-fluid">
-				<?php
-				 $i = 0;
-				 foreach($c as $key => $value)
-				 {
-					 $dl = ($i == 0) ? ' class="active"' : '';
-					 ++$i;
-			    ?>
-                  <div id="<?php echo e($key); ?>"<?php echo e($dl); ?>> 
-                    <!-- Sub categories list-->
-                    <div class="lnt-subcategory col-sm-8 col-md-8">
-                      <h3 class="lnt-category-name text-info text-uppercase"><?php echo e($key); ?></h3>
-					 
-                      <section class="col-sm-12">
-					  	
-                      </section>
-                     
-                    </div>
-                    <!-- Carousel -->
-                    <div class="col-sm-4 col-md-4">
-                      <div id="carousel-category-home" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                          <li data-target="#carousel-category-home" data-slide-to="0" class=""></li>
-                          <li data-target="#carousel-category-home" data-slide-to="1" class="active"></li>
-                          <li data-target="#carousel-category-home" data-slide-to="2" class=""></li>
-                        </ol>
-                        <div class="carousel-inner" role="listbox">
-                          <div class="item active"><img src="<?php echo e(asset('images/nav-img-1.jpg')); ?>" width="296" height="400" alt="Slide image"/></div>
-                          <div class="item"> <img src="<?php echo e(asset('images/nav-img-1.jpg')); ?>" width="296" height="400" alt="Slide image"/> </div>
-                          <div class="item"> <img src="<?php echo e(asset('images/nav-img-1.jpg')); ?>" width="296" height="400" alt="Slide image"/> </div>
+                        <div class="col-xl-6 col-lg-8 d-flex flex-wrap justify-content-lg-start justify-content-center align-items-center">
+                            <!--Links start-->
+                            <div class="header-top-links color-white">
+                                <ul>
+                                    <li><a href="tel:<?php echo e($contact['phone']); ?>"><i class="fa fa-phone"></i><?php echo e($contact['phone']); ?></a></li>
+                                    <li><a href="mailto:<?php echo e($contact['email']); ?>"><i class="fa fa-envelope-open-o"></i><?php echo e($contact['email']); ?></a></li>
+                                </ul>
+                            </div>
+                            <!--Links end-->
+                            <!--Socail start-->
+                            <div class="header-top-social color-white">
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                            <!--Socail end-->
                         </div>
-                      </div>
+                        <div class="col-xl-6 col-lg-4">
+                            <div class="ht-right d-flex justify-content-lg-end justify-content-center">
+                                <ul class="ht-us-menu color-white d-flex">
+                                   <?php
+                                    if($user === null){
+                                   ?>
+                                    <li><a href="#"><i class="fa fa-user-circle-o"></i>Welcome!</a>
+                                        <ul class="ht-dropdown right">
+                                            <li><a href="<?php echo e(url('login')); ?>">Login</a></li>
+                                            <li><a href="<?php echo e(url('signup')); ?>">Sign up</a></li>
+                                        </ul>
+                                    </li>
+                                    <?php
+                                    }else{
+                                    ?>
+                                     <li><a href="#"><i class="fa fa-user-circle-o"></i>Hi, <?php echo e($user->fname); ?></a>
+                                        <ul class="ht-dropdown right">
+                                            <li><a href="<?php echo e(url('dashboard')); ?>">My Account</a></li>
+                                            <li><a href="<?php echo e(url('bye')); ?>">Log out</a></li>
+                                        </ul>
+                                    </li>
+                                    <?php
+                                     }
+                                    ?>
+                                </ul>
+                                <ul class="ht-cr-menu color-white d-flex">
+                                    <li><a href="#"><?php echo e($currencies[0]); ?></a>
+                                        <ul class="ht-dropdown width-20">
+                                            <?php
+                                             foreach($currencies as $c){
+                                            ?>
+                                            <li><a href="#"><?php echo e($c); ?></a></li>
+                                            <?php
+                                             }
+                                            ?>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#"><img src="<?php echo e($languages[0]['img']); ?>" alt=""><?php echo e($languages[0]['value']); ?></a>
+                                        <ul class="ht-dropdown width-50">
+                                            <?php
+                                             foreach($languages as $l){
+                                            ?>
+                                            <li><a href="#"><img src="<?php echo e($l['img']); ?>" alt=""><?php echo e($l['value']); ?></a></li>
+                                            <?php
+                                             }
+                                            ?>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-				  <?php
-				   }
-				   $nau = url('shop')."?type=new-arrivals";
-				   $bsu = url('shop')."?type=best-sellers";
-				  ?>
+
                 </div>
-              </div>
             </div>
-          </li>
-        </ul>
-        <ul class="nav navbar-nav main-nav">
-		 <?php
-		   $cccc = [
-	    ['name' => "earrings",'url' => url('shop')."?category=earrings"],
-	    ['name' => "brooches",'url' => url('shop')."?category=brooches"],
-	    ['name' => "rings",'url' => url('shop')."?category=rings"]
-	    ];
-		 ?>
-          <li class="active"><a href="<?php echo e(url('/')); ?>" class="ion-ios-home"> HOME</a></li>
-          <li><a href="<?php echo e($nau); ?>">NEW ARRIVALS</a></li>
-		  <?php $__currentLoopData = $cccc; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $xc): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-          <li><a href="<?php echo e($xc['url']); ?>"><?php echo e(strtoupper($xc['name'])); ?></a></li>
-		  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-          <li><a href="<?php echo e(url('contact')); ?>">CONTACT</a></li>
-        </ul>
-        <ul class="nav navbar-nav visible-xs">
-          <li><a href="<?php echo e(url('/')); ?>">Home</a></li>
-        </ul>
-        <form class="navbar-form navbar-right lnt-search-form" action="<?php echo e(url('search')); ?>" role="search">
-          <div class="form-group">
-            <div class="input-group">
-              <div class="input-group-btn lnt-search-category">
-                <button type="button" class="btn btn-default dropdown-toggle selected-category-btn" data-toggle="dropdown" aria-expanded="false"> <span class="selected-category-text">All </span> <span class="ion-android-arrow-dropdown"></span> </button>
-                <ul class="dropdown-menu " role="menu">
-				<?php $__currentLoopData = $c; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                  <li><a href="#"><?php echo e(ucwords($key)); ?></a></li>
-				<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>         
-                </ul>
-              </div>
-              <input type="text" class="form-control lnt-search-input" name="q" aria-label="Search" placeholder="Find Your Product">
+            <div class="header-bottom menu-right bg-dark">
+                <div class="container-fluid pl-75 pr-75 pl-lg-15 pr-lg-15 pl-md-15 pr-md-15 pl-sm-15 pr-sm-15 pl-xs-15 pr-xs-15">
+                    <div class="row align-items-center">
+
+                        <!--Logo start-->
+                        <div class="col-lg-3 col-md-3 col-6 order-lg-1 order-md-1 order-1">
+                            <div class="logo">
+                                <a href="<?php echo e(url('/')); ?>"><img src="assets/images/logo-white.png" alt=""></a>
+                            </div>
+                        </div>
+                        <!--Logo end-->
+
+                        <!--Menu start-->
+                        <div class="col-lg-6 col-md-6 col-12 order-lg-2 order-md-2 order-3 d-flex justify-content-center">
+                            <nav class="main-menu color-white">
+                                <ul>
+                                    <li><a href="<?php echo e(url('/')); ?>">Home</a></li>
+                                    <li><a href="#">Shop</a>
+                                    <ul class="sub-menu">
+                                            <li><a href="<?php echo e(url('shop')); ?>">All Products</a></li>
+                                            <?php
+                                             foreach($categories as $c){
+                                            ?>
+                                            <li><a href="<?php echo e($c['url']); ?>"><?php echo e($c['name']); ?></a></li>
+                                            <?php
+                                             }
+                                            ?>
+                                      </ul>
+                                    </li>
+                                    <li><a href="<?php echo e(url('blog')); ?>">Blog</a></li>
+                                    <li><a href="#">About Us</a>
+                                      <ul class="sub-menu">
+                                        <li><a href="<?php echo e(url('about')); ?>">About Us</a></li>
+                                        <li><a href="<?php echo e(url('faq')); ?>">FAQ</a></li>
+                                        <li><a href="<?php echo e(url('mission')); ?>">Mission Statement</a></li>
+                                      </ul>
+                                    </li>
+                                    <li><a href="<?php echo e(url('contact')); ?>">Contact Us</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!--Menu end-->
+
+                        <!--Search Cart Start-->
+                        <div class="col-lg-3 col-md-3 col-6 order-lg-3 order-md-3 order-2 d-flex justify-content-end">
+                            <div class="header-search">
+                                <button class="header-search-toggle color-white"><i class="fa fa-search"></i></button>
+                                <div class="header-search-form">
+                                    <form action="#">
+                                        <input type="text" placeholder="Type and hit enter">
+                                        <button><i class="fa fa-search"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="header-cart color-white">
+                                <a href="<?php echo e(url('cart')); ?>"><i class="fa fa-shopping-cart"></i><span>3</span></a>
+                                <!--Mini Cart Dropdown Start-->
+                                <div class="header-cart-dropdown">
+                                    <ul class="cart-items">
+                                    <?php
+			                               $cc = (isset($cart)) ? count($cart) : 0;
+
+                                     for($a = 0; $a < $cc; $a++)
+			                              	{
+                                        $c = $cart[$a];
+				                              	$item = $c['product'];
+					                              $qty = $c['qty'];
+					                              $itemAmount = $item['pd']['amount'];
+                                        $img = $item['imggs'][0];
+                                        $pu = url('product')."?xf=".$item['sku'];
+                                        $ru = url('remove-from-cart')."?xf=".$item['sku'];
+		                                ?>
+                                        <li class="single-cart-item">
+                                            <div class="cart-img">
+                                                <a href="<?php echo e(url('cart')); ?>"><img src="<?php echo e($img); ?>" alt=""><?php echo e($item['name']); ?></a>
+                                            </div>
+                                            <div class="cart-content">
+                                                <h5 class="product-name"><a href="<?php echo e($pu); ?>"><?php echo e($item['name']); ?></a></h5>
+                                                <span class="product-quantity"><?php echo e($c['qty']); ?> ×</span>
+                                                <span class="product-price">&#8358;<?php echo e(number_format($itemAmount,2)); ?></span>
+                                            </div>
+                                            <div class="cart-item-remove">
+                                                <a title="Remove" href="<?php echo e($ru); ?>"><i class="fa fa-trash"></i></a>
+                                            </div>
+                                        </li>
+                                      <?php
+                                      }
+                                      ?>
+                                    </ul>
+                                    <div class="cart-total">
+                                        <h5>Subtotal :<span class="float-right">$39.79</span></h5>
+                                        <h5>Total : <span class="float-right">$46.79</span></h5>
+                                    </div>
+                                    <div class="cart-btn">
+                                        <a href="<?php echo e(url('cart')); ?>">View Cart</a>
+                                        <a href="<?php echo e(url('checkout')); ?>">checkout</a>
+                                    </div>
+                                </div>
+                                <!--Mini Cart Dropdown End-->
+                            </div>
+                        </div>
+                        <!--Search Cart End-->
+                    </div>
+
+                    <!--Mobile Menu start-->
+                    <div class="row">
+                        <div class="col-12 d-flex d-lg-none d-block">
+                            <div class="mobile-menu"></div>
+                        </div>
+                    </div>
+                    <!--Mobile Menu end-->
+
+                </div>
             </div>
-          </div>
-          <div class="lnt-search-suggestion">
-            
-          </div>
-          <button type="submit" class="btn btn-xs btn-search"><span class="ion-android-search"></span></button>
-        </form>
-      </div>
-    </div>
-  </nav>
-  <!-- end of navigation --> 
-  
-   <!--------- Cookie consent-------------->
-        	<?php //@include('cookie-consent') ?>
-        
-        <!--------- Session notifications-------------->
+        </header>
+        <!--Header section end-->
+
+          <!--------- Session notifications-------------->
         	<?php
                $pop = ""; $val = "";
                
@@ -413,308 +263,387 @@
                     <?php if(isset($errors) && count($errors) > 0): ?>
                           <?php echo $__env->make('input-errors', ['errors'=>$errors], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                      <?php endif; ?> 
-  
-  
- <?php echo $__env->yieldContent('content'); ?>
- 
 
-    
-  </div>
-  <!--end of middle sec--> 
-  
-  <!--start of btm sec-->
-  <div class="btm-sec">
-    <footer>
-      <div class="footer-top wow fadeIn" data-wow-offset="10" data-wow-duration="2s">
-        <div class="container">
-          <div class="row">
-            <div class="col-xs-8 col-sm-9">
-              <h4><i class="ion-android-phone-portrait icon text-info"></i><span class="text-uppercase text-primary">Ace Luxury Store - Exquisite Fashion For You</span></h4>
-            </div>
-            <div class="col-xs-4 col-sm-3"> <a href="javascript:void(0)" class="btn btn-default btn-block hvr-underline-from-center-default pull-right">Shop now</a> </div>
-          </div>
-        </div>
-      </div>
-      <div class="footer-middle wow fadeIn" data-wow-offset="40" data-wow-duration="2s">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-3 col-sm-6">
-              <h5 class="text-info text-uppercase">useful pages</h5>
-              <ul class="list-unstyled nudge">
-                <li><a href="<?php echo e(url('about')); ?>">About us</a> </li>
-                <li><a href="<?php echo e(url('privacy-policy')); ?>">Privacy Policy</a> </li>
-                <li><a href="<?php echo e(url('returns')); ?>">Return Policy</a> </li>
-                <li><a href="<?php echo e(url('faq')); ?>">FAQ</a> </li>
-                <li><a href="<?php echo e(url('contact')); ?>">Contact us</a> </li>
-              </ul>
-              <hr class="hidden-md hidden-lg hidden-sm">
-            </div>
-            <div class="col-md-3 col-sm-6">
-              <h5 class="text-info text-uppercase">Categories</h5>
-              <ul class="list-unstyled nudge">
-			  <?php
-			  foreach($c as $cc){
-				   $ccu = url('shop')."?category=".$cc['category'];
-					 #$ccu = "javascript:void(0)";
-					 $catt = ucwords($cc['category']);
-					 #$catt = "Category";
-			  ?>
-                <li><a href="<?php echo e($ccu); ?>"><?php echo e($catt); ?></a> </li>
-			  <?php
-			  }
-			  ?>
-              </ul>
-            </div>
-            <div class="col-sm-12 col-md-6">
-              <div class="row">
-                <div class="col-sm-12">
-                  <h5 class="text-info text-uppercase">Get the news</h5>
-                  <p class="text-muted">Subscribe for updates on our latest arrivals</p>
-                  <form action="<?php echo e(url('subscribe')); ?>" method="post" id="newsletter">
-					  <?php echo csrf_field(); ?>
+        <?php echo $__env->yieldContent('content'); ?>
 
-                    <div>
-                      <input type="text" name="email" id="newsletter-mail" title="Sign up for our newsletter" class="input-text required-entry validate-email" placeholder="Enter your email address" autocomplete="off">
-                      <button type="submit" title="Subscribe" class="btn btn-primary pull-right"><span>Subscribe</span></button>
+         <!--Brand section start-->
+         <div
+            class="brand-section section pt-90 pt-lg-70 pt-md-65 pt-sm-55 pt-xs-40 pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
+            <div class="container">
+                <div class="row">
+
+                    <!--Brand Slider start-->
+                    <div class="brand-slider tf-element-carousel section p-0" data-slick-options='{
+                        "slidesToShow": 5,
+                        "slidesToScroll": 1,
+                        "infinite": true,
+                        "arrows": false,
+                        "autoplay": true
+                        }'  data-slick-responsive='[
+                        {"breakpoint":1199, "settings": {
+                        "slidesToShow": 4
+                        }},
+                        {"breakpoint":992, "settings": {
+                        "slidesToShow": 4
+                        }},
+                        {"breakpoint":768, "settings": {
+                        "slidesToShow": 3
+                        }},
+                        {"breakpoint":576, "settings": {
+                        "slidesToShow": 1
+                        }}
+                        ]'>
+                        <div class="brand col"><a href="#"><img src="assets/images/brands/brand-1.png" alt=""></a></div>
+                        <div class="brand col"><a href="#"><img src="assets/images/brands/brand-2.png" alt=""></a></div>
+                        <div class="brand col"><a href="#"><img src="assets/images/brands/brand-3.png" alt=""></a></div>
+                        <div class="brand col"><a href="#"><img src="assets/images/brands/brand-4.png" alt=""></a></div>
+                        <div class="brand col"><a href="#"><img src="assets/images/brands/brand-5.png" alt=""></a></div>
                     </div>
-                  </form>
-                  <hr>
-                </div>
-                <div class="col-sm-12">
-                  <h5 class="text-info text-uppercase">Stay in touch</h5>
-                  <ul class="list-inline social clearfix">
-                    <li class="col-sm-6 facebook"><a href="https://www.facebook.com/aceluxurystore"> <span><i class="ion-social-facebook"></i></span>
-                      <p>160</p>
-                      </a></li>
-                    <li class="col-sm-6 googleplus"><a href="https://www.instagram.com/aceluxurystore"> <span><i class=" ion-social-instagram"></i></span>
-                      <p>1597</p>
-                      </a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="footer-btm wow fadeIn" data-wow-offset="50" data-wow-duration="2s">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12">
-              <p class="pull-left">&copy; <?php echo e(date("Y")); ?> Allrights reserved <a class="external" href="<?php echo e(url('/')); ?>">Ace Luxury Store</a>.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-	<div class="whatsapp-btn">
-	  <a href="javascript:void(0)" data-toggle="modal" data-target="#whatsapp-box" class="btn btn-sm btn-primary">Need help? <b>Chat with us</b></a>
-	  <a href="javascript:void(0)" data-toggle="modal" data-target="#whatsapp-box">
-	    <span><i class="ion-social-whatsapp"></i></span>
-	  </a>
-	</div>
-  </div>
-  <!--end of btm sec--> 
-  
-  <!--start of login box-->
-  <div class="modal fade" id="login-box" tabindex="-1" role="dialog" aria-labelledby="loginboxLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title text-primary text-uppercase" id="loginboxLabel" >login your account</h4>
-        </div>
-        <div class="modal-body">
-          <ul class="list-inline row">
-            <li class="col-sm-6"> <a href="#" class="btn btn-block btn-facebook  " ><i class="ion-social-facebook"></i></a> </li>
-            <li class="col-sm-6"> <a href="#" class="btn btn-block btn-google" ><i class="ion-social-google"></i></a></li>
-          </ul>
-          <hr>
-          <form method="post" id="login-form" action="<?php echo e(url('login')); ?>" accept-charset="UTF-8">
-		   <?php echo csrf_field(); ?>
+                    <!--Brand Slider end-->
 
-		   <input type="hidden" id="href" value="">
-		   <script>
-		     document.querySelector('#href').value = document.location.href;
-		   </script>
-            <div class=" form-group">
-              <label class="control-label" for="login-name">Email address or phone number</label>
-              <input type="text" class="form-control" value="" name="id" id="login-name" required>
+                </div>
             </div>
-            <div class="form-group">
-              <label class="control-label text-uppercase" for="login-password">Your password</label>
-              <input type="password" class="form-control" value="" name="pass" id="login-password" required>
-            </div>
-            <div class="checkbox">
-              <input type="checkbox" id="logincheckbox" value="option1" name="remember">
-              <label for="logincheckbox"> Remember me </label>
-            </div>
-            <button class="btn btn-block btn-primary hvr-underline-from-center-primary" id="login-submit" type="submit">login</button>
-          </form>
         </div>
-        <div class="modal-footer">
-          <p class="text-center"><small>Forget your password? <a href="#">We can help!</a></small></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--end of login box--> 
+        <!--Brand section end-->
 
-  <!--start of whatsapp box-->
-  <div class="whatsapp-box modal fade" id="whatsapp-box" tabindex="-1" role="dialog" aria-labelledby="loginboxLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="tw">&times;</span></button>
-          <h4 class="modal-title tw text-uppercase" id="loginboxLabel" >start a conversation</h4>
-		  <h6 class="tw">Click one any of numbers listed beow to chat on Whatsapp:</h6>
-        </div>
-        <div class="modal-body">
-          <ul class="list-inline row">
-            <li class="col-sm-12"> <a href="https://wa.me/2348097039692" target="_blank" class="btn btn-block " ><i class="ion-social-whatsapp"></i> Customer Support</a> </li>
-          </ul>
-        </div>
-        <div class="modal-footer">
-          <p class="text-center"><small>The team usually reply in a few minutes</small></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--end of whatsapp box--> 
-  
-  <!-- hidden toggle for cart success box -->
-  <a href="javascript:void(0)" data-toggle="modal" id="csb-toggle" data-target="#cart-successful-box"></a>
-  
-  <!--start of cart successful box-->
-  <div class="modal fade" id="cart-successful-box" tabindex="-1" role="dialog" aria-labelledby="cartSuccessfulLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="tw">&times;</span></button>
-          <h4 class="modal-title tw text-uppercase" id="cartSuccessfulLabel" >start a conversation</h4>
-		  <h6 class="tw">Added to cart!</h6>
-        </div>
-        <div class="modal-body">
-          <ul class="list-inline row">
-            <li class="col-sm-12"> <a href="https://wa.me/2348097039692" target="_blank" class="btn btn-block " ><i class="ion-social-whatsapp"></i> Customer Support</a> </li>
-          </ul>
-        </div>
-        <div class="modal-footer">
-          <p class="text-center"><small>The team usually reply in a few minutes</small></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--end of cart successful box--> 
-  
-  <!--start of quick view box-->
-  <div class="modal fade" id="quick-view-box" tabindex="-1" role="dialog" aria-labelledby="quickviewboxLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title text-primary text-uppercase" id="quickviewboxLabel">product sku</h4>
-        </div>
-        <div class="modal-body product-details">
-          <div class="row">
-            <div class="col-sm-7"> <img id="quickviewboxImg" class="img-responsive" src="<?php echo e(asset('images/p-details-z-1.jpg')); ?>" width="700" height="700"  alt=""/> </div>
-            <div class="col-sm-5 sub-info">
-              <div class="product-review">
-                <p><span class="text-info"><i class="ion-android-star"></i><i class="ion-android-star"></i><i class="ion-android-star"></i><i class="ion-android-star-half"></i><i class="ion-android-star-outline"></i></span> <span class="pull-right"><small>8 Reviews</small></span> </p>
-              </div>
-			    
-				
-              <div class="product-description">
-                <h5 class="text-primary text-uppercase">Quick Overview</h5>
-                <p id="quickviewboxDescription"> Product description goes here</p>
-              </div>
-              <div class="product-availability in-stock">
-                <p>Availability: <span class="text-info" id="quickviewboxInStock"></span></p>
-              </div>
-              <div class="product-price clearfix"> <span class="pull-left btn btn-primary"><strong>&#8358;<span id="quickviewboxAmount">0.00</span></strong></span> </div>
+        <!--Categorie Product section start-->
+        <div
+            class="categorie-product-section section">
+            <div class="container-fluid pl-0 pr-0">
+                <div class="row g-0">
+                    <div class="col-lg-4 col-md-4">
+                        <!-- Single Categorie Product Start -->
+                        <div class="single-categorie">
+                            <div class="categorie-image">
+                                <img src="./assets/images/categorie/cate-1.png" alt="">
+                            </div>
+                            <div class="categorie-content">
+                                <h3>Now introducing</h3>
+                                <a class="shop-btn" href="#">Shop now</a>
+                                <h1>Spa Optima+</h1>
+                            </div>
+                        </div>
+                        <!-- Single Categorie Product End -->
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <!-- Single Categorie Product Start -->
+                        <div class="single-categorie">
+                            <div class="categorie-image">
+                                <img src="./assets/images/categorie/cate-2.png" alt="">
+                            </div>
+                            <div class="categorie-content">
+                                <h3>Wrinkle cure</h3>
+                                <a class="shop-btn" href="#">Shop now</a>
+                                <h1>Time Revolution</h1>
+                            </div>
+                        </div>
+                        <!-- Single Categorie Product End -->
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <!-- Single Categorie Product Start -->
+                        <div class="single-categorie">
+                            <div class="categorie-image">
+                                <img src="./assets/images/categorie/cate-3.png" alt="">
+                            </div>
+                            <div class="categorie-content">
+                                <h3>Pretty perks for every point you earn</h3>
+                                <a class="shop-btn" href="#">Shop now</a>
+                                <h1>Beauty Squad</h1>
+                            </div>
+                        </div>
+                        <!-- Single Categorie Product End -->
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="modal-footer">
-          <ul class="soc pull-left">
-            <li><a class="soc-twitter" href="#"></a></li>
-            <li><a class="soc-facebook" href="#"></a></li>
-            <li><a class="soc-whatsapp soc-icon-last" href="#"></a></li>
-          </ul>
-          <button class="btn btn-default hvr-underline-from-center-default">full details</button>
-          <button type="button" class="btn btn-primary hvr-underline-from-center-primary" >add to cart</button>
+        <!--Categorie Product section end-->
+
+        <!--Footer section start-->
+        <footer class="footer-section section bg-dark">
+
+            <!--Footer Top start-->
+            <div
+                class="footer-top section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-45 pb-lg-25 pb-md-15 pb-sm-5 pb-xs-0">
+                <div class="container">
+                    <div class="row row-25">
+
+                        <!--Footer Widget start-->
+                        <div class="footer-widget col-lg-3 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
+                            <h4 class="title"><span class="text">About TheFace</span></h4>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat</p>
+                            <div class="footer-social">
+                                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                                <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+                                <a href="#" class="linkedin"><i class="fa fa-instagram"></i></a>
+                                <a href="#" class="pinterest"><i class="fa fa-pinterest-p"></i></a>
+                                <a href="#" class="pinterest"><i class="fa fa-vimeo"></i></a>
+                            </div>
+                        </div>
+                        <!--Footer Widget end-->
+
+                        
+                        <!--Footer Widget start-->
+                        <div class="footer-widget col-lg-3 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
+                            <h4 class="title"><span class="text">Information</span></h4>
+                            <ul class="ft-menu">
+                                <li><a href="#">Returns</a></li>
+                                <li><a href="#">Delivery</a></li>
+                                <li><a href="#">Service</a></li>
+                                <li><a href="#">Gift Cards</a></li>
+                                <li><a href="#">Mobile</a></li>
+                                <li><a href="#">Gift Cards</a></li>
+                                <li><a href="#">Unsubscribe Notification</a></li>
+                            </ul>
+                        </div>
+                        <!--Footer Widget end-->
+
+
+                        <!--Footer Widget start-->
+                        <div class="footer-widget col-lg-3 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
+                            <h4 class="title"><span class="text">Our Offers</span></h4>
+                            <ul class="ft-menu">
+                                <li><a href="#">New products</a></li>
+                                <li><a href="#">Top sellers</a></li>
+                                <li><a href="#">Specials</a></li>
+                                <li><a href="#">Manufacturers</a></li>
+                                <li><a href="#">Suppliers</a></li>
+                                <li><a href="#">Specials</a></li>
+                                <li><a href="#">Service</a></li>
+                            </ul>
+                        </div>
+                        <!--Footer Widget end-->
+
+                        <!--Footer Widget start-->
+                        <div class="footer-widget col-lg-3 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
+                            <h4 class="title"><span class="text">Contact us</span></h4>
+                            <ul class="address">
+                                <li><i class="fa fa-home"></i><span>HH2 BacHa building, Tohuu Street Hanoi, Vietnam</span>
+                                </li>
+                                <li><i class="fa fa-phone"></i><span><a href="#">(08) 123 456 7890</a></span></li>
+                                <li><i class="fa fa-envelope-o"></i><span><a href="#">yourmail@domain.com</a></span></li>
+                            </ul>
+                            <div class="payment-box mt-15 mb-15">
+                                <a href="#"><img src="./assets/images/payment.png" alt=""></a>
+                            </div>
+                        </div>
+                        <!--Footer Widget end-->
+                    </div>
+                </div>
+            </div>
+            <!--Footer Top end-->
+
+            <!--Footer bottom start-->
+            <div class="footer-bottom section">
+                <div class="container ft-border pt-40 pb-40 pt-xs-20 pb-xs-20">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-lg-6 col-md-6 col-sm-8">
+                            <div class="copyright text-start">
+                                <p>Copyright &copy;2022 <a href="#">Theface</a>. All rights reserved.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-4">
+                            <div class="footer-logo text-end">
+                                <a href="index.html"><img src="./assets/images/logofoo.png" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Footer bottom end-->
+
+        </footer>
+        <!--Footer section end-->
+        
+        <!-- Modal Area Strat -->
+        <div class="modal fade quick-view-modal-container" id="quick-view-modal-container" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-xl-12 col-lg-12">
+                            <div class="row">
+                                <div class="col-xl-5 col-lg-6 col-md-6 mb-xxs-25 mb-xs-25 mb-sm-25">
+                                    <!-- Product Details Left -->
+                                    <div class="product-details-left">
+                                        <div class="product-details-images slider-lg-image-1 tf-element-carousel" data-slick-options='{
+                                            "slidesToShow": 1,
+                                            "slidesToScroll": 1,
+                                            "infinite": true,
+                                            "asNavFor": ".slider-thumbs-1",
+                                            "arrows": false,
+                                            "prevArrow": {"buttonClass": "slick-btn slick-prev", "iconClass": "fa fa-angle-left" },
+                                            "nextArrow": {"buttonClass": "slick-btn slick-next", "iconClass": "fa fa-angle-right" }
+                                            }'>
+                                            <div class="lg-image">
+                                                <img src="./assets/images/product/large-product/l-product-1.jpg" alt="">
+                                            </div>
+                                            <div class="lg-image">
+                                                <img src="./assets/images/product/large-product/l-product-2.jpg" alt="">
+                                            </div>
+                                            <div class="lg-image">
+                                                <img src="./assets/images/product/large-product/l-product-3.jpg" alt="">
+                                            </div>
+                                            <div class="lg-image">
+                                                <img src="./assets/images/product/large-product/l-product-4.jpg" alt="">
+                                            </div>
+                                            <div class="lg-image">
+                                                <img src="./assets/images/product/large-product/l-product-5.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="product-details-thumbs slider-thumbs-1 tf-element-carousel" data-slick-options='{
+                                            "slidesToShow": 4,
+                                            "slidesToScroll": 1,
+                                            "infinite": true,
+                                            "focusOnSelect": true,
+                                            "asNavFor": ".slider-lg-image-1",
+                                            "arrows": false,
+                                            "prevArrow": {"buttonClass": "slick-btn slick-prev", "iconClass": "fa fa-angle-left" },
+                                            "nextArrow": {"buttonClass": "slick-btn slick-next", "iconClass": "fa fa-angle-right" }
+                                            }' data-slick-responsive= '[
+                                            {"breakpoint":991, "settings": {
+                                                "slidesToShow": 3
+                                            }},
+                                            {"breakpoint":767, "settings": {
+                                                "slidesToShow": 4
+                                            }},
+                                            {"breakpoint":479, "settings": {
+                                                "slidesToShow": 2
+                                            }}
+                                        ]'>										
+                                            <div class="sm-image"><img src="./assets/images/product/small-product/s-product-1.jpg" alt="product image thumb"></div>
+                                            <div class="sm-image"><img src="./assets/images/product/small-product/s-product-2.jpg" alt="product image thumb"></div>
+                                            <div class="sm-image"><img src="./assets/images/product/small-product/s-product-3.jpg" alt="product image thumb"></div>
+                                            <div class="sm-image"><img src="./assets/images/product/small-product/s-product-4.jpg" alt="product image thumb"></div>
+                                            <div class="sm-image"><img src="./assets/images/product/small-product/s-product-5.jpg" alt="product image thumb"></div>
+                                        </div>
+                                    </div>
+                                    <!--Product Details Left -->
+                                </div>
+                                <div class="col-xl-7 col-lg-6 col-md-6">
+                                    <!-- product detail content -->
+                                    
+                                    <!--Product Details Content Start-->
+                                    <div class="product-details-content">
+                                        <!--Product Nav Start-->
+                                        <div class="product-nav">
+                                            <a href="#"><i class="fa fa-angle-left"></i></a>
+                                            <a href="#"><i class="fa fa-angle-right"></i></a>
+                                        </div>
+                                        <!--Product Nav End-->
+                                        <h2>White Shave Brux</h2>
+                                        <div class="single-product-reviews">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <a class="review-link" href="#">(1 customer review)</a>
+                                        </div>
+                                        <div class="single-product-price">
+                                            <span class="price new-price">$66.00</span>
+                                            <span class="regular-price">$77.00</span>
+                                        </div>
+                                        <div class="product-description">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus</p>
+                                        </div>
+                                        <div class="single-product-quantity">
+                                            <form class="add-quantity" action="#">
+                                                <div class="product-quantity">
+                                                    <input value="1" type="number">
+                                                </div>
+                                                <div class="add-to-link">
+                                                    <button class="product-add-btn" data-text="add to cart">add to cart</button>
+                                                </div>
+                                            </form>
+                                    </div>
+                                        <div class="wishlist-compare-btn">
+                                            <a href="#" class="wishlist-btn mb-md-10 mb-sm-10">Add to Wishlist</a>
+                                            <a href="#" class="add-compare">Compare</a>
+                                        </div>
+                                        <div class="product-meta">
+                                            <span class="posted-in">
+                                                    Categories: 
+                                                    <a href="#">Accessories</a>,
+                                                    <a href="#">Electronics</a>
+                                                </span>
+                                        </div>
+                                        <div class="single-product-sharing">
+                                            <h3>Share this product</h3>
+                                            <ul>
+                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!--Product Details Content End-->
+                                    
+                                    <!-- End of product detail content -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
         </div>
-      </div>
+        <!-- Modal Area End -->
+
+        <!-- Newsletter Popup Start -->
+        <div class="newsletter-popup-area" id="newsletter-popup-area">
+            <div class="newsletter-popup-content-wrapper">
+                <div class="newsletter-popup-content text-center">
+                    <a href="javascript:void(0)" class="close-newsletter-popup" id="close-newsletter-popup">Close</a>
+                    <h2>NEWSLETTER</h2>
+                    <p>Subscribe to our newsletters now and stay up-to-date with new collections, the latest lookbooks and exclusive offers.</p>
+                    <div class="subscription-form">
+                        <form  id="mc-form2" class="mc-form">
+                            <input type="email" placeholder="Enter your email address here" >
+                            <button class="btn" type="submit">Subscribe</button>
+                        </form>
+                        <!-- mailchimp-alerts Start -->
+    
+                        <div class="mailchimp-alerts mt-5 mb-5">
+                            <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
+                            <div class="mailchimp-success"></div><!-- mailchimp-success end -->
+                            <div class="mailchimp-error"></div><!-- mailchimp-error end -->
+                        </div>
+    
+                        <!-- mailchimp-alerts end -->
+                    </div>
+                    <div class="subscribe-bottom">
+                        <input type="checkbox" id="newsletter_popup_dont_show_again">
+                        <label for="newsletter_popup_dont_show_again">Don't show this popup again</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Newsletter Popup End -->
     </div>
-  </div>
-  <!--end of quick view box--> 
-  
-    <!--start of checkout box-->
-  <div class="checkout-modal modal fade" id="checkout-modal" tabindex="-1" role="dialog" aria-labelledby="checkoutModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="tw">&times;</span></button>
-          <h4 class="modal-title tw text-uppercase" id="checkoutModalLabel" >start a conversation</h4>
-		  <h6 class="tw">Click one any of numbers listed beow to chat on Whatsapp:</h6>
-        </div>
-        <div class="modal-body">
-          <a href="javascript:void(0)" onclick="payCard(); return false;" class="btn btn-block btn-primary" ><i class="ion-card"></i> Continue to make payment</a> 
-        </div>
-        <div class="modal-footer">
-          <p class="text-center" style="color: red; font-weight: bold; font-size: 1.1em;"><small>NOTE: Kindly note your referrence number in case of any unforeseen issues with this transaction</small></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--end of checkout box--> 
-  
+
+    <!-- Placed js at the end of the document so the pages load faster -->
+
+    <!-- All jquery file included here -->
+    <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/vendor/jquery-migrate-3.3.2.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
 </div>
-<!--end of content wrap--> 
-
-<!--Start of go to top--> 
-<a href="#0" class="cd-top"></a> 
-<!--end of go to top--> 
-
-<!--start of js--> 
-
-<?php echo $__env->yieldContent('scripts'); ?>
-
-<!--style switcher--> 
-<script src="<?php echo e(asset('js/style-switcher.js')); ?>"></script> 
-<!--switches--> 
-<script src="<?php echo e(asset('js/switches.js')); ?>"></script> 
-<!--slick carousel--> 
-<script src="<?php echo e(asset('js/slick.js')); ?>"></script> 
-<!--navigation js--> 
-<script src="<?php echo e(asset('js/jquery.highlight.js')); ?>"></script> 
-<script src="<?php echo e(asset('js/jquery.touchSwipe.min.js')); ?>"></script> 
-<!--<script src="js/line.js"></script>--> 
-<!--scrollbar js--> 
-<script src="<?php echo e(asset('js/nicescroll.js')); ?>"></script> 
-<script src="<?php echo e(asset('js/jquery.nicescroll.plus.js')); ?>"></script> 
-<!--countdown counter--> 
-<script src="<?php echo e(asset('js/countdown.js')); ?>"></script> 
-<!--color picker--> 
-<script src="<?php echo e(asset('js/jquery.simplecolorpicker.js')); ?>"></script> 
-<!--image zoom--> 
-<script src="<?php echo e(asset('js/jquery.zoom.js')); ?>"></script> 
-<!--go to top--> 
-<script src="<?php echo e(asset('js/to-top.js')); ?>"></script> 
-<!--product items counter--> 
-<script src="<?php echo e(asset('js/jquery.charactercounter.js')); ?>"></script> 
-<!--select--> 
-<script src="<?php echo e(asset('js/bootstrap-select.min.js')); ?>"></script> 
-<!--price range slider--> 
-<script src="<?php echo e(asset('js/bootstrap-slider.js')); ?>"></script> 
-<!--animated particles--> 
-<script src="<?php echo e(asset('js/jquery.particleground.js')); ?>"></script> 
-<!--masonry--> 
-<script src="<?php echo e(asset('js/salvattore.js')); ?>"></script> 
-<!--tab collapse--> 
-<script src="<?php echo e(asset('js/bootstrap-tabcollapse.js')); ?>"></script> 
-
-
-<!--end of js-->
 </body>
 </html>
 <?php /**PATH /Users/mac/repos/fairyskin/resources/views/layout.blade.php ENDPATH**/ ?>

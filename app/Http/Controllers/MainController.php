@@ -29,18 +29,16 @@ class MainController extends Controller {
 		$hasUnpaidOrders = null;
 		$user = null;
 		
-		//remove all carts with no user id
-		$this->helpers->clearGhostCarts();
 		
 		if(Auth::check())
 		{
 			$user = Auth::user();
-			$hasUnpaidOrders = $this->helpers->checkForUnpaidOrders($user);
+			//$hasUnpaidOrders = $this->helpers->checkForUnpaidOrders($user);
 		}
 		
 		$req = $request->all();
-		$gid = isset($_COOKIE['gid']) ? $_COOKIE['gid'] : "";
-		$cart = $this->helpers->getCart($user,$gid);
+		//$gid = isset($_COOKIE['gid']) ? $_COOKIE['gid'] : "";
+		$cart = $this->helpers->getCart($user);
 		
 		$c = $this->helpers->getCategories();
 		
@@ -60,7 +58,7 @@ class MainController extends Controller {
 		shuffle($ads);
 		shuffle($banners);
 		$ad = count($ads) < 1 ? "images/inner-ad-2.png" : $ads[0]['img'];
-    	return view("oldindex",compact(['user','cart','c','banners','hasUnpaidOrders','bs','na','ad','signals','plugins']));
+    	return view("index",compact(['user','cart','c','banners','hasUnpaidOrders','bs','na','ad','signals','plugins']));
     }
 	
 	/**
