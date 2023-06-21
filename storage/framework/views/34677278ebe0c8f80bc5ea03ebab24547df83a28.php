@@ -1,1375 +1,2399 @@
-<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths" lang="en" style=""><head>
+
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Beautyhouse | Home1</title>
+    <title>TheFace - Beauty & Cosmetics eCommerce Bootstrap 5 Template</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico in the root directory -->
-    <link href="images/apple-touch-icon.png" type="images/x-icon" rel="shortcut icon">
+    <link href="assets/images/favicon.ico" type="img/x-icon" rel="shortcut icon">
     <!-- All css files are included here. -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/core.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <!-- customizer style css -->
-    <link rel="stylesheet" href="css/style-customizer.css">
-    <link href="css/color/skin-default.css" data-style="styles" rel="stylesheet">
-    <!-- Modernizr JS -->
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/iconfont.min.css">
+    <link rel="stylesheet" href="assets/css/plugins.css">
+    <link rel="stylesheet" href="assets/css/helper.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
 </head>
 
-<body class="wide-layout">
-    <!--[if lt IE 8]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->  
-    
-    <div class="wrapper white-bg">
-        <!--header section start-->
-        <!--header section start-->
-        <div class="header">
-            <div class="header-top">
-                <div class="container">
-                    <div class="row mobile-items-center">
-                        <div class="col-md-6 col-sm-6 hidden-xs">
-                            <div class="header-left">
-                                <div class="call-center">
-                                    <p><i class="zmdi zmdi-phone"></i>+012 345 678 102</p>
-                                </div>
-                                <div class="mail-address">
-                                    <p><i class="zmdi zmdi-email"></i>info@example.com</p>
-                                </div>
+<body>
+
+    <div id="main-wrapper">
+
+        <!--Header section start-->
+        <header class="header header-transparent header-sticky">
+            <div class="header-top bg-dark">
+                <div class="container-fluid pl-75 pr-75 pl-lg-15 pr-lg-15 pl-md-15 pr-md-15 pl-sm-15 pr-sm-15 pl-xs-15 pr-xs-15">
+                    <div class="row align-items-center">
+
+                        <div class="col-xl-6 col-lg-8 d-flex flex-wrap justify-content-lg-start justify-content-center align-items-center">
+                            <!--Links start-->
+                            <div class="header-top-links color-white">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-phone"></i>(08) 123 456 7890</a></li>
+                                    <li><a href="#"><i class="fa fa-envelope-open-o"></i>yourmail@domain.com</a></li>
+                                </ul>
                             </div>
+                            <!--Links end-->
+                            <!--Socail start-->
+                            <div class="header-top-social color-white">
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                                <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-vimeo"></i></a>
+                            </div>
+                            <!--Socail end-->
                         </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="social-icons">
-                                <a href="#"><i class="zmdi zmdi-facebook"></i></a>
-                                <a href="#"><i class="zmdi zmdi-twitter"></i></a>
-                                <a href="#"><i class="zmdi zmdi-dribbble"></i></a>
-                                <a href="#"><i class="zmdi zmdi-pinterest"></i></a>
-                                <a href="#"><i class="zmdi zmdi-instagram"></i></a>
+                        <div class="col-xl-6 col-lg-4">
+                            <div class="ht-right d-flex justify-content-lg-end justify-content-center">
+                                <ul class="ht-us-menu color-white d-flex">
+                                    <li><a href="#"><i class="fa fa-user-circle-o"></i>Login</a>
+                                        <ul class="ht-dropdown right">
+                                            <li><a href="compare.html">Compare Products</a></li>
+                                            <li><a href="my-account.html">My Account</a></li>
+                                            <li><a href="wishlist.html">My Wish List</a></li>
+                                            <li><a href="login-register.html">Sign In</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="ht-cr-menu color-white d-flex">
+                                    <li><a href="#">EUR</a>
+                                        <ul class="ht-dropdown width-20">
+                                            <li><a href="#">USD</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#"><img src="assets/images/language/english.png" alt="">English2</a>
+                                        <ul class="ht-dropdown width-50">
+                                            <li><a href=""><img src="assets/images/language/english.png"
+                                                        alt="">English1</a></li>
+                                            <li><a href=""><img src="assets/images/language/english.png"
+                                                        alt="">English3</a></li>
+                                            <li><a href=""><img src="assets/images/language/english.png"
+                                                        alt="">English4</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
-            <div class="header-bottom sticky-header sticky">
-                <div class="container">
-                    <div class="mgea-full-width">
-                        <div class="row">
-                            <div class="col-lg-2 col-md-6 col-sm-9 xs-3">
-                                <div class="logo">
-                                    <a href="index.html"><img src="images/logo/logo.png" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-8 d-none d-lg-block">
-                                <div class="menu">
-                                    <nav>
-                                        <ul>
-                                            <li><a href="index.html">Home</a>
-                                                <ul class="dropdown_menu">
-                                                    <li><a href="index.html">home page one</a></li>
-                                                    <li><a href="index-2.html">home page two</a></li>
-                                                    <li><a href="index-3.html">home page three</a></li>
-                                                    <li><a href="index-4.html">home page four</a></li>
-                                                    <li><a href="index-5.html">home page five</a></li>
-                                                    <li><a href="index-box.html">home page six</a></li>
-                                                    <li><a href="index-box-fixed.html">home page seven</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="mega-parent item-2"><a href="shop.html">shop</a>
-                                               <ul class="mgea-menu">
-                                                    <li class="mega-sub"><a href="#">Column one</a>
-                                                        <ul class="mega-sub-item">
-                                                            <li><a href="shop.html">shop page</a></li>
-                                                            <li><a href="shop.html">shop sidebar</a></li>
-                                                            <li><a href="wishlist.html">wishlist</a></li>
-                                                            <li><a href="product-details.html">product Details</a></li>
-                                                            <li><a href="cart.html">cart</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="mega-sub"><a href="#">Column two</a>
-                                                        <ul class="mega-sub-item">
-                                                            <li><a href="checkout.html">checkout</a></li>
-                                                            <li><a href="gallery-2.html">Gallery 2</a></li>
-                                                            <li><a href="gallery.html">gallery</a></li>
-                                                            <li><a href="elements-feature.html">Feature</a></li>
-                                                            <li><a href="elements-fun-fact.html">Fun fact</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="mega-sub"><a href="#">Column Three</a>
-                                                      <div class="mega-img">
-                                                          <img src="images/product/mega.jpg" alt="">
-                                                      </div>  
-                                                    </li>
-                                                </ul> 
-                                            </li>
-                                            <li><a href="about-us.html">about</a></li>
-                                            <li><a href="#">pages</a>
-                                                <ul class="dropdown_menu">
-                                                    <li><a href="about-us.html">about us</a></li>
-                                                    <li><a href="404.html">404</a></li>
-                                                    <li><a href="contact-us.html">contact us</a></li>
-                                                    <li><a href="blog.html">Blog</a></li>
-                                                    <li><a href="blog-details.html">blog Deatils</a></li>
-                                                    <li><a href="gallery-2.html">gallery</a></li>
-                                                    <li><a href="shop.html">shop pages</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="mega-parent"><a href="#">Feature</a>
-                                               <ul class="mgea-menu">
-                                                    <li class="mega-sub"><a href="#">Column one</a>
-                                                        <ul class="mega-sub-item">
-                                                            <li><a href="elements-accordion.html">Accordion</a></li>
-                                                            <li><a href="elements-tab.html">Tab</a></li>
-                                                            <li><a href="elements-table.html">table</a></li>
-                                                            <li><a href="elements-progessbar.html">progressbar</a></li>
-                                                            <li><a href="elements-alerts.html">Alerts</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="mega-sub"><a href="#">Column two</a>
-                                                        <ul class="mega-sub-item">
-                                                            <li><a href="elements-audio.html">Audio</a></li>
-                                                            <li><a href="elements-video.html">video</a></li>
-                                                            <li><a href="elements-gallery.html">gallery one</a></li>
-                                                            <li><a href="gallery-2.html">Gallery two</a></li>
-                                                            <li><a href="elements-typhograpy.html">typhogrpahy</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="mega-sub"><a href="#">Column Three</a>
-                                                        <ul class="mega-sub-item">
-                                                            <li><a href="elements-testimonial.html">Testimonial</a></li>
-                                                            <li><a href="elements-brand.html">brand</a></li>
-                                                            <li><a href="elements-team.html">Team</a></li>
-                                                            <li><a href="elements-button.html">Button</a></li>
-                                                            <li><a href="elements-map.html">map</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="mega-sub"><a href="#">Column one</a>
-                                                        <ul class="mega-sub-item">
-                                                            <li><a href="elements-pricing.html">Pricing table</a></li>
-                                                            <li><a href="elements-fun-fact.html">Fun fact</a></li>
-                                                            <li><a href="elements-feature.html">Features</a></li>
-                                                            <li><a href="elements-video-2.html">Video section</a></li>
-                                                            <li><a href="elements-no-sticky.html">No sticky</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul> 
-                                            </li>
-                                            <li><a href="blog.html">blog</a></li>
-                                            <li><a href="contact-us.html">contact</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-6 col-sm-3 xs-9">
-                                <div class="header-action-box">
-                                    <div class="mini-cart">
-                                        <div class="cart-icon">
-                                            <a href="#"><i class="zmdi zmdi-shopping-cart"></i></a>
-                                            <span>2</span>
-                                        </div>
-                                        <!-- Mini Cart -->
-                                        <div class="mini-cart-box right">
-                                            <div class="mini-cart-product fix">
-                                                <a href="#" class="image"><img src="images/cart/mini-1.jpg" alt=""></a>
-                                                <div class="content fix">
-                                                    <a href="#" class="title">wooden furniture</a>
-                                                    <p>Color: Black</p>
-                                                    <p>Size: SL</p>
-                                                    <button class="remove"><i class="zmdi zmdi-close"></i></button>
-                                                </div>
-                                            </div>
-                                            <div class="mini-cart-product fix">
-                                                <a href="#" class="image"><img src="images/cart/mini-1.jpg" alt=""></a>
-                                                <div class="content fix">
-                                                    <a href="#" class="title">wooden furniture</a>
-                                                    <p>Color: Black</p>
-                                                    <p>Size: SL</p>
-                                                    <button class="remove"><i class="zmdi zmdi-close"></i></button>
-                                                </div>
-                                            </div>
-                                            <div class="mini-cart-product fix">
-                                                <a href="#" class="image"><img src="images/cart/mini-1.jpg" alt=""></a>
-                                                <div class="content fix">
-                                                    <a href="#" class="title">wooden furniture</a>
-                                                    <p>Color: Black</p>
-                                                    <p>Size: SL</p>
-                                                    <button class="remove"><i class="zmdi zmdi-close"></i></button>
-                                                </div>
-                                            </div>
-                                            <div class="mini-cart-checkout text-center">
-                                                <a href="checkout.html">checkout</a>
-                                            </div>
-                                        </div>
-                                        <!--mini cart end-->
-                                    </div>
-                                    <div class="search">
-                                        <a href="#"><i class="zmdi zmdi-search"></i></a>
-                                    </div>
-                                </div>
-                                <div class="search-box">
-                                    <div class="search-form">
-                                        <form action="#" id="search-form">
-                                            <input type="search" name="search" placeholder="Search here...">
-                                            <button type="submit">
-                                                <span><i class="fa fa-search"></i></span>
-                                            </button>
-                                        </form>                                
-                                    </div>
-                                </div>
+            <div class="header-bottom menu-right bg-dark">
+                <div class="container-fluid pl-75 pr-75 pl-lg-15 pr-lg-15 pl-md-15 pr-md-15 pl-sm-15 pr-sm-15 pl-xs-15 pr-xs-15">
+                    <div class="row align-items-center">
+
+                        <!--Logo start-->
+                        <div class="col-lg-3 col-md-3 col-6 order-lg-1 order-md-1 order-1">
+                            <div class="logo">
+                                <a href="index.html"><img src="./assets/images/logo-white.png" alt=""></a>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <!-- Mobile menu start -->
-                <div class="mobile-menu-area d-lg-none">
-                    <div class="container">
-                        <div class="col-md-12">
-                            <nav id="dropdown" style="display: block;">
+                        <!--Logo end-->
+
+                        <!--Menu start-->
+                        <div class="col-lg-6 col-md-6 col-12 order-lg-2 order-md-2 order-3 d-flex justify-content-center">
+                            <nav class="main-menu color-white">
                                 <ul>
                                     <li><a href="index.html">Home</a>
-                                        <ul class="dropdown_menu">
-                                            <li><a href="index.html">home page one</a></li>
-                                            <li><a href="index-2.html">home page two</a></li>
-                                            <li><a href="index-3.html">home page three</a></li>
-                                            <li><a href="index-4.html">home page four</a></li>
-                                            <li><a href="index-5.html">home page five</a></li>
-                                            <li><a href="index-box.html">home page six</a></li>
-                                            <li><a href="index-box-fixed.html">home page seven</a></li>
+                                        <ul class="sub-menu">
+                                            <li><a href="index.html">Home One</a></li>
+                                            <li><a href="index-2.html">Home Two</a></li>
+                                            <li><a href="index-3.html">Home Three</a></li>
+                                            <li><a href="index-4.html">Home Four</a></li>
+                                            <li><a href="index-5.html">Home Five</a></li>
+                                            <li><a href="index-6.html">Home Six</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="shop.html">shop</a>
-                                       <ul class="mgea-menu">
-                                            <li class="mega-sub"><a href="#">Column one</a>
-                                                <ul class="mega-sub-item">
-                                                    <li><a href="shop.html">shop page</a></li>
-                                                    <li><a href="shop.html">shop sidebar</a></li>
-                                                    <li><a href="wishlist.html">wishlist</a></li>
-                                                    <li><a href="product-details.html">product Details</a></li>
-                                                    <li><a href="cart.html">cart</a></li>
+                                    <li><a href="shop.html">Shop</a>
+                                        <ul class="mega-menu four-column">
+                                            <li><a href="#" class="item-link">Pages</a>
+                                                <ul>
+                                                    <li><a href="compare.html">Compare</a></li>
+                                                    <li><a href="cart.html">Shopping Cart</a></li>
+                                                    <li><a href="checkout.html">Checkout</a></li>
+                                                    <li><a href="wishlist.html">Wishlist</a></li>
+                                                    <li><a href="my-account.html">My Account</a></li>
+                                                    <li><a href="login-register.html">Login Register</a></li>
+                                                    <li><a href="faq.html">Frequently Questions</a></li>
+                                                    <li><a href="404.html">Error 404</a></li>
                                                 </ul>
                                             </li>
-                                            <li class="mega-sub"><a href="#">Column two</a>
-                                                <ul class="mega-sub-item">
-                                                    <li><a href="checkout.html">checkout</a></li>
-                                                    <li><a href="gallery-2.html">Gallery 2</a></li>
-                                                    <li><a href="gallery.html">gallery</a></li>
-                                                    <li><a href="elements-feature.html">Feature</a></li>
-                                                    <li><a href="elements-fun-fact.html">Fun fact</a></li>
+                                            <li><a href="#" class="item-link">Shop Layout</a>
+                                                <ul>
+                                                    <li><a href="shop.html">Shop</a></li>
+                                                    <li><a href="shop-three-column.html">Shop Three Column</a></li>
+                                                    <li><a href="shop-four-column.html">Shop Four Column</a></li>
+                                                    <li><a href="shop-right-sidebar.html">Shop Right Sidebar</a></li>
+                                                    <li><a href="shop-list-nosidebar.html">Shop List No Sidebar</a></li>
+                                                    <li><a href="shop-list-left-sidebar.html">Shop List Left Sidebar</a>
+                                                    </li>
+                                                    <li><a href="shop-list-right-sidebar.html">Shop List Right
+                                                            Sidebar</a></li>
                                                 </ul>
                                             </li>
-                                        </ul> 
-                                    </li>
-                                    <li><a href="about-us.html">about</a></li>
-                                    <li><a href="#">pages</a>
-                                        <ul class="dropdown_menu">
-                                            <li><a href="about-us.html">about us</a></li>
-                                            <li><a href="404.html">404</a></li>
-                                            <li><a href="contact-us.html">contact us</a></li>
-                                            <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="blog-details.html">blog Deatils</a></li>
-                                            <li><a href="gallery-2.html">gallery</a></li>
-                                            <li><a href="shop.html">shop pages</a></li>
+                                            <li><a href="#" class="item-link">Product Details</a>
+                                                <ul>
+                                                    <li><a href="single-product.html">Single Product</a></li>
+                                                    <li><a href="single-product-variable.html">Variable Product</a></li>
+                                                    <li><a href="single-product-affiliate.html">Affiliate Product</a>
+                                                    </li>
+                                                    <li><a href="single-product-group.html">Group Product</a></li>
+                                                    <li><a href="single-product-tabstyle-2.html">Product Left Tab</a>
+                                                    </li>
+                                                    <li><a href="single-product-tabstyle-3.html">Product Right Tab</a>
+                                                    </li>
+                                                    <li><a href="single-product-gallery-left.html">Product Gallery
+                                                            Left</a></li>
+                                                    <li><a href="single-product-gallery-right.html">Product Gallery
+                                                            Right</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#" class="item-link">Product Details</a>
+                                                <ul>
+                                                    <li><a href="single-product-sticky-left.html">Product Sticky
+                                                            Left</a></li>
+                                                    <li><a href="single-product-sticky-right.html">Product Sticky
+                                                            Right</a></li>
+                                                    <li><a href="single-product-slider-box.html">Product Box Slider</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">Feature</a>
-                                       <ul class="mgea-menu">
-                                            <li class="mega-sub"><a href="#">Column one</a>
-                                                <ul class="mega-sub-item">
-                                                    <li><a href="elements-accordion.html">Accordion</a></li>
-                                                    <li><a href="elements-tab.html">Tab</a></li>
-                                                    <li><a href="elements-table.html">table</a></li>
-                                                    <li><a href="elements-progessbar.html">progressbar</a></li>
-                                                    <li><a href="elements-alerts.html">Alerts</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="mega-sub"><a href="#">Column two</a>
-                                                <ul class="mega-sub-item">
-                                                    <li><a href="elements-audio.html">Audio</a></li>
-                                                    <li><a href="elements-video.html">video</a></li>
-                                                    <li><a href="elements-gallery.html">gallery one</a></li>
-                                                    <li><a href="gallery-2.html">Gallery two</a></li>
-                                                    <li><a href="elements-typhograpy.html">typhogrpahy</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="mega-sub"><a href="#">Column Three</a>
-                                                <ul class="mega-sub-item">
-                                                    <li><a href="elements-testimonial.html">Testimonial</a></li>
-                                                    <li><a href="elements-brand.html">brand</a></li>
-                                                    <li><a href="elements-team.html">Team</a></li>
-                                                    <li><a href="elements-button.html">Button</a></li>
-                                                    <li><a href="elements-map.html">map</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="mega-sub"><a href="#">Column one</a>
-                                                <ul class="mega-sub-item">
-                                                    <li><a href="elements-pricing.html">Pricing table</a></li>
-                                                    <li><a href="elements-fun-fact.html">Fun fact</a></li>
-                                                    <li><a href="elements-feature.html">Features</a></li>
-                                                    <li><a href="elements-video-2.html">Video section</a></li>
-                                                    <li><a href="elements-no-sticky.html">No sticky</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul> 
+                                    <li><a href="blog.html">Blog</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="blog.html">Blog Three Column</a></li>
+                                            <li><a href="blog-two-column.html">Blog Two Column</a></li>
+                                            <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
+                                            <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
+                                            <li><a href="blog-details.html">Blog Details</a></li>
+                                            <li><a href="blog-details-gallery.html">Blog Details Gallery</a></li>
+                                            <li><a href="blog-details-audio.html">Blog Details Audio</a></li>
+                                            <li><a href="blog-details-video.html">Blog Details Video</a></li>
+                                        </ul>
                                     </li>
-                                    <li><a href="blog.html">blog</a></li>
-                                    <li><a href="contact-us.html">contact</a></li>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="contact.html">Contact Us</a></li>
                                 </ul>
                             </nav>
                         </div>
+                        <!--Menu end-->
+
+                        <!--Search Cart Start-->
+                        <div class="col-lg-3 col-md-3 col-6 order-lg-3 order-md-3 order-2 d-flex justify-content-end">
+                            <div class="header-search">
+                                <button class="header-search-toggle color-white"><i class="fa fa-search"></i></button>
+                                <div class="header-search-form">
+                                    <form action="#">
+                                        <input type="text" placeholder="Type and hit enter">
+                                        <button><i class="fa fa-search"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="header-cart color-white">
+                                <a href="cart.html"><i class="fa fa-shopping-cart"></i><span>3</span></a>
+                                <!--Mini Cart Dropdown Start-->
+                                <div class="header-cart-dropdown">
+                                    <ul class="cart-items">
+                                        <li class="single-cart-item">
+                                            <div class="cart-img">
+                                                <a href="cart.html"><img src="assets/images/cart/cart-1.jpg" alt=""></a>
+                                            </div>
+                                            <div class="cart-content">
+                                                <h5 class="product-name"><a href="single-product.html">Dell Inspiron
+                                                        24</a></h5>
+                                                <span class="product-quantity">1 ×</span>
+                                                <span class="product-price">$278.00</span>
+                                            </div>
+                                            <div class="cart-item-remove">
+                                                <a title="Remove" href="#"><i class="fa fa-trash"></i></a>
+                                            </div>
+                                        </li>
+                                        <li class="single-cart-item">
+                                            <div class="cart-img">
+                                                <a href="cart.html"><img src="assets/images/cart/cart-2.jpg" alt=""></a>
+                                            </div>
+                                            <div class="cart-content">
+                                                <h5 class="product-name"><a href="single-product.html">Lenovo Ideacentre
+                                                        300</a></h5>
+                                                <span class="product-quantity">1 ×</span>
+                                                <span class="product-price">$23.39</span>
+                                            </div>
+                                            <div class="cart-item-remove">
+                                                <a title="Remove" href="#"><i class="fa fa-trash"></i></a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="cart-total">
+                                        <h5>Subtotal :<span class="float-right">$39.79</span></h5>
+                                        <h5>Eco Tax (-2.00) :<span class="float-right">$7.00</span></h5>
+                                        <h5>VAT (20%) : <span class="float-right">$0.00</span></h5>
+                                        <h5>Total : <span class="float-right">$46.79</span></h5>
+                                    </div>
+                                    <div class="cart-btn">
+                                        <a href="cart.html">View Cart</a>
+                                        <a href="checkout.html">checkout</a>
+                                    </div>
+                                </div>
+                                <!--Mini Cart Dropdown End-->
+                            </div>
+                        </div>
+                        <!--Search Cart End-->
                     </div>
+
+                    <!--Mobile Menu start-->
+                    <div class="row">
+                        <div class="col-12 d-flex d-lg-none d-block">
+                            <div class="mobile-menu"></div>
+                        </div>
+                    </div>
+                    <!--Mobile Menu end-->
+
                 </div>
-                <!-- Mobile menu end -->
             </div>
-         </div>
-        <!--header section end-->
-        <!--header section end-->
+        </header>
+        <!--Header section end-->
+
         <!--slider section start-->
-        <div class="slider-container">
-			<!-- Slider Image -->
-			<div id="mainSlider" class="nivoSlider slider-image">
-				<img src="images/slider/1.jpg" alt="" title="#htmlcaption1" style="display: none; width: 1280px;">
-				<img src="images/slider/2.jpg" alt="" title="#htmlcaption2" style="display: none; width: 1280px;">
-				<img src="images/slider/3.jpg" alt="" title="#htmlcaption3" style="display: none; width: 1280px;">
-			<img class="nivo-main-image" src="images/slider/1.jpg" style="display: inline; width: 1280px; height: auto;"><div class="nivo-caption" style="display: block;">
-				<div class="slider-text-table">
-					<div class="slider-text-tablecell">
-						<div class="container-fluid">
-							<div class="row">
-								<div class="col-md-12 col-sm-12 col-xs-12">
-									<div class="slide1-text">
-										<div class="middle-text">
-											<div class="title-1 wow rotateInDownRight" data-wow-duration="0.9s" data-wow-delay="0s" style="visibility: visible; animation-duration: 0.9s; animation-delay: 0s; animation-name: rotateInDownRight;">
-												<h1>welcome our beauty house</h1>
-											</div>	
-											<div class="desc wow slideInRight" data-wow-duration="1.2s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 1.2s; animation-delay: 0.2s; animation-name: slideInRight;">
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel volutpat felis, eu condimentum<br> massa.lorem ipsum dolor sit amet,consectetur adipicing elit.</p>
-											</div>
-											<div class="explore-now wow bounceInUp" data-wow-duration="1.3s" data-wow-delay=".5s" style="visibility: visible; animation-duration: 1.3s; animation-delay: 0.5s; animation-name: bounceInUp;">
-												<a href="#">Explore now</a>
-											</div>	
-										</div>	
-									</div>				
-								</div>
-							</div>	
-						</div>
-					</div>
-				</div>
-			</div></div><div class="nivo-controlNav"><a class="nivo-control active" rel="0">1</a><a class="nivo-control" rel="1">2</a><a class="nivo-control" rel="2">3</a></div>
-			<!-- Slider Caption 1 -->
-			<div id="htmlcaption1" class="nivo-html-caption slider-caption-1">
-				<div class="slider-text-table">
-					<div class="slider-text-tablecell">
-						<div class="container-fluid">
-							<div class="row">
-								<div class="col-md-12 col-sm-12 col-xs-12">
-									<div class="slide1-text">
-										<div class="middle-text">
-											<div class="title-1 wow rotateInDownRight animated" data-wow-duration="0.9s" data-wow-delay="0s" style="visibility: visible; animation-duration: 0.9s; animation-delay: 0s; animation-name: rotateInDownRight;">
-												<h1>welcome our beauty house</h1>
-											</div>	
-											<div class="desc wow slideInRight animated" data-wow-duration="1.2s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 1.2s; animation-delay: 0.2s; animation-name: slideInRight;">
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel volutpat felis, eu condimentum<br> massa.lorem ipsum dolor sit amet,consectetur adipicing elit.</p>
-											</div>
-											<div class="explore-now wow bounceInUp animated" data-wow-duration="1.3s" data-wow-delay=".5s" style="visibility: visible; animation-duration: 1.3s; animation-delay: 0.5s; animation-name: bounceInUp;">
-												<a href="#">Explore now</a>
-											</div>	
-										</div>	
-									</div>				
-								</div>
-							</div>	
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="htmlcaption2" class="nivo-html-caption slider-caption-1">
-				<div class="slider-text-table">
-					<div class="slider-text-tablecell">
-						<div class="container-fluid">
-							<div class="row">
-								<div class="col-md-12 col-sm-12 col-xs-12">
-									<div class="slide1-text">
-										<div class="middle-text">
-											<div class="title-1 wow rotateInDownRight animated" data-wow-duration="0.9s" data-wow-delay="0s" style="visibility: visible; animation-duration: 0.9s; animation-delay: 0s; animation-name: rotateInDownRight;">
-												<h1>welcome our beauty house</h1>
-											</div>	
-											<div class="desc wow slideInRight animated" data-wow-duration="1.2s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 1.2s; animation-delay: 0.2s; animation-name: slideInRight;">
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel volutpat felis, eu condimentum<br> massa.lorem ipsum dolor sit amet,consectetur adipicing elit.</p>
-											</div>
-											<div class="explore-now wow bounceInUp animated" data-wow-duration="1.3s" data-wow-delay=".5s" style="visibility: visible; animation-duration: 1.3s; animation-delay: 0.5s; animation-name: bounceInUp;">
-												<a href="#">Explore now</a>
-											</div>	
-										</div>	
-									</div>				
-								</div>
-							</div>	
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="htmlcaption3" class="nivo-html-caption slider-caption-1">
-				<div class="slider-text-table">
-					<div class="slider-text-tablecell">
-						<div class="container-fluid">
-							<div class="row">
-								<div class="col-md-12 col-sm-12 col-xs-12">
-									<div class="slide1-text">
-										<div class="middle-text">
-											<div class="title-1 wow rotateInDownRight animated" data-wow-duration="0.9s" data-wow-delay="0s" style="visibility: visible; animation-duration: 0.9s; animation-delay: 0s; animation-name: rotateInDownRight;">
-												<h1>welcome our beauty house</h1>
-											</div>	
-											<div class="desc wow slideInRight animated" data-wow-duration="1.2s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 1.2s; animation-delay: 0.2s; animation-name: slideInRight;">
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel volutpat felis, eu condimentum<br> massa.lorem ipsum dolor sit amet,consectetur adipicing elit.</p>
-											</div>
-											<div class="explore-now wow bounceInUp animated" data-wow-duration="1.3s" data-wow-delay=".5s" style="visibility: visible; animation-duration: 1.3s; animation-delay: 0.5s; animation-name: bounceInUp;">
-												<a href="#">Explore now</a>
-											</div>	
-										</div>	
-									</div>				
-								</div>
-							</div>	
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+        <div class="hero-section section position-relative">
+
+            <div class="tf-element-carousel slider-nav" data-slick-options='{
+        "slidesToShow": 1,
+        "slidesToScroll": 1,
+        "infinite": true,
+        "arrows": true,
+        "dots": true
+        }' data-slick-responsive='[
+        {"breakpoint":768, "settings": {
+        "slidesToShow": 1
+        }},
+        {"breakpoint":575, "settings": {
+        "slidesToShow": 1,
+        "arrows": false,
+        "autoplay": true
+        }}
+        ]'>
+                <!--Hero Item start-->
+                <div class="hero-item bg-image" data-bg="./assets/images/hero/hero-1.jpg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+
+                                <!--Hero Content start-->
+                                <div class="hero-content-2 color-1 center">
+
+                                    <h2>view our</h2>
+                                    <h1>New Cosmetics</h1>
+                                    <h3>Products now</h3>
+                                    <a href="shop.html">shop now</a>
+
+                                </div>
+                                <!--Hero Content end-->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Hero Item end-->
+
+                <!--Hero Item start-->
+                <div class="hero-item bg-image" data-bg="./assets/images/hero/hero-2.jpg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+
+                                <!--Hero Content start-->
+                                <div class="hero-content-2 color-2">
+
+                                    <h2>view our</h2>
+                                    <h1>Women's hair</h1>
+                                    <h3>Products now</h3>
+                                    <a href="shop.html">shop now</a>
+
+                                </div>
+                                <!--Hero Content end-->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Hero Item end-->
+            </div>
+
+        </div>
         <!--slider section end-->
-        <!--welcome section start-->
-        <div class="welcome-about">
+
+        <!--Banner section start-->
+        <div class="banner-section section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 col-sm-12 col-xs-12">
-                        <div class="about-img">
-                            <img src="images/about/1.jpg" alt="">
+                    <div class="col-lg-3 col-md-3">
+                        <!-- Single Banner Start -->
+                        <div class="single-banner mb-30">
+                            <a href="#">
+                                <img src="assets/images/banner/h1-banner-1.png" alt="">
+                            </a>
+                        </div>
+                        <!-- Single Banner End -->
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <!-- Single Banner Start -->
+                        <div class="single-banner mb-30">
+                            <a href="#">
+                                <img src="assets/images/banner/h1-banner-2.png" alt="">
+                            </a>
+                        </div>
+                        <!-- Single Banner End -->
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <!-- Single Banner Start -->
+                        <div class="single-banner mb-30">
+                            <a href="#">
+                                <img src="assets/images/banner/h1-banner-3.png" alt="">
+                            </a>
+                        </div>
+                        <!-- Single Banner End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Banner section end-->
+
+        <!--Deal Of Product section start-->
+        <div class="deal-product-section section pt-70 pt-lg-50 pt-md-40 pt-sm-30 pt-xs-20">
+            <div class="container">
+                <div class="row">
+                    <!-- Section Title Start -->
+                    <div class="col">
+                        <div class="section-title mb-40 mb-xs-20">
+                            <h2>Deals of the day</h2>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-sm-12 col-xs-12">
-                        <div class="about-desc">
-                            <h6>Welcome to beauty house</h6>
-                            <h2>About Our Beauty House</h2>
-                            <p class="text-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet dolor libero, eget loved venenatis mauris finibus dictum. Vestibulum quis elit eget neque porttitor  no amet dolor. Proin pretium purus a lorem ornare</p>
-                            <p class="text-2">sed lobortis pulvinar. Integer laoreet mi id eros porta euismod. Suspendisse potenti. Nulla eros mauris, convallis et sem tempus, viverra hendrerit sapien  Lorem  amet, consectetur adipiscing elit. Donec aliquet dolor libero, </p>
-                            <a href="#">Read more</a>
+                    <!-- Section Title End -->
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="tf-element-carousel" data-slick-options='{
+                        "slidesToShow": 1,
+                        "slidesToScroll": 1,
+                        "infinite": true,
+                        "arrows": true,
+                        "prevArrow": {"buttonClass": "slick-btn slick-prev", "iconClass": "fa fa-angle-left" },
+                        "nextArrow": {"buttonClass": "slick-btn slick-next", "iconClass": "fa fa-angle-right" }
+                        }' data-slick-responsive='[
+                        {"breakpoint":768, "settings": {
+                        "slidesToShow": 1,
+                        "arrows": false,
+                        "autoplay": true
+                        }},
+                        {"breakpoint":575, "settings": {
+                        "slidesToShow": 1,
+                        "arrows": false,
+                        "autoplay": true
+                        }}
+                        ]'>
+                            <!-- Single Deal Product Start -->
+                            <div class="single-deal-product">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="deal-product-img">
+                                            <a href="single-product.html">
+                                                <img src="./assets/images/deal-product/product-1.jpg" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="deal-product-content">
+                                            <h3><a href="single-product.html">Aftershave Lotion</a></h3>
+                                            <div class="ratting">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                            <h4 class="price"><span class="new">€110.00</span><span
+                                                    class="old">€130.00</span></h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+                                                nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+                                                volutpat. Ut wisi..</p>
+                                            <div class="cs-countdown black-color">
+                                                <div class="pro-countdown" data-countdown="2021/01/10"></div>
+                                            </div>
+                                            <div class="actoion-box">
+                                                <div class="product-action d-flex justify-content-between">
+                                                    <a class="product-btn" href="#">Add to Cart</a>
+                                                    <ul class="d-flex">
+                                                        <li><a href="#quick-view-modal-container" data-bs-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single Deal Product End -->
+                            <!-- Single Deal Product Start -->
+                            <div class="single-deal-product">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="deal-product-img">
+                                            <a href="single-product.html">
+                                                <img src="./assets/images/deal-product/product-2.jpg" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="deal-product-content">
+                                            <h3><a href="single-product.html">Brass Acces1</a></h3>
+                                            <div class="ratting">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                            <h4 class="price"><span class="new">€60.00</span><span
+                                                    class="old">€70.00</span></h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+                                                nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+                                                volutpat. Ut wisi..</p>
+                                            <div class="cs-countdown black-color">
+                                                <div class="pro-countdown" data-countdown="2021/01/10"></div>
+                                            </div>
+                                            <div class="actoion-box">
+                                                <div class="product-action d-flex justify-content-between">
+                                                    <a class="product-btn" href="#">Add to Cart</a>
+                                                    <ul class="d-flex">
+                                                        <li><a href="#quick-view-modal-container" data-bs-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single Deal Product End -->
+                            <!-- Single Deal Product Start -->
+                            <div class="single-deal-product">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="deal-product-img">
+                                            <a href="single-product.html">
+                                                <img src="./assets/images/deal-product/product-3.jpg" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="deal-product-content">
+                                            <h3><a href="single-product.html">White Shave Brush</a></h3>
+                                            <div class="ratting">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                            <h4 class="price"><span class="new">€110.00</span><span
+                                                    class="old">€130.00</span></h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+                                                nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+                                                volutpat. Ut wisi..</p>
+                                            <div class="cs-countdown black-color">
+                                                <div class="pro-countdown" data-countdown="2021/01/10"></div>
+                                            </div>
+                                            <div class="actoion-box">
+                                                <div class="product-action d-flex justify-content-between">
+                                                    <a class="product-btn" href="#">Add to Cart</a>
+                                                    <ul class="d-flex">
+                                                        <li><a href="#quick-view-modal-container" data-bs-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single Deal Product End -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!--welcome section end-->
-        <!--fun fact area-->
-        <div class="fun-fact text-center ptb-100">
+        <!--Deal Of Product section end-->
+
+        <!--Product section start-->
+        <div class="product-section section pt-100 pt-lg-70 pt-md-65 pt-sm-60 pt-xs-45 pb-70 pb-lg-50 pb-md-40 pb-sm-30 pb-xs-20">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col">
+                        <div class="product-tab-menu mb-40 mb-xs-20">
+                            <ul class="nav">
+                                <li><a class="active" data-bs-toggle="tab" href="#products"> New Products</a></li>
+                                <li><a data-bs-toggle="tab" href="#onsale"> OnSale</a></li>
+                                <li><a data-bs-toggle="tab" href="#featureproducts"> Feature Products</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="products">
+                                <div class="product-slider tf-element-carousel" data-slick-options='{
+                                "slidesToShow": 4,
+                                "slidesToScroll": 1,
+                                "infinite": true,
+                                "arrows": true,
+                                "prevArrow": {"buttonClass": "slick-btn slick-prev", "iconClass": "fa fa-angle-left" },
+                                "nextArrow": {"buttonClass": "slick-btn slick-next", "iconClass": "fa fa-angle-right" }
+                                }' data-slick-responsive='[
+                                {"breakpoint":1199, "settings": {
+                                "slidesToShow": 3
+                                }},
+                                {"breakpoint":992, "settings": {
+                                "slidesToShow": 2
+                                }},
+                                {"breakpoint":768, "settings": {
+                                "slidesToShow": 2,
+                                "arrows": false,
+                                "autoplay": true
+                                }},
+                                {"breakpoint":576, "settings": {
+                                "slidesToShow": 1,
+                                "arrows": false,
+                                "autoplay": true
+                                }}
+                                ]'>
+                                    <div class="col-lg-3">
+                                        <!-- Single Product Start -->
+                                        <div class="single-product mb-30">
+                                            <div class="product-img">
+                                                <a href="single-product.html">
+                                                    <img src="./assets/images/product/product-1.jpg" alt="">
+                                                </a>
+                                                <span class="descount-sticker">-10%</span>
+                                                <span class="sticker">New</span>
+                                                <div class="product-action d-flex justify-content-between">
+                                                    <a class="product-btn" href="#">Add to Cart</a>
+                                                    <ul class="d-flex">
+                                                        <li><a href="#quick-view-modal-container" data-bs-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Brush</a></h3>
+                                                <div class="ratting">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <h4 class="price"><span class="new">€110.00</span><span
+                                                        class="old">€130.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single Product End -->
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <!-- Single Product Start -->
+                                        <div class="single-product mb-30">
+                                            <div class="product-img">
+                                                <a href="single-product.html">
+                                                    <img src="./assets/images/product/product-2.jpg" alt="">
+                                                </a>
+                                                <span class="descount-sticker">-10%</span>
+                                                <span class="sticker">New</span>
+                                                <div class="product-action d-flex justify-content-between">
+                                                    <a class="product-btn" href="#">Add to Cart</a>
+                                                    <ul class="d-flex">
+                                                        <li><a href="#quick-view-modal-container" data-bs-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Brux</a></h3>
+                                                <div class="ratting">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <h4 class="price"><span class="new">€130.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single Product End -->
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <!-- Single Product Start -->
+                                        <div class="single-product mb-30">
+                                            <div class="product-img">
+                                                <a href="single-product.html">
+                                                    <img src="./assets/images/product/product-3.jpg" alt="">
+                                                </a>
+                                                <span class="descount-sticker">-10%</span>
+                                                <span class="sticker">New</span>
+                                                <div class="product-action d-flex justify-content-between">
+                                                    <a class="product-btn" href="#">Add to Cart</a>
+                                                    <ul class="d-flex">
+                                                        <li><a href="#quick-view-modal-container" data-bs-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Bruz</a></h3>
+                                                <div class="ratting">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <h4 class="price"><span class="new">€130.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single Product End -->
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <!-- Single Product Start -->
+                                        <div class="single-product mb-30">
+                                            <div class="product-img">
+                                                <a href="single-product.html">
+                                                    <img src="./assets/images/product/product-4.jpg" alt="">
+                                                </a>
+                                                <span class="descount-sticker">-10%</span>
+                                                <span class="sticker">New</span>
+                                                <div class="product-action d-flex justify-content-between">
+                                                    <a class="product-btn" href="#">Add to Cart</a>
+                                                    <ul class="d-flex">
+                                                        <li><a href="#quick-view-modal-container" data-bs-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Bruk</a></h3>
+                                                <div class="ratting">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <h4 class="price"><span class="new">€115.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single Product End -->
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <!-- Single Product Start -->
+                                        <div class="single-product mb-30">
+                                            <div class="product-img">
+                                                <a href="single-product.html">
+                                                    <img src="./assets/images/product/product-5.jpg" alt="">
+                                                </a>
+                                                <span class="descount-sticker">-10%</span>
+                                                <span class="sticker">New</span>
+                                                <div class="product-action d-flex justify-content-between">
+                                                    <a class="product-btn" href="#">Add to Cart</a>
+                                                    <ul class="d-flex">
+                                                        <li><a href="#quick-view-modal-container" data-bs-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Brush</a></h3>
+                                                <div class="ratting">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <h4 class="price"><span class="new">€130.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single Product End -->
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <!-- Single Product Start -->
+                                        <div class="single-product mb-30">
+                                            <div class="product-img">
+                                                <a href="single-product.html">
+                                                    <img src="./assets/images/product/product-6.jpg" alt="">
+                                                </a>
+                                                <span class="descount-sticker">-10%</span>
+                                                <span class="sticker">New</span>
+                                                <div class="product-action d-flex justify-content-between">
+                                                    <a class="product-btn" href="#">Add to Cart</a>
+                                                    <ul class="d-flex">
+                                                        <li><a href="#quick-view-modal-container" data-bs-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Brug</a></h3>
+                                                <div class="ratting">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <h4 class="price"><span class="new">€70.00</span><span
+                                                        class="old">€100.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single Product End -->
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <!-- Single Product Start -->
+                                        <div class="single-product mb-30">
+                                            <div class="product-img">
+                                                <a href="single-product.html">
+                                                    <img src="./assets/images/product/product-7.jpg" alt="">
+                                                </a>
+                                                <span class="descount-sticker">-10%</span>
+                                                <span class="sticker">New</span>
+                                                <div class="product-action d-flex justify-content-between">
+                                                    <a class="product-btn" href="#">Add to Cart</a>
+                                                    <ul class="d-flex">
+                                                        <li><a href="#quick-view-modal-container" data-bs-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Bruc</a></h3>
+                                                <div class="ratting">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <h4 class="price"><span class="new">€70.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single Product End -->
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <!-- Single Product Start -->
+                                        <div class="single-product mb-30">
+                                            <div class="product-img">
+                                                <a href="single-product.html">
+                                                    <img src="./assets/images/product/product-8.jpg" alt="">
+                                                </a>
+                                                <span class="descount-sticker">-10%</span>
+                                                <span class="sticker">New</span>
+                                                <div class="product-action d-flex justify-content-between">
+                                                    <a class="product-btn" href="#">Add to Cart</a>
+                                                    <ul class="d-flex">
+                                                        <li><a href="#quick-view-modal-container" data-bs-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Brusb</a></h3>
+                                                <div class="ratting">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <h4 class="price"><span class="new">€90.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single Product End -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="onsale">
+                                <div class="product-slider tf-element-carousel" data-slick-options='{
+                                "slidesToShow": 4,
+                                "slidesToScroll": 1,
+                                "infinite": true,
+                                "arrows": true,
+                                "prevArrow": {"buttonClass": "slick-btn slick-prev", "iconClass": "fa fa-angle-left" },
+                                "nextArrow": {"buttonClass": "slick-btn slick-next", "iconClass": "fa fa-angle-right" }
+                                }' data-slick-responsive='[
+                                {"breakpoint":1199, "settings": {
+                                "slidesToShow": 3
+                                }},
+                                {"breakpoint":992, "settings": {
+                                "slidesToShow": 2
+                                }},
+                                {"breakpoint":768, "settings": {
+                                "slidesToShow": 2,
+                                "arrows": false,
+                                "autoplay": true
+                                }},
+                                {"breakpoint":576, "settings": {
+                                "slidesToShow": 1,
+                                "arrows": false,
+                                "autoplay": true
+                                }}
+                                ]'>
+                                    <div class="col-lg-3">
+                                        <!-- Single Product Start -->
+                                        <div class="single-product mb-30">
+                                            <div class="product-img">
+                                                <a href="single-product.html">
+                                                    <img src="./assets/images/product/product-5.jpg" alt="">
+                                                </a>
+                                                <span class="descount-sticker">-10%</span>
+                                                <span class="sticker">New</span>
+                                                <div class="product-action d-flex justify-content-between">
+                                                    <a class="product-btn" href="#">Add to Cart</a>
+                                                    <ul class="d-flex">
+                                                        <li><a href="#quick-view-modal-container" data-bs-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Brush</a></h3>
+                                                <div class="ratting">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <h4 class="price"><span class="new">€130.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single Product End -->
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <!-- Single Product Start -->
+                                        <div class="single-product mb-30">
+                                            <div class="product-img">
+                                                <a href="single-product.html">
+                                                    <img src="./assets/images/product/product-6.jpg" alt="">
+                                                </a>
+                                                <span class="descount-sticker">-10%</span>
+                                                <span class="sticker">New</span>
+                                                <div class="product-action d-flex justify-content-between">
+                                                    <a class="product-btn" href="#">Add to Cart</a>
+                                                    <ul class="d-flex">
+                                                        <li><a href="#quick-view-modal-container" data-bs-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Brug</a></h3>
+                                                <div class="ratting">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <h4 class="price"><span class="new">€70.00</span><span
+                                                        class="old">€100.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single Product End -->
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <!-- Single Product Start -->
+                                        <div class="single-product mb-30">
+                                            <div class="product-img">
+                                                <a href="single-product.html">
+                                                    <img src="./assets/images/product/product-7.jpg" alt="">
+                                                </a>
+                                                <span class="descount-sticker">-10%</span>
+                                                <span class="sticker">New</span>
+                                                <div class="product-action d-flex justify-content-between">
+                                                    <a class="product-btn" href="#">Add to Cart</a>
+                                                    <ul class="d-flex">
+                                                        <li><a href="#quick-view-modal-container" data-bs-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Bruc</a></h3>
+                                                <div class="ratting">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <h4 class="price"><span class="new">€70.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single Product End -->
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <!-- Single Product Start -->
+                                        <div class="single-product mb-30">
+                                            <div class="product-img">
+                                                <a href="single-product.html">
+                                                    <img src="./assets/images/product/product-8.jpg" alt="">
+                                                </a>
+                                                <span class="descount-sticker">-10%</span>
+                                                <span class="sticker">New</span>
+                                                <div class="product-action d-flex justify-content-between">
+                                                    <a class="product-btn" href="#">Add to Cart</a>
+                                                    <ul class="d-flex">
+                                                        <li><a href="#quick-view-modal-container" data-bs-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Brusb</a></h3>
+                                                <div class="ratting">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <h4 class="price"><span class="new">€90.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single Product End -->
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <!-- Single Product Start -->
+                                        <div class="single-product mb-30">
+                                            <div class="product-img">
+                                                <a href="single-product.html">
+                                                    <img src="./assets/images/product/product-1.jpg" alt="">
+                                                </a>
+                                                <span class="descount-sticker">-10%</span>
+                                                <span class="sticker">New</span>
+                                                <div class="product-action d-flex justify-content-between">
+                                                    <a class="product-btn" href="#">Add to Cart</a>
+                                                    <ul class="d-flex">
+                                                        <li><a href="#quick-view-modal-container" data-bs-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Brush</a></h3>
+                                                <div class="ratting">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <h4 class="price"><span class="new">€110.00</span><span
+                                                        class="old">€130.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single Product End -->
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <!-- Single Product Start -->
+                                        <div class="single-product mb-30">
+                                            <div class="product-img">
+                                                <a href="single-product.html">
+                                                    <img src="./assets/images/product/product-2.jpg" alt="">
+                                                </a>
+                                                <span class="descount-sticker">-10%</span>
+                                                <span class="sticker">New</span>
+                                                <div class="product-action d-flex justify-content-between">
+                                                    <a class="product-btn" href="#">Add to Cart</a>
+                                                    <ul class="d-flex">
+                                                        <li><a href="#quick-view-modal-container" data-bs-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Brux</a></h3>
+                                                <div class="ratting">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <h4 class="price"><span class="new">€130.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single Product End -->
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <!-- Single Product Start -->
+                                        <div class="single-product mb-30">
+                                            <div class="product-img">
+                                                <a href="single-product.html">
+                                                    <img src="./assets/images/product/product-3.jpg" alt="">
+                                                </a>
+                                                <span class="descount-sticker">-10%</span>
+                                                <span class="sticker">New</span>
+                                                <div class="product-action d-flex justify-content-between">
+                                                    <a class="product-btn" href="#">Add to Cart</a>
+                                                    <ul class="d-flex">
+                                                        <li><a href="#quick-view-modal-container" data-bs-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Bruz</a></h3>
+                                                <div class="ratting">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <h4 class="price"><span class="new">€130.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single Product End -->
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <!-- Single Product Start -->
+                                        <div class="single-product mb-30">
+                                            <div class="product-img">
+                                                <a href="single-product.html">
+                                                    <img src="./assets/images/product/product-4.jpg" alt="">
+                                                </a>
+                                                <span class="descount-sticker">-10%</span>
+                                                <span class="sticker">New</span>
+                                                <div class="product-action d-flex justify-content-between">
+                                                    <a class="product-btn" href="#">Add to Cart</a>
+                                                    <ul class="d-flex">
+                                                        <li><a href="#quick-view-modal-container" data-bs-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Bruk</a></h3>
+                                                <div class="ratting">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <h4 class="price"><span class="new">€115.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single Product End -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="featureproducts">
+                                <div class="product-slider tf-element-carousel" data-slick-options='{
+                                "slidesToShow": 4,
+                                "slidesToScroll": 1,
+                                "infinite": true,
+                                "arrows": true,
+                                "prevArrow": {"buttonClass": "slick-btn slick-prev", "iconClass": "fa fa-angle-left" },
+                                "nextArrow": {"buttonClass": "slick-btn slick-next", "iconClass": "fa fa-angle-right" }
+                                }' data-slick-responsive='[
+                                {"breakpoint":1199, "settings": {
+                                "slidesToShow": 3
+                                }},
+                                {"breakpoint":992, "settings": {
+                                "slidesToShow": 2
+                                }},
+                                {"breakpoint":768, "settings": {
+                                "slidesToShow": 2,
+                                "arrows": false,
+                                "autoplay": true
+                                }},
+                                {"breakpoint":576, "settings": {
+                                "slidesToShow": 1,
+                                "arrows": false,
+                                "autoplay": true
+                                }}
+                                ]'>
+                                    <div class="col-lg-3">
+                                        <!-- Single Product Start -->
+                                        <div class="single-product mb-30">
+                                            <div class="product-img">
+                                                <a href="single-product.html">
+                                                    <img src="./assets/images/product/product-3.jpg" alt="">
+                                                </a>
+                                                <span class="descount-sticker">-10%</span>
+                                                <span class="sticker">New</span>
+                                                <div class="product-action d-flex justify-content-between">
+                                                    <a class="product-btn" href="#">Add to Cart</a>
+                                                    <ul class="d-flex">
+                                                        <li><a href="#quick-view-modal-container" data-bs-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Bruz</a></h3>
+                                                <div class="ratting">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <h4 class="price"><span class="new">€130.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single Product End -->
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <!-- Single Product Start -->
+                                        <div class="single-product mb-30">
+                                            <div class="product-img">
+                                                <a href="single-product.html">
+                                                    <img src="./assets/images/product/product-4.jpg" alt="">
+                                                </a>
+                                                <span class="descount-sticker">-10%</span>
+                                                <span class="sticker">New</span>
+                                                <div class="product-action d-flex justify-content-between">
+                                                    <a class="product-btn" href="#">Add to Cart</a>
+                                                    <ul class="d-flex">
+                                                        <li><a href="#quick-view-modal-container" data-bs-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Bruk</a></h3>
+                                                <div class="ratting">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <h4 class="price"><span class="new">€115.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single Product End -->
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <!-- Single Product Start -->
+                                        <div class="single-product mb-30">
+                                            <div class="product-img">
+                                                <a href="single-product.html">
+                                                    <img src="./assets/images/product/product-5.jpg" alt="">
+                                                </a>
+                                                <span class="descount-sticker">-10%</span>
+                                                <span class="sticker">New</span>
+                                                <div class="product-action d-flex justify-content-between">
+                                                    <a class="product-btn" href="#">Add to Cart</a>
+                                                    <ul class="d-flex">
+                                                        <li><a href="#quick-view-modal-container" data-bs-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Brush</a></h3>
+                                                <div class="ratting">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <h4 class="price"><span class="new">€130.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single Product End -->
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <!-- Single Product Start -->
+                                        <div class="single-product mb-30">
+                                            <div class="product-img">
+                                                <a href="single-product.html">
+                                                    <img src="./assets/images/product/product-6.jpg" alt="">
+                                                </a>
+                                                <span class="descount-sticker">-10%</span>
+                                                <span class="sticker">New</span>
+                                                <div class="product-action d-flex justify-content-between">
+                                                    <a class="product-btn" href="#">Add to Cart</a>
+                                                    <ul class="d-flex">
+                                                        <li><a href="#quick-view-modal-container" data-bs-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Brug</a></h3>
+                                                <div class="ratting">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <h4 class="price"><span class="new">€70.00</span><span
+                                                        class="old">€100.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single Product End -->
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <!-- Single Product Start -->
+                                        <div class="single-product mb-30">
+                                            <div class="product-img">
+                                                <a href="single-product.html">
+                                                    <img src="./assets/images/product/product-1.jpg" alt="">
+                                                </a>
+                                                <span class="descount-sticker">-10%</span>
+                                                <span class="sticker">New</span>
+                                                <div class="product-action d-flex justify-content-between">
+                                                    <a class="product-btn" href="#">Add to Cart</a>
+                                                    <ul class="d-flex">
+                                                        <li><a href="#quick-view-modal-container" data-bs-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Brush</a></h3>
+                                                <div class="ratting">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <h4 class="price"><span class="new">€110.00</span><span
+                                                        class="old">€130.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single Product End -->
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <!-- Single Product Start -->
+                                        <div class="single-product mb-30">
+                                            <div class="product-img">
+                                                <a href="single-product.html">
+                                                    <img src="./assets/images/product/product-2.jpg" alt="">
+                                                </a>
+                                                <span class="descount-sticker">-10%</span>
+                                                <span class="sticker">New</span>
+                                                <div class="product-action d-flex justify-content-between">
+                                                    <a class="product-btn" href="#">Add to Cart</a>
+                                                    <ul class="d-flex">
+                                                        <li><a href="#quick-view-modal-container" data-bs-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Brux</a></h3>
+                                                <div class="ratting">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <h4 class="price"><span class="new">€130.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single Product End -->
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <!-- Single Product Start -->
+                                        <div class="single-product mb-30">
+                                            <div class="product-img">
+                                                <a href="single-product.html">
+                                                    <img src="./assets/images/product/product-7.jpg" alt="">
+                                                </a>
+                                                <span class="descount-sticker">-10%</span>
+                                                <span class="sticker">New</span>
+                                                <div class="product-action d-flex justify-content-between">
+                                                    <a class="product-btn" href="#">Add to Cart</a>
+                                                    <ul class="d-flex">
+                                                        <li><a href="#quick-view-modal-container" data-bs-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Bruc</a></h3>
+                                                <div class="ratting">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <h4 class="price"><span class="new">€70.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single Product End -->
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <!-- Single Product Start -->
+                                        <div class="single-product mb-30">
+                                            <div class="product-img">
+                                                <a href="single-product.html">
+                                                    <img src="./assets/images/product/product-8.jpg" alt="">
+                                                </a>
+                                                <span class="descount-sticker">-10%</span>
+                                                <span class="sticker">New</span>
+                                                <div class="product-action d-flex justify-content-between">
+                                                    <a class="product-btn" href="#">Add to Cart</a>
+                                                    <ul class="d-flex">
+                                                        <li><a href="#quick-view-modal-container" data-bs-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Brusb</a></h3>
+                                                <div class="ratting">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <h4 class="price"><span class="new">€90.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single Product End -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--Product section end-->
+
+        <!--Call To Action section start-->
+        <div class="cta-section section bg-image pt-90 pt-lg-70 pt-md-60 pt-sm-50 pt-xs-40 pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-40"
+            data-bg="assets/images/bg/cta-bg.jpg">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-3 col-xs-12">
-                        <div class="single-fun-fact float-left">
-                            <div class="fun-icon">
-                                <a href="#"><i class="fa fa-trophy" aria-hidden="true"></i></a>
+
+                    <div class="col-12">
+                        <div class="cta-content">
+                            <h3>Get <span>10%</span> Discount</h3>
+                            <p><span>Subcribe to the TheFace mailing list to receive update on mnew arrivals,</span>
+                                <span>special offers and other discount information.</span></p>
+                            <div class="cta-form">
+                                <form id="mc-form" class="mc-form">
+                                    <input id="mc-email" type="email" autocomplete="off"
+                                        placeholder="Your email address here" />
+                                    <button id="mc-submit" class="cta-btn">Subscribe</button>
+                                </form>
+                                <!-- mailchimp-alerts Start -->
+                                <div class="mailchimp-alerts text-centre">
+                                    <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
+                                    <div class="mailchimp-success"></div><!-- mailchimp-success end -->
+                                    <div class="mailchimp-error"></div><!-- mailchimp-error end -->
+                                </div><!-- mailchimp-alerts end -->
                             </div>
-                            <p class="counter">200</p>
-                            <h5>win awards</h5>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-3 col-xs-12">
-                        <div class="single-fun-fact middle-margin-left">
-                            <div class="fun-icon">
-                                <a href="#"><i class="zmdi zmdi-favorite"></i></a>
+
+                </div>
+            </div>
+        </div>
+        <!--Call To Action section end-->
+
+        <!--List Product section start-->
+        <div class="list-section section pt-95 pt-lg-75 pt-md-65 pt-sm-55 pt-xs-45 pb-30 pb-lg-10 pb-md-0 pb-sm-0 pb-xs-0">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-6 mb-40 mb-sm-30 mb-xs-20">
+                        <div class="row">
+                            <div class="col-12">
+                                <!--List Product Section Title Start-->
+                                <div class="list-product-section-title mb-30">
+                                    <h2>Top rated </h2>
+                                </div>
+                                <!--List Product Section Title End-->
                             </div>
-                            <p class="counter">150</p>
-                            <h5>Happy client</h5>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="tf-element-carousel" data-slick-options='{
+                                    "slidesToShow": 1,
+                                    "slidesToScroll": 1,
+                                    "infinite": true,
+                                    "arrows": true,
+                                    "prevArrow": {"buttonClass": "slick-btn slick-prev", "iconClass": "fa fa-angle-left" },
+                                    "nextArrow": {"buttonClass": "slick-btn slick-next", "iconClass": "fa fa-angle-right" }
+                                    }' data-slick-responsive='[
+                                    {"breakpoint":768, "settings": {
+                                    "slidesToShow": 1,
+                                    "arrows": false,
+                                    "autoplay": true
+                                    }},
+                                    {"breakpoint":575, "settings": {
+                                    "slidesToShow": 1,
+                                    "arrows": false,
+                                    "autoplay": true
+                                    }}
+                                    ]'>
+                                    <div class="list-product-group">
+                                        <!-- Single List Product Start -->
+                                        <div class="single-list-product">
+                                            <div class="product-image">
+                                                <a href="single-product.html"><img
+                                                        src="./assets/images/product/product-1.jpg" alt=""></a>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">Aftershave Lotion </a></h3>
+                                                <h4 class="price"><span class="new">€110.00</span><span
+                                                        class="old">€130.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single List Product End -->
+                                        <!-- Single List Product Start -->
+                                        <div class="single-list-product">
+                                            <div class="product-image">
+                                                <a href="single-product.html"><img
+                                                        src="./assets/images/product/product-2.jpg" alt=""></a>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Bruh </a></h3>
+                                                <h4 class="price"><span class="new">€130.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single List Product End -->
+                                        <!-- Single List Product Start -->
+                                        <div class="single-list-product">
+                                            <div class="product-image">
+                                                <a href="single-product.html"><img
+                                                        src="./assets/images/product/product-3.jpg" alt=""></a>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Brux </a></h3>
+                                                <h4 class="price"><span class="new">€130.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single List Product End -->
+                                    </div>
+                                    <div class="list-product-group">
+                                        <!-- Single List Product Start -->
+                                        <div class="single-list-product">
+                                            <div class="product-image">
+                                                <a href="single-product.html"><img
+                                                        src="./assets/images/product/product-4.jpg" alt=""></a>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">Aftershave Savlon </a></h3>
+                                                <h4 class="price"><span class="new">€70.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single List Product End -->
+                                        <!-- Single List Product Start -->
+                                        <div class="single-list-product">
+                                            <div class="product-image">
+                                                <a href="single-product.html"><img
+                                                        src="./assets/images/product/product-5.jpg" alt=""></a>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">Brass Acces1 </a></h3>
+                                                <h4 class="price"><span class="new">€150.00</span><span
+                                                        class="old">€187.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single List Product End -->
+                                        <!-- Single List Product Start -->
+                                        <div class="single-list-product">
+                                            <div class="product-image">
+                                                <a href="single-product.html"><img
+                                                        src="./assets/images/product/product-6.jpg" alt=""></a>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">Brass Accessory </a></h3>
+                                                <h4 class="price"><span class="new">€187.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single List Product End -->
+                                    </div>
+                                    <div class="list-product-group">
+                                        <!-- Single List Product Start -->
+                                        <div class="single-list-product">
+                                            <div class="product-image">
+                                                <a href="single-product.html"><img
+                                                        src="./assets/images/product/product-7.jpg" alt=""></a>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Bruw</a></h3>
+                                                <h4 class="price"><span class="new">€125.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single List Product End -->
+                                        <!-- Single List Product Start -->
+                                        <div class="single-list-product">
+                                            <div class="product-image">
+                                                <a href="single-product.html"><img
+                                                        src="./assets/images/product/product-8.jpg" alt=""></a>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Brum </a></h3>
+                                                <h4 class="price"><span class="new">€60.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single List Product End -->
+                                        <!-- Single List Product Start -->
+                                        <div class="single-list-product">
+                                            <div class="product-image">
+                                                <a href="single-product.html"><img
+                                                        src="./assets/images/product/product-9.jpg" alt=""></a>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Brun </a></h3>
+                                                <h4 class="price"><span class="new">€53.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single List Product End -->
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-3 col-xs-12">
-                        <div class="single-fun-fact middle-margin">
-                            <div class="fun-icon">
-                                <a href="#"><i class="zmdi zmdi-male-female"></i></a>
+                    <div class="col-lg-4 col-md-6 col-sm-6 mb-40 mb-sm-30 mb-xs-20">
+                        <div class="row">
+                            <div class="col-12">
+                                <!--List Product Section Title Start-->
+                                <div class="list-product-section-title mb-30">
+                                    <h2>On-sale</h2>
+                                </div>
+                                <!--List Product Section Title End-->
                             </div>
-                            <p class="counter">100</p>
-                            <h5>trainer</h5>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="tf-element-carousel" data-slick-options='{
+                                    "slidesToShow": 1,
+                                    "slidesToScroll": 1,
+                                    "infinite": true,
+                                    "arrows": true,
+                                    "prevArrow": {"buttonClass": "slick-btn slick-prev", "iconClass": "fa fa-angle-left" },
+                                    "nextArrow": {"buttonClass": "slick-btn slick-next", "iconClass": "fa fa-angle-right" }
+                                    }' data-slick-responsive='[
+                                    {"breakpoint":768, "settings": {
+                                    "slidesToShow": 1,
+                                    "arrows": false,
+                                    "autoplay": true
+                                    }},
+                                    {"breakpoint":575, "settings": {
+                                    "slidesToShow": 1,
+                                    "arrows": false,
+                                    "autoplay": true
+                                    }}
+                                    ]'>
+                                    <div class="list-product-group">
+                                        <!-- Single List Product Start -->
+                                        <div class="single-list-product">
+                                            <div class="product-image">
+                                                <a href="single-product.html"><img
+                                                        src="./assets/images/product/product-7.jpg" alt=""></a>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Bruw</a></h3>
+                                                <h4 class="price"><span class="new">€125.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single List Product End -->
+                                        <!-- Single List Product Start -->
+                                        <div class="single-list-product">
+                                            <div class="product-image">
+                                                <a href="single-product.html"><img
+                                                        src="./assets/images/product/product-8.jpg" alt=""></a>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Brum </a></h3>
+                                                <h4 class="price"><span class="new">€60.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single List Product End -->
+                                        <!-- Single List Product Start -->
+                                        <div class="single-list-product">
+                                            <div class="product-image">
+                                                <a href="single-product.html"><img
+                                                        src="./assets/images/product/product-9.jpg" alt=""></a>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Brun </a></h3>
+                                                <h4 class="price"><span class="new">€53.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single List Product End -->
+                                    </div>
+                                    <div class="list-product-group">
+                                        <!-- Single List Product Start -->
+                                        <div class="single-list-product">
+                                            <div class="product-image">
+                                                <a href="single-product.html"><img
+                                                        src="./assets/images/product/product-1.jpg" alt=""></a>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">Aftershave Lotion </a></h3>
+                                                <h4 class="price"><span class="new">€110.00</span><span
+                                                        class="old">€130.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single List Product End -->
+                                        <!-- Single List Product Start -->
+                                        <div class="single-list-product">
+                                            <div class="product-image">
+                                                <a href="single-product.html"><img
+                                                        src="./assets/images/product/product-2.jpg" alt=""></a>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Bruh </a></h3>
+                                                <h4 class="price"><span class="new">€130.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single List Product End -->
+                                        <!-- Single List Product Start -->
+                                        <div class="single-list-product">
+                                            <div class="product-image">
+                                                <a href="single-product.html"><img
+                                                        src="./assets/images/product/product-3.jpg" alt=""></a>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Brux </a></h3>
+                                                <h4 class="price"><span class="new">€130.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single List Product End -->
+                                    </div>
+                                    <div class="list-product-group">
+                                        <!-- Single List Product Start -->
+                                        <div class="single-list-product">
+                                            <div class="product-image">
+                                                <a href="single-product.html"><img
+                                                        src="./assets/images/product/product-4.jpg" alt=""></a>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">Aftershave Savlon </a></h3>
+                                                <h4 class="price"><span class="new">€70.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single List Product End -->
+                                        <!-- Single List Product Start -->
+                                        <div class="single-list-product">
+                                            <div class="product-image">
+                                                <a href="single-product.html"><img
+                                                        src="./assets/images/product/product-5.jpg" alt=""></a>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">Brass Acces1 </a></h3>
+                                                <h4 class="price"><span class="new">€150.00</span><span
+                                                        class="old">€187.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single List Product End -->
+                                        <!-- Single List Product Start -->
+                                        <div class="single-list-product">
+                                            <div class="product-image">
+                                                <a href="single-product.html"><img
+                                                        src="./assets/images/product/product-6.jpg" alt=""></a>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">Brass Accessory </a></h3>
+                                                <h4 class="price"><span class="new">€187.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single List Product End -->
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-xs-12">
-                        <div class="single-fun-fact float-right">
-                            <div class="fun-icon">
-                                <a href="#"><i class="fa fa-pagelines" aria-hidden="true"></i></a>
+                    <div class="col-lg-4 col-md-6 col-sm-6 mb-40 mb-sm-30 mb-xs-20">
+                        <div class="row">
+                            <div class="col-12">
+                                <!--List Product Section Title Start-->
+                                <div class="list-product-section-title mb-30">
+                                    <h2>Trending items</h2>
+                                </div>
+                                <!--List Product Section Title End-->
                             </div>
-                            <p class="counter">300</p>
-                            <h5>Treatment</h5>
                         </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="tf-element-carousel" data-slick-options='{
+                                    "slidesToShow": 1,
+                                    "slidesToScroll": 1,
+                                    "infinite": true,
+                                    "arrows": true,
+                                    "prevArrow": {"buttonClass": "slick-btn slick-prev", "iconClass": "fa fa-angle-left" },
+                                    "nextArrow": {"buttonClass": "slick-btn slick-next", "iconClass": "fa fa-angle-right" }
+                                    }' data-slick-responsive='[
+                                    {"breakpoint":768, "settings": {
+                                    "slidesToShow": 1,
+                                    "arrows": false,
+                                    "autoplay": true
+                                    }},
+                                    {"breakpoint":575, "settings": {
+                                    "slidesToShow": 1,
+                                    "arrows": false,
+                                    "autoplay": true
+                                    }}
+                                    ]'>
+                                    <div class="list-product-group">
+                                        <!-- Single List Product Start -->
+                                        <div class="single-list-product">
+                                            <div class="product-image">
+                                                <a href="single-product.html"><img
+                                                        src="./assets/images/product/product-4.jpg" alt=""></a>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">Aftershave Savlon </a></h3>
+                                                <h4 class="price"><span class="new">€70.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single List Product End -->
+                                        <!-- Single List Product Start -->
+                                        <div class="single-list-product">
+                                            <div class="product-image">
+                                                <a href="single-product.html"><img
+                                                        src="./assets/images/product/product-5.jpg" alt=""></a>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">Brass Acces1 </a></h3>
+                                                <h4 class="price"><span class="new">€150.00</span><span
+                                                        class="old">€187.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single List Product End -->
+                                        <!-- Single List Product Start -->
+                                        <div class="single-list-product">
+                                            <div class="product-image">
+                                                <a href="single-product.html"><img
+                                                        src="./assets/images/product/product-6.jpg" alt=""></a>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">Brass Accessory </a></h3>
+                                                <h4 class="price"><span class="new">€187.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single List Product End -->
+                                    </div>
+                                    <div class="list-product-group">
+                                        <!-- Single List Product Start -->
+                                        <div class="single-list-product">
+                                            <div class="product-image">
+                                                <a href="single-product.html"><img
+                                                        src="./assets/images/product/product-7.jpg" alt=""></a>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Bruw</a></h3>
+                                                <h4 class="price"><span class="new">€125.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single List Product End -->
+                                        <!-- Single List Product Start -->
+                                        <div class="single-list-product">
+                                            <div class="product-image">
+                                                <a href="single-product.html"><img
+                                                        src="./assets/images/product/product-8.jpg" alt=""></a>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Brum </a></h3>
+                                                <h4 class="price"><span class="new">€60.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single List Product End -->
+                                        <!-- Single List Product Start -->
+                                        <div class="single-list-product">
+                                            <div class="product-image">
+                                                <a href="single-product.html"><img
+                                                        src="./assets/images/product/product-9.jpg" alt=""></a>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Brun </a></h3>
+                                                <h4 class="price"><span class="new">€53.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single List Product End -->
+                                    </div>
+                                    <div class="list-product-group">
+                                        <!-- Single List Product Start -->
+                                        <div class="single-list-product">
+                                            <div class="product-image">
+                                                <a href="single-product.html"><img
+                                                        src="./assets/images/product/product-1.jpg" alt=""></a>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">Aftershave Lotion </a></h3>
+                                                <h4 class="price"><span class="new">€110.00</span><span
+                                                        class="old">€130.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single List Product End -->
+                                        <!-- Single List Product Start -->
+                                        <div class="single-list-product">
+                                            <div class="product-image">
+                                                <a href="single-product.html"><img
+                                                        src="./assets/images/product/product-2.jpg" alt=""></a>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Bruh </a></h3>
+                                                <h4 class="price"><span class="new">€130.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single List Product End -->
+                                        <!-- Single List Product Start -->
+                                        <div class="single-list-product">
+                                            <div class="product-image">
+                                                <a href="single-product.html"><img
+                                                        src="./assets/images/product/product-3.jpg" alt=""></a>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="single-product.html">White Shave Brux </a></h3>
+                                                <h4 class="price"><span class="new">€130.00</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- Single List Product End -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--List Product section end-->
+
+
+        <!--Blog section start-->
+        <div
+            class="blog-section section bg-gray pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-75 pb-lg-55 pb-md-45 pb-sm-35 pb-xs-30">
+            <div class="container">
+
+                <div class="row">
+                    <!-- Section Title Start -->
+                    <div class="col">
+                        <div class="section-title mb-40 mb-xs-20">
+                            <h2>From the blog</h2>
+                        </div>
+                    </div>
+                    <!-- Section Title End -->
+                </div>
+
+                <div class="blog-slider tf-element-carousel" data-slick-options='{
+                    "slidesToShow": 3,
+                    "slidesToScroll": 1,
+                    "infinite": true,
+                    "arrows": true,
+                    "prevArrow": {"buttonClass": "slick-btn slick-prev", "iconClass": "fa fa-angle-left" },
+                    "nextArrow": {"buttonClass": "slick-btn slick-next", "iconClass": "fa fa-angle-right" }
+                    }' data-slick-responsive='[
+                    {"breakpoint":1199, "settings": {
+                    "slidesToShow": 3
+                    }},
+                    {"breakpoint":992, "settings": {
+                    "slidesToShow": 2
+                    }},
+                    {"breakpoint":768, "settings": {
+                    "slidesToShow": 2,
+                    "arrows": false,
+                    "autoplay": true
+                    }},
+                    {"breakpoint":575, "settings": {
+                    "slidesToShow": 1,
+                    "arrows": false,
+                    "autoplay": true
+                    }}
+                    ]'>
+                    <!-- Single Blog Start -->
+                    <div class="blog col">
+                        <div class="blog-inner">
+                            <div class="media"><a href="blog-details.html" class="image"><img src="./assets/images/blog/blog1.png" alt=""></a></div>
+                            <div class="content">
+                                <h3 class="title"><a href="blog-details.html">Cool boy with tattoo</a></h3>
+                                <ul class="meta">
+                                    <li><i class="fa fa-calendar"></i><span class="date-time"><span class="date">20</span><span class="separator">-</span><span class="month">Jul</span></span></li>
+                                </ul>
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat </p>
+                                <a class="readmore" href="blog-details.html">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Blog End -->
+                    <!-- Single Blog Start -->
+                    <div class="blog col">
+                        <div class="blog-inner">
+                            <div class="media"><a href="blog-details.html" class="image"><img src="./assets/images/blog/blog2.png" alt=""></a></div>
+                            <div class="content">
+                                <h3 class="title"><a href="blog-details.html">Blog image post</a></h3>
+                                <ul class="meta">
+                                    <li><i class="fa fa-calendar"></i><span class="date-time"><span class="date">09</span><span class="separator">-</span><span class="month">March</span></span></li>
+                                </ul>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores eaque veniam nihil unde et sapiente vel, iure eos! </p>
+                                <a class="readmore" href="blog-details.html">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Blog End -->
+                    <!-- Single Blog Start -->
+                    <div class="blog col">
+                        <div class="blog-inner">
+                            <div class="media"><a href="blog-details.html" class="image"><img src="./assets/images/blog/blog3.png" alt=""></a></div>
+                            <div class="content">
+                                <h3 class="title"><a href="blog-details.html">Blog Audio post</a></h3>
+                                <ul class="meta">
+                                    <li><i class="fa fa-calendar"></i><span class="date-time"><span class="date">15</span><span class="separator">-</span><span class="month">May</span></span></li>
+                                </ul>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores eaque veniam nihil unde et sapiente vel, iure eos! </p>
+                                <a class="readmore" href="blog-details.html">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Blog End -->
+                    <!-- Single Blog Start -->
+                    <div class="blog col">
+                        <div class="blog-inner">
+                            <div class="media"><a href="blog-details.html" class="image"><img src="./assets/images/blog/blog1.png" alt=""></a></div>
+                            <div class="content">
+                                <h3 class="title"><a href="blog-details.html">Blog Video post</a></h3>
+                                <ul class="meta">
+                                    <li><i class="fa fa-calendar"></i><span class="date-time"><span class="date">13</span><span class="separator">-</span><span class="month">Oct</span></span></li>
+                                </ul>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores eaque veniam nihil unde et sapiente vel, iure eos! </p>
+                                <a class="readmore" href="blog-details.html">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Blog End -->
+                </div>
+            </div>
+        </div>
+        <!--Blog section end-->
+
+        <!--Brand section start-->
+        <div
+            class="brand-section section pt-90 pt-lg-70 pt-md-65 pt-sm-55 pt-xs-40 pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
+            <div class="container">
+                <div class="row">
+
+                    <!--Brand Slider start-->
+                    <div class="brand-slider tf-element-carousel section p-0" data-slick-options='{
+                        "slidesToShow": 5,
+                        "slidesToScroll": 1,
+                        "infinite": true,
+                        "arrows": false,
+                        "autoplay": true
+                        }'  data-slick-responsive='[
+                        {"breakpoint":1199, "settings": {
+                        "slidesToShow": 4
+                        }},
+                        {"breakpoint":992, "settings": {
+                        "slidesToShow": 4
+                        }},
+                        {"breakpoint":768, "settings": {
+                        "slidesToShow": 3
+                        }},
+                        {"breakpoint":576, "settings": {
+                        "slidesToShow": 1
+                        }}
+                        ]'>
+                        <div class="brand col"><a href="#"><img src="assets/images/brands/brand-1.png" alt=""></a></div>
+                        <div class="brand col"><a href="#"><img src="assets/images/brands/brand-2.png" alt=""></a></div>
+                        <div class="brand col"><a href="#"><img src="assets/images/brands/brand-3.png" alt=""></a></div>
+                        <div class="brand col"><a href="#"><img src="assets/images/brands/brand-4.png" alt=""></a></div>
+                        <div class="brand col"><a href="#"><img src="assets/images/brands/brand-5.png" alt=""></a></div>
+                    </div>
+                    <!--Brand Slider end-->
+
+                </div>
+            </div>
+        </div>
+        <!--Brand section end-->
+
+        <!--Categorie Product section start-->
+        <div
+            class="categorie-product-section section">
+            <div class="container-fluid pl-0 pr-0">
+                <div class="row g-0">
+                    <div class="col-lg-4 col-md-4">
+                        <!-- Single Categorie Product Start -->
+                        <div class="single-categorie">
+                            <div class="categorie-image">
+                                <img src="./assets/images/categorie/cate-1.png" alt="">
+                            </div>
+                            <div class="categorie-content">
+                                <h3>Now introducing</h3>
+                                <a class="shop-btn" href="#">Shop now</a>
+                                <h1>Spa Optima+</h1>
+                            </div>
+                        </div>
+                        <!-- Single Categorie Product End -->
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <!-- Single Categorie Product Start -->
+                        <div class="single-categorie">
+                            <div class="categorie-image">
+                                <img src="./assets/images/categorie/cate-2.png" alt="">
+                            </div>
+                            <div class="categorie-content">
+                                <h3>Wrinkle cure</h3>
+                                <a class="shop-btn" href="#">Shop now</a>
+                                <h1>Time Revolution</h1>
+                            </div>
+                        </div>
+                        <!-- Single Categorie Product End -->
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <!-- Single Categorie Product Start -->
+                        <div class="single-categorie">
+                            <div class="categorie-image">
+                                <img src="./assets/images/categorie/cate-3.png" alt="">
+                            </div>
+                            <div class="categorie-content">
+                                <h3>Pretty perks for every point you earn</h3>
+                                <a class="shop-btn" href="#">Shop now</a>
+                                <h1>Beauty Squad</h1>
+                            </div>
+                        </div>
+                        <!-- Single Categorie Product End -->
                     </div>
                 </div>
             </div>
         </div>
-        <!--fun fact area end-->
-        <!--Gallery section start-->
-        <div class="galllery ptb-100">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 offset-md-2">
-                        <div class="section-title text-center">
-                            <h2>our latest gallery</h2>
-                            <p>  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim nostrud exercitation ullamco laboris nisi.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-tab-section">
+        <!--Categorie Product section end-->
+
+        <!--Footer section start-->
+        <footer class="footer-section section bg-dark">
+
+            <!--Footer Top start-->
+            <div
+                class="footer-top section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-45 pb-lg-25 pb-md-15 pb-sm-5 pb-xs-0">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="gallery-tab-menu text-center">   
-                                <ul class="nav" role="tablist">
-									<li role="presentation"><a href="#all" aria-controls="all" data-bs-toggle="tab" aria-selected="false" tabindex="-1" role="tab">All</a></li>
-									<li role="presentation"><a aria-controls="massage" href="#massage" data-bs-toggle="tab" aria-selected="false" tabindex="-1" role="tab">Lunch</a></li>
-									<li role="presentation"><a href="#skin" aria-controls="skin" data-bs-toggle="tab" aria-selected="false" tabindex="-1" role="tab">skin care</a></li>
-									<li role="presentation"><a class="active" href="#hair" aria-controls="hair" data-bs-toggle="tab" aria-selected="true" role="tab">hair cut</a></li>
-									<li role="presentation"><a href="#nail" aria-controls="nail" data-bs-toggle="tab" aria-selected="false" tabindex="-1" role="tab">nail care</a></li>
-									<li role="presentation"><a href="#beauty" aria-controls="beauty" data-bs-toggle="tab" aria-selected="false" tabindex="-1" role="tab"> beauty spa</a></li>
-								</ul>
+                    <div class="row row-25">
+
+                        <!--Footer Widget start-->
+                        <div class="footer-widget col-lg-3 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
+                            <h4 class="title"><span class="text">About TheFace</span></h4>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat</p>
+                            <div class="footer-social">
+                                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                                <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+                                <a href="#" class="linkedin"><i class="fa fa-instagram"></i></a>
+                                <a href="#" class="pinterest"><i class="fa fa-pinterest-p"></i></a>
+                                <a href="#" class="pinterest"><i class="fa fa-vimeo"></i></a>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="gallery-tab-content">
-                    <div class="tab-content">
-				        <div role="tabpanel" class="tab-pane fade show active" id="all">
-                            <div class="single-gallery-list owl_pagination owl-carousel owl-theme" style="opacity: 1; display: block;">
-                                <div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 6144px; left: 0px; display: block;"><div class="owl-item" style="width: 256px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/1.jpg" alt="">
-                                        <a href="images/gallery/1.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 256px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/2.jpg" alt="">
-                                        <a href="images/gallery/2.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 256px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/3.jpg" alt="">
-                                        <a href="images/gallery/3.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 256px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/4.jpg" alt="">
-                                         <a href="images/gallery/4.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 256px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/5.jpg" alt="">
-                                        <a href="images/gallery/5.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 256px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/3.jpg" alt="">
-                                        <a href="images/gallery/3.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 256px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/4.jpg" alt="">
-                                        <a href="images/gallery/4.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 256px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/5.jpg" alt="">
-                                        <a href="images/gallery/5.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 256px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/4.jpg" alt="">
-                                        <a href="images/gallery/4.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 256px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/3.jpg" alt="">
-                                        <a href="images/gallery/4.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 256px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/4.jpg" alt="">
-                                         <a href="images/gallery/4.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 256px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/5.jpg" alt="">
-                                        <a href="images/gallery/5.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div></div></div>
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                            <div class="owl-controls clickable"><div class="owl-pagination"><div class="owl-page active"><span class=""></span></div><div class="owl-page"><span class=""></span></div><div class="owl-page"><span class=""></span></div></div></div></div>
+                        <!--Footer Widget end-->
+
+                        
+                        <!--Footer Widget start-->
+                        <div class="footer-widget col-lg-3 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
+                            <h4 class="title"><span class="text">Information</span></h4>
+                            <ul class="ft-menu">
+                                <li><a href="#">Returns</a></li>
+                                <li><a href="#">Delivery</a></li>
+                                <li><a href="#">Service</a></li>
+                                <li><a href="#">Gift Cards</a></li>
+                                <li><a href="#">Mobile</a></li>
+                                <li><a href="#">Gift Cards</a></li>
+                                <li><a href="#">Unsubscribe Notification</a></li>
+                            </ul>
                         </div>
-				        <div role="tabpanel" class="tab-pane fade" id="massage">
-                            <div class="single-gallery-list owl_pagination owl-carousel owl-theme" style="opacity: 0; display: block;">
-                                <div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 320px; left: 0px; display: block;"><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/1.jpg" alt="">
-                                        <a href="images/gallery/1.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/2.jpg" alt="">
-                                        <a href="images/gallery/2.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/3.jpg" alt="">
-                                        <span>  <a href=""><i class="zmdi zmdi-zoom-in"></i></a></span>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/4.jpg" alt="">
-                                         <a href="images/gallery/4.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/5.jpg" alt="">
-                                        <a href="images/gallery/5.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/3.jpg" alt="">
-                                        <a href="images/gallery/3.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/4.jpg" alt="">
-                                         <a href="images/gallery/4.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/5.jpg" alt="">
-                                        <a href="images/gallery/5.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div></div></div>
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                            <div class="owl-controls clickable"><div class="owl-pagination"><div class="owl-page active"><span class=""></span></div><div class="owl-page"><span class=""></span></div></div></div></div>
+                        <!--Footer Widget end-->
+
+
+                        <!--Footer Widget start-->
+                        <div class="footer-widget col-lg-3 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
+                            <h4 class="title"><span class="text">Our Offers</span></h4>
+                            <ul class="ft-menu">
+                                <li><a href="#">New products</a></li>
+                                <li><a href="#">Top sellers</a></li>
+                                <li><a href="#">Specials</a></li>
+                                <li><a href="#">Manufacturers</a></li>
+                                <li><a href="#">Suppliers</a></li>
+                                <li><a href="#">Specials</a></li>
+                                <li><a href="#">Service</a></li>
+                            </ul>
                         </div>
-				        <div role="tabpanel" class="tab-pane fade" id="skin">
-                        <div class="single-gallery-list owl_pagination owl-carousel owl-theme" style="opacity: 0; display: block;">
-                                <div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 320px; left: 0px; display: block;"><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/1.jpg" alt="">
-                                        <a href="images/gallery/1.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/2.jpg" alt="">
-                                        <a href="images/gallery/2.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/3.jpg" alt="">
-                                        <a href="images/gallery/3.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/4.jpg" alt="">
-                                         <a href="images/gallery/4.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/5.jpg" alt="">
-                                        <a href="images/gallery/5.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/3.jpg" alt="">
-                                        <a href="images/gallery/4.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/4.jpg" alt="">
-                                         <a href="images/gallery/4.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/5.jpg" alt="">
-                                        <a href="images/gallery/5.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div></div></div>
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                            <div class="owl-controls clickable"><div class="owl-pagination"><div class="owl-page active"><span class=""></span></div><div class="owl-page"><span class=""></span></div></div></div></div>
+                        <!--Footer Widget end-->
+
+                        <!--Footer Widget start-->
+                        <div class="footer-widget col-lg-3 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
+                            <h4 class="title"><span class="text">Contact us</span></h4>
+                            <ul class="address">
+                                <li><i class="fa fa-home"></i><span>HH2 BacHa building, Tohuu Street Hanoi, Vietnam</span>
+                                </li>
+                                <li><i class="fa fa-phone"></i><span><a href="#">(08) 123 456 7890</a></span></li>
+                                <li><i class="fa fa-envelope-o"></i><span><a href="#">yourmail@domain.com</a></span></li>
+                            </ul>
+                            <div class="payment-box mt-15 mb-15">
+                                <a href="#"><img src="./assets/images/payment.png" alt=""></a>
+                            </div>
                         </div>
-				        <div role="tabpanel" class="tab-pane fade" id="hair">
-                            <div class="single-gallery-list owl_pagination owl-carousel owl-theme" style="opacity: 0; display: block;">
-                                <div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 320px; left: 0px; display: block;"><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/1.jpg" alt="">
-                                        <a href="images/gallery/1.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/2.jpg" alt="">
-                                        <span><a href="images/gallery/2.jpg"><i class="zmdi zmdi-zoom-in"></i></a></span>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/3.jpg" alt="">
-                                        <a href="images/gallery/3.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/4.jpg" alt="">
-                                         <a href="images/gallery/4.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/5.jpg" alt="">
-                                        <a href="images/gallery/5.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/3.jpg" alt="">
-                                        <a href="images/gallery/3.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/4.jpg" alt="">
-                                         <a href="images/gallery/4.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/5.jpg" alt="">
-                                        <a href="images/gallery/5.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div></div></div>
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                            <div class="owl-controls clickable"><div class="owl-pagination"><div class="owl-page active"><span class=""></span></div><div class="owl-page"><span class=""></span></div></div></div></div>
-                        </div>
-				        <div role="tabpanel" class="tab-pane fade" id="nail">
-                            <div class="single-gallery-list owl_pagination owl-carousel owl-theme" style="opacity: 0; display: block;">
-                                <div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 320px; left: 0px; display: block;"><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/1.jpg" alt="">
-                                        <a href="images/gallery/1.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/2.jpg" alt="">
-                                        <a href="images/gallery/2.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/3.jpg" alt="">
-                                        <a href="images/gallery/3.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/4.jpg" alt="">
-                                         <a href="images/gallery/4.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/5.jpg" alt="">
-                                        <a href="images/gallery/5.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/3.jpg" alt="">
-                                        <a href="images/gallery/3.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/4.jpg" alt="">
-                                         <a href="images/gallery/4.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/5.jpg" alt="">
-                                        <a href="images/gallery/5.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div></div></div>
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                            <div class="owl-controls clickable"><div class="owl-pagination"><div class="owl-page active"><span class=""></span></div><div class="owl-page"><span class=""></span></div></div></div></div>
-                        </div>
-				        <div role="tabpanel" class="tab-pane fade" id="beauty">
-                            <div class="single-gallery-list owl_pagination owl-carousel owl-theme" style="opacity: 0; display: block;">
-                                <div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 320px; left: 0px; display: block;"><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/1.jpg" alt="">
-                                        <a href="images/gallery/1.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/2.jpg" alt="">
-                                        <a href="images/gallery/2.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/3.jpg" alt="">
-                                        <a href="images/gallery/3.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/4.jpg" alt="">
-                                         <a href="images/gallery/4.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/5.jpg" alt="">
-                                        <a href="images/gallery/5.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/3.jpg" alt="">
-                                        <a href="images/gallery/3.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/4.jpg" alt="">
-                                         <a href="images/gallery/4.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div><div class="owl-item" style="width: 20px;"><div class="single-gallery">
-                                    <div class="gallery-img">
-                                        <img src="images/gallery/5.jpg" alt="">
-                                        <a href="images/gallery/5.jpg"><i class="zmdi zmdi-zoom-in"></i></a>
-                                    </div>
-                                </div></div></div></div>
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                            <div class="owl-controls clickable"><div class="owl-pagination"><div class="owl-page active"><span class=""></span></div><div class="owl-page"><span class=""></span></div></div></div></div>
-                        </div>
+                        <!--Footer Widget end-->
                     </div>
                 </div>
             </div>
-        </div>
-        <!--Gallery section end-->
-        <!--Offer section start-->
-        <div class="special-offer">
-           <div class="bg-img">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 offset-md-2">
-                            <div class="section-title bg_grey text-center">
-                                <h2>you get our special offer</h2>
-                                <p>  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim nostrud exercitation ullamco laboris nisi.</p>
+            <!--Footer Top end-->
+
+            <!--Footer bottom start-->
+            <div class="footer-bottom section">
+                <div class="container ft-border pt-40 pb-40 pt-xs-20 pb-xs-20">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-lg-6 col-md-6 col-sm-8">
+                            <div class="copyright text-start">
+                                <p>Copyright &copy;2022 <a href="#">Theface</a>. All rights reserved.</p>
                             </div>
                         </div>
-                        <div class="col-md-12">
-                            <div class="offer-apoinment text-center">
-                                <a href="#">Make An Appoinment</a>
+                        <div class="col-lg-6 col-md-6 col-sm-4">
+                            <div class="footer-logo text-end">
+                                <a href="index.html"><img src="./assets/images/logofoo.png" alt=""></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!--Offer section end-->
-        <!--Our feature section-->
-        <div class="our-feature ptb-100">
-            <div class="container">
-               <div class="row">
-                    <div class="col-md-8 offset-md-2">
-                        <div class="section-title text-center">
-                            <h2>our Features</h2>
-                            <p>  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim nostrud exercitation ullamco laboris nisi.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mb-n-30px">
-                    <div class="col-lg-4 col-md-6 col-xs-12 mb-30px">
-                        <div class="single-feature text-center">
-                            <div class="feature-img">
-                                <img src="images/feature/1.png" alt="">
-                            </div>
-                            <div class="feature-desc">
-                                <h3><a href="#">Face Treatment</a></h3>
-                                <p>$100</p>
-                                <a href="#">Book now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-xs-12 mb-30px">
-                        <div class="single-feature text-center">
-                            <div class="feature-img">
-                                <img src="images/feature/2.png" alt="">
-                            </div>
-                            <div class="feature-desc">
-                                <h3><a href="#">Body message</a></h3>
-                                <p>$300</p>
-                                <a href="#">Book now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-xs-12 mb-30px">
-                        <div class="single-feature text-center">
-                            <div class="feature-img">
-                                <img src="images/feature/3.png" alt="">
-                            </div>
-                            <div class="feature-desc">
-                                <h3><a href="#">Nail Treatment</a></h3>
-                                <p>$200</p>
-                                <a href="#">Book now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--Our feature section end-->
-        <!--Video section start-->
-        <div class="video-section text-center">
-            <div class="bg-overlay"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="video-section-inner">
-                            <div class="video-icon">
-                                <a href="https://www.youtube.com/watch?v=E6ZgAyx8kWU"><i class="zmdi zmdi-play"></i></a>
-                            </div>
-                            <h2>how it works</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--Video section end-->
-        <!--pricing palaning start-->
-        <div class="pricing-plan ptb-100">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 offset-md-2">
-                        <div class="section-title text-center">
-                            <h2>our pricing plan</h2>
-                            <p>  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim nostrud exercitation ullamco laboris nisi.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mb-n-30px">
-                    <div class="col-lg-4 col-md-6 col-xs-12 mb-30px">
-                        <div class="pricing-table text-center">
-                            <div class="pricing-title">
-                                <h3>silver pack</h3>
-                            </div>
-                            <div class="pricing-desc">
-                                <h2><span class="currency">$</span>77<span class="date">/month</span></h2>
-                                <ul>
-                                    <li>Nail cutting &amp; styling</li>
-                                    <li>Hot Ayurvedic spa</li>
-                                    <li>Hot oil massage</li>
-                                    <li>Body wraps</li>
-                                </ul>
-                                <div class="book-now">
-                                    <a href="#">Book now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-xs-12 mb-30px">
-                        <div class="pricing-table text-center">
-                            <div class="pricing-title">
-                                <h3>silver pack</h3>
-                            </div>
-                            <div class="pricing-desc">
-                                <h2><span class="currency">$</span>77<span class="date">/month</span></h2>
-                                <ul>
-                                    <li>Nail cutting &amp; styling</li>
-                                    <li>Hot Ayurvedic spa</li>
-                                    <li>Hot oil massage</li>
-                                    <li>Body wraps</li>
-                                </ul>
-                                <div class="book-now">
-                                    <a href="#">Book now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-xs-12 mb-30px">
-                        <div class="pricing-table text-center">
-                            <div class="pricing-title">
-                                <h3>silver pack</h3>
-                            </div>
-                            <div class="pricing-desc">
-                                 <h2><span class="currency">$</span>77<span class="date">/month</span></h2>
-                                <ul>
-                                    <li>Nail cutting &amp; styling</li>
-                                    <li>Hot Ayurvedic spa</li>
-                                    <li>Hot oil massage</li>
-                                    <li>Body wraps</li>
-                                </ul>
-                                <div class="book-now">
-                                    <a href="#">Book now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--pricing palaning end-->
-        <!--Testimonial start-->
-        <div class="testimonial">
-            <div class="bg-img">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2">
-                            <div class="testimonail-list owl_pagination owl-carousel owl-theme" style="opacity: 1; display: block;">
-                                <div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 5550px; left: 0px; display: block;"><div class="owl-item" style="width: 555px;"><div class="single-testimonial">
-                                    <p><i class="fa fa-quote-left" aria-hidden="true"></i>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley </p>
-                                    <h3>sathi bhuiyan</h3>
-                                    <p class="title">Manager</p>
-                                </div></div><div class="owl-item" style="width: 555px;"><div class="single-testimonial">
-                                    <p><i class="fa fa-quote-left" aria-hidden="true"></i>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley </p>
-                                    <h3>sathi bhuiyan</h3>
-                                    <p class="title">Manager</p>
-                                </div></div><div class="owl-item" style="width: 555px;"><div class="single-testimonial">
-                                    <p><i class="fa fa-quote-left" aria-hidden="true"></i>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley </p>
-                                    <h3>sathi bhuiyan</h3>
-                                    <p class="title">Manager</p>
-                                </div></div><div class="owl-item" style="width: 555px;"><div class="single-testimonial">
-                                    <p><i class="fa fa-quote-left" aria-hidden="true"></i>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley </p>
-                                    <h3>sathi bhuiyan</h3>
-                                    <p class="title">Manager</p>
-                                </div></div><div class="owl-item" style="width: 555px;"><div class="single-testimonial">
-                                    <p><i class="fa fa-quote-left" aria-hidden="true"></i>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley </p>
-                                    <h3>sathi bhuiyan</h3>
-                                    <p class="title">Manager</p>
-                                </div></div></div></div>
-                                
-                                
-                                
-                                
-                            <div class="owl-controls clickable"><div class="owl-pagination"><div class="owl-page active"><span class=""></span></div><div class="owl-page"><span class=""></span></div><div class="owl-page"><span class=""></span></div><div class="owl-page"><span class=""></span></div><div class="owl-page"><span class=""></span></div></div></div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--Testimonial end-->
-        <!--our blog start-->
-        <div class="our-blog pt-100">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 offset-md-2">
-                        <div class="section-title text-center">
-                            <h2>our Blog</h2>
-                            <p>  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim nostrud exercitation ullamco laboris nisi.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mb-n-30px">
-                    <div class="col-lg-6 col-sm-12 col-xs-12 mb-30px">
-                        <div class="single-blog">
-                            <div class="single-blog-top fix">
-                                <div class="blog-img">
-                                    <a href="#">
-                                        <img src="images/blog/1.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="blog-desc">
-                                    <h6><a href="#">Lorem Ipsum is simply dummy</a></h6>
-                                    <p>Lorem ipsum dolor sit amet, consectetur eiusmodm adipisicing elit, sed do eiusmod tempor incididuntm ut labore et dolore magna aliqua. </p>
-                                    <a class="read-more" href="#">Read more <i class="zmdi zmdi-long-arrow-right"></i></a>
-                                </div>
-                            </div>
-                            <div class="blog-bottom-action">
-                                <div class="blog-publish">
-                                    <p><i class="zmdi zmdi-time"></i>Jun 25, 2022 </p>
-                                </div>
-                                <div class="blog-action-box">
-                                    <ul>
-                                        <li><a href="#"><i class="zmdi zmdi-favorite-outline"></i>(550)</a></li>
-                                        <li><a href="#"><i class="zmdi zmdi-comments"></i>(200)</a></li>
-                                        <li><a href="#"><i class="zmdi zmdi-share"></i>(100)</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-sm-12 col-xs-12 mb-30px">
-                        <div class="single-blog">
-                            <div class="single-blog-top fix">
-                                <div class="blog-img">
-                                    <a href="#">
-                                        <img src="images/blog/2.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="blog-desc">
-                                    <h6><a href="#">Lorem Ipsum is simply dummy</a></h6>
-                                    <p>Lorem ipsum dolor sit amet, consectetur eiusmodm adipisicing elit, sed do eiusmod tempor incididuntm ut labore et dolore magna aliqua. </p>
-                                    <a class="read-more" href="#">Read more <i class="zmdi zmdi-long-arrow-right"></i></a>
-                                </div>
-                            </div>
-                            <div class="blog-bottom-action">
-                                <div class="blog-publish">
-                                    <p><i class="zmdi zmdi-time"></i>Jun 25, 2022 </p>
-                                </div>
-                                <div class="blog-action-box">
-                                    <ul>
-                                        <li><a href="#"><i class="zmdi zmdi-favorite-outline"></i>(550)</a></li>
-                                        <li><a href="#"><i class="zmdi zmdi-comments"></i>(200)</a></li>
-                                        <li><a href="#"><i class="zmdi zmdi-share"></i>(100)</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--our blog end-->
-        <!--Our partener start-->
-        <div class="our-partner">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="partner-list owl-carousel owl-theme" style="opacity: 1; display: block;">
-                            <div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 4560px; left: 0px; display: block;"><div class="owl-item" style="width: 228px;"><div class="single-partner">
-                                <a href="#"><img src="images/logo/1.png" alt=""></a>
-                            </div></div><div class="owl-item" style="width: 228px;"><div class="single-partner">
-                                <a href="#"><img src="images/logo/1.png" alt=""></a>
-                            </div></div><div class="owl-item" style="width: 228px;"><div class="single-partner">
-                                <a href="#"><img src="images/logo/1.png" alt=""></a>
-                            </div></div><div class="owl-item" style="width: 228px;"><div class="single-partner">
-                                <a href="#"><img src="images/logo/1.png" alt=""></a>
-                            </div></div><div class="owl-item" style="width: 228px;"><div class="single-partner">
-                                <a href="#"><img src="images/logo/1.png" alt=""></a>
-                            </div></div><div class="owl-item" style="width: 228px;"><div class="single-partner">
-                                <a href="#"><img src="images/logo/1.png" alt=""></a>
-                            </div></div><div class="owl-item" style="width: 228px;"><div class="single-partner">
-                                <a href="#"><img src="images/logo/1.png" alt=""></a>
-                            </div></div><div class="owl-item" style="width: 228px;"><div class="single-partner">
-                                <a href="#"><img src="images/logo/1.png" alt=""></a>
-                            </div></div><div class="owl-item" style="width: 228px;"><div class="single-partner">
-                                <a href="#"><img src="images/logo/1.png" alt=""></a>
-                            </div></div><div class="owl-item" style="width: 228px;"><div class="single-partner">
-                                <a href="#"><img src="images/logo/1.png" alt=""></a>
-                            </div></div></div></div>
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--Our partener end-->
-        <!--footer start-->
-        <div class="footer">
-            <div class="footer-top ptb-100">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-6 col-xs-12">
-                            <div class="single-footer contact">
-                                <div class="footer-title">
-                                    <h3>Contact us</h3>
-                                </div>
-                                <div class="contact-action mb-15">
-                                    <span><i class="zmdi zmdi-pin"></i></span>
-                                    <p>House No 08, Road No 08,<br>Din Bari, Dhaka, Bangladesh</p>
-                                </div>
-                                <div class="contact-action mb-15">
-                                    <span><i class="zmdi zmdi-email"></i></span>
-                                    <p>info@example.com<br>info@example.com</p>
-                                </div>
-                                <div class="contact-action">
-                                    <span>
-                                        <i class="zmdi zmdi-phone"></i>
-                                    </span>
-                                    <p>+012 345 678 102<br>+012 345 678 102</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-6 col-xs-12">
-                            <div class="single-footer quick-links">
-                               <div class="footer-title">
-                                    <h3>Quick links</h3>
-                                </div>
-                                <ul>
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">about</a></li>
-                                    <li><a href="#">serivces</a></li>
-                                    <li><a href="#">portfolio</a></li>
-                                    <li><a href="#">contact us</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-xs-12">
-                            <div class="single-footer open-hours">
-                                <div class="footer-title">
-                                    <h3>Open hours</h3>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetueiusmodm dost  adipisicing elit, sed do eiusmod is tempincididuntm ut 
-lorem ipsome do or sit amt  labore et dolor </p>
-                                <ul>
-                                    <li>Monday - Friday <span>8.00-5.00</span></li>
-                                    <li>Saturday <span>12.00-5.00</span></li>
-                                    <li>Sunday <span class="close">close</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-xs-12">
-                            <div class="single-footer widget">
-                                <div class="footer-title">
-                                    <h3>Flicker widget</h3>
-                                </div>
-                                <ul>
-                                    <li><a href="#"><img src="images/widget/1.jpg" alt=""></a></li>
-                                    <li><a href="#"><img src="images/widget/2.jpg" alt=""></a></li>
-                                    <li><a href="#"><img src="images/widget/3.jpg" alt=""></a></li>
-                                    <li><a href="#"><img src="images/widget/4.jpg" alt=""></a></li>
-                                    <li><a href="#"><img src="images/widget/5.jpg" alt=""></a></li>
-                                    <li><a href="#"><img src="images/widget/6.jpg" alt=""></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom text-center">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="copyright">
-                                <p>
-                                    Copyright© Beautyhouse 2022.All right reserved.Created by
-                                    <a href="#">beautyhouse</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--footer end-->
-       
-    </div>
-    
+            <!--Footer bottom end-->
+
+        </footer>
+        <!--Footer section end-->
         
-    <!--=================================
-     style-customizer start  -->
-
-    <div class="style-customizer closed">
-
-      <div class="buy-button">
-            <a href="#" class="customizer-logo"><img src="images/logo/logo.png" alt="Theme Logo"></a>
-            <a class="opener" href="#"><i class="fa fa-cog fa-spin"></i></a>
-            <div class="buy-now">
-                <a class="button button-border" href="#">Buy now!</a> 
+        <!-- Modal Area Strat -->
+        <div class="modal fade quick-view-modal-container" id="quick-view-modal-container" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-xl-12 col-lg-12">
+                            <div class="row">
+                                <div class="col-xl-5 col-lg-6 col-md-6 mb-xxs-25 mb-xs-25 mb-sm-25">
+                                    <!-- Product Details Left -->
+                                    <div class="product-details-left">
+                                        <div class="product-details-images slider-lg-image-1 tf-element-carousel" data-slick-options='{
+                                            "slidesToShow": 1,
+                                            "slidesToScroll": 1,
+                                            "infinite": true,
+                                            "asNavFor": ".slider-thumbs-1",
+                                            "arrows": false,
+                                            "prevArrow": {"buttonClass": "slick-btn slick-prev", "iconClass": "fa fa-angle-left" },
+                                            "nextArrow": {"buttonClass": "slick-btn slick-next", "iconClass": "fa fa-angle-right" }
+                                            }'>
+                                            <div class="lg-image">
+                                                <img src="./assets/images/product/large-product/l-product-1.jpg" alt="">
+                                            </div>
+                                            <div class="lg-image">
+                                                <img src="./assets/images/product/large-product/l-product-2.jpg" alt="">
+                                            </div>
+                                            <div class="lg-image">
+                                                <img src="./assets/images/product/large-product/l-product-3.jpg" alt="">
+                                            </div>
+                                            <div class="lg-image">
+                                                <img src="./assets/images/product/large-product/l-product-4.jpg" alt="">
+                                            </div>
+                                            <div class="lg-image">
+                                                <img src="./assets/images/product/large-product/l-product-5.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="product-details-thumbs slider-thumbs-1 tf-element-carousel" data-slick-options='{
+                                            "slidesToShow": 4,
+                                            "slidesToScroll": 1,
+                                            "infinite": true,
+                                            "focusOnSelect": true,
+                                            "asNavFor": ".slider-lg-image-1",
+                                            "arrows": false,
+                                            "prevArrow": {"buttonClass": "slick-btn slick-prev", "iconClass": "fa fa-angle-left" },
+                                            "nextArrow": {"buttonClass": "slick-btn slick-next", "iconClass": "fa fa-angle-right" }
+                                            }' data-slick-responsive= '[
+                                            {"breakpoint":991, "settings": {
+                                                "slidesToShow": 3
+                                            }},
+                                            {"breakpoint":767, "settings": {
+                                                "slidesToShow": 4
+                                            }},
+                                            {"breakpoint":479, "settings": {
+                                                "slidesToShow": 2
+                                            }}
+                                        ]'>										
+                                            <div class="sm-image"><img src="./assets/images/product/small-product/s-product-1.jpg" alt="product image thumb"></div>
+                                            <div class="sm-image"><img src="./assets/images/product/small-product/s-product-2.jpg" alt="product image thumb"></div>
+                                            <div class="sm-image"><img src="./assets/images/product/small-product/s-product-3.jpg" alt="product image thumb"></div>
+                                            <div class="sm-image"><img src="./assets/images/product/small-product/s-product-4.jpg" alt="product image thumb"></div>
+                                            <div class="sm-image"><img src="./assets/images/product/small-product/s-product-5.jpg" alt="product image thumb"></div>
+                                        </div>
+                                    </div>
+                                    <!--Product Details Left -->
+                                </div>
+                                <div class="col-xl-7 col-lg-6 col-md-6">
+                                    <!-- product detail content -->
+                                    
+                                    <!--Product Details Content Start-->
+                                    <div class="product-details-content">
+                                        <!--Product Nav Start-->
+                                        <div class="product-nav">
+                                            <a href="#"><i class="fa fa-angle-left"></i></a>
+                                            <a href="#"><i class="fa fa-angle-right"></i></a>
+                                        </div>
+                                        <!--Product Nav End-->
+                                        <h2>White Shave Brux</h2>
+                                        <div class="single-product-reviews">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <a class="review-link" href="#">(1 customer review)</a>
+                                        </div>
+                                        <div class="single-product-price">
+                                            <span class="price new-price">$66.00</span>
+                                            <span class="regular-price">$77.00</span>
+                                        </div>
+                                        <div class="product-description">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus</p>
+                                        </div>
+                                        <div class="single-product-quantity">
+                                            <form class="add-quantity" action="#">
+                                                <div class="product-quantity">
+                                                    <input value="1" type="number">
+                                                </div>
+                                                <div class="add-to-link">
+                                                    <button class="product-add-btn" data-text="add to cart">add to cart</button>
+                                                </div>
+                                            </form>
+                                    </div>
+                                        <div class="wishlist-compare-btn">
+                                            <a href="#" class="wishlist-btn mb-md-10 mb-sm-10">Add to Wishlist</a>
+                                            <a href="#" class="add-compare">Compare</a>
+                                        </div>
+                                        <div class="product-meta">
+                                            <span class="posted-in">
+                                                    Categories: 
+                                                    <a href="#">Accessories</a>,
+                                                    <a href="#">Electronics</a>
+                                                </span>
+                                        </div>
+                                        <div class="single-product-sharing">
+                                            <h3>Share this product</h3>
+                                            <ul>
+                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!--Product Details Content End-->
+                                    
+                                    <!-- End of product detail content -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
             </div>
         </div>
-      <div class="clearfix content-chooser">
-        <h3>Layout Options</h3>
-        <p>Which layout option you want to use?</p>
-        <ul class="layoutstyle clearfix">
-          <li class="wide-layout" data-style="wide" title="wide"> Wide </li>
-          <li class="boxed-layout" data-style="boxed" title="boxed"> Boxed </li>
-        </ul>
-        <h3>Color Schemes</h3>
-        <p>Which theme color you want to use? Select from here.</p>
-        <ul class="styleChange clearfix">
-          <li class="skin-default selected" title="skin-default" data-style="skin-default"></li>
-          <li class="color-1" title="color-1" data-style="color-1"></li>
-          <li class="color-2" title="color-2" data-style="color-2"></li>
-          <li class="color-3" title="color-3" data-style="color-3"></li>
-          <li class="color-4" title="color-4" data-style="color-4"></li>
-          <li class="color-5" title="color-5" data-style="color-5"></li>
-          <li class="color-6" title="color-6" data-style="color-6"></li>
-          <li class="color-7" title="color-7" data-style="color-7"></li>
-          <li class="color-8" title="color-8" data-style="color-8"></li>
-          <li class="color-9" title="color-9" data-style="color-9"></li>
-          <li class="color-10" title="color-10" data-style="color-10"></li>
-          <li class="color-11" title="color-11" data-style="color-11"></li>
-        </ul>
-        
-        <h3>Background Patterns</h3>
-        <p>Which background pattern you want to use?</p>
-        <ul class="patternChange clearfix">
-          <li class="pattern-0" data-style="pattern-0" title="white background"></li>
-          <li class="pattern-1" data-style="pattern-1" title="pattern-1"></li>
-          <li class="pattern-2" data-style="pattern-2" title="pattern-2"></li>
-          <li class="pattern-3" data-style="pattern-3" title="pattern-3"></li>
-          <li class="pattern-4" data-style="pattern-4" title="pattern-4"></li>
-          <li class="pattern-5" data-style="pattern-5" title="pattern-5"></li>
-          <li class="pattern-6" data-style="pattern-6" title="pattern-6"></li>
-          <li class="pattern-7" data-style="pattern-7" title="pattern-7"></li>
-        </ul>
-        <h3>Background Images</h3>
-        <p>Which background image you want to use?</p>
-        <ul class="patternChange main-bg-change clearfix">
-          <li class="main-bg-1" data-style="main-bg-1" title="Background 1"> <img src="images/customizer/bodybg/bg-1.jpg" alt=""></li>
-          <li class="main-bg-2" data-style="main-bg-2" title="Background 2"> <img src="images/customizer/bodybg/bg-2.jpg" alt=""></li>
-          <li class="main-bg-3" data-style="main-bg-3" title="Background 3"> <img src="images/customizer/bodybg/bg-3.jpg" alt=""></li>
-          <li class="main-bg-4" data-style="main-bg-4" title="Background 4"> <img src="images/customizer/bodybg/bg-4.jpg" alt=""></li>
-          <li class="main-bg-5" data-style="main-bg-5" title="Background 5"> <img src="images/customizer/bodybg/bg-5.jpg" alt=""></li>
-          <li class="main-bg-6" data-style="main-bg-6" title="Background 6"> <img src="images/customizer/bodybg/bg-6.jpg" alt=""></li>
-          <li class="main-bg-7" data-style="main-bg-7" title="Background 7"> <img src="images/customizer/bodybg/bg-7.jpg" alt=""></li>
-          <li class="main-bg-8" data-style="main-bg-8" title="Background 8"> <img src="images/customizer/bodybg/bg-8.jpg" alt=""></li>
-          <li class="main-bg-9" data-style="main-bg-9" title="Background 9"> <img src="images/customizer/bodybg/bg-9.jpg" alt=""></li>
-          <li class="main-bg-10" data-style="main-bg-10" title="Background 10"> <img src="images/customizer/bodybg/bg-10.jpg" alt=""></li>
-          <li class="main-bg-11" data-style="main-bg-11" title="Background 11"> <img src="images/customizer/bodybg/bg-11.jpg" alt=""></li>
-          <li class="main-bg-12" data-style="main-bg-12" title="Background 12"> <img src="images/customizer/bodybg/bg-12.jpg" alt=""></li>
-        </ul>
-        <ul class="resetAll">
-          <li><a class="button button-border button-reset" href="#">Reset All</a></li>
-        </ul>
-      </div>
-    </div>
+        <!-- Modal Area End -->
 
-    <!-- style-customizer End -->
+        <!-- Newsletter Popup Start -->
+        <div class="newsletter-popup-area" id="newsletter-popup-area">
+            <div class="newsletter-popup-content-wrapper">
+                <div class="newsletter-popup-content text-center">
+                    <a href="javascript:void(0)" class="close-newsletter-popup" id="close-newsletter-popup">Close</a>
+                    <h2>NEWSLETTER</h2>
+                    <p>Subscribe to our newsletters now and stay up-to-date with new collections, the latest lookbooks and exclusive offers.</p>
+                    <div class="subscription-form">
+                        <form  id="mc-form2" class="mc-form">
+                            <input type="email" placeholder="Enter your email address here" >
+                            <button class="btn" type="submit">Subscribe</button>
+                        </form>
+                        <!-- mailchimp-alerts Start -->
     
-
+                        <div class="mailchimp-alerts mt-5 mb-5">
+                            <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
+                            <div class="mailchimp-success"></div><!-- mailchimp-success end -->
+                            <div class="mailchimp-error"></div><!-- mailchimp-error end -->
+                        </div>
+    
+                        <!-- mailchimp-alerts end -->
+                    </div>
+                    <div class="subscribe-bottom">
+                        <input type="checkbox" id="newsletter_popup_dont_show_again">
+                        <label for="newsletter_popup_dont_show_again">Don't show this popup again</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Newsletter Popup End -->
+    </div>
 
     <!-- Placed js at the end of the document so the pages load faster -->
 
-    
-    <!-- All js plugins included in this file. -->
-    <script src="js/vendor/jquery-1.12.0.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.nivo.slider.pack.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/ajax-mail.js"></script>
-    <script src="js/jquery.magnific-popup.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/style-customizer.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script><a id="scrollUp" href="#top" style="position: fixed; z-index: 2147483647; display: none;"><i class="fa fa-angle-up"></i></a>
+    <!-- All jquery file included here -->
+    <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/vendor/jquery-migrate-3.3.2.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/main.js"></script>
 
+</body>
 
-
-</body></html><?php /**PATH /Users/mac/repos/fairyskin/resources/views/oldindex.blade.php ENDPATH**/ ?>
+</html><?php /**PATH /Users/mac/repos/fairyskin/resources/views/oldindex.blade.php ENDPATH**/ ?>
