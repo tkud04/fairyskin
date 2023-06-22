@@ -77,14 +77,34 @@ class MainController extends Controller {
 			'middle' => ['img' => 'assets/images/banner/h1-banner-2.png', 'url' => '#'],
 			'right' => ['img' => 'assets/images/banner/h1-banner-3.png', 'url' => '#'],
 		 ];
+
+		 $topDeals = [
+			[
+				'img' => 'assets/images/deal-product/product-1.jpg',
+				'name' => 'Product 1',
+				'url' => '#',
+				'amount' => '15000',
+				'description' => 'This is a test description for the product. Tjis text is just to fillup space to see how everything looks.',
+				'rating' => '3'
+			],
+			[
+				'img' => 'assets/images/deal-product/product-2.jpg',
+				'name' => 'Product 2',
+				'url' => '#',
+				'amount' => '15000',
+				'description' => 'This is a test description for the product. Tjis text is just to fillup space to see how everything looks.',
+				'rating' => '4'
+			]
+		 ];
 		$plugins = $this->helpers->getPlugins();
-		
+		$tabProducts = [];
+		$posts = [];
 		#dd($hasUnpaidOrders);
 		
 		shuffle($ads);
 		shuffle($banners);
 		$ad = count($ads) < 1 ? "images/inner-ad-2.png" : $ads[0]['img'];
-    	return view("index",compact(['user','cart','c','banners','homeSlides','hasUnpaidOrders','bs','na','ad','signals','plugins']));
+    	return view("index",compact(['user','cart','c','banners','homeSlides','topDeals','tabProducts','posts','hasUnpaidOrders','bs','na','ad','signals','plugins']));
     }
 	
 	/**
