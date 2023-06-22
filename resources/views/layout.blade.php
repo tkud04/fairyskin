@@ -147,7 +147,7 @@
                         <div class="col-lg-3 col-md-3 col-6 order-lg-1 order-md-1 order-1">
                             <div class="logo">
                                 <a href="{{url('/')}}">
-                                    <img src="assets/images/fairyskin-logo.jpg"  alt="FAIRYSKIN"/>
+                                    <img src="assets/images/fairyskin-logo.jpg" style="width: 118px; height: 44px;"  alt="FAIRYSKIN"/>
                                 </a>
                             </div>
                         </div>
@@ -391,6 +391,7 @@
                         <!--Footer Widget start-->
                         <div class="footer-widget col-lg-3 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
                             <h4 class="title"><span class="text">About Fairyskin</span></h4>
+                            <img src="assets/images/fairyskin-logo.jpg" style="width: 118px; height: 44px;"  alt="FAIRYSKIN"/>
                             <p>We are private label cosmetics manufacurers specializing in creating new and sensational skin and skin care products.</p>
                             <div class="footer-social">
                                 <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
