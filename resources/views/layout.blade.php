@@ -102,6 +102,13 @@
                                      <li><a href="#"><i class="fa fa-user-circle-o"></i>Hi, {{$user->fname}}</a>
                                         <ul class="ht-dropdown right">
                                             <li><a href="{{url('dashboard')}}">My Account</a></li>
+                                            <?php
+                                             if($user->role === 'admin'){
+                                            ?>
+                                              <li><a href="{{url('admin-centre')}}">Admin Centre</a></li>
+                                            <?php
+                                             }
+                                            ?>
                                             <li><a href="{{url('bye')}}">Log out</a></li>
                                         </ul>
                                     </li>

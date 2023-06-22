@@ -9,20 +9,34 @@ $plugins = [];
 <?php $__env->startSection('title',"Not Found"); ?>
 
 <?php $__env->startSection('content'); ?>
-   <!--start of middle sec-->
-<div class="middle-sec wow fadeIn animated animated" data-wow-offset="10" data-wow-duration="2s" style="visibility: visible; animation-duration: 2s;">
-    <div id="particles"><canvas class="pg-canvas" width="1349" height="450" style="display: block;"></canvas>
-      <div id="not-found" class="wow fadeInDown text-center container animated animated" style="visibility: visible;">
-        <div class="update">
-          <h2 class="text-primary text-uppercase"><strong>Oops!</strong> We checked very hard.</h2>
-          <p>The page you are looking for was moved, removed, renamed or
-            might have never existed.</p>
+<?php echo $__env->make('banner-2',['title' => 'Not Found'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
+    <!-- 404 Error Section Start -->
+    <div class="404-error-section section pt-55 pt-lg-35 pt-md-40 pt-sm-35 pt-xs-30  pb-100 pb-lg-80 pb-md-70 pb-sm-40 pb-xs-35">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="error-wrapper text-center">
+                            <div class="error-text">
+                                <h1>404</h1>
+                                <h2>Oops! PAGE NOT BE FOUND</h2>
+                                <p>Sorry but the page you are looking for does not exist, have been removed, name changed or is temporarity unavailable.</p>
+                            </div>
+                            <div class="search-error">
+                                <form action="#">
+                                    <input placeholder="Search" type="text">
+                                    <button><i class="fa fa-search"></i></button>
+                                </form>
+                            </div>
+                            <div class="error-button">
+                                <a href="<?php echo e(url('/')); ?>">Back to home page</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="not-found text-info"> <strong>4<span class="ion-flash-off"></span>4</strong> </div>
-        <a href="<?php echo e(url('/')); ?>" class="btn btn-primary hvr-underline-from-center-primary">Go to home</a> </div>
-    </div>
-  </div>
-  <!--end of middle sec--> 
+        <!-- 404 Error Section End --> 
     
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/mac/repos/fairyskin/resources/views/errors/404.blade.php ENDPATH**/ ?>

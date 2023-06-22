@@ -102,6 +102,13 @@
                                      <li><a href="#"><i class="fa fa-user-circle-o"></i>Hi, <?php echo e($user->fname); ?></a>
                                         <ul class="ht-dropdown right">
                                             <li><a href="<?php echo e(url('dashboard')); ?>">My Account</a></li>
+                                            <?php
+                                             if($user->role === 'admin'){
+                                            ?>
+                                              <li><a href="<?php echo e(url('admin-centre')); ?>">Admin Centre</a></li>
+                                            <?php
+                                             }
+                                            ?>
                                             <li><a href="<?php echo e(url('bye')); ?>">Log out</a></li>
                                         </ul>
                                     </li>
