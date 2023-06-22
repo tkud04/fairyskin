@@ -2,7 +2,7 @@
 <html class="no-js" lang="zxx">
   <?php
    $contact = [
-    'phone' => "09048166902",
+    'phone' => "+234 904 816 6902",
     'email' => "fairyskintreatmentsorders@gmail.com"
    ];
 
@@ -17,6 +17,14 @@
     ['name' => 'Category 3','url' => '#'],
     ['name' => 'Category 4','url' => '#'],
     ['name' => 'Category 5','url' => '#'],
+  ];
+
+  $brands = [
+    ['img' => 'assets/images/brands/sponsor.png'],
+    ['img' => 'assets/images/brands/sponsor.png'],
+    ['img' => 'assets/images/brands/sponsor.png'],
+    ['img' => 'assets/images/brands/sponsor.png'],
+    ['img' => 'assets/images/brands/sponsor.png'],
   ];
 
   ?>
@@ -39,6 +47,15 @@
     <link rel="stylesheet" href="assets/css/plugins.css">
     <link rel="stylesheet" href="assets/css/helper.css">
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+    
+
+    <!-- libs -->
+    <link rel="stylesheet" href="assets/lib/sweet-alert/sweetalert2.css">
+    <script src="assets/lib/sweet-alert/sweetalert2.js"></script>
+
     
 </head>
 <body>
@@ -126,10 +143,12 @@
                 <div class="container-fluid pl-75 pr-75 pl-lg-15 pr-lg-15 pl-md-15 pr-md-15 pl-sm-15 pr-sm-15 pl-xs-15 pr-xs-15">
                     <div class="row align-items-center">
 
-                        <!--Logo start-->
+                        <!--Logo white start-->
                         <div class="col-lg-3 col-md-3 col-6 order-lg-1 order-md-1 order-1">
                             <div class="logo">
-                                <a href="{{url('/')}}"><img src="assets/images/logo-white.png" alt=""></a>
+                                <a href="{{url('/')}}">
+                                    <img src="assets/images/fairyskin-logo.jpg"  alt="FAIRYSKIN"/>
+                                </a>
                             </div>
                         </div>
                         <!--Logo end-->
@@ -293,11 +312,13 @@
                         "slidesToShow": 1
                         }}
                         ]'>
-                        <div class="brand col"><a href="#"><img src="assets/images/brands/brand-1.png" alt=""></a></div>
-                        <div class="brand col"><a href="#"><img src="assets/images/brands/brand-2.png" alt=""></a></div>
-                        <div class="brand col"><a href="#"><img src="assets/images/brands/brand-3.png" alt=""></a></div>
-                        <div class="brand col"><a href="#"><img src="assets/images/brands/brand-4.png" alt=""></a></div>
-                        <div class="brand col"><a href="#"><img src="assets/images/brands/brand-5.png" alt=""></a></div>
+                        <?php
+                        foreach($brands as $b){
+                        ?>
+                        <div class="brand col"><a href="#"><img src="{{$b['img']}}" alt=""></a></div>
+                        <?php
+                        }
+                        ?>
                     </div>
                     <!--Brand Slider end-->
 
@@ -369,15 +390,12 @@
 
                         <!--Footer Widget start-->
                         <div class="footer-widget col-lg-3 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
-                            <h4 class="title"><span class="text">About TheFace</span></h4>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat</p>
+                            <h4 class="title"><span class="text">About Fairyskin</span></h4>
+                            <p>We are private label cosmetics manufacurers specializing in creating new and sensational skin and skin care products.</p>
                             <div class="footer-social">
                                 <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
                                 <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                                <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
                                 <a href="#" class="linkedin"><i class="fa fa-instagram"></i></a>
-                                <a href="#" class="pinterest"><i class="fa fa-pinterest-p"></i></a>
-                                <a href="#" class="pinterest"><i class="fa fa-vimeo"></i></a>
                             </div>
                         </div>
                         <!--Footer Widget end-->
@@ -389,39 +407,33 @@
                             <ul class="ft-menu">
                                 <li><a href="#">Returns</a></li>
                                 <li><a href="#">Delivery</a></li>
-                                <li><a href="#">Service</a></li>
-                                <li><a href="#">Gift Cards</a></li>
-                                <li><a href="#">Mobile</a></li>
-                                <li><a href="#">Gift Cards</a></li>
-                                <li><a href="#">Unsubscribe Notification</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Mission Statement</a></li>
                             </ul>
                         </div>
                         <!--Footer Widget end-->
 
 
                         <!--Footer Widget start-->
-                        <div class="footer-widget col-lg-3 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
+                        <div class="footer-widget col-lg-2 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
                             <h4 class="title"><span class="text">Our Offers</span></h4>
                             <ul class="ft-menu">
                                 <li><a href="#">New products</a></li>
                                 <li><a href="#">Top sellers</a></li>
-                                <li><a href="#">Specials</a></li>
-                                <li><a href="#">Manufacturers</a></li>
-                                <li><a href="#">Suppliers</a></li>
-                                <li><a href="#">Specials</a></li>
-                                <li><a href="#">Service</a></li>
+                                <li><a href="#">All products</a></li>
                             </ul>
                         </div>
                         <!--Footer Widget end-->
 
                         <!--Footer Widget start-->
-                        <div class="footer-widget col-lg-3 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
+                        <div class="footer-widget col-lg-4 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
                             <h4 class="title"><span class="text">Contact us</span></h4>
                             <ul class="address">
-                                <li><i class="fa fa-home"></i><span>HH2 BacHa building, Tohuu Street Hanoi, Vietnam</span>
+                                <li><i class="fa fa-home"></i><span>3, Bankole St, Off Ikosi Rd, Oregun, Ikeja,<br> Lagos NG</span>
                                 </li>
-                                <li><i class="fa fa-phone"></i><span><a href="#">(08) 123 456 7890</a></span></li>
-                                <li><i class="fa fa-envelope-o"></i><span><a href="#">yourmail@domain.com</a></span></li>
+                                <li><i class="fa fa-phone"></i><span><a href="tel:{{$contact['phone']}}">{{$contact['phone']}}</a></span></li>
+                                <li><i class="fa fa-envelope-o"></i><span><a href="mailto:{{$contact['email']}}">{{$contact['email']}}</a></span></li>
                             </ul>
                             <div class="payment-box mt-15 mb-15">
                                 <a href="#"><img src="./assets/images/payment.png" alt=""></a>
@@ -439,12 +451,12 @@
                     <div class="row justify-content-between align-items-center">
                         <div class="col-lg-6 col-md-6 col-sm-8">
                             <div class="copyright text-start">
-                                <p>Copyright &copy;2022 <a href="#">Theface</a>. All rights reserved.</p>
+                                <p>Copyright &copy;{{date('Y')}} <a href="{{url('/')}}">Fairyskin</a>. All rights reserved.</p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-4">
                             <div class="footer-logo text-end">
-                                <a href="index.html"><img src="./assets/images/logofoo.png" alt=""></a>
+                                <a href="{{url('/')}}">FAIRYSKIN</a>
                             </div>
                         </div>
                     </div>
@@ -632,13 +644,13 @@
     <!-- Placed js at the end of the document so the pages load faster -->
 
     <!-- All jquery file included here -->
-    <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
-    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
     <script src="assets/js/vendor/jquery-migrate-3.3.2.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/mmm.js"></script>
+    <script src="assets/js/utils.js"></script>
 
 </body>
 

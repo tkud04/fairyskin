@@ -49,9 +49,9 @@ Route::get('review-order', [MainController::class,'getReviewOrder']);
 Route::post('review-order', [MainController::class,'postReviewOrder']);
 
 Route::get('login', [LoginController::class,'getLogin']);
-Route::get('register', [LoginController::class,'getRegister']);
+Route::get('signup', [LoginController::class,'getSignup']);
 Route::post('login', [LoginController::class,'postLogin']);
-Route::post('register', [LoginController::class,'postRegister']);
+Route::post('signup', [LoginController::class,'postSignup']);
 
 Route::get('forgot-password', [LoginController::class,'getForgotPassword']);
 Route::post('forgot-password', [LoginController::class,'postForgotPassword']);

@@ -25,9 +25,19 @@ class LoginController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function getSignup()
+	public function getSignup(Request $request)
     {
-		return redirect()->intended('/?xx=1');
+		$user = null;
+       $req = $request->all();
+       $return = isset($req['return']) ? $req['return'] : '/';
+		
+		if(Auth::check())
+		{
+			$user = Auth::user();
+			return redirect()->intended($return);
+		}
+		$signals = $this->helpers->signals;
+    	return view('register',compact(['user','return','signals']));
     }
 
     
@@ -72,7 +82,7 @@ class LoginController extends Controller {
              $messages = $validator->messages();
              //return redirect()->back()->withInput()->with('errors',$messages);
              session()->flash("login-status","error");
-				return redirect()->intended('/');
+				return redirect()->intended('back');
          }
          
          else
