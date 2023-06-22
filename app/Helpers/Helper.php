@@ -508,22 +508,18 @@ else
 return $ret; 
 }
 
-function signInAsGuest($data)
-{
+function getAuthenticatedAdmin(){
+  $ret = null;
 
-
-$uu = User::where('phone',$data['phone'])
-       ->where('password',$data['phone']."@aceluxurystore.com")->first();
-$remember = true;			
-
-// dd($uu);
-if(is_null($uu))
-{
-   $uu = $this->createUser($data);
-}
-
-
-return $uu;
+  if(Auth::check())
+		{
+			$user = Auth::user();
+            if($user->role === "admin")
+            {
+                $ret = $user;
+            }
+		}
+  return $ret;
 }
 
 function createUser($data)

@@ -6,21 +6,36 @@ $plugins = [];
 ?>
 @extends('layout')
 
-@section('title',"Server Error")
+@section('title',"Request Failed")
 
 @section('content')
-   <!--start of middle sec-->
-<div class="middle-sec wow fadeIn animated animated" data-wow-offset="10" data-wow-duration="2s" style="visibility: visible; animation-duration: 2s;">
-    <div id="particles"><canvas class="pg-canvas" width="1349" height="450" style="display: block;"></canvas>
-      <div id="not-found" class="wow fadeInDown text-center container animated animated" style="visibility: visible;">
-        <div class="update">
-          <h2 class="text-primary text-uppercase"><strong>Oops!</strong> The server encountered a teeny tiny error.</h2>
-          <p>We are really sorry, these things happen. We are looking into it as you read this.</p>
+@include('banner-2',['title' => 'Request Failed'])
+
+    <!-- 404 Error Section Start -->
+    <div class="404-error-section section pt-55 pt-lg-35 pt-md-40 pt-sm-35 pt-xs-30  pb-100 pb-lg-80 pb-md-70 pb-sm-40 pb-xs-35">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="error-wrapper text-center">
+                            <div class="error-text">
+                                <h1>404</h1>
+                                <h2>Oops! YUR REQUEST FAILED</h2>
+                                <p>Sorry your request failed due to an issue on the server, our team are working hard to resolve this, please try again later.</p>
+                            </div>
+                            <div class="search-error">
+                                <form action="#">
+                                    <input placeholder="Search" type="text">
+                                    <button><i class="fa fa-search"></i></button>
+                                </form>
+                            </div>
+                            <div class="error-button">
+                                <a href="{{url('/')}}">Back to home page</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="not-found text-info"> <strong>5<span class="ion-flash-off"></span><span class="ion-flash-off"></span></strong> </div>
-        <a href="{{url('/')}}" class="btn btn-primary hvr-underline-from-center-primary">Go to home</a> </div>
-    </div>
-  </div>
-  <!--end of middle sec--> 
+        <!-- 404 Error Section End --> 
     
 @stop

@@ -94,3 +94,8 @@ Route::get('gc', [MainController::class,'getCouriers']);
 Route::get('error', [MainController::class,'getError']);
 Route::get('cps', [MainController::class,'getCpsTest']);
 
+
+/**
+ * ADMIN CENTER
+ */
+Route::get('admin-center', [AdminController::class,'getDashboard']);
