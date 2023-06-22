@@ -105,7 +105,7 @@
                                             <?php
                                              if($user->role === 'admin'){
                                             ?>
-                                              <li><a href="{{url('admin-centre')}}">Admin Centre</a></li>
+                                              <li><a href="{{url('admin-center')}}">Admin Center</a></li>
                                             <?php
                                              }
                                             ?>
@@ -659,6 +659,8 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/mmm.js"></script>
     <script src="assets/js/utils.js"></script>
+
+    @yield('scripts')
 
 </body>
 

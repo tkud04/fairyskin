@@ -33,4 +33,16 @@ $(document).ready(() => {
             $('#signup-form').submit()
         }
     })
+
+    $('#add-category').click(e => {
+        e.preventDefault()
+        hideElem('#categories-div')
+        showElem('#add-categories-div')
+    })
+
+    $('#categories-back-button').click(e => {
+        e.preventDefault()
+        hideElem('#add-categories-div')
+        showElem('#categories-div')
+    })
 })

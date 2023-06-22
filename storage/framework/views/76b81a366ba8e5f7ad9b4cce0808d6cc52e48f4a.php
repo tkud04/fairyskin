@@ -1,7 +1,15 @@
 <?php $__env->startSection('title','Admin Center'); ?>
 
+<?php $__env->startSection('scripts'); ?>
+<script>
+    $(document).ready(() => {
+        hideElem('#add-categories-div')
+    })
+</script>
+<?php $__env->stopSection(); ?>
+
 <?php $__env->startSection('content'); ?>
-<?php echo $__env->make('banner-2',['title' => 'Admin Center','subtitle' => 'Admin suite for managinf the site operations'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php echo $__env->make('banner-2',['title' => 'Admin Center','subtitle' => 'Admin suite for managing the site operations'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
  <!--My Account section start-->
  <div class="my-account-section section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50  pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
@@ -21,6 +29,8 @@
                                     <a href="#download" data-bs-toggle="tab"><i class="fa fa-users"></i> Users</a>
     
                                     <a href="#products" data-bs-toggle="tab"><i class="fa fa-shopping-bag"></i> Products</a>
+
+                                    <a href="#categories" data-bs-toggle="tab"><i class="fa fa-shopping-bag"></i> Categories</a>
     
                                     <a href="#address-edit" data-bs-toggle="tab"><i class="fa fa-map-marker"></i> address</a>
     
@@ -205,9 +215,126 @@
                                     <!-- Single Tab Content Start -->
                                     <div class="tab-pane fade" id="products" role="tabpanel">
                                         <div class="myaccount-content">
-                                            <h3>Payment Method</h3>
+                                        <h3>Products <a href="<?php echo e(url('buup')); ?>" class="btn btn-primary">Add Products</a></h3>
+                                                <div class="myaccount-table table-responsive text-center">
+                                                <table class="table table-bordered">
+                                                    <thead class="thead-light">
+                                                    <tr>
+                                                        <th>No</th>
+                                                        <th>Name</th>
+                                                        <th>Date</th>
+                                                        <th>Status</th>
+                                                        <th>Total</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                    </thead>
     
-                                            <p class="saved-message">You Can't Saved Your Payment Method yet.</p>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Mostarizing Oil</td>
+                                                        <td>Aug 22, 2022</td>
+                                                        <td>Pending</td>
+                                                        <td>$45</td>
+                                                        <td><a href="cart.html" class="btn">View</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>Katopeno Altuni</td>
+                                                        <td>July 22, 2022</td>
+                                                        <td>Approved</td>
+                                                        <td>$100</td>
+                                                        <td><a href="cart.html" class="btn">View</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Murikhete Paris</td>
+                                                        <td>June 12, 2022</td>
+                                                        <td>On Hold</td>
+                                                        <td>$99</td>
+                                                        <td><a href="cart.html" class="btn">View</a></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Single Tab Content End -->
+
+                                     <!-- Single Tab Content Start -->
+                                     <div class="tab-pane fade" id="categories" role="tabpanel">
+                                        <div class="myaccount-content">
+                                        <div id="categories-div">
+                                             <h3>Categories <a href="#" id="add-category" class="btn btn-primary">Add Category</a></h3>
+                                                <div class="myaccount-table table-responsive text-center">
+                                                <table class="table table-bordered">
+                                                    <thead class="thead-light">
+                                                    <tr>
+                                                        <th>No</th>
+                                                        <th>Name</th>
+                                                        <th>Category</th>
+                                                        <th>Date</th>
+                                                        <th>Status</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                    </thead>
+    
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Mostarizing Oil</td>
+                                                        <td>Aug 22, 2022</td>
+                                                        <td>Pending</td>
+                                                        <td>Pending</td>
+                                                        <td>$45</td>
+                                                        <td><a href="cart.html" class="btn">Remove</a></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                               </div>
+                                            
+                                           </div>
+                                           <div id="add-categories-div" class="account-details-form">
+                                               <h3> Add category <a href="#" id="categories-back-button" class="btn btn-primary">Back to Categories</a></h3>
+                                               <form action="#">
+                                                    <div class="row">
+                                                        <div class="col-lg-6 col-12 mb-30">
+                                                            <input id="first-name" placeholder="First Name" type="text">
+                                                        </div>
+    
+                                                        <div class="col-lg-6 col-12 mb-30">
+                                                            <input id="last-name" placeholder="Last Name" type="text">
+                                                        </div>
+    
+                                                        <div class="col-12 mb-30">
+                                                            <input id="display-name" placeholder="Display Name" type="text">
+                                                        </div>
+    
+                                                        <div class="col-12 mb-30">
+                                                            <input id="email" placeholder="Email Address" type="email">
+                                                        </div>
+    
+                                                        <div class="col-12 mb-30"><h4>Password change</h4></div>
+    
+                                                        <div class="col-12 mb-30">
+                                                            <input id="current-pwd" placeholder="Current Password" type="password">
+                                                        </div>
+    
+                                                        <div class="col-lg-6 col-12 mb-30">
+                                                            <input id="new-pwd" placeholder="New Password" type="password">
+                                                        </div>
+    
+                                                        <div class="col-lg-6 col-12 mb-30">
+                                                            <input id="confirm-pwd" placeholder="Confirm Password" type="password">
+                                                        </div>
+    
+                                                        <div class="col-12">
+                                                            <button class="save-change-btn">Save Changes</button>
+                                                        </div>
+    
+                                                    </div>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
                                     <!-- Single Tab Content End -->

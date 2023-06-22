@@ -37,6 +37,44 @@ class AdminController extends Controller {
 		 $courses = [];
        return view('admin-center',compact(['user','signals','stats']));
     }
+
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+    public function postAddCategory(Request $request)
+    {
+		dd($request);
+		$user = null;
+    	if(Auth::check())
+		{
+			$user = Auth::user();
+		}
+		
+        $req = $request->all();
+        //dd($req);
+        
+        $validator = Validator::make($req, [
+                             'name' => 'required',
+                             'category' => 'required',
+							 'status' => 'required'
+         ]);
+         
+         if($validator->fails())
+         {
+             $messages = $validator->messages();
+             return redirect()->back()->withInput()->with('errors',$messages);
+             //dd($messages);
+         }
+         
+         else
+         {
+         	$this->helpers->createCategory($user,$req);
+	        session()->flash("add-category-status","ok");
+			return redirect()->back();
+         }        
+    }
 	   
     
     /**
