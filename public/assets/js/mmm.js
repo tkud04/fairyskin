@@ -21,13 +21,16 @@ $(document).ready(() => {
                 pass2 === '', v2 = pass !== pass2
         
         if(v || v2){
+            console.log({v,v2})
             let errorMessage = ''
             if(v) errorMessage = 'All fields are required'
-            if(v2) errorMessage = 'Passwords must not match'
+            console.log({errorMessage})
+            if(v2) errorMessage = 'Passwords do not match'
+            console.log({errorMessage})
             displayError(errorMessage)
         }
         else{
-            $('#login-form').submit()
+            $('#signup-form').submit()
         }
     })
 })

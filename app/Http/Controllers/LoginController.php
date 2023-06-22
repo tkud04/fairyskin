@@ -121,6 +121,9 @@ class LoginController extends Controller {
         $validator = Validator::make($req, [
                              'password' => 'required|confirmed',
                              'email' => 'required|email', 
+                             'fname' => 'required',
+                             'lname' => 'required',
+                             'phone' => 'required|numeric',
                              #'g-recaptcha-response' => 'required',
                            # 'terms' => 'accepted',
          ]);
@@ -136,11 +139,13 @@ class LoginController extends Controller {
          else
          {
 			 #dd($req);
-             $req['role'] = "admin";
+             $req['role'] = "user";
            $req['status'] = "ok";  
-           $req['verified'] = "yes";         			
+           $req['verified'] = "yes"; 
+           $req['account_status'] = "new";    
+           $req['username'] = '';     			
             
-                       #dd($req);            
+            #dd($req);            
 
             $user =  $this->helpers->createUser($req); 
             

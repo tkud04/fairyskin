@@ -50,7 +50,33 @@ class MainController extends Controller {
 		#$bs = [];
 		#dd($na);
 		$ads = $this->helpers->getAds("wide-ad");
-		$banners = $this->helpers->getBanners();
+		//$banners = $this->helpers->getBanners();
+		$banners = [
+			[
+				'img' => 'assets/images/hero/hero-1.jpg',
+				'url' => url('shop'),
+				'top-text' => 'view our',
+				'middle-text' => 'skin care',
+				'bottom-text' => 'products now',
+				'action-text' => 'shop now',
+				'class' => 'hero-content-2 color-1 center'
+			],
+			[
+				'img' => 'assets/images/hero/hero-2.jpg',
+				'url' => url('shop'),
+				'top-text' => 'view our',
+				'middle-text' => 'skin treatment',
+				'bottom-text' => 'products now',
+				'action-text' => 'shop now',
+				'class' => 'hero-content-2 color-2'
+			],
+		 ];
+
+		 $homeSlides = [
+			'left' => ['img' => 'assets/images/banner/h1-banner-1.png', 'url' => '#'],
+			'middle' => ['img' => 'assets/images/banner/h1-banner-2.png', 'url' => '#'],
+			'right' => ['img' => 'assets/images/banner/h1-banner-3.png', 'url' => '#'],
+		 ];
 		$plugins = $this->helpers->getPlugins();
 		
 		#dd($hasUnpaidOrders);
@@ -58,7 +84,7 @@ class MainController extends Controller {
 		shuffle($ads);
 		shuffle($banners);
 		$ad = count($ads) < 1 ? "images/inner-ad-2.png" : $ads[0]['img'];
-    	return view("index",compact(['user','cart','c','banners','hasUnpaidOrders','bs','na','ad','signals','plugins']));
+    	return view("index",compact(['user','cart','c','banners','homeSlides','hasUnpaidOrders','bs','na','ad','signals','plugins']));
     }
 	
 	/**
@@ -1099,6 +1125,7 @@ class MainController extends Controller {
 		if(Auth::check())
 		{
 			$user = Auth::user();
+			dd($user);
 			$req = $request->all();
 		$gid = isset($_COOKIE['gid']) ? $_COOKIE['gid'] : "";
 		$cart = $this->helpers->getCart($user,$gid);

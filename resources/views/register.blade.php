@@ -17,7 +17,7 @@
                                     <h2>Register</h2>
                                 </div>
                                 <div class="register-form">
-                                    <form action="{{url('register')}}" method="post">
+                                    <form action="{{url('signup')}}" id="signup-form" method="post">
                                        {!! csrf_field() !!}
                                       <div class="row">
                                        <div class="col-md-6 co-sm-6">

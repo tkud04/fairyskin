@@ -17,7 +17,7 @@
                                     <h2>Register</h2>
                                 </div>
                                 <div class="register-form">
-                                    <form action="<?php echo e(url('register')); ?>" method="post">
+                                    <form action="<?php echo e(url('signup')); ?>" id="signup-form" method="post">
                                        <?php echo csrf_field(); ?>
 
                                       <div class="row">

@@ -52,6 +52,6 @@ const hideElem = (name) => {
 const displayError = (title) => {
     Swal.fire({
         icon: 'error',
-        title: "Please fill in the required fields."
+        title
     })
 }

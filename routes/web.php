@@ -58,7 +58,7 @@ Route::post('forgot-password', [LoginController::class,'postForgotPassword']);
 Route::get('reset', [LoginController::class,'getPasswordReset']);
 Route::post('reset', [LoginController::class,'postPasswordReset']);
 
-Route::get('signout', [LoginController::class,'getLogout']);
+Route::get('bye', [LoginController::class,'getLogout']);
 
 Route::get('dashboard', [MainController::class,'getDashboard']);
 Route::get('profile', [MainController::class,'getProfile']);

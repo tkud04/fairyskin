@@ -42,7 +42,7 @@ class Helper implements HelperContract
 {    
 
     public $signals = ['okays'=> ["login-status" => "Welcome back!",            
-    "signup-status" => "Welcome to your new account. As a welcome gift you get a discount N500 off your first order. Enjoy your shopping!",
+    "signup-status" => "Welcome to your new account. Enjoy your shopping!",
     "profile-status" => "Profile updated!",
     "cpayment-status" => "Your request has been received, you will be notified via email shortly if your payment has been cleared.",
     "update-status" => "Account updated!",
@@ -531,12 +531,15 @@ function createUser($data)
 $ret = User::create(['fname' => $data['fname'], 
                                      'lname' => $data['lname'], 
                                      'email' => $data['email'], 
+                                     'username' => $data['username'], 
                                      'phone' => $data['phone'], 
                                      'role' => $data['role'], 
                                      'status' => $data['status'], 
                                      'verified' => $data['verified'], 
                                      'account_status' => $data['account_status'], 
-                                     'password' => bcrypt($data['pass']), 
+                                     'remember_token' => '',
+                                     'reset_code'=> '',
+                                     'password' => bcrypt($data['password']), 
                                      ]);
                                      
 return $ret;
