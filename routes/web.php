@@ -99,4 +99,5 @@ Route::get('cps', [MainController::class,'getCpsTest']);
  * ADMIN CENTER
  */
 Route::get('admin-center', [AdminController::class,'getDashboard']);
-Route::get('add-category', [AdminController::class,'getAddCategory']);
+Route::post('add-category', [AdminController::class,'postAddCategory']);
+Route::get('update-category-status', [AdminController::class,'getUpdateCategoryStatus']);

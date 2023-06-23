@@ -20,7 +20,7 @@ class AdminController extends Controller {
     }
 
 	/**
-	 * Show the application welcome screen to the user.
+	 * Show the admin center
 	 *
 	 * @return Response
 	 */
@@ -35,7 +35,8 @@ class AdminController extends Controller {
         //$stats = $this->helpers->getDashboardStats();
         $stats = [];
 		 $courses = [];
-       return view('admin-center',compact(['user','signals','stats']));
+		$categories = $this->helpers->getCategories();
+       return view('admin-center',compact(['user','signals','stats','categories']));
     }
 
 	/**
@@ -45,12 +46,11 @@ class AdminController extends Controller {
 	 */
     public function postAddCategory(Request $request)
     {
-		dd($request);
-		$user = null;
-    	if(Auth::check())
-		{
-			$user = Auth::user();
-		}
+		$user = $this->helpers->getAuthenticatedAdmin();
+
+       if($user === null){
+		return json_encode(['status' => 'error','message' => 'Unauthorized']);
+	   }
 		
         $req = $request->all();
         //dd($req);
@@ -63,16 +63,51 @@ class AdminController extends Controller {
          
          if($validator->fails())
          {
-             $messages = $validator->messages();
-             return redirect()->back()->withInput()->with('errors',$messages);
-             //dd($messages);
+			return json_encode(['status' => 'error','message' => 'Validation']);
          }
          
          else
          {
-         	$this->helpers->createCategory($user,$req);
-	        session()->flash("add-category-status","ok");
-			return redirect()->back();
+			$req['special'] = '';
+			$req['gpc'] = '';
+         	$this->helpers->addCategory($req);
+	        
+			return json_encode(['status' => 'ok']);
+         }        
+    }
+
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+    public function getUpdateCategoryStatus(Request $request)
+    {
+	   $user = $this->helpers->getAuthenticatedAdmin();
+
+       if($user === null){
+		return json_encode(['status' => 'error','message' => 'Unauthorized']);
+	   }
+		
+        $req = $request->all();
+        //dd($req);
+        
+        $validator = Validator::make($req, [
+		    'xf' => 'required',
+			'mode' => 'required'
+         ]);
+         
+         if($validator->fails())
+         {
+			return json_encode(['status' => 'error','message' => 'Validation']);
+         }
+         
+         else
+         {
+			$req['status'] = $req['mode'] === 'Enable' ? 'enabled' : 'disabled';
+         	$this->helpers->updateCategory($req);
+	        
+			return json_encode(['status' => 'ok']);
          }        
     }
 	   

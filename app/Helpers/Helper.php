@@ -63,6 +63,9 @@ class Helper implements HelperContract
     "no-cart-status" => "Your cart is empty.",
     "invalid-order-status" => "We couldn't find your order.",
     "review-order-status" => "Thank you for your review!",
+
+    //ADMIN
+    "add-category-status" => "Category added!",
     ],
     'errors'=> ["login-status-error" => "Wrong username or password, please try again.",
     "signup-status-error" => "There was a problem creating your account, please try again.",
@@ -83,6 +86,9 @@ class Helper implements HelperContract
     "track-order-status-error" => "Invalid reference number, please try again.",
     "no-cart-status-error" => "Your cart is empty.",
     "invalid-order-status-error" => "We could not find your order.",
+
+    //ADMIN
+    "add-category-status-error" => "Failed to add category",
    ]
   ];
 
@@ -1480,9 +1486,10 @@ $category = Categories::create([
 'name' => $data['name'],
 'category' => $data['category'],
 'special' => $data['special'],
+'gpc' => $data['gpc'],
 'status' => $data['status'],
 ]);                          
-return $ret;
+return $category;
 }
 
 function getCategories()
@@ -1495,11 +1502,7 @@ if($categories != null)
 {           	
   foreach($categories as $c) 
    {
-       $temp = [];
-       $temp['name'] = $c->name;
-       $temp['category'] = $c->category;
-       $temp['special'] = $c->special;
-       $temp['status'] = $c->status;
+       $temp = $this->getCategory($c->id);
        array_push($ret,$temp);
    }
   
@@ -1521,10 +1524,28 @@ if($c != null)
        $temp['category'] = $c->category;
        $temp['special'] = $c->special;
        $temp['status'] = $c->status;
+       $temp['date'] = $c->created_at->format("jS F, Y");
+       
        $ret = $temp;
 }                                 
                                      
 return $ret;
+}
+
+function updateCategory($data)
+{
+  $c = Categories::where('id',$data['xf'])->first();
+  if($c != null){
+    $ret = [
+      'name' => isset($data['name']) ? $data['name'] : $c->name,
+      'category' => isset($data['category']) ? $data['category'] : $c->category,
+      'special' => isset($data['special']) ? $data['special'] : $c->special,
+      'status' => isset($data['status']) ? $data['status'] : $c->status
+    ];
+
+    $c->update($ret);
+  }
+
 }
 
 function getFriendlyName($n)

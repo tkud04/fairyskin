@@ -1,9 +1,18 @@
 <?php $__env->startSection('title','Admin Center'); ?>
 
+<?php $__env->startSection('styles'); ?>
+<link rel="stylesheet" href="assets/lib/datatables/css/dataTables.bootstrap.min.css">
+<?php $__env->stopSection(); ?>
+
 <?php $__env->startSection('scripts'); ?>
+<script src="assets/lib/datatables/js/datatables.min.js"></script>
+<script src="assets/lib/datatables/js/datatables-init.js"></script>
 <script>
     $(document).ready(() => {
-        hideElem('#add-categories-div')
+        hideElem([
+            '#add-categories-div','#add-category-loading',
+            '.update-category-status-loading'
+        ])
     })
 </script>
 <?php $__env->stopSection(); ?>
@@ -17,6 +26,7 @@
                 <div class="row">
                     
                     <div class="col-12">
+                        <input type="hidden" id="skf" value="<?php echo e(csrf_token()); ?>"/>
                         <div class="row">
                             <!-- My Account Tab Menu Start -->
                             <div class="col-lg-3 col-12">
@@ -267,28 +277,40 @@
                                         <div id="categories-div">
                                              <h3>Categories <a href="#" id="add-category" class="btn btn-primary">Add Category</a></h3>
                                                 <div class="myaccount-table table-responsive text-center">
-                                                <table class="table table-bordered">
+                                                <table class="table table-bordered fairyskin-table">
                                                     <thead class="thead-light">
                                                     <tr>
-                                                        <th>No</th>
                                                         <th>Name</th>
                                                         <th>Category</th>
-                                                        <th>Date</th>
+                                                        <th>Date Added</th>
                                                         <th>Status</th>
                                                         <th>Action</th>
                                                     </tr>
                                                     </thead>
     
                                                     <tbody>
+                                                    <?php
+                                                     if(count($categories) > 0){
+                                                        foreach($categories as $c){
+                                                            $xf = $c['id'];
+                                                            $mode= $c['status'] === "enabled" ? "Disable" : "Enable";
+                                                            $updateButton = "update-category-status-btn-{$xf}";
+                                                            $updateLoading = "update-category-status-loading-{$xf}";
+                                                    ?>
                                                     <tr>
-                                                        <td>1</td>
-                                                        <td>Mostarizing Oil</td>
-                                                        <td>Aug 22, 2022</td>
-                                                        <td>Pending</td>
-                                                        <td>Pending</td>
-                                                        <td>$45</td>
-                                                        <td><a href="cart.html" class="btn">Remove</a></td>
+                                                        <td><?php echo e($c['name']); ?></td>
+                                                        <td><?php echo e($c['category']); ?></td>
+                                                        <td><?php echo e($c['date']); ?></td>
+                                                        <td><b><?php echo e(strtoupper($c['status'])); ?></b></td>
+                                                        <td>
+                                                            <a href="#" id="<?php echo e($updateButton); ?>" class="btn update-category-status-btn" data-mode="<?php echo e($mode); ?>" data-xf="<?php echo e($xf); ?>"><?php echo e($mode); ?></a>
+                                                            <p id="<?php echo e($updateLoading); ?>" class="update-category-status-loading"> <img src="assets/images/loading.gif" alt="Loading" style="width: 70px; height: 70px;"/> Processing your request</p>
+                                                        </td>
                                                     </tr>
+                                                    <?php
+                                                        }
+                                                    }
+                                                    ?>
                                                     </tbody>
                                                 </table>
                                                </div>
@@ -297,39 +319,48 @@
                                            <div id="add-categories-div" class="account-details-form">
                                                <h3> Add category <a href="#" id="categories-back-button" class="btn btn-primary">Back to Categories</a></h3>
                                                <form action="#">
+                                                  <?php
+                                                   $statuses = [
+                                                    ['label' => 'Enabled', 'value' => 'enabled'],
+                                                    ['label' => 'Disabled', 'value' => 'disabled'],
+                                                   ];
+                                                  ?>
+                                                
                                                     <div class="row">
                                                         <div class="col-lg-6 col-12 mb-30">
-                                                            <input id="first-name" placeholder="First Name" type="text">
+                                                            <div class="form-fild">
+                                                              <p><label>Name <span class="required">*</span></label></p>
+                                                              <input id="add-category-name" name="name" placeholder="Display name" type="text">
+                                                             </div>
                                                         </div>
     
                                                         <div class="col-lg-6 col-12 mb-30">
-                                                            <input id="last-name" placeholder="Last Name" type="text">
+                                                            <div class="form-fild">
+                                                              <p><label>Category <span class="required">*</span></label></p>
+                                                              <input id="add-category-category" name="category" placeholder="Category" type="text" disabled>
+                                                             </div>
+                                                            
                                                         </div>
     
-                                                        <div class="col-12 mb-30">
-                                                            <input id="display-name" placeholder="Display Name" type="text">
+                                                        <div class="col-lg-12 col-12 mb-30">
+                                                            <div class="form-fild">
+                                                              <p><label>Status <span class="required">*</span></label></p>
+                                                              <select id="add-category-status">
+                                                                <option value='none'>Choose an option</option>
+                                                                <?php
+                                                                 foreach($statuses as $s){
+                                                                ?>
+                                                                 <option value="<?php echo e($s['value']); ?>"><?php echo e($s['label']); ?></option>
+                                                                <?php
+                                                                 }
+                                                                ?>
+                                                              </select>
+                                                           </div>
                                                         </div>
-    
-                                                        <div class="col-12 mb-30">
-                                                            <input id="email" placeholder="Email Address" type="email">
-                                                        </div>
-    
-                                                        <div class="col-12 mb-30"><h4>Password change</h4></div>
-    
-                                                        <div class="col-12 mb-30">
-                                                            <input id="current-pwd" placeholder="Current Password" type="password">
-                                                        </div>
-    
-                                                        <div class="col-lg-6 col-12 mb-30">
-                                                            <input id="new-pwd" placeholder="New Password" type="password">
-                                                        </div>
-    
-                                                        <div class="col-lg-6 col-12 mb-30">
-                                                            <input id="confirm-pwd" placeholder="Confirm Password" type="password">
-                                                        </div>
-    
+
                                                         <div class="col-12">
-                                                            <button class="save-change-btn">Save Changes</button>
+                                                            <button class="save-change-btn" id="add-category-btn">Save Changes</button>
+                                                            <p id="add-category-loading"> <img src="assets/images/loading.gif" alt="Loading" style="width: 70px; height: 70px;"/> Processing your request</p>
                                                         </div>
     
                                                     </div>

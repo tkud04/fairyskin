@@ -48,6 +48,8 @@
     <link rel="stylesheet" href="assets/css/helper.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
+    @yield('styles')
+
     <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
     <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
     
