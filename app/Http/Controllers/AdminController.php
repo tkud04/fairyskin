@@ -32,8 +32,7 @@ class AdminController extends Controller {
 	   }
 
 		$signals = $this->helpers->signals;
-        //$stats = $this->helpers->getDashboardStats();
-        $stats = [];
+         $stats = $this->helpers->getDashboardStats();
 		 $courses = [];
 		$categories = $this->helpers->getCategories();
        return view('admin-center',compact(['user','signals','stats','categories']));

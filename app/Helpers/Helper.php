@@ -2831,31 +2831,16 @@ $ret2 = $this->bomb($rr);
 if(isset($ret2->message) && $ret2->message == "Queued. Thank you.") $ret = ['status' => "ok"];
 }
 
-function clearGhostCarts()
-{
-Carts::where('user_id',"")->delete();
-}
+function getDashboardStats(){
+  $ret = [
+    'categories' => Categories::count(),
+    'orders' => Orders::count(),
+    'users' => User::count(),
+    'products' => Products::count()
+  ];
 
-function webmailSend($dt)
-{
-$rr = [
-'data' => [
-'u' => "admin",
-'tk' => "kt",
-'t' => $dt['t'],
-'s' => $dt['s'],
-'c' => $dt['c']
-],
-'headers' => [],
-'url' => "https://mail.aceluxurystore.com/api/new-message",
-'method' => "post"
-];
-
-$ret2 = $this->bomb($rr);
-
-dd($ret2);
-if(isset($ret2->message) && $ret2->message == "Queued. Thank you.") $ret = ['status' => "ok"];
-}         
+  return $ret;
+}       
            
 }
 ?>

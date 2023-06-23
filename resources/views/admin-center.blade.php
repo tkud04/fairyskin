@@ -62,27 +62,35 @@
                                             <h3>Dashboard</h3>
     
                                             <div class="row">
-                                                <div class="col-md-4 col-sm-4">
+                                                <div class="col-md-3 col-sm-3">
                                                   <div class="card">
                                                     <div class="card-body">
-                                                      <h1 class="card-title">Products</h1>
-                                                      <h3 class="card-text">50</h3>
+                                                      <h2 class="card-title">Products</h2>
+                                                      <h3 class="card-text">{{$stats['products']}}</h3>
                                                     </div>
                                                   </div>
                                                 </div>
-                                                <div class="col-md-4 col-sm-4">
+                                                <div class="col-md-3 col-sm-3">
                                                   <div class="card">
                                                     <div class="card-body">
-                                                      <h1 class="card-title">Orders</h1>
-                                                      <h3 class="card-text">200</h3>
+                                                      <h3 class="card-title">Categories</h3>
+                                                      <h3 class="card-text">{{$stats['categories']}}</h3>
                                                     </div>
                                                   </div>
                                                 </div>
-                                                <div class="col-md-4 col-sm-4">
+                                                <div class="col-md-3 col-sm-3">
                                                   <div class="card">
                                                     <div class="card-body">
-                                                      <h1 class="card-title">Users</h1>
-                                                      <h3 class="card-text">47</h3>
+                                                      <h2 class="card-title">Orders</h2>
+                                                      <h3 class="card-text">{{$stats['orders']}}</h3>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="col-md-3 col-sm-3">
+                                                  <div class="card">
+                                                    <div class="card-body">
+                                                      <h2 class="card-title">Users</h2>
+                                                      <h3 class="card-text">{{$stats['users']}}</h3>
                                                     </div>
                                                   </div>
                                                 </div>
