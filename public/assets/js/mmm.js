@@ -147,5 +147,10 @@ $(document).ready(() => {
         BUUPAddRow()
     })
 
+    $('#buup-btn').click(e => {
+        e.preventDefault()
+        BUUP()
+    })
+
 
 })

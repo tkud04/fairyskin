@@ -102,14 +102,14 @@ const requestClan = (req,okCallback,errorCallback) => {
 	   });
 }
 
-function BUUPAddRow(){	
+const BUUPAddRow = () => {	
 	let str = `
-	 <tr id="buup-${buupCounter}" style="margin-bottom: 20px; border-bottom: 1px solid #fff;">
+	 <tr id="buup-${buupCounter}">
 	 <td>Will be generated</td>
-	 <td><input type="text" placeholder="Product name" class="form-control pname"></td>
-	   <td width="40%"><input type="text" placeholder="Product description" class="form-control desc"></td>
-	   <td><input type="number"  placeholder="Price in NGN" class="form-control price"></td>
-	   <td><input type="number"  placeholder="Stock" class="form-control stock"></td>
+	 <td><input type="text" placeholder="Product name"></td>
+	   <td width="40%"><input type="text" placeholder="Product description" class=" desc"></td>
+	   <td><input type="number"  placeholder="Price in NGN" class=" price"></td>
+	   <td><input type="number"  placeholder="Stock" class=" stock"></td>
 	   <td>
 	     <select class="category" >
 		 <option value="none">Select category</option>
@@ -128,7 +128,7 @@ function BUUPAddRow(){
 	    <div>
 		  <div id="buup-${buupCounter}-images-div" class="row">
 	        <div class="col-md-6">
-	         <input type="file" placeholder="Upload image"  data-ic="0" class="form-control images" onchange="readURL(this,'${buupCounter}')" name="buup-${buupCounter}-images[]">
+	         <input type="file" placeholder="Upload image"  data-ic="0" class=" images" onchange="readURL(this,'${buupCounter}')" name="buup-${buupCounter}-images[]">
 		    </div>
 			<div class="col-md-6">
 			    <div class="row">
@@ -144,8 +144,8 @@ function BUUPAddRow(){
 	    </div>
 	   </td>
 	   <td>
-	   <button onclick="BUUPAddImage('${buupCounter}'); return false;" class="btn btn-primary">Add image</button>
-	   <button onclick="BUUPRemoveRow('${buupCounter}'); return false;" class="btn btn-danger">Cancel</button>
+	   <a href="#" style="border: 1px solid #000; padding: 5px; border-radius: 5px; margin-right: 5px;" onclick="BUUPAddImage('${buupCounter}'); return false;">Add image</button>
+	   <a href="#" style="border: 1px solid #000; padding: 5px; border-radius: 5px;" onclick="BUUPRemoveRow('${buupCounter}'); return false;">Cancel</button>
 	  
 	   </td>
 	 </tr>
@@ -154,14 +154,14 @@ function BUUPAddRow(){
 	$('#buup-table').append(str);
 }
 
-function BUUPRemoveRow(ctr){
+const BUUPRemoveRow = (ctr) => {
 	let r = $(`#buup-${ctr}`);
 	console.log(r);
 	r.remove();
 	--buupCounter;
 }
 
-function readURL(input,ctr) {
+const readURL = (input,ctr) => {
   if (input.files && input.files[0]) {
     var reader = new FileReader();
     
@@ -178,14 +178,19 @@ function readURL(input,ctr) {
   }
 }
 
+const showSelectError = (type,err) => {
+	$(`#${type}-select-${err}-error`).fadeIn()
+}
 
-function BUUPAddImage(ctr){
+
+const BUUPAddImage = (ctr) => {
 	let i = $(`#buup-${ctr}-images-div`), imgCount = $(`#buup-${ctr}-images-div input[type=file]`).length;
 	console.log(imgCount);
-	i.append(`<div class="col-md-6">
-	          <input type="file" placeholder="Upload image" data-ic="${imgCount}" onchange="readURL(this,'${ctr}')" class="form-control images" name="buup-${ctr}-images[]">
+	i.append(`<div class="row">
+	          <div class="col-md-12">
+	          <input type="file" placeholder="Upload image" data-ic="${imgCount}" onchange="readURL(this,'${ctr}')" class=" images" name="buup-${ctr}-images[]">
 			  </div>
-			  <div class="col-md-6">
+			  <div class="col-md-12">
 			    <div class="row">
 			      <div class="col-md-7">
 	                <img id="buup-${ctr}-preview-${imgCount}" src="#" alt="preview" style="width: 50px; height: 50px;"/>
@@ -194,11 +199,24 @@ function BUUPAddImage(ctr){
 			        <input type="radio" name="buup-${ctr}-cover" value="${imgCount}">
 			      </div>
 			    </div>
+			    </div>
 			  </div>
 	  `);
 }
 
-function BUUP(){
+const hideElems = (cls) => {
+	switch(cls){
+		case 'bup':
+		  hideElem(['#bup-select-product-error','#bup-select-qty-error'])
+		break;
+		
+		case 'buup':
+		  hideElem(['#buup-select-product-error','#buup-select-qty-error'])
+		break;
+	}
+}
+
+const BUUP = () => {
 	hideElems('buup');
 	console.log("BUUPlist length: ",buupCounter);
 	
@@ -264,7 +282,7 @@ function BUUP(){
   }
 }
 
-function buupFire(){
+const buupFire = () => {
 	 let bc = localStorage.getItem("buupCtr");
 	     if(!bc) bc = "0";
 		 
@@ -350,7 +368,7 @@ function buupFire(){
 }
 
 
-function displayProductSelect(product){
+const displayProductSelect = (product) => {
 	return `
 	<option value="${product.sku}">
 	<div class="row">

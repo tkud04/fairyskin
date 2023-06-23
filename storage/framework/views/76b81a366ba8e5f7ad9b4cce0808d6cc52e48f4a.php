@@ -305,12 +305,12 @@
                                 <tr>
                                     <th>SKU</th>
                                     <th>Product name</th>
-                                    <th width="30%">Description</th>
+                                    <th>Description</th>
                                     <th>Price(&#8358;)</th>
                                     <th>Current stock</th>
                                     <th>Category</th>
 									<th>Status</th>
-                                    <th width="20%">Images</th>
+                                    <th>Images</th>
                                     <th>Actions</th>                                                                                                      
                                 </tr>
                             </thead>
@@ -334,7 +334,7 @@
                              <h3 id="buup-select-product-error" class="label label-danger text-uppercase buup-hide mr-5 mb-5">Please add a new product</h3>
                              <h3 id="buup-select-validation-error" class="label label-danger text-uppercase buup-hide">All fields are required</h3>
                              <br>
-                             <button onclick="BUUP(); return false;" class="btn btn-default btn-block btn-clean" style="margin-top: 5px;">Submit</button>
+                             <button id="buup-btn" class="btn btn-default btn-block btn-clean" style="margin-top: 5px;">Submit</button>
                             </div>
                             <div id="buup-result-box">
                              <h4 id="buup-loading"> <img src="/assets/images/loading.gif" class="img img-fluid" alt="Loading" width="50" height="50"></h4> Uploading products<br>
