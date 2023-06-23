@@ -142,5 +142,10 @@ $(document).ready(() => {
         showElem('#products-div')
     })
 
+    $('#buup-add-row-btn').click(e => {
+        e.preventDefault()
+        BUUPAddRow()
+    })
+
 
 })

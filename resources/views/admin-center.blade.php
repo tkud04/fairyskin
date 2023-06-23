@@ -10,12 +10,31 @@
 <script src="assets/lib/datatables/js/datatables.min.js"></script>
 <script src="assets/lib/datatables/js/datatables-init.js"></script>
 <script>
+    /*
+      $('#buup-select-product-error').hide();
+		  $('#buup-select-qty-error').hide();
+    */
+   let buupCounter = 0, categories = []
     $(document).ready(() => {
         hideElem([
             '#add-categories-div','#add-category-loading',
             '.update-category-status-loading', '#add-products-div',
-            '#add-product-loading'
+            '#add-product-loading','.buup-hide',
+            '#buup-select-product-error','#buup-select-qty-error',
+            '#buup-result-box','#buup-finish-box',
+            '#buup-select-validation-error'
         ])
+        localStorage.clear()
+
+        <?php 
+          foreach($categories as $cc){ 
+           if($cc['status'] == "enabled"){
+        ?>
+	      categories.push("{{$cc['category']}}")
+	    <?php
+           }
+        }
+        ?>
     })
 </script>
 @stop
@@ -280,53 +299,53 @@
                                           </div>
                                            <div id="add-products-div">
                                            <h3> Add product <a href="#" id="products-back-button" class="btn btn-primary">Back to Products</a></h3>
-                                               <form action="#">
-                                                  <?php
-                                                   $statuses = [
-                                                    ['label' => 'Enabled', 'value' => 'enabled'],
-                                                    ['label' => 'Disabled', 'value' => 'disabled'],
-                                                   ];
-                                                  ?>
-                                                
-                                                    <div class="row">
-                                                        <div class="col-lg-6 col-12 mb-30">
-                                                            <div class="form-fild">
-                                                              <p><label>Name <span class="required">*</span></label></p>
-                                                              <input id="add-category-name" name="name" placeholder="Display name" type="text">
-                                                             </div>
-                                                        </div>
-    
-                                                        <div class="col-lg-6 col-12 mb-30">
-                                                            <div class="form-fild">
-                                                              <p><label>Category <span class="required">*</span></label></p>
-                                                              <input id="add-category-category" name="category" placeholder="Category" type="text" disabled>
-                                                             </div>
-                                                            
-                                                        </div>
-    
-                                                        <div class="col-lg-12 col-12 mb-30">
-                                                            <div class="form-fild">
-                                                              <p><label>Status <span class="required">*</span></label></p>
-                                                              <select id="add-category-status">
-                                                                <option value='none'>Choose an option</option>
-                                                                <?php
-                                                                 foreach($statuses as $s){
-                                                                ?>
-                                                                 <option value="{{$s['value']}}">{{$s['label']}}</option>
-                                                                <?php
-                                                                 }
-                                                                ?>
-                                                              </select>
-                                                           </div>
-                                                        </div>
+                                           <form id="buup-form" enctype="multipart/form-data">
+					                         <div class="myaccount-table table-responsive text-center">
+					     
+                        <table id="buup-table" cellpadding="0" cellspacing="0" width="100%" data-idl="3" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>SKU</th>
+                                    <th>Product name</th>
+                                    <th width="30%">Description</th>
+                                    <th>Price(&#8358;)</th>
+                                    <th>Current stock</th>
+                                    <th>Category</th>
+									<th>Status</th>
+                                    <th width="20%">Images</th>
+                                    <th>Actions</th>                                                                                                      
+                                </tr>
+                            </thead>
+                            <tbody>
+							   							   
+                            </tbody>
+                        </table>                                        
 
-                                                        <div class="col-12">
-                                                            <button class="save-change-btn" id="add-category-btn">Save Changes</button>
-                                                            <p id="add-category-loading"> <img src="assets/images/loading.gif" alt="Loading" style="width: 70px; height: 70px;"/> Processing your request</p>
-                                                        </div>
-    
-                                                    </div>
-                                                </form>
+                    </div><br>
+					
+					
+					  </form>
+                      <div class="hp-info hp-simple pull-left">
+					      
+							
+                          <input type="hidden" id="buup-dt" name="dt">
+                         
+                            <div class="hp-sm" id="button-box">
+                             <a id="buup-add-row-btn" href="#" class="btn btn-primary" style="margin-top: 5px;">Add new product</a>
+                        
+                             <h3 id="buup-select-product-error" class="label label-danger text-uppercase buup-hide mr-5 mb-5">Please add a new product</h3>
+                             <h3 id="buup-select-validation-error" class="label label-danger text-uppercase buup-hide">All fields are required</h3>
+                             <br>
+                             <button onclick="BUUP(); return false;" class="btn btn-default btn-block btn-clean" style="margin-top: 5px;">Submit</button>
+                            </div>
+                            <div id="buup-result-box">
+                             <h4 id="buup-loading"> <img src="/assets/images/loading.gif" class="img img-fluid" alt="Loading" width="50" height="50"></h4> Uploading products<br>
+                             <h5>Products uploaded: <span class="label label-success" id="result-ctr">0</span></h5>
+                            </div>
+                            <div id="buup-finish-box">
+                             <h4>Upload complete!</h4>
+                            </div>                                
+                   </div>
                                            </div>
 
                                         </div>
