@@ -130,5 +130,17 @@ $(document).ready(() => {
         
     })
 
+    $('#add-product').click(e => {
+        e.preventDefault()
+        hideElem('#products-div')
+        showElem('#add-products-div')
+    })
+
+    $('#products-back-button').click(e => {
+        e.preventDefault()
+        hideElem('#add-products-div')
+        showElem('#products-div')
+    })
+
 
 })

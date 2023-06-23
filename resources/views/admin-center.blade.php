@@ -13,7 +13,8 @@
     $(document).ready(() => {
         hideElem([
             '#add-categories-div','#add-category-loading',
-            '.update-category-status-loading'
+            '.update-category-status-loading', '#add-products-div',
+            '#add-product-loading'
         ])
     })
 </script>
@@ -235,9 +236,10 @@
                                     <!-- Single Tab Content Start -->
                                     <div class="tab-pane fade" id="products" role="tabpanel">
                                         <div class="myaccount-content">
-                                        <h3>Products <a href="{{url('buup')}}" class="btn btn-primary">Add Products</a></h3>
+                                        <div id="products-div">
+                                          <h3>Products <a href="#" id="add-product" class="btn btn-primary">Add Product</a></h3>
                                                 <div class="myaccount-table table-responsive text-center">
-                                                <table class="table table-bordered">
+                                                <table class="table table-bordered fairyskin-table">
                                                     <thead class="thead-light">
                                                     <tr>
                                                         <th>No</th>
@@ -250,33 +252,83 @@
                                                     </thead>
     
                                                     <tbody>
+                                                    <?php
+                                                     if(count($products) > 0){
+                                                        foreach($products as $p){
+                                                            $xf = $p['id'];
+                                                            $mode= $p['status'] === "enabled" ? "Disable" : "Enable";
+                                                            $updateButton = "update-category-status-btn-{$xf}";
+                                                            $updateLoading = "update-category-status-loading-{$xf}";
+                                                    ?>
                                                     <tr>
-                                                        <td>1</td>
-                                                        <td>Mostarizing Oil</td>
-                                                        <td>Aug 22, 2022</td>
-                                                        <td>Pending</td>
-                                                        <td>$45</td>
-                                                        <td><a href="cart.html" class="btn">View</a></td>
+                                                        <td>{{$p['name']}}</td>
+                                                        <td>{{$p['category']}}</td>
+                                                        <td>{{$p['date']}}</td>
+                                                        <td><b>{{strtoupper($p['status'])}}</b></td>
+                                                        <td>
+                                                            <a href="#" id="{{$updateButton}}" class="btn update-category-status-btn" data-mode="{{$mode}}" data-xf="{{$xf}}">{{$mode}}</a>
+                                                            <p id="{{$updateLoading}}" class="update-category-status-loading"> <img src="assets/images/loading.gif" alt="Loading" style="width: 70px; height: 70px;"/> Processing your request</p>
+                                                        </td>
                                                     </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td>Katopeno Altuni</td>
-                                                        <td>July 22, 2022</td>
-                                                        <td>Approved</td>
-                                                        <td>$100</td>
-                                                        <td><a href="cart.html" class="btn">View</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>3</td>
-                                                        <td>Murikhete Paris</td>
-                                                        <td>June 12, 2022</td>
-                                                        <td>On Hold</td>
-                                                        <td>$99</td>
-                                                        <td><a href="cart.html" class="btn">View</a></td>
-                                                    </tr>
+                                                    <?php
+                                                        }
+                                                    }
+                                                    ?>
                                                     </tbody>
                                                 </table>
                                             </div>
+                                          </div>
+                                           <div id="add-products-div">
+                                           <h3> Add product <a href="#" id="products-back-button" class="btn btn-primary">Back to Products</a></h3>
+                                               <form action="#">
+                                                  <?php
+                                                   $statuses = [
+                                                    ['label' => 'Enabled', 'value' => 'enabled'],
+                                                    ['label' => 'Disabled', 'value' => 'disabled'],
+                                                   ];
+                                                  ?>
+                                                
+                                                    <div class="row">
+                                                        <div class="col-lg-6 col-12 mb-30">
+                                                            <div class="form-fild">
+                                                              <p><label>Name <span class="required">*</span></label></p>
+                                                              <input id="add-category-name" name="name" placeholder="Display name" type="text">
+                                                             </div>
+                                                        </div>
+    
+                                                        <div class="col-lg-6 col-12 mb-30">
+                                                            <div class="form-fild">
+                                                              <p><label>Category <span class="required">*</span></label></p>
+                                                              <input id="add-category-category" name="category" placeholder="Category" type="text" disabled>
+                                                             </div>
+                                                            
+                                                        </div>
+    
+                                                        <div class="col-lg-12 col-12 mb-30">
+                                                            <div class="form-fild">
+                                                              <p><label>Status <span class="required">*</span></label></p>
+                                                              <select id="add-category-status">
+                                                                <option value='none'>Choose an option</option>
+                                                                <?php
+                                                                 foreach($statuses as $s){
+                                                                ?>
+                                                                 <option value="{{$s['value']}}">{{$s['label']}}</option>
+                                                                <?php
+                                                                 }
+                                                                ?>
+                                                              </select>
+                                                           </div>
+                                                        </div>
+
+                                                        <div class="col-12">
+                                                            <button class="save-change-btn" id="add-category-btn">Save Changes</button>
+                                                            <p id="add-category-loading"> <img src="assets/images/loading.gif" alt="Loading" style="width: 70px; height: 70px;"/> Processing your request</p>
+                                                        </div>
+    
+                                                    </div>
+                                                </form>
+                                           </div>
+
                                         </div>
                                     </div>
                                     <!-- Single Tab Content End -->
