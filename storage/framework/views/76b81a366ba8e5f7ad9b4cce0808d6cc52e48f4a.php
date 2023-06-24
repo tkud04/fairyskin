@@ -328,7 +328,7 @@
 							
                           <input type="hidden" id="buup-dt" name="dt">
                          
-                            <div class="hp-sm" id="button-box">
+                            <div class="hp-sm" id="buup-button-box">
                              <a id="buup-add-row-btn" href="#" class="btn btn-primary" style="margin-top: 5px;">Add new product</a>
                         
                              <h3 id="buup-select-product-error" class="label label-danger text-uppercase buup-hide mr-5 mb-5">Please add a new product</h3>
@@ -338,7 +338,7 @@
                             </div>
                             <div id="buup-result-box">
                              <h4 id="buup-loading"> <img src="/assets/images/loading.gif" class="img img-fluid" alt="Loading" width="50" height="50"></h4> Uploading products<br>
-                             <h5>Products uploaded: <span class="label label-success" id="result-ctr">0</span></h5>
+                             <h5>Products uploaded: <span class="label label-success" id="buup-result-ctr">0</span></h5>
                             </div>
                             <div id="buup-finish-box">
                              <h4>Upload complete!</h4>

@@ -33,6 +33,7 @@ use App\Models\Guests;
 use App\Models\OrderReviews;
 use \Cloudinary\Api;
 use \Cloudinary\Api\Response;
+use Cloudinary\Api\Upload\UploadApi;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Exception\RequestException;
@@ -568,9 +569,9 @@ return $temp;
 function createShippingDetails($data)
 {
 $zip = isset($data['zip']) ? $data['zip'] : "";
-$ret = ShippingDetails::create(['user_id' => $data['user_id'],                                                                                                          
+$ret = ShippingDetails::create(['user_id' => $data['user_id'],      
                                      'company' => $data['company'], 
-                                     'zipcode' => $zip,                                                      
+                                     'zipcode' => $zip,    
                                      'address' => $data['address'], 
                                      'city' => $data['city'], 
                                      'state' => $data['state'], 
@@ -743,7 +744,7 @@ $ss = ShippingDetails::where('user_id', $xf)->first();
 
 if(is_null($ss))
 {
-   $shippingDetails =  ShippingDetails::create(['user_id' => $user->id,                                                                                                          
+   $shippingDetails =  ShippingDetails::create(['user_id' => $user->id,      
                                      'company' => $company, 
                                      'address' => $data['address'],
                                     'city' => $data['city'],
@@ -863,7 +864,7 @@ $uid = "";
 if($data['type'] == "single") $uid = $data['sku'];
 else if($data['type'] == "category") $uid = $data['category'];
 
-$ret = Discounts::create(['uid' => $uid,                                                                                                          
+$ret = Discounts::create(['uid' => $uid,      
                                      'code' => $data['code'], 
                                      'discount_type' => $data['discount_type'], 
                                      'discount' => $data['discount'], 
@@ -1051,6 +1052,18 @@ if($otherImages != null)
 }
 
 return $ret;
+}
+
+function uploadCloudImage($path){
+  // Upload the image
+  $upload = new UploadApi();
+
+  $ret = $upload->upload($path/*, [
+    'public_id' => 'flower_sample',
+    'use_filename' => TRUE,
+    'overwrite' => TRUE
+  ]*/);
+  return $ret;
 }
 
 function getCloudinaryImages($dt)
@@ -2632,7 +2645,7 @@ return $ret;
 function giveDiscount($user,$dt)
 {
 $ret = $this->createDiscount([
-'id' => $user->id,                                                                                                          
+'id' => $user->id,      
 'discount_type' => $dt['type'], 
 'discount' => $dt['amount'], 
 'status' => "enabled",	   
@@ -2831,6 +2844,9 @@ $ret2 = $this->bomb($rr);
 if(isset($ret2->message) && $ret2->message == "Queued. Thank you.") $ret = ['status' => "ok"];
 }
 
+/*******************************************
+ADMIN HELPERS
+********************************************/
 function getDashboardStats(){
   $ret = [
     'categories' => Categories::count(),
@@ -2840,7 +2856,58 @@ function getDashboardStats(){
   ];
 
   return $ret;
-}       
+}
+
+function createProduct($data){
+  $sku = $this->generateSKU();
+  
+  $ret = Products::create([
+    'name' => $data['name'],      
+    'sku' => $sku, 
+    'qty' => $data['qty'],     
+    'added_by' => $data['user_id'],
+    'status' => "enabled", 
+  ]);
+    
+                 $data['sku'] = $ret->sku;                         
+                $pd = $this->createProductData($data);
+				$ird = "none";
+				$irdc = 0;
+				if(isset($data['ird']) && count($data['ird']) > 0)
+				{
+					foreach($data['ird'] as $i)
+                    {
+                    	$this->createProductImage(['sku' => $data['sku'], 'url' => $i['public_id'], 'cover' => $i['ci'], 'irdc' => "1"]);
+                    }
+				}
+                
+                return $ret;
+           }
+           function createProductData($data)
+           {
+           	$in_stock = (isset($data["in_stock"])) ? "new" : $data["in_stock"];
+           
+           	$ret = ProductData::create(['sku' => $data['sku'],      
+    'description' => $data['description'], 
+    'amount' => $data['amount'],    
+    'category' => $data['category'],    
+    'in_stock' => $in_stock                                              
+    ]);
+    
+                return $ret;
+           }
+         
+           function createProductImage($data)
+           {
+			   $cover = isset($data['cover']) ? $data['cover'] : "no";
+           	$ret = ProductImages::create(['sku' => $data['sku'],      
+    'url' => $data['url'], 
+    'irdc' => $data['irdc'], 
+    'cover' => $cover, 
+    ]);
+    
+                return $ret;
+           }
            
 }
 ?>

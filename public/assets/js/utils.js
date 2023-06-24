@@ -76,6 +76,7 @@ const requestClan = (req,okCallback,errorCallback) => {
 	//fetch request
 	fetch(req)
 	   .then(response => {
+		  console.log(response);
 		   if(response.status === 200){
 			   //console.log(response);
 			   
@@ -106,7 +107,7 @@ const BUUPAddRow = () => {
 	let str = `
 	 <tr id="buup-${buupCounter}">
 	 <td>Will be generated</td>
-	 <td><input type="text" placeholder="Product name"></td>
+	 <td><input type="text" placeholder="Product name" class="pname"></td>
 	   <td width="40%"><input type="text" placeholder="Product description" class=" desc"></td>
 	   <td><input type="number"  placeholder="Price in NGN" class=" price"></td>
 	   <td><input type="number"  placeholder="Stock" class=" stock"></td>
@@ -211,21 +212,21 @@ const hideElems = (cls) => {
 		break;
 		
 		case 'buup':
-		  hideElem(['#buup-select-product-error','#buup-select-qty-error'])
+		  hideElem(['#buup-select-product-error','#buup-select-validation-error','#buup-select-qty-error'])
 		break;
 	}
 }
 
 const BUUP = () => {
-	hideElems('buup');
-	console.log("BUUPlist length: ",buupCounter);
+	hideElems('buup')
+	console.log("BUUPlist length: ",buupCounter)
 	
 	
 	if(buupCounter < 1){
-		showSelectError('buup','product');
+		showSelectError('buup','product')
 	}
 	else{
-	ret = [], hasUnfilledQty = false; err = [];
+	ret = [], hasUnfilledQty = false; err = []
 
 	for(let i = 0; i < buupCounter; i++){
 		let BUPitem = `#buup-${i}`;
@@ -234,9 +235,9 @@ const BUUP = () => {
 		price = $(`${BUPitem} input.price`).val();
 		stock = $(`${BUPitem} input.stock`).val();
 		category = $(`${BUPitem} select.category`).val();
-		status = $(`${BUPitem} select.status`).val();
+		productStatus = $(`${BUPitem} select.status`).val();
 		
-			if(pname != "" && desc != "" && parseInt(price) > 0 && parseInt(stock) > 0 && category != "none" && status != "none"){
+			if(pname !== "" && desc !== "" && parseInt(price) > 0 && parseInt(stock) > 0 && category !== "none" && productStatus !== "none"){
 				let temp = {
 					id: BUPitem,
 					data:{
@@ -245,18 +246,18 @@ const BUUP = () => {
 					  price: price,
 					  stock: stock,
 					  category: category,
-					  status: status,
+					  status: productStatus,
 					}
 				};
 				BUUPlist.push(temp);
 			}
 			else{
-				if(pname == "") err.push("pname");
-				if(desc == "") err.push("desc");
+				if(pname === "") err.push("pname");
+				if(desc === "") err.push("desc");
 				if( parseInt(price) < 1) err.push("price");
 				if( parseInt(stock) < 1) err.push("stock");
-				if(category == "none") err.push("category");
-				if(status == "none") err.push("status");
+				if(category === "none") err.push("category");
+				if(productStatus === "none") err.push("status");
 				hasUnfilledQty = true;
 			}		
 	}
@@ -273,11 +274,11 @@ const BUUP = () => {
 		$('#buup-form').submit();
 		
 		 **/
-		 $('#button-box').hide();
-		 $('#result-box').fadeIn();
+		 hideElem('#buup-button-box')
+		 showElem('#buup-result-box')
 		 
-		 buupFire();
-		 console.log(localStorage);
+		 buupFire()
+		 console.log(localStorage)
 	   }
   }
 }
@@ -285,10 +286,10 @@ const BUUP = () => {
 const buupFire = () => {
 	 let bc = localStorage.getItem("buupCtr");
 	     if(!bc) bc = "0";
-		 
+		 console.log('BUUPlist: ',BUUPlist)
 		 
 		
-		 let fd = new FormData();
+		 let fd = new FormData()
 		 fd.append("dt",JSON.stringify(BUUPlist[bc]));
 		 imgs = []; covers = [];
 		
@@ -310,61 +311,39 @@ const buupFire = () => {
 		 fd.append(cover.attr("name"),cover.val());
 		 
 		 
-		 fd.append("_token",$('#tk').val());
+		 fd.append("_token",$('#skf').val());
 		 console.log("fd: ",fd);
          
 	
 	//create request
 	const req = new Request("buup",{method: 'POST', body: fd});
 	//console.log(req);
-	
-	
-	//fetch request
-	fetch(req)
-	   .then(response => {
-		   if(response.status === 200){
-			   //console.log(response);
-			   
-			   return response.json();
-		   }
-		   else{
-			   return {status: "error:", message: "Network error"};
-		   }
-	   })
-	   .catch(error => {
-		    alert("Failed to upload product: " + error);			
-	   })
-	   .then(res => {
-		   console.log(res);
-          bc = parseInt(bc) + 1;
-			     localStorage.setItem("buupCtr",bc);
-				 
-		   if(res.status == "ok"){
-                  $('#result-ctr').html(bc);
+	const onSuccess = () => {
+		console.log(res);
+		bc = parseInt(bc) + 1
+		localStorage.setItem("buupCtr",bc)
+
+		$('#result-ctr').html(bc)
 				  
-				  setTimeout(function(){
-			       if(bc >= buupCounter){
-					  $('#result-box').hide();
-					  $("#finish-box").fadeIn();
-					  window.location = "buup";
-				  }
-                  else{
-					 buupFire();
-				  }				  
-		         },4000);
-		   }
-		   else if(res.status == "error"){
-				     alert("An unknown network error has occured. Please refresh the app or try again later");	
-                     $('#result-box').hide();
-					  $("#finish-box").fadeIn();					 
-		   }
-		   
-		    
-		   
-		  
-	   }).catch(error => {
-		    alert("Failed to send message: " + error);			
-	   });
+		setTimeout(function(){
+		 if(bc >= buupCounter){
+			hideElem('#buup-result-box')
+			showElem("#buup-finish-box")
+			window.location = "admin-center"
+		}
+		else{
+		   buupFire()
+		}				  
+	   },4000)
+	}
+
+	const onError = () => {
+      displayError('Failed to upload product due to an issue, please try again')
+	  hideElem(['#buup-result-box','#buup-finish-box'])
+	  showElem("#buup-button-box")
+	}
+
+	requestClan(req,onSuccess,onError)
 }
 
 

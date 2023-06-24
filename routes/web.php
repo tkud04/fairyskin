@@ -101,3 +101,4 @@ Route::get('cps', [MainController::class,'getCpsTest']);
 Route::get('admin-center', [AdminController::class,'getDashboard']);
 Route::post('add-category', [AdminController::class,'postAddCategory']);
 Route::get('update-category-status', [AdminController::class,'getUpdateCategoryStatus']);
+Route::post('buup', [AdminController::class,'postBulkUploadProducts']);
