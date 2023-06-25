@@ -227,6 +227,39 @@ class AdminController extends Controller {
          }        
     }
 
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+    public function getRemoveProduct(Request $request)
+    {
+	   $user = $this->helpers->getAuthenticatedAdmin();
+
+       if($user === null){
+		return json_encode(['status' => 'error','message' => 'Unauthorized']);
+	   }
+		
+        $req = $request->all();
+        //dd($req);
+        
+        $validator = Validator::make($req, [
+		    'xf' => 'required',
+         ]);
+         
+         if($validator->fails())
+         {
+			return json_encode(['status' => 'error','message' => 'Validation']);
+         }
+         
+         else
+         {
+			$this->helpers->removeProduct($req['xf']);
+	        
+			return json_encode(['status' => 'ok']);
+         }        
+    }
+
 	   
     
     /**

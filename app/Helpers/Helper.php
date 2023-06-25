@@ -1067,11 +1067,15 @@ function uploadCloudImage($path){
   // Upload the image
   $upload = new UploadApi();
 
-  $ret = $upload->upload($path/*, [
-    'public_id' => 'flower_sample',
-    'use_filename' => TRUE,
-    'overwrite' => TRUE
-  ]*/);
+  $ret = $upload->upload($path);
+  return $ret;
+}
+
+function destroyCloudImage($public_id){
+  // Upload the image
+  $upload = new UploadApi();
+
+  $ret = $upload->destroy($public_id);
   return $ret;
 }
 
@@ -2947,6 +2951,25 @@ function updateProduct($data)
 
     $p->update($ret);
     $pd->update($pdRet);
+  }
+
+}
+
+function removeProduct($xf){
+  $p = Products::where('sku',$xf)->first();
+  if($p != null){
+    $pd = ProductData::where('sku',$xf)->first();
+    $imgs = ProductImages::where('sku',$xf)->get();
+    
+    if(count($imgs) > 0){
+      foreach($imgs as $i){
+        $this->destroyCloudImage($i->url);
+        $i->delete();
+      }
+    }
+  
+    $pd->delete();
+    $p->delete();
   }
 
 }

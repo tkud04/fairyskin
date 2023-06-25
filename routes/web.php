@@ -103,3 +103,4 @@ Route::post('add-category', [AdminController::class,'postAddCategory']);
 Route::get('update-category-status', [AdminController::class,'getUpdateCategoryStatus']);
 Route::post('buup', [AdminController::class,'postBulkUploadProducts']);
 Route::post('update-product', [AdminController::class,'postUpdateProduct']);
+Route::get('remove-product', [AdminController::class,'getRemoveProduct']);

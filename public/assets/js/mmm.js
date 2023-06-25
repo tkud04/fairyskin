@@ -163,7 +163,7 @@ $(document).ready(() => {
           hideElem(`#update-product-status-btn-${xf}`)
           showElem(`#product-loading-${xf}`)
 
-         const u = `update-product?xf=${xf}&mode=${mode}`
+         const u = `update-product`
          
          const fd = new FormData()
          fd.append("_token",$('#skf').val())
@@ -186,6 +186,36 @@ $(document).ready(() => {
             method: 'post',
             body: fd
           });
+
+          requestClan(req,onSuccess,onError)
+        
+    })
+
+    $('.remove-product-btn').click(e => {
+        e.preventDefault()
+        let elem = e.target
+
+        const xf = $(elem).attr('data-xf')
+        
+        
+          hideElem(`#remove-product-btn-${xf}`)
+          showElem(`#product-loading-${xf}`)
+
+         const u = `remove-product?xf=${xf}`
+
+          const onSuccess = () => {
+            displaySuccess('Product removed!')
+            window.location = 'admin-center'
+          }
+
+          const onError = () => {
+            displayError('Failed to remove product, please try again')
+            hideElem(`#product-loading-${xf}`)
+            showElem(`#remove-product-btn-${xf}`)
+          }
+
+
+          const req = new Request(u);
 
           requestClan(req,onSuccess,onError)
         
