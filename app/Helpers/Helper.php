@@ -2858,6 +2858,11 @@ function getDashboardStats(){
   return $ret;
 }
 
+function generateSKU(){
+ $ret = "FRSK".rand(1,9999)."LX".rand(1,999);
+ return $ret;
+}
+
 function createProduct($data){
   $sku = $this->generateSKU();
   
@@ -2866,48 +2871,49 @@ function createProduct($data){
     'sku' => $sku, 
     'qty' => $data['qty'],     
     'added_by' => $data['user_id'],
+    'in_catalog' => "yes",
     'status' => "enabled", 
   ]);
     
-                 $data['sku'] = $ret->sku;                         
-                $pd = $this->createProductData($data);
-				$ird = "none";
-				$irdc = 0;
-				if(isset($data['ird']) && count($data['ird']) > 0)
-				{
-					foreach($data['ird'] as $i)
-                    {
-                    	$this->createProductImage(['sku' => $data['sku'], 'url' => $i['public_id'], 'cover' => $i['ci'], 'irdc' => "1"]);
-                    }
-				}
+  $data['sku'] = $ret->sku;                         
+  $pd = $this->createProductData($data);
+	$ird = "none";
+	$irdc = 0;
+				
+  if(isset($data['ird']) && count($data['ird']) > 0){
+		foreach($data['ird'] as $i){
+      $this->createProductImage(['sku' => $data['sku'], 'url' => $i['public_id'], 'cover' => $i['ci'], 'irdc' => "1"]);
+    }
+	}
                 
-                return $ret;
-           }
-           function createProductData($data)
-           {
-           	$in_stock = (isset($data["in_stock"])) ? "new" : $data["in_stock"];
+  return $ret;
+}
+
+function createProductData($data){
+  $in_stock = (isset($data["in_stock"])) ? "new" : $data["in_stock"];
            
-           	$ret = ProductData::create(['sku' => $data['sku'],      
+  $ret = ProductData::create([
+    'sku' => $data['sku'],      
     'description' => $data['description'], 
     'amount' => $data['amount'],    
     'category' => $data['category'],    
     'in_stock' => $in_stock                                              
-    ]);
+  ]);
     
-                return $ret;
-           }
+  return $ret;
+}
          
-           function createProductImage($data)
-           {
-			   $cover = isset($data['cover']) ? $data['cover'] : "no";
-           	$ret = ProductImages::create(['sku' => $data['sku'],      
+function createProductImage($data){
+	$cover = isset($data['cover']) ? $data['cover'] : "no";
+  $ret = ProductImages::create([
+    'sku' => $data['sku'],      
     'url' => $data['url'], 
     'irdc' => $data['irdc'], 
     'cover' => $cover, 
-    ]);
+  ]);
     
-                return $ret;
-           }
+  return $ret;
+}
            
 }
 ?>

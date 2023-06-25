@@ -76,7 +76,6 @@ const requestClan = (req,okCallback,errorCallback) => {
 	//fetch request
 	fetch(req)
 	   .then(response => {
-		  console.log(response);
 		   if(response.status === 200){
 			   //console.log(response);
 			   
@@ -90,16 +89,19 @@ const requestClan = (req,okCallback,errorCallback) => {
 		    displayError("Failed to process request: " + error);			
 	   })
 	   .then(res => {
-		   console.log('API response: ',res)
-          	 
+		  console.log(typeof res)	
+		  if(typeof res !== 'undefined'){ 
 		   if(res.status === "ok"){
               typeof okCallback === 'function' && okCallback()
 		   }
 		   else{
 			typeof errorCallback === 'function' && errorCallback()    					 
 		   }
+		}
 	   }).catch(error => {
-		    alert("Failed to fetch: " + error);			
+		console.log('error: ',error)
+		    displayError("Failed to fetch: " + error)
+			typeof errorCallback === 'function' && errorCallback()  		
 	   });
 }
 
@@ -319,7 +321,6 @@ const buupFire = () => {
 	const req = new Request("buup",{method: 'POST', body: fd});
 	//console.log(req);
 	const onSuccess = () => {
-		console.log(res);
 		bc = parseInt(bc) + 1
 		localStorage.setItem("buupCtr",bc)
 
