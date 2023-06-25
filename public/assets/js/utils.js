@@ -314,7 +314,6 @@ const buupFire = () => {
 		 
 		 
 		 fd.append("_token",$('#skf').val());
-		 console.log("fd: ",fd);
          
 	
 	//create request

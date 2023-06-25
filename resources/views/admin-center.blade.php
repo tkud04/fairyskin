@@ -22,7 +22,7 @@
             '#add-product-loading','.buup-hide',
             '#buup-select-product-error','#buup-select-qty-error',
             '#buup-result-box','#buup-finish-box',
-            '#buup-select-validation-error'
+            '#buup-select-validation-error','.product-loading'
         ])
         localStorage.clear()
 
@@ -261,32 +261,74 @@
                                                 <table class="table table-bordered fairyskin-table">
                                                     <thead class="thead-light">
                                                     <tr>
-                                                        <th>No</th>
-                                                        <th>Name</th>
-                                                        <th>Date</th>
+                                                        <th>Product Details</th>
+                                                        <th>Inventory Details</th>
                                                         <th>Status</th>
-                                                        <th>Total</th>
                                                         <th>Action</th>
                                                     </tr>
                                                     </thead>
     
                                                     <tbody>
                                                     <?php
+                                                    /** fggg h                   array:9 [▼
+    "id" => 1
+    "name" => "Test 1"
+    "shortname" => "Test 1"
+    "sku" => "FRSK5184LX516"
+    "qty" => "1"
+    "status" => "enabled"
+    "discounts" => []
+    "pd" => array:6 [▼
+      "id" => 1
+      "sku" => "FRSK5184LX516"
+      "amount" => "1000"
+      "description" => "This is a test product"
+      "in_stock" => "new"
+      "category" => "face"
+    ]
+    "imggs" => array:1 [▼
+      0 => "https://res.cloudinary.com/dirlfq4la/image/upload/v1687687517/mdpt7r9zv9e6fxpxztlh"
+    ]
+  ]**/
                                                      if(count($products) > 0){
                                                         foreach($products as $p){
-                                                            $xf = $p['id'];
+                                                            $sku = $p['sku'];
                                                             $mode= $p['status'] === "enabled" ? "Disable" : "Enable";
-                                                            $updateButton = "update-category-status-btn-{$xf}";
-                                                            $updateLoading = "update-category-status-loading-{$xf}";
+                                                            $updateButton = "update-product-status-btn-{$sku}";
+                                                            $removeButton = "remove-product-btn-{$sku}";
+                                                            $productLoading = "product-loading-{$sku}";
+                                                            $imgs = $p['imggs'];
+                                                            $pd = $p['pd'];
                                                     ?>
                                                     <tr>
-                                                        <td>{{$p['name']}}</td>
-                                                        <td>{{$p['category']}}</td>
-                                                        <td>{{$p['date']}}</td>
+                                                        <td>
+                                                            <div class="row">
+                                                                <div class="col-md-7">
+                                                                    <p>SKU: <b>{{$sku}}</b></p>
+                                                                    <p>Name: <b>{{$p['name']}}</b></p>
+                                                                    <p>Price: <b>&#8358;{{number_format($pd['amount'],2)}}</b></p>
+                                                                    <p>Description: <em>{{$pd['description']}}</em></p>
+                                                                </div>
+                                                                <div class="col-md-5">
+                                                                    <img src="{{$imgs[0]}}" style="width: 70px; heoght: 70px; border-radius: 35px;" alt="{{$p['name']}}"/>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <p>Category: <b>{{ucwords($pd['category'])}}</b></p>
+                                                                    <p>Stock status: <b>{{ucwords($pd['in_stock'])}}</b></p>
+                                                                    <p>Quantity: <b>{{$p['qty']}}</b></p>
+                                                                    <p>Date added: <b>{{$p['date']}}</b></p>
+                                                                </div>
+                                                            </div>
+                                                        </td>
                                                         <td><b>{{strtoupper($p['status'])}}</b></td>
                                                         <td>
-                                                            <a href="#" id="{{$updateButton}}" class="btn update-category-status-btn" data-mode="{{$mode}}" data-xf="{{$xf}}">{{$mode}}</a>
-                                                            <p id="{{$updateLoading}}" class="update-category-status-loading"> <img src="assets/images/loading.gif" alt="Loading" style="width: 70px; height: 70px;"/> Processing your request</p>
+                                                            <a href="#" id="{{$updateButton}}" class="update-product-status-btn" data-mode="{{$mode}}" data-xf="{{$sku}}">{{$mode}}</a>
+                                                            <a href="#" id="{{$removeButton}}" class="remove-product-btn" data-xf="{{$sku}}">Remove</a>
+                                                            <p id="{{$productLoading}}" class="product-loading"> <img src="assets/images/loading.gif" alt="Loading" style="width: 70px; height: 70px;"/> Processing</p>
                                                         </td>
                                                     </tr>
                                                     <?php

@@ -20,7 +20,7 @@
             '#add-product-loading','.buup-hide',
             '#buup-select-product-error','#buup-select-qty-error',
             '#buup-result-box','#buup-finish-box',
-            '#buup-select-validation-error'
+            '#buup-select-validation-error','.product-loading'
         ])
         localStorage.clear()
 
@@ -259,32 +259,74 @@
                                                 <table class="table table-bordered fairyskin-table">
                                                     <thead class="thead-light">
                                                     <tr>
-                                                        <th>No</th>
-                                                        <th>Name</th>
-                                                        <th>Date</th>
+                                                        <th>Product Details</th>
+                                                        <th>Inventory Details</th>
                                                         <th>Status</th>
-                                                        <th>Total</th>
                                                         <th>Action</th>
                                                     </tr>
                                                     </thead>
     
                                                     <tbody>
                                                     <?php
+                                                    /** fggg h                   array:9 [▼
+    "id" => 1
+    "name" => "Test 1"
+    "shortname" => "Test 1"
+    "sku" => "FRSK5184LX516"
+    "qty" => "1"
+    "status" => "enabled"
+    "discounts" => []
+    "pd" => array:6 [▼
+      "id" => 1
+      "sku" => "FRSK5184LX516"
+      "amount" => "1000"
+      "description" => "This is a test product"
+      "in_stock" => "new"
+      "category" => "face"
+    ]
+    "imggs" => array:1 [▼
+      0 => "https://res.cloudinary.com/dirlfq4la/image/upload/v1687687517/mdpt7r9zv9e6fxpxztlh"
+    ]
+  ]**/
                                                      if(count($products) > 0){
                                                         foreach($products as $p){
-                                                            $xf = $p['id'];
+                                                            $sku = $p['sku'];
                                                             $mode= $p['status'] === "enabled" ? "Disable" : "Enable";
-                                                            $updateButton = "update-category-status-btn-{$xf}";
-                                                            $updateLoading = "update-category-status-loading-{$xf}";
+                                                            $updateButton = "update-product-status-btn-{$sku}";
+                                                            $removeButton = "remove-product-btn-{$sku}";
+                                                            $productLoading = "product-loading-{$sku}";
+                                                            $imgs = $p['imggs'];
+                                                            $pd = $p['pd'];
                                                     ?>
                                                     <tr>
-                                                        <td><?php echo e($p['name']); ?></td>
-                                                        <td><?php echo e($p['category']); ?></td>
-                                                        <td><?php echo e($p['date']); ?></td>
+                                                        <td>
+                                                            <div class="row">
+                                                                <div class="col-md-7">
+                                                                    <p>SKU: <b><?php echo e($sku); ?></b></p>
+                                                                    <p>Name: <b><?php echo e($p['name']); ?></b></p>
+                                                                    <p>Price: <b>&#8358;<?php echo e(number_format($pd['amount'],2)); ?></b></p>
+                                                                    <p>Description: <em><?php echo e($pd['description']); ?></em></p>
+                                                                </div>
+                                                                <div class="col-md-5">
+                                                                    <img src="<?php echo e($imgs[0]); ?>" style="width: 70px; heoght: 70px; border-radius: 35px;" alt="<?php echo e($p['name']); ?>"/>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <p>Category: <b><?php echo e(ucwords($pd['category'])); ?></b></p>
+                                                                    <p>Stock status: <b><?php echo e(ucwords($pd['in_stock'])); ?></b></p>
+                                                                    <p>Quantity: <b><?php echo e($p['qty']); ?></b></p>
+                                                                    <p>Date added: <b><?php echo e($p['date']); ?></b></p>
+                                                                </div>
+                                                            </div>
+                                                        </td>
                                                         <td><b><?php echo e(strtoupper($p['status'])); ?></b></td>
                                                         <td>
-                                                            <a href="#" id="<?php echo e($updateButton); ?>" class="btn update-category-status-btn" data-mode="<?php echo e($mode); ?>" data-xf="<?php echo e($xf); ?>"><?php echo e($mode); ?></a>
-                                                            <p id="<?php echo e($updateLoading); ?>" class="update-category-status-loading"> <img src="assets/images/loading.gif" alt="Loading" style="width: 70px; height: 70px;"/> Processing your request</p>
+                                                            <a href="#" id="<?php echo e($updateButton); ?>" class="update-product-status-btn" data-mode="<?php echo e($mode); ?>" data-xf="<?php echo e($sku); ?>"><?php echo e($mode); ?></a>
+                                                            <a href="#" id="<?php echo e($removeButton); ?>" class="remove-product-btn" data-xf="<?php echo e($sku); ?>">Remove</a>
+                                                            <p id="<?php echo e($productLoading); ?>" class="product-loading"> <img src="assets/images/loading.gif" alt="Loading" style="width: 70px; height: 70px;"/> Processing</p>
                                                         </td>
                                                     </tr>
                                                     <?php

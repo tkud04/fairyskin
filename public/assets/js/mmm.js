@@ -152,5 +152,44 @@ $(document).ready(() => {
         BUUP()
     })
 
+    $('.update-product-status-btn').click(e => {
+        e.preventDefault()
+        let elem = e.target
+
+        const mode = $(elem).attr('data-mode'),
+              xf = $(elem).attr('data-xf')
+        
+        
+          hideElem(`#update-product-status-btn-${xf}`)
+          showElem(`#product-loading-${xf}`)
+
+         const u = `update-product?xf=${xf}&mode=${mode}`
+         
+         const fd = new FormData()
+         fd.append("_token",$('#skf').val())
+         fd.append('mode',mode)
+         fd.append('xf',xf)
+
+          const onSuccess = () => {
+            displaySuccess('Product updated!')
+            window.location = 'admin-center'
+          }
+
+          const onError = () => {
+            displayError('Failed to update product, please try again')
+            hideElem(`#product-loading-${xf}`)
+            showElem(`#update-product-status-btn-${xf}`)
+          }
+
+
+          const req = new Request(u,{
+            method: 'post',
+            body: fd
+          });
+
+          requestClan(req,onSuccess,onError)
+        
+    })
+
 
 })

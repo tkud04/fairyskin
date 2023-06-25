@@ -773,17 +773,25 @@ $products = Products::where('qty','>',"0")
                   ->where('status',"enabled")->get();
 **/				
 #dd($rr);			   
+$products = null;
 
+if($c === "all"){
+  $products = Products::cursor()->filter(function ($p) {
+    return ($p->id > 0);
+ });
+}
+else{
 $products = Products::cursor()->filter(function ($p) {
-                                           return ($p->qty > 0 && $p->status == "enabled");
-                                         });
+   return ($p->qty > 0 && $p->status === "enabled");
+});
+}
 
 
 $products = $products->sortByDesc('created_at');				   
 
 
 
-if($products != null)
+if($products !== null)
 {
  foreach($products as $p)
  {
@@ -801,12 +809,12 @@ $ret = [];
 $pds = ProductData::where('category',$cat)->get();
 $pds = $pds->sortByDesc('created_at');	
 
-if($pds != null)
+if($pds !== null)
 {
  foreach($pds as $p)
  {
      $pp = $this->getProduct($p->sku);
-     if($pp['status'] == "enabled" && $pp['qty'] > 0) array_push($ret,$pp);
+     if($pp['status'] === "enabled" && $pp['qty'] > 0) array_push($ret,$pp);
  }
 }                         
                  
@@ -851,6 +859,7 @@ if($product != null)
  $temp['pd'] = $this->getProductData($product->sku);
  $imgs = $this->getImages($product->sku);
  $temp['imggs'] = $this->getCloudinaryImages($imgs);
+ $temp['date'] = $product->created_at->format("jS F, Y");
  $ret = $temp;
 }                         
                                      
@@ -1084,7 +1093,7 @@ else
       for($x = 0; $x < count($dt); $x++)
         {
             $ird = $dt[$x]['url'];
-           $imgg = "https://res.cloudinary.com/dahkzo84h/image/upload/v1585236664/".$ird;
+           $imgg = "https://res.cloudinary.com/dirlfq4la/image/upload/v1687687517/".$ird;
            array_push($ret,$imgg); 
         }
    }
@@ -1101,7 +1110,7 @@ if(is_null($dt)) { $ret = "img/no-image.png"; }
 
 else
 {
-   $ret = "https://res.cloudinary.com/dahkzo84h/image/upload/v1585236664/".$dt;
+   $ret = "https://res.cloudinary.com/dirlfq4la/image/upload/v1687687517/".$dt;
 }
 
 return $ret;
@@ -2915,5 +2924,32 @@ function createProductImage($data){
   return $ret;
 }
            
+
+function updateProduct($data)
+{
+  $p = Products::where('sku',$data['xf'])->first();
+  if($p != null){
+    $pd = ProductData::where('sku',$data['xf'])->first();
+
+    $ret = [
+      'name' => isset($data['name']) ? $data['name'] : $p->name,
+      'qty' => isset($data['qty']) ? $data['qty'] : $p->qty,
+      'in_catalog' => isset($data['in_catalog']) ? $data['in_catalog'] : $p->in_catalog,
+      'status' => isset($data['status']) ? $data['status'] : $p->status
+    ];
+
+    $pdRet = [
+      'description' => isset($data['description']) ? $data['description'] : $pd->description,
+      'amount' => isset($data['amount']) ? $data['amount'] : $pd->amount,
+      'in_stock' => isset($data['in_stock']) ? $data['in_stock'] : $pd->in_stock,
+      'category' => isset($data['category']) ? $data['category'] : $pd->category,
+    ];
+
+    $p->update($ret);
+    $pd->update($pdRet);
+  }
+
+}
+
 }
 ?>
