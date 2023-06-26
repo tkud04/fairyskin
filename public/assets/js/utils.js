@@ -361,3 +361,30 @@ const displayProductSelect = (product) => {
 	</option>
 	`;
 }
+
+const quickViewProduct = (data) => {
+	console.log('data: ',data)
+    const myModal = new bootstrap.Modal('#quick-view-modal-container', {
+		keyboard: false
+	  })
+ 
+	  for(let img of data.imgs){
+		$('#qvp-lg-images').append(`
+		 <div class="lg-image">
+		  <img src="${img}" alt="">
+	     </div>
+		`)
+
+		$('#qvp-sm-images').append(`
+		 <div class="lg-image">
+		  <img src="${img}" alt="" style="width: 117px; height: 151px;">
+	     </div>
+		`)
+
+		$('#qvp-name').html(data.name)
+		$('#qvp-description').html(data.pd.description)
+		$('#qvp-price').html(`&#8358;${data.pd.formattedAmount}`)
+		$('#qvp-category').html(data.pd.category.toUpperCase())
+	  }
+	myModal.toggle()
+}

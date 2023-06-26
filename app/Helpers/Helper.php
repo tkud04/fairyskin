@@ -985,6 +985,7 @@ if($pd != null)
  $temp['id'] = $pd->id;
  $temp['sku'] = $pd->sku;
  $temp['amount'] = $pd->amount;
+ $temp['formattedAmount'] = number_format($pd->amount,2);
  $temp['description'] = $pd->description;
  $temp['in_stock'] = $pd->in_stock;
  $temp['category'] = $pd->category;

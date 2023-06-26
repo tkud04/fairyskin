@@ -96,6 +96,9 @@ class MainController extends Controller {
 				'rating' => '4'
 			]
 		 ];
+		 $products = $this->helpers->getProducts();
+		 $topDeals = $products;
+		 shuffle($topDeals);
 		$plugins = $this->helpers->getPlugins();
 		$tabProducts = [];
 		$posts = [];

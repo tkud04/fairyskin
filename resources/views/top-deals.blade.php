@@ -1,4 +1,5 @@
 <!--Deal Of Product section start-->
+
 <div class="deal-product-section section pt-70 pt-lg-50 pt-md-40 pt-sm-30 pt-xs-20">
             <div class="container">
                 <div class="row">
@@ -32,8 +33,51 @@
                         }}
                         ]'>
                          <?php
-                         foreach($products as $p){
+                         foreach($products as $product){
+                            /* 
+		  " => 2
+    "name" => "Moroccan Face Soap"
+    "shortname" => "Moroccan Fac.."
+    "sku" => "FRSK7391LX942"
+    "qty" => "10"
+    "status" => "enabled"
+    "discounts" => []
+    "pd" => array:6 [▶]
+    "imggs" => array:1 [▶]
+    "date" => "25th June, 2023"
+  ]
+		 */
+                        $p = [
+                         'url' => url('product')."?sku={$product['sku']}",
+                         'name' => $product['name'],
+                         'sku' => $product['sku'],
+                         'img' => $product['imggs'][0],
+                         'rating' => 4,
+                         'amount' => $product['pd']['amount'],
+                         'description' => $product['pd']['description'],
+                         'cart-url' => url('add-to-cart')."?sku={$product['sku']}"
+                        ];
+
+                        $imgs = json_encode($product['imggs']);
+                        $pd = json_encode($product['pd']);
+                        
+
+                        
+$productData = <<<EOD
+ {
+url: "{$p['url']}",
+name: "{$p['name']}",
+imgs: {$imgs},
+rating: 4,
+pd: {$pd},
+cartUrl: "{$p['cart-url']}",
+sku: "{$p['sku']}"
+}
+EOD;
+                        
                          ?>
+                        
+
                             <!-- Single Deal Product Start -->
                             <div class="single-deal-product">
                                 <div class="row">
@@ -62,7 +106,7 @@
                                                 <div class="product-action d-flex justify-content-between">
                                                     <a class="product-btn" href="#">Add to Cart</a>
                                                     <ul class="d-flex">
-                                                        <li><a href="#quick-view-modal-container" data-bs-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="#" onclick="quickViewProduct({{$productData}}); return false;" title="Quick View"><i class="fa fa-eye"></i></a></li>
                                                         <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
                                                         <li><a href="#"><i class="fa fa-exchange"></i></a></li>
                                                     </ul>

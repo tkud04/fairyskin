@@ -492,7 +492,7 @@
                                 <div class="col-xl-5 col-lg-6 col-md-6 mb-xxs-25 mb-xs-25 mb-sm-25">
                                     <!-- Product Details Left -->
                                     <div class="product-details-left">
-                                        <div class="product-details-images slider-lg-image-1 tf-element-carousel" data-slick-options='{
+                                        <div id="qvp-lg-images" class="product-details-images slider-lg-image-1 tf-element-carousel" data-slick-options='{
                                             "slidesToShow": 1,
                                             "slidesToScroll": 1,
                                             "infinite": true,
@@ -501,23 +501,9 @@
                                             "prevArrow": {"buttonClass": "slick-btn slick-prev", "iconClass": "fa fa-angle-left" },
                                             "nextArrow": {"buttonClass": "slick-btn slick-next", "iconClass": "fa fa-angle-right" }
                                             }'>
-                                            <div class="lg-image">
-                                                <img src="./assets/images/product/large-product/l-product-1.jpg" alt="">
-                                            </div>
-                                            <div class="lg-image">
-                                                <img src="./assets/images/product/large-product/l-product-2.jpg" alt="">
-                                            </div>
-                                            <div class="lg-image">
-                                                <img src="./assets/images/product/large-product/l-product-3.jpg" alt="">
-                                            </div>
-                                            <div class="lg-image">
-                                                <img src="./assets/images/product/large-product/l-product-4.jpg" alt="">
-                                            </div>
-                                            <div class="lg-image">
-                                                <img src="./assets/images/product/large-product/l-product-5.jpg" alt="">
-                                            </div>
+                                            
                                         </div>
-                                        <div class="product-details-thumbs slider-thumbs-1 tf-element-carousel" data-slick-options='{
+                                        <div id="qvp-sm-images" class="product-details-thumbs slider-thumbs-1 tf-element-carousel" data-slick-options='{
                                             "slidesToShow": 4,
                                             "slidesToScroll": 1,
                                             "infinite": true,
@@ -537,11 +523,7 @@
                                                 "slidesToShow": 2
                                             }}
                                         ]'>										
-                                            <div class="sm-image"><img src="./assets/images/product/small-product/s-product-1.jpg" alt="product image thumb"></div>
-                                            <div class="sm-image"><img src="./assets/images/product/small-product/s-product-2.jpg" alt="product image thumb"></div>
-                                            <div class="sm-image"><img src="./assets/images/product/small-product/s-product-3.jpg" alt="product image thumb"></div>
-                                            <div class="sm-image"><img src="./assets/images/product/small-product/s-product-4.jpg" alt="product image thumb"></div>
-                                            <div class="sm-image"><img src="./assets/images/product/small-product/s-product-5.jpg" alt="product image thumb"></div>
+                                           
                                         </div>
                                     </div>
                                     <!--Product Details Left -->
@@ -551,14 +533,14 @@
                                     
                                     <!--Product Details Content Start-->
                                     <div class="product-details-content">
-                                        <!--Product Nav Start-->
+                                        <!--Product Nav Start--
                                         <div class="product-nav">
                                             <a href="#"><i class="fa fa-angle-left"></i></a>
                                             <a href="#"><i class="fa fa-angle-right"></i></a>
                                         </div>
-                                        <!--Product Nav End-->
-                                        <h2>White Shave Brux</h2>
-                                        <div class="single-product-reviews">
+                                        --Product Nav End-->
+                                        <h2 id="qvp-name"></h2>
+                                        <div id="qvp-rating" class="single-product-reviews">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -567,11 +549,11 @@
                                             <a class="review-link" href="#">(1 customer review)</a>
                                         </div>
                                         <div class="single-product-price">
-                                            <span class="price new-price">$66.00</span>
-                                            <span class="regular-price">$77.00</span>
+                                           <!-- <span class="price regular-price">$66.00</span> -->
+                                            <span id="qvp-price" class="new-price"></span>
                                         </div>
                                         <div class="product-description">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus</p>
+                                            <p id="qvp-description"></p>
                                         </div>
                                         <div class="single-product-quantity">
                                             <form class="add-quantity" action="#">
@@ -589,9 +571,8 @@
                                         </div>
                                         <div class="product-meta">
                                             <span class="posted-in">
-                                                    Categories: 
-                                                    <a href="#">Accessories</a>,
-                                                    <a href="#">Electronics</a>
+                                                    Category: 
+                                                    <a href="#" id="qvp-category"></a>
                                                 </span>
                                         </div>
                                         <div class="single-product-sharing">

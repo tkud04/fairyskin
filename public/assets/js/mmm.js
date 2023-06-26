@@ -221,5 +221,9 @@ $(document).ready(() => {
         
     })
 
+    $('#toggle-product-quick-view-modal').click(e => {
+        e.preventDefault()
+    })
+
 
 })
