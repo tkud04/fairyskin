@@ -821,7 +821,7 @@ if($pds !== null)
 return $ret;
 }
 
-function getProductsByType($t)
+function getProductsByTag($t)
 {
 //WORK NEEDS TO BE DONE HERE
 $ret = [];
@@ -833,7 +833,7 @@ if($pds != null)
  foreach($pds as $p)
  {
      $pp = $this->getProduct($p->sku);
-     if($pp['status'] == "enabled" && $pp['qty'] > 0) array_push($ret,$pp);
+     if($pp['status'] == "enabled" && $pp['qty'] > 0 && $p->tag === $t) array_push($ret,$pp);
  }
 }                         
                  
@@ -2857,6 +2857,7 @@ $ret2 = $this->bomb($rr);
 #dd($ret2);
 if(isset($ret2->message) && $ret2->message == "Queued. Thank you.") $ret = ['status' => "ok"];
 }
+
 
 /*******************************************
 ADMIN HELPERS

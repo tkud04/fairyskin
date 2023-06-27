@@ -388,3 +388,12 @@ const quickViewProduct = (data) => {
 	  }
 	myModal.toggle()
 }
+
+const clearProductModal = () => {
+	$('#qvp-lg-images').html('')
+	$('#qvp-sm-images').html('')
+    $('#qvp-name').html('')
+		$('#qvp-description').html('')
+		$('#qvp-price').html('')
+		$('#qvp-category').html('')
+}

@@ -225,5 +225,11 @@ $(document).ready(() => {
         e.preventDefault()
     })
 
+    $('#quick-view-modal-container').on('hidden.bs.modal',e => {
+        e.preventDefault()
+       clearProductModal()
+    })
+
+
 
 })

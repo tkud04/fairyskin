@@ -78,29 +78,17 @@ class MainController extends Controller {
 			'right' => ['img' => 'assets/images/banner/h1-banner-3.png', 'url' => '#'],
 		 ];
 
-		 $topDeals = [
-			[
-				'img' => 'assets/images/deal-product/product-1.jpg',
-				'name' => 'Product 1',
-				'url' => '#',
-				'amount' => '15000',
-				'description' => 'This is a test description for the product. Tjis text is just to fillup space to see how everything looks.',
-				'rating' => '3'
-			],
-			[
-				'img' => 'assets/images/deal-product/product-2.jpg',
-				'name' => 'Product 2',
-				'url' => '#',
-				'amount' => '15000',
-				'description' => 'This is a test description for the product. Tjis text is just to fillup space to see how everything looks.',
-				'rating' => '4'
-			]
-		 ];
+		
 		 $products = $this->helpers->getProducts();
 		 $topDeals = $products;
 		 shuffle($topDeals);
 		$plugins = $this->helpers->getPlugins();
-		$tabProducts = [];
+		$tabProducts = [
+			'new' => $this->helpers->getProductsByTag('new'),
+			'sale' => $this->helpers->getProductsByTag('sale'),
+			'featured' => $this->helpers->getProductsByTag('featured'),
+		];
+
 		$posts = [];
 		#dd($hasUnpaidOrders);
 		

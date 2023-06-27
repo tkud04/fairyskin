@@ -34,19 +34,7 @@
                         ]'>
                          <?php
                          foreach($products as $product){
-                            /* 
-		  " => 2
-    "name" => "Moroccan Face Soap"
-    "shortname" => "Moroccan Fac.."
-    "sku" => "FRSK7391LX942"
-    "qty" => "10"
-    "status" => "enabled"
-    "discounts" => []
-    "pd" => array:6 [▶]
-    "imggs" => array:1 [▶]
-    "date" => "25th June, 2023"
-  ]
-		 */
+
                         $p = [
                          'url' => url('product')."?sku={$product['sku']}",
                          'name' => $product['name'],
