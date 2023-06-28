@@ -88,14 +88,18 @@ class MainController extends Controller {
 			'sale' => $this->helpers->getProductsByTag('sale'),
 			'featured' => $this->helpers->getProductsByTag('featured'),
 		];
+		$productGroups = $this->helpers->getProductGroups(['top-rated','sale','trending'],3);
 
 		$posts = [];
-		#dd($hasUnpaidOrders);
 		
 		shuffle($ads);
 		shuffle($banners);
 		$ad = count($ads) < 1 ? "images/inner-ad-2.png" : $ads[0]['img'];
-    	return view("index",compact(['user','cart','c','banners','homeSlides','topDeals','tabProducts','posts','hasUnpaidOrders','bs','na','ad','signals','plugins']));
+    	return view("index",compact([
+			'user','cart','c','banners','homeSlides',
+			'topDeals','tabProducts','posts','hasUnpaidOrders',
+			'productGroups','ad','signals','plugins'
+		]));
     }
 	
 	/**

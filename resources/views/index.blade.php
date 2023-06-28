@@ -78,7 +78,7 @@
         </div>
         <!--Call To Action section end-->
 
-        @include('products-slide',['products' => $tabProducts])
+        @include('products-slide',['productGroups' => $productGroups])
 
         @include('home-blog',['posts' => $posts])
 @stop

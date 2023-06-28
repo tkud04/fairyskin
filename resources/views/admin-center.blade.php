@@ -14,7 +14,7 @@
       $('#buup-select-product-error').hide();
 		  $('#buup-select-qty-error').hide();
     */
-   let buupCounter = 0, categories = []
+   let buupCounter = 0, categories = [], tags = ['trending,top-rated,sale']
     $(document).ready(() => {
         hideElem([
             '#add-categories-div','#add-category-loading',
@@ -294,6 +294,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-12">
                                                                     <p>Category: <b>{{ucwords($pd['category'])}}</b></p>
+                                                                    <p>Tag: <b>{{ucwords($pd['tag'])}}</b></p>
                                                                     <p>Stock status: <b>{{ucwords($pd['in_stock'])}}</b></p>
                                                                     <p>Quantity: <b>{{$p['qty']}}</b></p>
                                                                     <p>Date added: <b>{{$p['date']}}</b></p>
@@ -329,6 +330,7 @@
                                     <th>Price(&#8358;)</th>
                                     <th>Current stock</th>
                                     <th>Category</th>
+                                    <th>Tag</th>
 									<th>Status</th>
                                     <th>Images</th>
                                     <th>Actions</th>                                                                                                      

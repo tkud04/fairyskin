@@ -155,6 +155,7 @@ class AdminController extends Controller {
 				
 				$rr = [
 				  'category' => $p->category,
+				  'tag' => $p->tag,
                              'description' => $p->desc,                        
                              'name' => $p->name,                        
                              'in_stock' => $p->status,                        

@@ -76,7 +76,7 @@
         </div>
         <!--Call To Action section end-->
 
-        <?php echo $__env->make('products-slide',['products' => $tabProducts], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        <?php echo $__env->make('products-slide',['productGroups' => $productGroups], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
         <?php echo $__env->make('home-blog',['posts' => $posts], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php $__env->stopSection(); ?>

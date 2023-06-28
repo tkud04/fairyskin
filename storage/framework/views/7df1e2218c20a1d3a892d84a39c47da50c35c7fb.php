@@ -34,122 +34,46 @@
                         "autoplay": true
                         }}
                         ]'>
+                        <?php
+                         foreach($productGroups['top-rated'] as $pg){
+
+                        ?>
                         <div class="list-product-group">
+                            <?php
+                            for($i = 0; $i < count($pg); $i++){
+                                $product = $pg[$i];
+
+                                $p = [
+                                    'url' => url('product')."?sku={$product['sku']}",
+                                    'name' => $product['name'],
+                                    'sku' => $product['sku'],
+                                    'img' => $product['imggs'][0],
+                                    'rating' => 4,
+                                    'amount' => $product['pd']['amount'],
+                                    'description' => $product['pd']['description'],
+                                    'cart-url' => url('add-to-cart')."?sku={$product['sku']}"
+                                   ];
+                            ?>
                             <!-- Single List Product Start -->
                             <div class="single-list-product">
                                 <div class="product-image">
-                                    <a href="single-product.html"><img
-                                            src="./assets/images/product/product-1.jpg" alt=""></a>
+                                    <a href="<?php echo e($p['url']); ?>">
+                                        <img src="<?php echo e($p['img']); ?>" alt="<?php echo e($p['name']); ?>"/>
+                                    </a>
                                 </div>
                                 <div class="product-content">
-                                    <h3><a href="single-product.html">Aftershave Lotion </a></h3>
-                                    <h4 class="price"><span class="new">€110.00</span><span
-                                            class="old">€130.00</span></h4>
+                                    <h3><a href="single-product.html"><?php echo e($p['name']); ?></a></h3>
+                                    <h4 class="price"><span class="new">&#8358;<?php echo e(number_format($p['amount'],2)); ?></span></h4>
                                 </div>
                             </div>
                             <!-- Single List Product End -->
-                            <!-- Single List Product Start -->
-                            <div class="single-list-product">
-                                <div class="product-image">
-                                    <a href="single-product.html"><img
-                                            src="./assets/images/product/product-2.jpg" alt=""></a>
-                                </div>
-                                <div class="product-content">
-                                    <h3><a href="single-product.html">White Shave Bruh </a></h3>
-                                    <h4 class="price"><span class="new">€130.00</span></h4>
-                                </div>
-                            </div>
-                            <!-- Single List Product End -->
-                            <!-- Single List Product Start -->
-                            <div class="single-list-product">
-                                <div class="product-image">
-                                    <a href="single-product.html"><img
-                                            src="./assets/images/product/product-3.jpg" alt=""></a>
-                                </div>
-                                <div class="product-content">
-                                    <h3><a href="single-product.html">White Shave Brux </a></h3>
-                                    <h4 class="price"><span class="new">€130.00</span></h4>
-                                </div>
-                            </div>
-                            <!-- Single List Product End -->
+                            <?php
+                            }
+                            ?>
                         </div>
-                        <div class="list-product-group">
-                            <!-- Single List Product Start -->
-                            <div class="single-list-product">
-                                <div class="product-image">
-                                    <a href="single-product.html"><img
-                                            src="./assets/images/product/product-4.jpg" alt=""></a>
-                                </div>
-                                <div class="product-content">
-                                    <h3><a href="single-product.html">Aftershave Savlon </a></h3>
-                                    <h4 class="price"><span class="new">€70.00</span></h4>
-                                </div>
-                            </div>
-                            <!-- Single List Product End -->
-                            <!-- Single List Product Start -->
-                            <div class="single-list-product">
-                                <div class="product-image">
-                                    <a href="single-product.html"><img
-                                            src="./assets/images/product/product-5.jpg" alt=""></a>
-                                </div>
-                                <div class="product-content">
-                                    <h3><a href="single-product.html">Brass Acces1 </a></h3>
-                                    <h4 class="price"><span class="new">€150.00</span><span
-                                            class="old">€187.00</span></h4>
-                                </div>
-                            </div>
-                            <!-- Single List Product End -->
-                            <!-- Single List Product Start -->
-                            <div class="single-list-product">
-                                <div class="product-image">
-                                    <a href="single-product.html"><img
-                                            src="./assets/images/product/product-6.jpg" alt=""></a>
-                                </div>
-                                <div class="product-content">
-                                    <h3><a href="single-product.html">Brass Accessory </a></h3>
-                                    <h4 class="price"><span class="new">€187.00</span></h4>
-                                </div>
-                            </div>
-                            <!-- Single List Product End -->
-                        </div>
-                        <div class="list-product-group">
-                            <!-- Single List Product Start -->
-                            <div class="single-list-product">
-                                <div class="product-image">
-                                    <a href="single-product.html"><img
-                                            src="./assets/images/product/product-7.jpg" alt=""></a>
-                                </div>
-                                <div class="product-content">
-                                    <h3><a href="single-product.html">White Shave Bruw</a></h3>
-                                    <h4 class="price"><span class="new">€125.00</span></h4>
-                                </div>
-                            </div>
-                            <!-- Single List Product End -->
-                            <!-- Single List Product Start -->
-                            <div class="single-list-product">
-                                <div class="product-image">
-                                    <a href="single-product.html"><img
-                                            src="./assets/images/product/product-8.jpg" alt=""></a>
-                                </div>
-                                <div class="product-content">
-                                    <h3><a href="single-product.html">White Shave Brum </a></h3>
-                                    <h4 class="price"><span class="new">€60.00</span></h4>
-                                </div>
-                            </div>
-                            <!-- Single List Product End -->
-                            <!-- Single List Product Start -->
-                            <div class="single-list-product">
-                                <div class="product-image">
-                                    <a href="single-product.html"><img
-                                            src="./assets/images/product/product-9.jpg" alt=""></a>
-                                </div>
-                                <div class="product-content">
-                                    <h3><a href="single-product.html">White Shave Brun </a></h3>
-                                    <h4 class="price"><span class="new">€53.00</span></h4>
-                                </div>
-                            </div>
-                            <!-- Single List Product End -->
-                        </div>
+                        <?php
+                         }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -159,7 +83,7 @@
                 <div class="col-12">
                     <!--List Product Section Title Start-->
                     <div class="list-product-section-title mb-30">
-                        <h2>On-sale</h2>
+                        <h2>On sale</h2>
                     </div>
                     <!--List Product Section Title End-->
                 </div>
@@ -185,122 +109,46 @@
                         "autoplay": true
                         }}
                         ]'>
+                        <?php
+                         foreach($productGroups['sale'] as $pg){
+
+                        ?>
                         <div class="list-product-group">
+                            <?php
+                            for($i = 0; $i < count($pg); $i++){
+                                $product = $pg[$i];
+
+                                $p = [
+                                    'url' => url('product')."?sku={$product['sku']}",
+                                    'name' => $product['name'],
+                                    'sku' => $product['sku'],
+                                    'img' => $product['imggs'][0],
+                                    'rating' => 4,
+                                    'amount' => $product['pd']['amount'],
+                                    'description' => $product['pd']['description'],
+                                    'cart-url' => url('add-to-cart')."?sku={$product['sku']}"
+                                   ];
+                            ?>
                             <!-- Single List Product Start -->
                             <div class="single-list-product">
                                 <div class="product-image">
-                                    <a href="single-product.html"><img
-                                            src="./assets/images/product/product-7.jpg" alt=""></a>
+                                    <a href="<?php echo e($p['url']); ?>">
+                                        <img src="<?php echo e($p['img']); ?>" alt="<?php echo e($p['name']); ?>"/>
+                                    </a>
                                 </div>
                                 <div class="product-content">
-                                    <h3><a href="single-product.html">White Shave Bruw</a></h3>
-                                    <h4 class="price"><span class="new">€125.00</span></h4>
+                                    <h3><a href="single-product.html"><?php echo e($p['name']); ?></a></h3>
+                                    <h4 class="price"><span class="new">&#8358;<?php echo e(number_format($p['amount'],2)); ?></span></h4>
                                 </div>
                             </div>
                             <!-- Single List Product End -->
-                            <!-- Single List Product Start -->
-                            <div class="single-list-product">
-                                <div class="product-image">
-                                    <a href="single-product.html"><img
-                                            src="./assets/images/product/product-8.jpg" alt=""></a>
-                                </div>
-                                <div class="product-content">
-                                    <h3><a href="single-product.html">White Shave Brum </a></h3>
-                                    <h4 class="price"><span class="new">€60.00</span></h4>
-                                </div>
-                            </div>
-                            <!-- Single List Product End -->
-                            <!-- Single List Product Start -->
-                            <div class="single-list-product">
-                                <div class="product-image">
-                                    <a href="single-product.html"><img
-                                            src="./assets/images/product/product-9.jpg" alt=""></a>
-                                </div>
-                                <div class="product-content">
-                                    <h3><a href="single-product.html">White Shave Brun </a></h3>
-                                    <h4 class="price"><span class="new">€53.00</span></h4>
-                                </div>
-                            </div>
-                            <!-- Single List Product End -->
+                            <?php
+                            }
+                            ?>
                         </div>
-                        <div class="list-product-group">
-                            <!-- Single List Product Start -->
-                            <div class="single-list-product">
-                                <div class="product-image">
-                                    <a href="single-product.html"><img
-                                            src="./assets/images/product/product-1.jpg" alt=""></a>
-                                </div>
-                                <div class="product-content">
-                                    <h3><a href="single-product.html">Aftershave Lotion </a></h3>
-                                    <h4 class="price"><span class="new">€110.00</span><span
-                                            class="old">€130.00</span></h4>
-                                </div>
-                            </div>
-                            <!-- Single List Product End -->
-                            <!-- Single List Product Start -->
-                            <div class="single-list-product">
-                                <div class="product-image">
-                                    <a href="single-product.html"><img
-                                            src="./assets/images/product/product-2.jpg" alt=""></a>
-                                </div>
-                                <div class="product-content">
-                                    <h3><a href="single-product.html">White Shave Bruh </a></h3>
-                                    <h4 class="price"><span class="new">€130.00</span></h4>
-                                </div>
-                            </div>
-                            <!-- Single List Product End -->
-                            <!-- Single List Product Start -->
-                            <div class="single-list-product">
-                                <div class="product-image">
-                                    <a href="single-product.html"><img
-                                            src="./assets/images/product/product-3.jpg" alt=""></a>
-                                </div>
-                                <div class="product-content">
-                                    <h3><a href="single-product.html">White Shave Brux </a></h3>
-                                    <h4 class="price"><span class="new">€130.00</span></h4>
-                                </div>
-                            </div>
-                            <!-- Single List Product End -->
-                        </div>
-                        <div class="list-product-group">
-                            <!-- Single List Product Start -->
-                            <div class="single-list-product">
-                                <div class="product-image">
-                                    <a href="single-product.html"><img
-                                            src="./assets/images/product/product-4.jpg" alt=""></a>
-                                </div>
-                                <div class="product-content">
-                                    <h3><a href="single-product.html">Aftershave Savlon </a></h3>
-                                    <h4 class="price"><span class="new">€70.00</span></h4>
-                                </div>
-                            </div>
-                            <!-- Single List Product End -->
-                            <!-- Single List Product Start -->
-                            <div class="single-list-product">
-                                <div class="product-image">
-                                    <a href="single-product.html"><img
-                                            src="./assets/images/product/product-5.jpg" alt=""></a>
-                                </div>
-                                <div class="product-content">
-                                    <h3><a href="single-product.html">Brass Acces1 </a></h3>
-                                    <h4 class="price"><span class="new">€150.00</span><span
-                                            class="old">€187.00</span></h4>
-                                </div>
-                            </div>
-                            <!-- Single List Product End -->
-                            <!-- Single List Product Start -->
-                            <div class="single-list-product">
-                                <div class="product-image">
-                                    <a href="single-product.html"><img
-                                            src="./assets/images/product/product-6.jpg" alt=""></a>
-                                </div>
-                                <div class="product-content">
-                                    <h3><a href="single-product.html">Brass Accessory </a></h3>
-                                    <h4 class="price"><span class="new">€187.00</span></h4>
-                                </div>
-                            </div>
-                            <!-- Single List Product End -->
-                        </div>
+                        <?php
+                         }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -336,122 +184,46 @@
                         "autoplay": true
                         }}
                         ]'>
+                        <?php
+                         foreach($productGroups['trending'] as $pg){
+
+                        ?>
                         <div class="list-product-group">
+                            <?php
+                            for($i = 0; $i < count($pg); $i++){
+                                $product = $pg[$i];
+
+                                $p = [
+                                    'url' => url('product')."?sku={$product['sku']}",
+                                    'name' => $product['name'],
+                                    'sku' => $product['sku'],
+                                    'img' => $product['imggs'][0],
+                                    'rating' => 4,
+                                    'amount' => $product['pd']['amount'],
+                                    'description' => $product['pd']['description'],
+                                    'cart-url' => url('add-to-cart')."?sku={$product['sku']}"
+                                   ];
+                            ?>
                             <!-- Single List Product Start -->
                             <div class="single-list-product">
                                 <div class="product-image">
-                                    <a href="single-product.html"><img
-                                            src="./assets/images/product/product-4.jpg" alt=""></a>
+                                    <a href="<?php echo e($p['url']); ?>">
+                                        <img src="<?php echo e($p['img']); ?>" alt="<?php echo e($p['name']); ?>"/>
+                                    </a>
                                 </div>
                                 <div class="product-content">
-                                    <h3><a href="single-product.html">Aftershave Savlon </a></h3>
-                                    <h4 class="price"><span class="new">€70.00</span></h4>
+                                    <h3><a href="single-product.html"><?php echo e($p['name']); ?></a></h3>
+                                    <h4 class="price"><span class="new">&#8358;<?php echo e(number_format($p['amount'],2)); ?></span></h4>
                                 </div>
                             </div>
                             <!-- Single List Product End -->
-                            <!-- Single List Product Start -->
-                            <div class="single-list-product">
-                                <div class="product-image">
-                                    <a href="single-product.html"><img
-                                            src="./assets/images/product/product-5.jpg" alt=""></a>
-                                </div>
-                                <div class="product-content">
-                                    <h3><a href="single-product.html">Brass Acces1 </a></h3>
-                                    <h4 class="price"><span class="new">€150.00</span><span
-                                            class="old">€187.00</span></h4>
-                                </div>
-                            </div>
-                            <!-- Single List Product End -->
-                            <!-- Single List Product Start -->
-                            <div class="single-list-product">
-                                <div class="product-image">
-                                    <a href="single-product.html"><img
-                                            src="./assets/images/product/product-6.jpg" alt=""></a>
-                                </div>
-                                <div class="product-content">
-                                    <h3><a href="single-product.html">Brass Accessory </a></h3>
-                                    <h4 class="price"><span class="new">€187.00</span></h4>
-                                </div>
-                            </div>
-                            <!-- Single List Product End -->
+                            <?php
+                            }
+                            ?>
                         </div>
-                        <div class="list-product-group">
-                            <!-- Single List Product Start -->
-                            <div class="single-list-product">
-                                <div class="product-image">
-                                    <a href="single-product.html"><img
-                                            src="./assets/images/product/product-7.jpg" alt=""></a>
-                                </div>
-                                <div class="product-content">
-                                    <h3><a href="single-product.html">White Shave Bruw</a></h3>
-                                    <h4 class="price"><span class="new">€125.00</span></h4>
-                                </div>
-                            </div>
-                            <!-- Single List Product End -->
-                            <!-- Single List Product Start -->
-                            <div class="single-list-product">
-                                <div class="product-image">
-                                    <a href="single-product.html"><img
-                                            src="./assets/images/product/product-8.jpg" alt=""></a>
-                                </div>
-                                <div class="product-content">
-                                    <h3><a href="single-product.html">White Shave Brum </a></h3>
-                                    <h4 class="price"><span class="new">€60.00</span></h4>
-                                </div>
-                            </div>
-                            <!-- Single List Product End -->
-                            <!-- Single List Product Start -->
-                            <div class="single-list-product">
-                                <div class="product-image">
-                                    <a href="single-product.html"><img
-                                            src="./assets/images/product/product-9.jpg" alt=""></a>
-                                </div>
-                                <div class="product-content">
-                                    <h3><a href="single-product.html">White Shave Brun </a></h3>
-                                    <h4 class="price"><span class="new">€53.00</span></h4>
-                                </div>
-                            </div>
-                            <!-- Single List Product End -->
-                        </div>
-                        <div class="list-product-group">
-                            <!-- Single List Product Start -->
-                            <div class="single-list-product">
-                                <div class="product-image">
-                                    <a href="single-product.html"><img
-                                            src="./assets/images/product/product-1.jpg" alt=""></a>
-                                </div>
-                                <div class="product-content">
-                                    <h3><a href="single-product.html">Aftershave Lotion </a></h3>
-                                    <h4 class="price"><span class="new">€110.00</span><span
-                                            class="old">€130.00</span></h4>
-                                </div>
-                            </div>
-                            <!-- Single List Product End -->
-                            <!-- Single List Product Start -->
-                            <div class="single-list-product">
-                                <div class="product-image">
-                                    <a href="single-product.html"><img
-                                            src="./assets/images/product/product-2.jpg" alt=""></a>
-                                </div>
-                                <div class="product-content">
-                                    <h3><a href="single-product.html">White Shave Bruh </a></h3>
-                                    <h4 class="price"><span class="new">€130.00</span></h4>
-                                </div>
-                            </div>
-                            <!-- Single List Product End -->
-                            <!-- Single List Product Start -->
-                            <div class="single-list-product">
-                                <div class="product-image">
-                                    <a href="single-product.html"><img
-                                            src="./assets/images/product/product-3.jpg" alt=""></a>
-                                </div>
-                                <div class="product-content">
-                                    <h3><a href="single-product.html">White Shave Brux </a></h3>
-                                    <h4 class="price"><span class="new">€130.00</span></h4>
-                                </div>
-                            </div>
-                            <!-- Single List Product End -->
-                        </div>
+                        <?php
+                         }
+                        ?>
                     </div>
                 </div>
             </div>

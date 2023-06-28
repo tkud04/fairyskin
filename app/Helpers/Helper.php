@@ -840,6 +840,39 @@ if($pds != null)
 return $ret;
 }
 
+function getProductGroups($tags,$groupCount){
+  $ret = [];
+  $products = $this->getProducts("enabled");
+
+  foreach($tags as $t){
+    switch($t){
+      case 'top-rated':
+      case 'sale':
+      case 'trending':
+        shuffle($products);
+        $ret[$t] = [];
+        
+        $ret2 = [];
+        for($i = 0; $i < count($products); $i++){
+           $p = $products[$i];
+          
+           if($i !== 0 && $i % 3 === 0){
+            array_push($ret[$t],$ret2);
+            $ret2 = [$p];
+           }
+           else{
+             array_push($ret2,$p);
+             if($i === count($products) - 1) array_push($ret[$t],$ret2);
+           }
+           
+        }
+      break;
+    }
+  }
+  //['top-rated','sale','trending'],3);
+  return $ret;
+}
+
 function getProduct($id)
 {
 $ret = [];
@@ -989,6 +1022,7 @@ if($pd != null)
  $temp['description'] = $pd->description;
  $temp['in_stock'] = $pd->in_stock;
  $temp['category'] = $pd->category;
+ $temp['tag'] = $pd->tag;
  $ret = $temp;
 }                         
                                      
@@ -2912,6 +2946,7 @@ function createProductData($data){
     'description' => $data['description'], 
     'amount' => $data['amount'],    
     'category' => $data['category'],    
+    'tag' => $data['tag'],    
     'in_stock' => $in_stock                                              
   ]);
     

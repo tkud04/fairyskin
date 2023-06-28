@@ -120,6 +120,12 @@ const BUUPAddRow = () => {
 		 </select>
 	   </td>
 	   <td>
+	     <select class="category" >
+		 <option value="none">Select category</option>
+		  ${tags.map(k => "<option value='" + k + "'>" + k.toUpperCase() + "</option>").join("")}
+		 </select>
+	   </td>
+	   <td>
 	    <select class="status" >
 		<option value="none">Select status</option>
 		 <option value="in_stock">In stock</option>
