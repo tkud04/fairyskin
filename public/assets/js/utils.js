@@ -1,19 +1,41 @@
 let BUUPlist = []
 
 const addClass = (elem,name) => {
-	let el = document.querySelector(elem);
-	
-	if(el){
-	 el.classList.add(name);
+	let el
+	if(elem.includes('#')){
+	  el = document.querySelector(elem);
+
+	  if(el){
+		el.classList.add(name);
+	  }
+	}
+	else{
+		el = document.querySelectorAll(elem)
+		if(el.length > 0){
+		el.forEach(item => {
+			item.classList.add(name);
+		})
+		}
 	}
 	
 }
 
 const removeClass = (elem,name) => {
-	let el = document.querySelector(elem);
-	
-	if(el){
-	 el.classList.remove(name);
+	let el
+	if(elem.includes('#')){
+	  el = document.querySelector(elem);
+
+	  if(el){
+		el.classList.remove(name);
+	  }
+	}
+	else{
+		el = document.querySelectorAll(elem)
+		if(el.length > 0){
+		el.forEach(item => {
+			item.classList.remove(name);
+		})
+		}
 	}
 	
 }

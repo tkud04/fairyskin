@@ -11,13 +11,6 @@
     ['img' => 'assets/images/language/english.png','value' => 'English']
   ];
 
-  $categories = [
-    ['name' => 'Category 1','url' => '#'],
-    ['name' => 'Category 2','url' => '#'],
-    ['name' => 'Category 3','url' => '#'],
-    ['name' => 'Category 4','url' => '#'],
-    ['name' => 'Category 5','url' => '#'],
-  ];
 
   $brands = [
     ['img' => 'assets/images/brands/sponsor.png'],
@@ -169,25 +162,26 @@
                                     <li><a href="<?php echo e(url('/')); ?>">Home</a></li>
                                     <li><a href="#">Shop</a>
                                     <ul class="sub-menu">
-                                            <li><a href="<?php echo e(url('shop')); ?>">All Products</a></li>
+                                            <li><a href="#<?php echo e(url('shop')); ?>">All Products</a></li>
                                             <?php
                                              foreach($categories as $c){
+                                                $url = '#'
                                             ?>
-                                            <li><a href="<?php echo e($c['url']); ?>"><?php echo e($c['name']); ?></a></li>
+                                            <li><a href="<?php echo e($url); ?>"><?php echo e($c['name']); ?></a></li>
                                             <?php
                                              }
                                             ?>
                                       </ul>
                                     </li>
-                                    <li><a href="<?php echo e(url('blog')); ?>">Blog</a></li>
+                                    <li><a href="#<?php echo e(url('blog')); ?>">Blog</a></li>
                                     <li><a href="#">About Us</a>
                                       <ul class="sub-menu">
-                                        <li><a href="<?php echo e(url('about')); ?>">About Us</a></li>
-                                        <li><a href="<?php echo e(url('faq')); ?>">FAQ</a></li>
-                                        <li><a href="<?php echo e(url('mission')); ?>">Mission Statement</a></li>
+                                        <li><a href="#<?php echo e(url('about')); ?>">About Us</a></li>
+                                        <li><a href="#<?php echo e(url('faq')); ?>">FAQ</a></li>
+                                        <li><a href="#<?php echo e(url('mission')); ?>">Mission Statement</a></li>
                                       </ul>
                                     </li>
-                                    <li><a href="<?php echo e(url('contact')); ?>">Contact Us</a></li>
+                                    <li><a href="#<?php echo e(url('contact')); ?>">Contact Us</a></li>
                                 </ul>
                             </nav>
                         </div>

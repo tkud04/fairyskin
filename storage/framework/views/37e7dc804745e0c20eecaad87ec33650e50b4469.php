@@ -19,6 +19,8 @@
 }}
 ]'>
   <?php
+   $showHeroContent = false;
+
    foreach($banners as $b){
   ?>
 	<!--Hero Item start-->
@@ -26,17 +28,23 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
-
+                    
+				   <?php
+				    if($showHeroContent){
+				   ?>
 					<!--Hero Content start-->
 					<div class="<?php echo e($b['class']); ?>">
 
-						<h2><?php echo e($b['top-text']); ?></h2>
-						<h1><?php echo e($b['middle-text']); ?></h1>
-						<h3><?php echo e($b['bottom-text']); ?></h3>
-						<a href="<?php echo e($b['url']); ?>"><?php echo e($b['action-text']); ?></a>
+						<h2><?php echo e($b['top_text']); ?></h2>
+						<h1><?php echo e($b['middle_text']); ?></h1>
+						<h3><?php echo e($b['bottom_text']); ?></h3>
+						<a href="<?php echo e($b['url']); ?>"><?php echo e($b['action_text']); ?></a>
 
 					</div>
 					<!--Hero Content end-->
+					<?php
+                     }
+					?>
 
 				</div>
 			</div>

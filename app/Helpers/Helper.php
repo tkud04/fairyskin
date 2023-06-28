@@ -42,124 +42,7 @@ use Codedge\Fpdf\Fpdf\Fpdf;
 class Helper implements HelperContract
 {    
 
-    public $signals = ['okays'=> ["login-status" => "Welcome back!",            
-    "signup-status" => "Welcome to your new account. Enjoy your shopping!",
-    "profile-status" => "Profile updated!",
-    "cpayment-status" => "Your request has been received, you will be notified via email shortly if your payment has been cleared.",
-    "update-status" => "Account updated!",
-    "config-status" => "Config added/updated!",
-    "contact-status" => "Message sent! Our customer service representatives will get back to you shortly.",
-    "add-review-status" => "Thanks for your feedback! It will be visible after review by admins",
-    "add-to-cart-status" => "Added to cart!",
-    "update-cart-status" => "Cart updated!",
-    "remove-from-cart-status" => "Removed from cart!",
-    "subscribe-status" => "Subscribed!",
-    "pay-card-status" => "Payment successful! Your order is being processed.",
-    "pay-bank-status" => "Payment successful! Your order is being processed.",
-    "add-to-wishlist-status" => "Added to wishlist!",
-    "add-to-compare-status" => "Added to compare list!",
-    "remove-from-wishlist-status" => "Removed from wishlist!",
-    "remove-from-compare-status" => "Removed from compare list!",
-    "select-bank-status" => "Please select your bank",					 
-    "no-cart-status" => "Your cart is empty.",
-    "invalid-order-status" => "We couldn't find your order.",
-    "review-order-status" => "Thank you for your review!",
-
-    //ADMIN
-    "add-category-status" => "Category added!",
-    ],
-    'errors'=> ["login-status-error" => "Wrong username or password, please try again.",
-    "signup-status-error" => "There was a problem creating your account, please try again.",
-    "profile-status-error" => "There was a problem updating your profile, please try again.",
-    "update-status-error" => "There was a problem updating the account, please try again.",
-    "contact-status-error" => "There was a problem sending your message, please try again.",
-    "add-review-status-error" => "There was a problem sending your review, please try again.",
-    "add-to-cart-status-error" => "Stock not sufficient.",
-    "update-cart-status-error" => "Stock not sufficient.",
-    "remove-from-cart-status-error" => "There was a problem removing this product from your cart, please try again.",
-    "subscribe-status-error" => "There was a problem subscribing, please try again.",
-    "pay-card-status-error" => "There was a problem making payment, please try again.",
-    "pay-bank-status-error" => "There was a problem making payment, please try again.",
-    "add-to-compare-status-error" => "There was a problem adding to compare list.",
-    "add-to-wishlist-status-error" => "There was a problem adding to wishlist.",
-    "remove-from-wishlist-status-error" => "There was a problem removing item from wishlist.",
-    "remove-from-compare-status-error" => "There was a problem removing item from compare list.",
-    "track-order-status-error" => "Invalid reference number, please try again.",
-    "no-cart-status-error" => "Your cart is empty.",
-    "invalid-order-status-error" => "We could not find your order.",
-
-    //ADMIN
-    "add-category-status-error" => "Failed to add category",
-   ]
-  ];
-
-public $categories = [
-'watches' => [
-['name' => "Category_1",'url' => "#",'special' => "popular"],
-['name' => "Category_2",'url' => "#",'special' => ""],
-['name' => "Category_3",'url' => "#",'special' => ""],
-['name' => "Category_4",'url' => "#",'special' => "hot"],
-['name' => "Category_5",'url' => "#",'special' => ""],
-['name' => "Category_6",'url' => "#",'special' => "trending"],
-],
-'anklets' => [
-['name' => "Category_1",'url' => "#",'special' => ""],
-['name' => "Category_2",'url' => "#",'special' => ""],
-['name' => "Category_3",'url' => "#",'special' => ""],
-['name' => "Category_4",'url' => "#",'special' => ""],
-['name' => "Category_5",'url' => "#",'special' => "trending"],
-['name' => "Category_6",'url' => "#",'special' => ""],
-],
-'bracelets' => [
-['name' => "Category_1",'url' => "#",'special' => ""],
-['name' => "Category_2",'url' => "#",'special' => "popular"],
-['name' => "Category_3",'url' => "#",'special' => ""],
-['name' => "Category_4",'url' => "#",'special' => ""],
-['name' => "Category_5",'url' => "#",'special' => ""],
-['name' => "Category_6",'url' => "#",'special' => ""],
-],
-'brooches' => [
-['name' => "Category_1",'url' => "#",'special' => ""],
-['name' => "Category_2",'url' => "#",'special' => ""],
-['name' => "Category_3",'url' => "#",'special' => ""],
-['name' => "Category_4",'url' => "#",'special' => "hot"],
-['name' => "Category_5",'url' => "#",'special' => ""],
-['name' => "Category_6",'url' => "#",'special' => ""],
-],
-'earrings' => [
-['name' => "Category_1",'url' => "#",'special' => ""],
-['name' => "Category_2",'url' => "#",'special' => ""],
-['name' => "Category_3",'url' => "#",'special' => ""],
-['name' => "Category_4",'url' => "#",'special' => ""],
-['name' => "Category_5",'url' => "#",'special' => ""],
-['name' => "Category_6",'url' => "#",'special' => ""],
-],
-'necklaces' => [
-['name' => "Category_1",'url' => "#",'special' => "hot"],
-['name' => "Category_2",'url' => "#",'special' => ""],
-['name' => "Category_3",'url' => "#",'special' => ""],
-['name' => "Category_4",'url' => "#",'special' => ""],
-['name' => "Category_5",'url' => "#",'special' => ""],
-['name' => "Category_6",'url' => "#",'special' => ""],
-],
-'rings' => [
-['name' => "Category_1",'url' => "#",'special' => ""],
-['name' => "Category_2",'url' => "#",'special' => ""],
-['name' => "Category_3",'url' => "#",'special' => ""],
-['name' => "Category_4",'url' => "#",'special' => ""],
-['name' => "Category_5",'url' => "#",'special' => ""],
-['name' => "Category_6",'url' => "#",'special' => "trending"],
-]
-];
-
-public $categories_2 = ['watches' => "Watches",
-                 'anklets' => "Anklets",
-                 'bracelets' => "Bracelets",
-                 'brooches' => "Brooches",
-                 'earrings' => "Ear Rings",
-                 'necklaces' => "Necklaces",
-                 'rings' => "Rings"
-                 ];
+    public $signals = ['okays' => [], 'errors' => []];
 
 
 public $states = [
@@ -1719,19 +1602,34 @@ if(!is_null($banners))
 {
   foreach($banners as $b)
   {
-      $temp = [];
-      $temp['id'] = $b->id;
-      $img = $b->img;
-      $temp['img'] = $this->getCloudinaryImage($img);
-      $temp['title'] = $b->title;
-      $temp['subtitle'] = $b->subtitle;
-      $temp['copy'] = $b->copy;
-      $temp['status'] = $b->status;
+      $temp = $this->getBanner($b->id);
       array_push($ret,$temp);
   }
 }
 
 return $ret;
+}
+
+function getBanner($id){
+  $ret = [];
+  $b = Banners::where('id',$id)->first();
+
+  if(!is_null($b)){
+      $temp = [];
+      $temp['id'] = $b->id;
+      $img = $b->img;
+      $temp['img'] = $this->getCloudinaryImage($img);
+      $temp['url'] = $b->url;
+      $temp['top_text'] = $b->top_text;
+      $temp['middle_text'] = $b->middle_text;
+      $temp['bottom_text'] = $b->bottom_text;
+      $temp['action_text'] = $b->action_text;
+      $temp['class'] = $b->class;
+      $temp['status'] = $b->status;
+      $temp['date'] = $b->created_at->format("jS F, Y"); 
+      $ret = $temp;
+  }
+  return $ret;
 }
 
 function checkout($u,$data,$type="paystack")
@@ -3007,6 +2905,30 @@ function removeProduct($xf){
   
     $pd->delete();
     $p->delete();
+  }
+
+}
+
+function createBanner($data){
+          
+  $ret = Banners::create([
+    'img' => $data['img'],      
+    'url' => $data['url'], 
+    'top_text' => $data['top_text'],    
+    'middle_text' => $data['middle_text'],    
+    'bottom_text' => $data['bottom_text'],    
+    'action_text' => $data['action_text'],                                            
+    'class' => $data['class'],                                            
+    'status' => $data['status'],                                         
+  ]);
+    
+  return $ret;
+}
+
+function removeBanner($xf){
+  $b = Banners::where('id',$xf)->first();
+  if($b != null){
+    $b->delete();
   }
 
 }

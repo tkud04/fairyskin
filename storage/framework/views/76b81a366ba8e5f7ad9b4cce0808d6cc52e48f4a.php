@@ -20,7 +20,8 @@
             '#add-product-loading','.buup-hide',
             '#buup-select-product-error','#buup-select-qty-error',
             '#buup-result-box','#buup-finish-box',
-            '#buup-select-validation-error','.product-loading'
+            '#buup-select-validation-error','.product-loading',
+            '#add-banners-div','#add-banner-loading','.update-banner-loading'
         ])
         localStorage.clear()
 
@@ -61,6 +62,8 @@
                                     <a href="#products" data-bs-toggle="tab"><i class="fa fa-shopping-bag"></i> Products</a>
 
                                     <a href="#categories" data-bs-toggle="tab"><i class="fa fa-shopping-bag"></i> Categories</a>
+
+                                    <a href="#banners" data-bs-toggle="tab"><i class="fa fa-picture-o"></i> Banners</a>
     
                                     <a href="<?php echo e(url('bye')); ?>"><i class="fa fa-sign-out"></i> Logout</a>
                                 </div>
@@ -460,6 +463,184 @@
                                                         <div class="col-12">
                                                             <button class="save-change-btn" id="add-category-btn">Save Changes</button>
                                                             <p id="add-category-loading"> <img src="assets/images/loading.gif" alt="Loading" style="width: 70px; height: 70px;"/> Processing your request</p>
+                                                        </div>
+    
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Single Tab Content End -->
+
+
+                                     <!-- Single Tab Content Start -->
+                                     <div class="tab-pane fade" id="banners" role="tabpanel">
+                                        <div class="myaccount-content">
+                                        <div id="banners-div">
+                                             <h3>Banners <a href="#" id="add-banner" class="btn btn-primary">Add Banner</a></h3>
+                                                <div class="myaccount-table table-responsive text-center">
+                                                <table class="table table-bordered fairyskin-table">
+                                                    <thead class="thead-light">
+                                                    <tr>
+                                                        <th>Details</th>
+                                                        <th>Date Added</th>
+                                                        <th>Status</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                    </thead>
+    
+                                                    <tbody>
+                                                    <?php
+                                                     if(count($banners) > 0){
+                                                        foreach($banners as $b){
+                                                            $xf = $b['id'];
+                                                            $mode= $b['status'] === "enabled" ? "Disable" : "Enable";
+                                                            $updateButton = "update-banner-btn-{$xf}";
+                                                            $updateLoading = "update-banner-loading-{$xf}";
+                                                    ?>
+                                                    <tr>
+                                                        <td>
+                                                            <p>URL: <b><?php echo e($b['url']); ?></b></p>
+                                                            <p>Top text: <b><?php echo e($b['top_text']); ?></b></p>
+                                                            <p>Middle text: <b><?php echo e($b['middle_text']); ?></b></p>
+                                                            <p>Bottom text: <b><?php echo e($b['bottom_text']); ?></b></p>
+                                                            <p>Action text: <b><?php echo e($b['action_text']); ?></b></p>
+                                                            <img src="<?php echo e($b['img']); ?>" alt=""/>
+                                                        </td>
+                                                        <td><?php echo e($b['date']); ?></td>
+                                                        <td><b><?php echo e(strtoupper($b['status'])); ?></b></td>
+                                                        <td>
+                                                            <a href="#" id="<?php echo e($updateButton); ?>" class="btn update-banner-btn" data-mode="<?php echo e($mode); ?>" data-xf="<?php echo e($xf); ?>"><?php echo e($mode); ?></a>
+                                                            <p id="<?php echo e($updateLoading); ?>" class="update-banner-loading"> <img src="assets/images/loading.gif" alt="Loading" style="width: 70px; height: 70px;"/> Processing your request</p>
+                                                        </td>
+                                                    </tr>
+                                                    <?php
+                                                        }
+                                                    }
+                                                    ?>
+                                                    </tbody>
+                                                </table>
+                                               </div>
+                                            
+                                           </div>
+                                           <div id="add-banners-div" class="account-details-form">
+                                               <h3> Add banner <a href="#" id="banners-back-button" class="btn btn-primary">Back to Banners</a></h3>
+                                               <form action="#">
+                                                  <?php
+                                                   $statuses = [
+                                                    ['label' => 'Enabled', 'value' => 'enabled'],
+                                                    ['label' => 'Disabled', 'value' => 'disabled'],
+                                                   ];
+
+                                                   $bannerTextThemes = [
+                                                    ['label' => 'Dark theme', 'value' => 'color-1'],
+                                                    ['label' => 'Light theme', 'value' => 'color-2'],
+                                                   ];
+
+                                                   $bannerTextPositions = [
+                                                    ['label' => 'Centered', 'value' => 'center'],
+                                                    ['label' => 'Left', 'value' => ''],
+                                                   ];
+                                                  ?>
+                                                
+                                                    <div class="row">
+                                                        <div class="col-lg-6 col-12 mb-30">
+                                                            <div class="form-fild">
+                                                              <p><label>URL <span class="required">*</span></label></p>
+                                                              <input id="add-banner-url" name="url" placeholder="URL" type="text">
+                                                             </div>
+                                                        </div>
+    
+                                                        <div class="col-lg-6 col-12 mb-30">
+                                                            <div class="form-fild">
+                                                              <p><label>Top text <span class="required">*</span></label></p>
+                                                              <input id="add-banner-toptext" name="top_text" placeholder="Text for the first line" type="text">
+                                                             </div>
+                                                        </div>
+
+                                                        <div class="col-lg-6 col-12 mb-30">
+                                                            <div class="form-fild">
+                                                              <p><label>Middle text <span class="required">*</span></label></p>
+                                                              <input id="add-banner-middletext" name="middle_text" placeholder="Text for the middle line" type="text">
+                                                             </div>
+                                                        </div>
+
+                                                        <div class="col-lg-6 col-12 mb-30">
+                                                            <div class="form-fild">
+                                                              <p><label>Bottom text <span class="required">*</span></label></p>
+                                                              <input id="add-banner-bottomtext" name="bottom_text" placeholder="Text for the bottom line" type="text">
+                                                             </div>
+                                                        </div>
+
+                                                        <div class="col-lg-6 col-12 mb-30">
+                                                            <div class="form-fild">
+                                                              <p><label>Action text <span class="required">*</span></label></p>
+                                                              <input id="add-banner-actiontext" name="action_text" placeholder="Text for the button" type="text">
+                                                             </div>
+                                                        </div>
+
+                                                        <div class="col-lg-6 col-12 mb-30">
+                                                            <div class="form-fild">
+                                                              <p><label>Banner text theme <span class="required">*</span></label></p>
+                                                              <select id="add-banner-text-theme">
+                                                                <option value='none'>Choose an option</option>
+                                                                <?php
+                                                                 foreach($bannerTextThemes as $s){
+                                                                ?>
+                                                                 <option value="<?php echo e($s['value']); ?>"><?php echo e($s['label']); ?></option>
+                                                                <?php
+                                                                 }
+                                                                ?>
+                                                              </select>
+                                                             </div>
+                                                        </div>
+
+                                                        <div class="col-lg-6 col-12 mb-30">
+                                                            <div class="form-fild">
+                                                              <p><label>Banner text position <span class="required">*</span></label></p>
+                                                              <select id="add-banner-text-position">
+                                                                <option value='none'>Choose an option</option>
+                                                                <?php
+                                                                 foreach($bannerTextPositions as $s){
+                                                                ?>
+                                                                 <option value="<?php echo e($s['value']); ?>"><?php echo e($s['label']); ?></option>
+                                                                <?php
+                                                                 }
+                                                                ?>
+                                                              </select>
+                                                             </div>
+                                                        </div>
+
+                                                        <div class='col-lg-6 col-12 mb-30'>
+                                                            <div class='form-fild'>
+                                                            <p><label>Image <span class="required">*</span></label></p>
+                                                                <input type="file" id="add-banner-img" placeholder="Upload image" data-ic='0' onchange="readURL(this,'0')" class=" images" name="img">
+                                                                <img src="" id='buup-0-preview-0'/>
+                                                            </div>
+                                                        </div>
+    
+    
+    
+    
+                                                        <div class="col-lg-12 col-12 mb-30">
+                                                            <div class="form-fild">
+                                                              <p><label>Status <span class="required">*</span></label></p>
+                                                              <select id="add-banner-status">
+                                                                <option value='none'>Choose an option</option>
+                                                                <?php
+                                                                 foreach($statuses as $s){
+                                                                ?>
+                                                                 <option value="<?php echo e($s['value']); ?>"><?php echo e($s['label']); ?></option>
+                                                                <?php
+                                                                 }
+                                                                ?>
+                                                              </select>
+                                                           </div>
+                                                        </div>
+
+                                                        <div class="col-12">
+                                                            <button class="save-change-btn" id="add-banner-btn">Save Changes</button>
+                                                            <p id="add-banner-loading"> <img src="assets/images/loading.gif" alt="Loading" style="width: 70px; height: 70px;"/> Processing your request</p>
                                                         </div>
     
                                                     </div>

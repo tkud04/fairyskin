@@ -19,6 +19,8 @@
 }}
 ]'>
   <?php
+   $showHeroContent = false;
+
    foreach($banners as $b){
   ?>
 	<!--Hero Item start-->
@@ -26,17 +28,23 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
-
+                    
+				   <?php
+				    if($showHeroContent){
+				   ?>
 					<!--Hero Content start-->
 					<div class="{{$b['class']}}">
 
-						<h2>{{$b['top-text']}}</h2>
-						<h1>{{$b['middle-text']}}</h1>
-						<h3>{{$b['bottom-text']}}</h3>
-						<a href="{{$b['url']}}">{{$b['action-text']}}</a>
+						<h2>{{$b['top_text']}}</h2>
+						<h1>{{$b['middle_text']}}</h1>
+						<h3>{{$b['bottom_text']}}</h3>
+						<a href="{{$b['url']}}">{{$b['action_text']}}</a>
 
 					</div>
 					<!--Hero Content end-->
+					<?php
+                     }
+					?>
 
 				</div>
 			</div>

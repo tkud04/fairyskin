@@ -230,6 +230,73 @@ $(document).ready(() => {
        clearProductModal()
     })
 
+    $('#add-banner').click(e => {
+        e.preventDefault()
+        hideElem('#banners-div')
+        showElem('#add-banners-div')
+    })
+
+    $('#banners-back-button').click(e => {
+        e.preventDefault()
+        hideElem('#add-banners-div')
+        showElem('#banners-div')
+    })
+
+    $('#add-banner-btn').click(e => {
+        e.preventDefault()
+       
+        const url = $('#add-banner-url').val(), topText = $('#add-banner-toptext').val(),
+        middleText = $('#add-banner-middletext').val(), bottomText = $('#add-banner-bottomtext').val(),
+        actionText = $('#add-banner-actiontext').val(), textTheme = $('#add-banner-text-theme').val(),
+        textPosition = $('#add-banner-text-position').val(), status = $('#add-banner-status').val(),
+        img = $('#add-banner-img')
+
+        const v = url === '' || topText === '' || middleText === '' || bottomText === '' ||
+                  actionText === '' || textTheme === 'none' || textPosition === 'none' ||
+                  status === 'none'
+
+        if(v){
+            displayError('Required fields are missing')
+        }
+        else{
+            const textClass = `hero-content-2 ${textTheme} ${textPosition.length > 0 ? textPosition : ''}`
+            hideElem(`#add-banner-btn`)
+            showElem(`#add-banner-loading`)
+
+            const fd = new FormData()
+         fd.append("_token",$('#skf').val())
+         fd.append('url',url)
+         fd.append('top_text',topText)
+         fd.append('middle_text',middleText)
+         fd.append('bottom_text',bottomText)
+         fd.append('action_text',actionText)
+         fd.append('class',textClass)
+         fd.append('status',status)
+         fd.append('ird',img[0].files[0])
+
+          const onSuccess = () => {
+            displaySuccess('Banner added!')
+            window.location = 'admin-center'
+          }
+
+          const onError = () => {
+            displayError('Failed to add banner, please try again')
+            hideElem(`#add-banner-loading`)
+            showElem(`#add-banner-btn`)
+          }
+
+          const u = 'add-banner'
+
+          const req = new Request(u,{
+            method: 'post',
+            body: fd
+          });
+
+          requestClan(req,onSuccess,onError)
+
+        }
+    })
+
 
 
 })

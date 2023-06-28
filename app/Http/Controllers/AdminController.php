@@ -36,8 +36,10 @@ class AdminController extends Controller {
 		 $courses = [];
 		$categories = $this->helpers->getCategories();
 		$products = $this->helpers->getProducts();
+		$banners = $this->helpers->getBanners();
+
 		//$users = $this->helpers->getUsers();
-       return view('admin-center',compact(['user','signals','stats','categories','products']));
+       return view('admin-center',compact(['user','signals','stats','categories','products','banners']));
     }
 
 	/**
@@ -259,6 +261,59 @@ class AdminController extends Controller {
 	        
 			return json_encode(['status' => 'ok']);
          }        
+    }
+
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+    public function postAddBanner(Request $request)
+    {	
+		$user = $this->helpers->getAuthenticatedAdmin();
+
+		if($user === null){
+		 return json_encode(['status' => 'error','message' => 'Unauthorized']);
+		}
+
+       $req = $request->all();
+	   
+		 #dd($req);
+		  $ret = ['status' => "ok","message"=>"nothing happened"];
+        $validator = Validator::make($req, [
+                             'ird' => 'required',
+							 'url' => 'required',
+							 'top_text' => 'required',
+							 'middle_text' => 'required',
+							 'bottom_text' => 'required',
+							 'action_text' => 'required',
+							 'class' => 'required',
+							 'status' => 'required|not_in:none',
+                             
+         ]);
+         
+         if($validator->fails())
+         {
+              $ret = ['status' => "error","message"=>"validation"];
+         }
+         
+         else
+         {
+		
+				$ird = isset($req['ird']) ? $request->file('ird') : null;
+				
+				 if(!is_null($ird))
+				 {
+                     $imgg = $this->helpers->uploadCloudImage($ird->getRealPath());
+					 $req['img'] = $imgg['public_id'];
+					
+				 }
+			
+                 $product = $this->helpers->createBanner($req);
+                 $ret = ['status' => "ok","message"=>"banner added"];
+
+         } 
+		 return json_encode($ret);
     }
 
 	   

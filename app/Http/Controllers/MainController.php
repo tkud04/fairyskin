@@ -40,7 +40,7 @@ class MainController extends Controller {
 		//$gid = isset($_COOKIE['gid']) ? $_COOKIE['gid'] : "";
 		$cart = $this->helpers->getCart($user);
 		
-		$c = $this->helpers->getCategories();
+		$categories = $this->helpers->getCategories();
 		
 		$signals = $this->helpers->signals;
 		$na = $this->helpers->getNewArrivals();
@@ -50,27 +50,7 @@ class MainController extends Controller {
 		#$bs = [];
 		#dd($na);
 		$ads = $this->helpers->getAds("wide-ad");
-		//$banners = $this->helpers->getBanners();
-		$banners = [
-			[
-				'img' => 'assets/images/hero/hero-1.jpg',
-				'url' => url('shop'),
-				'top-text' => 'view our',
-				'middle-text' => 'skin care',
-				'bottom-text' => 'products now',
-				'action-text' => 'shop now',
-				'class' => 'hero-content-2 color-1 center'
-			],
-			[
-				'img' => 'assets/images/hero/hero-2.jpg',
-				'url' => url('shop'),
-				'top-text' => 'view our',
-				'middle-text' => 'skin treatment',
-				'bottom-text' => 'products now',
-				'action-text' => 'shop now',
-				'class' => 'hero-content-2 color-2'
-			],
-		 ];
+		$banners = $this->helpers->getBanners();
 
 		 $homeSlides = [
 			'left' => ['img' => 'assets/images/banner/h1-banner-1.png', 'url' => '#'],
@@ -96,7 +76,7 @@ class MainController extends Controller {
 		shuffle($banners);
 		$ad = count($ads) < 1 ? "images/inner-ad-2.png" : $ads[0]['img'];
     	return view("index",compact([
-			'user','cart','c','banners','homeSlides',
+			'user','cart','categories','banners','homeSlides',
 			'topDeals','tabProducts','posts','hasUnpaidOrders',
 			'productGroups','ad','signals','plugins'
 		]));
