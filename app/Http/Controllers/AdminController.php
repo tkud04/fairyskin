@@ -36,7 +36,7 @@ class AdminController extends Controller {
 		 $courses = [];
 		$categories = $this->helpers->getCategories();
 		$products = $this->helpers->getProducts();
-		$banners = $this->helpers->getBanners();
+		$banners = $this->helpers->getBanners("all");
 
 		//$users = $this->helpers->getUsers();
        return view('admin-center',compact(['user','signals','stats','categories','products','banners']));
@@ -314,6 +314,74 @@ class AdminController extends Controller {
 
          } 
 		 return json_encode($ret);
+    }
+
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+    public function postUpdateBanner(Request $request)
+    {
+	   $user = $this->helpers->getAuthenticatedAdmin();
+
+       if($user === null){
+		return json_encode(['status' => 'error','message' => 'Unauthorized']);
+	   }
+		
+        $req = $request->all();
+        //dd($req);
+        
+        $validator = Validator::make($req, [
+		    'xf' => 'required'
+         ]);
+         
+         if($validator->fails())
+         {
+			return json_encode(['status' => 'error','message' => 'Validation']);
+         }
+         
+         else
+         {
+			if(isset($req['mode'])) $req['status'] = $req['mode'] === 'Enable' ? 'enabled' : 'disabled';
+         	$this->helpers->updateBanner($req);
+	        
+			return json_encode(['status' => 'ok']);
+         }        
+    }
+
+
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+    public function getRemoveBanner(Request $request)
+    {
+	   $user = $this->helpers->getAuthenticatedAdmin();
+
+       if($user === null){
+		return json_encode(['status' => 'error','message' => 'Unauthorized']);
+	   }
+		
+        $req = $request->all();
+        //dd($req);
+        
+        $validator = Validator::make($req, [
+		    'xf' => 'required',
+         ]);
+         
+         if($validator->fails())
+         {
+			return json_encode(['status' => 'error','message' => 'Validation']);
+         }
+         
+         else
+         {
+			$this->helpers->removeBanner($req['xf']);
+	        
+			return json_encode(['status' => 'ok']);
+         }        
     }
 
 	   

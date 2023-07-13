@@ -5,10 +5,10 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Helpers\Contracts\HelperContract; 
-use Illuminate\Support\Facades\Auth;
 use Session; 
 use Validator; 
 use Carbon\Carbon; 
+use Auth;
 
 class MainController extends Controller {
 
@@ -54,7 +54,7 @@ class MainController extends Controller {
 
 		 $homeSlides = [
 			'left' => ['img' => 'assets/images/banner/h1-banner-1.png', 'url' => '#'],
-			'middle' => ['img' => 'assets/images/banner/h1-banner-2.png', 'url' => '#'],
+			'middle' => ['img' => 'assets/images/homeSlides/slide-1.jpeg', 'url' => '#'],
 			'right' => ['img' => 'assets/images/banner/h1-banner-3.png', 'url' => '#'],
 		 ];
 

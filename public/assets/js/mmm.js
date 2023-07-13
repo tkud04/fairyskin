@@ -297,6 +297,75 @@ $(document).ready(() => {
         }
     })
 
+    $('.update-banner-btn').click(e => {
+      e.preventDefault()
+      let elem = e.target
+
+      const mode = $(elem).attr('data-mode'),
+            xf = $(elem).attr('data-xf')
+      
+        hideElem(`#update-banner-btn-${xf}`)
+        showElem(`#update-banner-loading-${xf}`)
+
+       const u = `update-banner`
+       
+       const fd = new FormData()
+       fd.append("_token",$('#skf').val())
+       fd.append('mode',mode)
+       fd.append('xf',xf)
+
+        const onSuccess = () => {
+          displaySuccess('Banner status updated!')
+          window.location = 'admin-center'
+        }
+
+        const onError = () => {
+          displayError('Failed to update banner status, please try again')
+          hideElem(`#update-banner-loading-${xf}`)
+          showElem(`#update-banner-btn-${xf}`)
+        }
+
+
+        const req = new Request(u,{
+          method: 'post',
+          body: fd
+        });
+
+        requestClan(req,onSuccess,onError)
+      
+  })
+
+
+    $('.remove-banner-btn').click(e => {
+      e.preventDefault()
+      let elem = e.target
+
+      const xf = $(elem).attr('data-xf')
+      
+      
+        hideElem(`#remove-banner-btn-${xf}`)
+        showElem(`#update-banner-loading-${xf}`)
+
+       const u = `remove-banner?xf=${xf}`
+
+        const onSuccess = () => {
+          displaySuccess('Banner removed!')
+          window.location = 'admin-center'
+        }
+
+        const onError = () => {
+          displayError('Failed to remove banner, please try again')
+          hideElem(`#update-banner--loading-${xf}`)
+          showElem(`#remove-banner-btn-${xf}`)
+        }
+
+
+        const req = new Request(u);
+
+        requestClan(req,onSuccess,onError)
+      
+  })
+
 
 
 })

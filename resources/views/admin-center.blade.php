@@ -498,6 +498,7 @@
                                                             $xf = $b['id'];
                                                             $mode= $b['status'] === "enabled" ? "Disable" : "Enable";
                                                             $updateButton = "update-banner-btn-{$xf}";
+                                                            $removeButton = "remove-banner-btn-{$xf}";
                                                             $updateLoading = "update-banner-loading-{$xf}";
                                                     ?>
                                                     <tr>
@@ -513,6 +514,7 @@
                                                         <td><b>{{strtoupper($b['status'])}}</b></td>
                                                         <td>
                                                             <a href="#" id="{{$updateButton}}" class="btn update-banner-btn" data-mode="{{$mode}}" data-xf="{{$xf}}">{{$mode}}</a>
+                                                            <a href="#" id="{{$removeButton}}" class="btn remove-banner-btn"  data-xf="{{$xf}}">Remove</a>
                                                             <p id="{{$updateLoading}}" class="update-banner-loading"> <img src="assets/images/loading.gif" alt="Loading" style="width: 70px; height: 70px;"/> Processing your request</p>
                                                         </td>
                                                     </tr>

@@ -1592,11 +1592,19 @@ $s = ['status' => "error",'message' => "server error"];
 return json_encode($s);
 }	
 
-function getBanners()
+function getBanners($mode="")
 {
 $ret = [];
-$banners = Banners::where('id',">",'0')
+$banners = null;
+
+if($mode === "all"){
+  $banners = Banners::where('id',">",'0')->get();
+}
+else{
+  $banners = Banners::where('id',">",'0')
                 ->where('status',"enabled")->get();
+}
+
 #dd($ads);
 if(!is_null($banners))
 {
@@ -2925,12 +2933,31 @@ function createBanner($data){
   return $ret;
 }
 
+function updateBanner($data)
+{
+  $b = Banners::where('id',$data['xf'])->first();
+  if($b != null){
+    
+    $ret = [
+      'top_text' => isset($data['top_text']) ? $data['top_text'] : $b->top_text,
+      'middle_text' => isset($data['middle_text']) ? $data['middle_text'] : $b->middle_text,
+      'bottom_text' => isset($data['bottom_text']) ? $data['bottom_text'] : $b->bottom_text,
+      'url' => isset($data['url']) ? $data['url'] : $b->url,
+      'class' => isset($data['class']) ? $data['class'] : $b->class,
+      'status' => isset($data['status']) ? $data['status'] : $b->status
+    ];
+
+    $b->update($ret);
+  }
+
+}
+
 function removeBanner($xf){
   $b = Banners::where('id',$xf)->first();
   if($b != null){
+    $this->destroyCloudImage($b->img);
     $b->delete();
   }
-
 }
 
 }

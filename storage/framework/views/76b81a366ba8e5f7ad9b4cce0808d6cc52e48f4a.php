@@ -496,6 +496,7 @@
                                                             $xf = $b['id'];
                                                             $mode= $b['status'] === "enabled" ? "Disable" : "Enable";
                                                             $updateButton = "update-banner-btn-{$xf}";
+                                                            $removeButton = "remove-banner-btn-{$xf}";
                                                             $updateLoading = "update-banner-loading-{$xf}";
                                                     ?>
                                                     <tr>
@@ -511,6 +512,7 @@
                                                         <td><b><?php echo e(strtoupper($b['status'])); ?></b></td>
                                                         <td>
                                                             <a href="#" id="<?php echo e($updateButton); ?>" class="btn update-banner-btn" data-mode="<?php echo e($mode); ?>" data-xf="<?php echo e($xf); ?>"><?php echo e($mode); ?></a>
+                                                            <a href="#" id="<?php echo e($removeButton); ?>" class="btn remove-banner-btn"  data-xf="<?php echo e($xf); ?>">Remove</a>
                                                             <p id="<?php echo e($updateLoading); ?>" class="update-banner-loading"> <img src="assets/images/loading.gif" alt="Loading" style="width: 70px; height: 70px;"/> Processing your request</p>
                                                         </td>
                                                     </tr>

@@ -19,7 +19,7 @@
 }}
 ]'>
   <?php
-   $showHeroContent = false;
+   $showHeroContent = true;
 
    foreach($banners as $b){
   ?>

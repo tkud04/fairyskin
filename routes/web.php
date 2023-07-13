@@ -105,4 +105,5 @@ Route::post('buup', [AdminController::class,'postBulkUploadProducts']);
 Route::post('update-product', [AdminController::class,'postUpdateProduct']);
 Route::get('remove-product', [AdminController::class,'getRemoveProduct']);
 Route::post('add-banner', [AdminController::class,'postAddBanner']);
+Route::post('update-banner', [AdminController::class,'postUpdateBanner']);
 Route::get('remove-banner', [AdminController::class,'getRemoveBanner']);
