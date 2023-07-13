@@ -20,6 +20,30 @@
     ['img' => 'assets/images/brands/sponsor.png'],
   ];
 
+  $bottomTrinity = [
+    [
+        'img' => 'assets/images/bottomTrinity/trinity-1.jpg',
+        'url' => '#',
+        'topText' => 'Testing top text',
+        'buttonText' => 'Shop now',
+        'bottomText' => 'Testing bottom text',
+    ],
+    [
+        'img' => 'assets/images/bottomTrinity/trinity-2.jpg',
+        'url' => '#',
+        'topText' => 'Testing top text',
+        'buttonText' => 'View more',
+        'bottomText' => 'Testing bottom text',
+    ],
+    [
+        'img' => 'assets/images/bottomTrinity/trinity-3.jpg',
+        'url' => '#',
+        'topText' => 'Testing top text',
+        'buttonText' => 'Shop now',
+        'bottomText' => 'Testing bottom text',
+    ],
+  ];
+
   ?>
 
 <head>
@@ -176,12 +200,12 @@
                                     <li><a href="#<?php echo e(url('blog')); ?>">Blog</a></li>
                                     <li><a href="#">About Us</a>
                                       <ul class="sub-menu">
-                                        <li><a href="#<?php echo e(url('about')); ?>">About Us</a></li>
-                                        <li><a href="#<?php echo e(url('faq')); ?>">FAQ</a></li>
-                                        <li><a href="#<?php echo e(url('mission')); ?>">Mission Statement</a></li>
+                                        <li><a href="<?php echo e(url('about')); ?>">About Us</a></li>
+                                        <li><a href="<?php echo e(url('faq')); ?>">FAQ</a></li>
+                                        <li><a href="<?php echo e(url('mission')); ?>">Mission Statement</a></li>
                                       </ul>
                                     </li>
-                                    <li><a href="#<?php echo e(url('contact')); ?>">Contact Us</a></li>
+                                    <li><a href="<?php echo e(url('contact')); ?>">Contact Us</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -335,48 +359,28 @@
             class="categorie-product-section section">
             <div class="container-fluid pl-0 pr-0">
                 <div class="row g-0">
+                <?php
+                 foreach($bottomTrinity as $p){
+                ?>
                     <div class="col-lg-4 col-md-4">
+                        
                         <!-- Single Categorie Product Start -->
                         <div class="single-categorie">
                             <div class="categorie-image">
-                                <img src="./assets/images/categorie/cate-1.png" alt="">
+                                <img src="<?php echo e($p['img']); ?>" alt="" style="width: 427px; height: 287px;">
                             </div>
                             <div class="categorie-content">
-                                <h3>Now introducing</h3>
-                                <a class="shop-btn" href="#">Shop now</a>
-                                <h1>Spa Optima+</h1>
+                                <h3><?php echo e($p['topText']); ?></h3>
+                                <a class="<?php echo e($p['url']); ?>" href="#"><?php echo e($p['buttonText']); ?></a>
+                                <h1><?php echo e($p['bottomText']); ?></h1>
                             </div>
                         </div>
                         <!-- Single Categorie Product End -->
                     </div>
-                    <div class="col-lg-4 col-md-4">
-                        <!-- Single Categorie Product Start -->
-                        <div class="single-categorie">
-                            <div class="categorie-image">
-                                <img src="./assets/images/categorie/cate-2.png" alt="">
-                            </div>
-                            <div class="categorie-content">
-                                <h3>Wrinkle cure</h3>
-                                <a class="shop-btn" href="#">Shop now</a>
-                                <h1>Time Revolution</h1>
-                            </div>
-                        </div>
-                        <!-- Single Categorie Product End -->
-                    </div>
-                    <div class="col-lg-4 col-md-4">
-                        <!-- Single Categorie Product Start -->
-                        <div class="single-categorie">
-                            <div class="categorie-image">
-                                <img src="./assets/images/categorie/cate-3.png" alt="">
-                            </div>
-                            <div class="categorie-content">
-                                <h3>Pretty perks for every point you earn</h3>
-                                <a class="shop-btn" href="#">Shop now</a>
-                                <h1>Beauty Squad</h1>
-                            </div>
-                        </div>
-                        <!-- Single Categorie Product End -->
-                    </div>
+                <?php
+                }
+                ?>
+                   
                 </div>
             </div>
         </div>

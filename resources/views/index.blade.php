@@ -7,12 +7,42 @@
 
 @include('banner',['banners' => $banners])
 
- <!--Banner section start-->
- <?php
+<?php
   $leftSlide = $homeSlides['left'];
   $middleSlide = $homeSlides['middle'];
   $rightSlide = $homeSlides['right'];
  ?>
+
+@section('scripts')
+<script>
+    const middleSlides = [
+        <?php
+         foreach($middleSlide as $m){
+            echo json_encode($m).",";
+         }
+        ?>
+    ]
+
+    let counter = 0
+    $('#middle-slide-a').attr('href',middleSlides[0]['url'])
+        $('#middle-slide-img').attr('src',middleSlides[0]['img'])
+    setInterval(() => {
+      if(counter < middleSlides.length){
+       
+        let s = middleSlides[counter]
+        $('#middle-slide-a').attr('href',s['url'])
+        $('#middle-slide-img').attr('src',s['img'])
+        ++counter
+      }
+      else{
+        counter = 0
+      }
+    },3000)
+</script>
+@stop
+
+ <!--Banner section start-->
+ 
  <div class="banner-section section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50">
             <div class="container">
                 <div class="row">
@@ -27,9 +57,9 @@
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <!-- Single Banner Start -->
-                        <div class="single-banner mb-30">
-                            <a href="{{$middleSlide['url']}}">
-                               <img src="{{$middleSlide['img']}}" alt="">
+                        <div id="middle-banner" class="single-banner mb-30">
+                            <a id="middle-slide-a" href="">
+                               <img id="middle-slide-img" src="" alt="">
                             </a>
                         </div>
                         <!-- Single Banner End -->

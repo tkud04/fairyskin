@@ -53,9 +53,16 @@ class MainController extends Controller {
 		$banners = $this->helpers->getBanners();
 
 		 $homeSlides = [
-			'left' => ['img' => 'assets/images/banner/h1-banner-1.png', 'url' => '#'],
-			'middle' => ['img' => 'assets/images/homeSlides/slide-1.jpeg', 'url' => '#'],
-			'right' => ['img' => 'assets/images/banner/h1-banner-3.png', 'url' => '#'],
+			'left' => ['img' => 'assets/images/sidebar-ad.jpeg', 'url' => '#'],
+			'middle' => [
+				['img' => 'assets/images/homeSlides/slide-1.jpeg', 'url' => '#'],
+				['img' => 'assets/images/homeSlides/slide-2.jpeg', 'url' => '#'],
+				['img' => 'assets/images/homeSlides/slide-3.jpeg', 'url' => '#'],
+				['img' => 'assets/images/homeSlides/slide-4.jpeg', 'url' => '#'],
+				['img' => 'assets/images/homeSlides/slide-5.jpeg', 'url' => '#'],
+				['img' => 'assets/images/homeSlides/slide-6.jpeg', 'url' => '#'],
+			],
+			'right' => ['img' => 'assets/images/sidebar-ad.jpeg', 'url' => '#'],
 		 ];
 
 		
@@ -74,12 +81,33 @@ class MainController extends Controller {
 		
 		shuffle($ads);
 		shuffle($banners);
-		$ad = count($ads) < 1 ? "images/inner-ad-2.png" : $ads[0]['img'];
-    	return view("index",compact([
+		return view("index",compact([
 			'user','cart','categories','banners','homeSlides',
 			'topDeals','tabProducts','posts','hasUnpaidOrders',
-			'productGroups','ad','signals','plugins'
+			'productGroups','signals','plugins'
 		]));
+    }
+
+	 /**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function getAbout(Request $request)
+    {
+       $user = null;
+		$cart = [];
+		if(Auth::check())
+		{
+			$user = Auth::user();
+			
+		}
+		$req = $request->all();
+		$cart = $this->helpers->getCart($user);
+		$categories = $this->helpers->getCategories();
+		$signals = $this->helpers->signals;
+		$plugins = $this->helpers->getPlugins();
+		return view("about",compact(['user','cart','categories','signals','plugins']));	
     }
 	
 	/**
@@ -947,32 +975,7 @@ class MainController extends Controller {
     }
     
    
-   /**
-	 * Show the application welcome screen to the user.
-	 *
-	 * @return Response
-	 */
-	public function getAbout(Request $request)
-    {
-       $user = null;
-		$cart = [];
-		if(Auth::check())
-		{
-			$user = Auth::user();
-			
-		}
-		$req = $request->all();
-		$gid = isset($_COOKIE['gid']) ? $_COOKIE['gid'] : "";
-		$cart = $this->helpers->getCart($user,$gid);
-		$c = $this->helpers->getCategories();
-		$ads = $this->helpers->getAds();
-		$signals = $this->helpers->signals;
-		$plugins = $this->helpers->getPlugins();
-		#dd($ads);
-		shuffle($ads);
-		$ad = count($ads) < 1 ? "images/inner-ad-2.png" : $ads[0]['img'];
-		return view("about",compact(['user','cart','c','ad','signals','plugins']));	
-    }
+  
 
 	/**
 	 * Show the application welcome screen to the user.
