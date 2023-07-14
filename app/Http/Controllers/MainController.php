@@ -109,6 +109,110 @@ class MainController extends Controller {
 		$plugins = $this->helpers->getPlugins();
 		return view("about",compact(['user','cart','categories','signals','plugins']));	
     }
+
+	 /**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function getMissionStatement(Request $request)
+    {
+       $user = null;
+		$cart = [];
+		if(Auth::check())
+		{
+			$user = Auth::user();
+			
+		}
+		$req = $request->all();
+		$cart = $this->helpers->getCart($user);
+		$categories = $this->helpers->getCategories();
+		$signals = $this->helpers->signals;
+		$plugins = $this->helpers->getPlugins();
+		return view("mission-statement",compact(['user','cart','categories','signals','plugins']));	
+    }
+
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function getFAQ(Request $request)
+    {
+		$user = null;
+		$cart = [];
+		if(Auth::check())
+		{
+			$user = Auth::user();
+			
+		}
+		$req = $request->all();
+		$cart = $this->helpers->getCart($user);
+		$categories = $this->helpers->getCategories();
+		$signals = $this->helpers->signals;
+		$plugins = $this->helpers->getPlugins();
+		return view("faq",compact(['user','cart','categories','signals','plugins']));	
+    }
+
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function getContact(Request $request)
+    {
+        $user = null;
+		$cart = [];
+		if(Auth::check())
+		{
+			$user = Auth::user();
+			
+		}
+		$req = $request->all();
+		$cart = $this->helpers->getCart($user);
+		$categories = $this->helpers->getCategories();
+		$signals = $this->helpers->signals;
+		$plugins = $this->helpers->getPlugins();
+		return view("contact",compact(['user','cart','categories','signals','plugins']));								 
+    }
+	
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+    public function postContact(Request $request)
+    {
+		$user = [];
+		
+    	if(Auth::check())
+		{
+			$user = Auth::user();
+		}
+       
+        $req = $request->all();
+        
+        $ret = ['status' => 'error','message' => 'nothing happened'];
+
+        $validator = Validator::make($req, [
+                             'name' => 'required',
+							 'subject' => 'required',
+                             'email' => 'required|email',
+                             'message' => 'required'
+         ]);
+         
+         if($validator->fails())
+         {
+             $ret = ['status' => 'error','message' => 'validation'];
+         }
+         
+         else
+         {
+         	//$this->helpers->contact($req);
+			 $ret = ['status' => 'ok'];
+         }    
+		 return json_encode($ret);    
+    }
 	
 	/**
 	 * Show the application welcome screen to the user.
@@ -855,70 +959,7 @@ class MainController extends Controller {
                  }	 
     }
 	
-	/**
-	 * Show the application welcome screen to the user.
-	 *
-	 * @return Response
-	 */
-	public function getContact(Request $request)
-    {
-        $user = null;
-		$cart = [];
-		if(Auth::check())
-		{
-			$user = Auth::user();
-			
-		}
-		$req = $request->all();
-		$gid = isset($_COOKIE['gid']) ? $_COOKIE['gid'] : "";
-		$cart = $this->helpers->getCart($user,$gid);
-		$c = $this->helpers->getCategories();
-		$signals = $this->helpers->signals;
-		$plugins = $this->helpers->getPlugins();
-		$ads = $this->helpers->getAds();
-		shuffle($ads);
-		$ad = count($ads) < 1 ? "images/inner-ad-2.png" : $ads[0]['img'];
-		//dd($user);
-		return view("contact",compact(['user','cart','c','ad','signals','plugins']));							 
-    }
 	
-	/**
-	 * Show the application welcome screen to the user.
-	 *
-	 * @return Response
-	 */
-    public function postContact(Request $request)
-    {
-		$user = [];
-		
-    	if(Auth::check())
-		{
-			$user = Auth::user();
-		}
-       
-        $req = $request->all();
-        //dd($req);
-        
-        $validator = Validator::make($req, [
-                             'name' => 'required',
-                             'email' => 'required|email',
-                             'msg' => 'required'
-         ]);
-         
-         if($validator->fails())
-         {
-             $messages = $validator->messages();
-             return redirect()->back()->withInput()->with('errors',$messages);
-             //dd($messages);
-         }
-         
-         else
-         {
-         	$this->helpers->contact($req);
-	        session()->flash("contact-status","ok");
-			return redirect()->intended('shop');
-         }        
-    }
 	
 	
 	/**
@@ -1029,31 +1070,7 @@ class MainController extends Controller {
 		return view("return-policy",compact(['user','cart','c','ad','signals','plugins']));	
     }
 	
-	/**
-	 * Show the application welcome screen to the user.
-	 *
-	 * @return Response
-	 */
-	public function getFAQ(Request $request)
-    {
-       $user = null;
-		$cart = [];
-		if(Auth::check())
-		{
-			$user = Auth::user();
-			
-		}
-		$req = $request->all();
-		$gid = isset($_COOKIE['gid']) ? $_COOKIE['gid'] : "";
-		$cart = $this->helpers->getCart($user,$gid);
-		$c = $this->helpers->getCategories();
-		$ads = $this->helpers->getAds();
-		$plugins = $this->helpers->getPlugins();
-		shuffle($ads);
-		$ad = count($ads) < 1 ? "images/inner-ad-2.png" : $ads[0]['img'];
-		$signals = $this->helpers->signals;
-		return view("faq",compact(['user','cart','c','ad','signals','plugins']));	
-    }
+	
     
 	/**
 	 * Show the application welcome screen to the user.

@@ -34,6 +34,7 @@ Route::get('contact', [MainController::class,'getContact']);
 Route::post('contact', [MainController::class,'postContact']);
 Route::get('search', [MainController::class,'getSearch']);
 Route::get('about', [MainController::class,'getAbout']);
+Route::get('mission-statement', [MainController::class,'getMissionStatement']);
 Route::get('faq', [MainController::class,'getFAQ']);
 Route::get('privacy-policy', [MainController::class,'getPrivacyPolicy']);
 Route::get('returns', [MainController::class,'getReturnPolicy']);

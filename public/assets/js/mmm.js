@@ -366,6 +366,51 @@ $(document).ready(() => {
       
   })
 
+  $('#contact-btn').click(e => {
+    e.preventDefault()
+   
+    const name = $('#contact-name').val(), subject = $('#contact-subject').val(), 
+          message = $('#contact-message').val(), email = $('#contact-email').val()
+
+    const v = name === '' || subject === '' || message === '' || email === ''
+
+    if(v){
+        displayError('Required fields are missing')
+    }
+    else{
+       hideElem(`#contact-btn`)
+        showElem(`#contact-loading`)
+
+      const fd = new FormData()
+       fd.append("_token",$('#skf').val())
+       fd.append('name',name)
+       fd.append('subject',subject)
+       fd.append('message',message)
+       fd.append('email',email)
+
+      const onSuccess = () => {
+        displaySuccess('Message sent! We would reach out to you shortly.')
+        window.location = 'contact'
+      }
+
+      const onError = () => {
+        displayError('Failed to send message, please try again')
+        hideElem(`#contact-loading`)
+        showElem(`#contact-btn`)
+      }
+
+      const u = 'contact'
+
+      const req = new Request(u,{
+        method: 'post',
+        body: fd
+      });
+
+      requestClan(req,onSuccess,onError)
+
+    }
+})
+
 
 
 })

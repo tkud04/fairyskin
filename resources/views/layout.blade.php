@@ -202,7 +202,7 @@
                                       <ul class="sub-menu">
                                         <li><a href="{{url('about')}}">About Us</a></li>
                                         <li><a href="{{url('faq')}}">FAQ</a></li>
-                                        <li><a href="{{url('mission')}}">Mission Statement</a></li>
+                                        <li><a href="{{url('mission-statement')}}">Mission Statement</a></li>
                                       </ul>
                                     </li>
                                     <li><a href="{{url('contact')}}">Contact Us</a></li>

@@ -111,7 +111,7 @@ const requestClan = (req,okCallback,errorCallback) => {
 		    displayError("Failed to process request: " + error);			
 	   })
 	   .then(res => {
-		  console.log(typeof res)	
+		  console.log(res)	
 		  if(typeof res !== 'undefined'){ 
 		   if(res.status === "ok"){
               typeof okCallback === 'function' && okCallback()

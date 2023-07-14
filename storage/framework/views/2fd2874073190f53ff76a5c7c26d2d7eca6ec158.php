@@ -202,7 +202,7 @@
                                       <ul class="sub-menu">
                                         <li><a href="<?php echo e(url('about')); ?>">About Us</a></li>
                                         <li><a href="<?php echo e(url('faq')); ?>">FAQ</a></li>
-                                        <li><a href="<?php echo e(url('mission')); ?>">Mission Statement</a></li>
+                                        <li><a href="<?php echo e(url('mission-statement')); ?>">Mission Statement</a></li>
                                       </ul>
                                     </li>
                                     <li><a href="<?php echo e(url('contact')); ?>">Contact Us</a></li>

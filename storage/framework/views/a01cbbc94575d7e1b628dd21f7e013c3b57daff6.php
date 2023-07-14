@@ -1,9 +1,7 @@
-@extends('layout')
+<?php $__env->startSection('title',"Contact Us"); ?>
 
-@section('title',"Contact Us")
-
-@section('content')
-@include('banner-2',['title' => 'Contact Us','subtitle' => 'We\'d like to hear from you!']) 
+<?php $__env->startSection('content'); ?>
+<?php echo $__env->make('banner-2',['title' => 'Contact Us','subtitle' => 'We\'d like to hear from you!'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?> 
 
  <!--Contact Map section start-->
  <div class="contact-map-section section">
@@ -41,7 +39,7 @@
                         <div class="contact-form-wrap">
                             <h3 class="contact-title">Drop us a line</h3>
                             <form id="contact-form" action="#" method="post">
-                              <input type="hidden" id="skf" value="{{csrf_token()}}"/>
+                              <input type="hidden" id="skf" value="<?php echo e(csrf_token()); ?>"/>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="contact-form-style mb-20">
@@ -75,4 +73,5 @@
             </div>
         </div>
         <!--Contact section end-->
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/mac/repos/fairyskin/resources/views/contact.blade.php ENDPATH**/ ?>

@@ -13,7 +13,7 @@
                         <!--About Us Image Start-->
                         <div class="about-us-img-wrapper mb-30 mb-xs-15">
                             <div class="about-us-image img-full">
-                                <a href="#"><img src="assets/images/about/about-1.jpg" alt=""></a>
+                                <a href="#"><img src="assets/images/about.jpg" alt=""></a>
                             </div>
                         </div>
                         <!--About Us Image End-->
