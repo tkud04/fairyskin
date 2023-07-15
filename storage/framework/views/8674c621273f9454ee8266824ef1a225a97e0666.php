@@ -1,8 +1,6 @@
-@extends('layout')
+<?php $__env->startSection('title',"Shop"); ?>
 
-@section('title',"Shop")
-
-@section('content')
+<?php $__env->startSection('content'); ?>
  <!-- Shop Section Start -->
  <div class="shop-section section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-70 pb-lg-50 pb-md-40 pb-sm-60 pb-xs-50">
             <div class="container">
@@ -15,7 +13,7 @@
 								<?php
                                  foreach($sidebarData['category'] as $c){
 								?>
-                                <li><a href="{{$c['url']}}"><i class="fa fa-angle-right"></i>{{$c['name']}} <span class="count">({{$c['count']}})</span></a></li>
+                                <li><a href="<?php echo e($c['url']); ?>"><i class="fa fa-angle-right"></i><?php echo e($c['name']); ?> <span class="count">(<?php echo e($c['count']); ?>)</span></a></li>
                                 <?php
 								 }
 								?>
@@ -29,7 +27,7 @@
 							<?php
                                  foreach($sidebarData['price'] as $c){
 								?>
-                                <li><a href="{{$c['url']}}"><i class="fa fa-angle-right"></i>{!!$c['name']!!} <span class="count">({{$c['count']}})</span></a></li>
+                                <li><a href="<?php echo e($c['url']); ?>"><i class="fa fa-angle-right"></i><?php echo $c['name']; ?> <span class="count">(<?php echo e($c['count']); ?>)</span></a></li>
                                 <?php
 								 }
 								?>
@@ -629,4 +627,5 @@
             </div>
         </div>
         <!-- Shop Section End -->
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/mac/repos/fairyskin/resources/views/shop.blade.php ENDPATH**/ ?>

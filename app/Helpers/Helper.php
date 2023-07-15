@@ -1514,6 +1514,46 @@ elseif(count($ret) > 1)
 return $rett;
 }
 
+function getShopSidebarData($type='category'){
+  $ret = [];
+  
+ switch($type){
+  case 'category':
+    
+    $categories = $this->getCategories();
+    foreach($categories as $c){
+     array_push($ret,[
+      'name' => $c['name'],
+      'url' => "shop?category={$c['category']}",
+      'count' => ProductData::where('category',$c['category'])->count()
+     ]);
+    }
+  break;
+
+  case 'price':
+    $ret = [
+      [
+        'name' => '&#8358;0.00 - &#8358;19,999.99',
+        'url' => "shop?price=below-20k",
+        'count' => ProductData::where('amount','<',20000)->count()
+      ],
+      [
+        'name' => '&#8358;20,000.00 - &#8358;99,999.99',
+        'url' => "shop?price=below-100k",
+        'count' => ProductData::where('amount','>=',20000)
+                              ->where('amount','<',100000)->count()
+      ],
+      [
+        'name' => '&#8358;100,000.00 and above',
+        'url' => "shop?price=above-100k",
+        'count' => ProductData::where('amount','>=',100000)->count()
+      ],
+    ];
+  break;
+ }
+ return $ret;
+}
+
 function createAds($data)
 {
 $ret = Ads::create(['img' => $data['img'], 

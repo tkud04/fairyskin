@@ -186,7 +186,7 @@
                                     <li><a href="<?php echo e(url('/')); ?>">Home</a></li>
                                     <li><a href="#">Shop</a>
                                     <ul class="sub-menu">
-                                            <li><a href="#<?php echo e(url('shop')); ?>">All Products</a></li>
+                                            <li><a href="<?php echo e(url('shop')); ?>">All Products</a></li>
                                             <?php
                                              foreach($categories as $c){
                                                 $url = '#'

@@ -213,6 +213,67 @@ class MainController extends Controller {
          }    
 		 return json_encode($ret);    
     }
+
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function getShop(Request $request)
+    {
+		$user = null;
+		if(Auth::check())
+		{
+			$user = Auth::user();
+			
+		}
+		$req = $request->all();
+		$cart = $this->helpers->getCart($user);
+		$categories = $this->helpers->getCategories();
+		$signals = $this->helpers->signals;
+		$plugins = $this->helpers->getPlugins();
+
+		$compact = ['user','cart','categories','signals','plugins'];
+		$products = [];
+		$samba = "Shop";
+		
+                 if(isset($req['type']) || isset($req['category']))
+				 {
+                    if(isset($req['type']))
+                     {
+					     $type = $req['type'];
+					   $products = $this->helpers->getProductsByType($type);
+					   // dd($products);
+					   $samba = $this->helpers->getFriendlyName($type);
+					   
+                     }
+                
+                    if(isset($req['category']))
+                    {
+					   
+					   $category = $req['category'];
+					   $products = $this->helpers->getProductsByCategory($category);
+					 // dd($products);
+					 $samba = $this->helpers->getFriendlyName($category);
+                    }
+				 }
+                 else
+				 {
+					   $products = $this->helpers->getProducts();
+					 // dd($products);
+					 $samba = "Shop";
+				 }
+                 
+				 $sidebarData = [
+					'category' => $this->helpers->getShopSidebarData(),
+					'price' => $this->helpers->getShopSidebarData('price'),
+				 ];
+	
+				 array_push($compact,'products','samba','sidebarData');
+
+				 return view("shop",compact($compact));		 
+    }
+	
 	
 	/**
 	 * Show the application welcome screen to the user.
@@ -252,63 +313,6 @@ class MainController extends Controller {
     	return view("reviews",compact(['user','cart','c','banners','reviews','ad','signals','plugins']));
     }
 	
-	/**
-	 * Show the application welcome screen to the user.
-	 *
-	 * @return Response
-	 */
-	public function getShop(Request $request)
-    {
-		$user = null;
-		if(Auth::check())
-		{
-			$user = Auth::user();
-			
-		}
-		$req = $request->all();
-		$gid = isset($_COOKIE['gid']) ? $_COOKIE['gid'] : "";
-		$cart = $this->helpers->getCart($user,$gid);
-		
-		$c = $this->helpers->getCategories();
-		$cc = $this->helpers->categories_2;
-		$signals = $this->helpers->signals;
-		$plugins = $this->helpers->getPlugins();
-		$ads = $this->helpers->getAds();
-		shuffle($ads);
-		$ad = count($ads) < 1 ? "images/inner-ad-2.png" : $ads[0]['img'];
-		$na = $this->helpers->getNewArrivals();
-		
-                 if(isset($req['type']) || isset($req['category']))
-				 {
-                    if(isset($req['type']))
-                     {
-					     $type = $req['type'];
-					   $products = $this->helpers->getProductsByType($type);
-					   // dd($products);
-					   $samba = $this->helpers->getFriendlyName($type);
-					   
-                       return view("shop",compact(['user','cart','products','c','na','ad','samba','signals','plugins']));
-                       
-                     }
-                
-                    if(isset($req['category']))
-                    {
-					   
-					   $category = $req['category'];
-					   $products = $this->helpers->getProductsByCategory($category);
-					 // dd($products);
-					 $samba = $this->helpers->getFriendlyName($category);
-                       return view("shop",compact(['user','cart','products','c','na','ad','samba','signals','plugins']));			 
-                    }
-				 }
-                 else
-				 {
-					   $products = $this->helpers->getProducts();
-					 // dd($products);
-					 $samba = "Shop";
-                       return view("shop",compact(['user','cart','products','c','na','ad','samba','signals','plugins']));
-				 }				 
-    }
 	
 	/**
 	 * Show the application welcome screen to the user.
