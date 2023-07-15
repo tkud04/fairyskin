@@ -38,7 +38,7 @@
                         <div class="common-sidebar-widget">
                             <div class="single-banner">
                                 <a href="#">
-                                    <img src="assets/images/banner/h4-banner-2.png" alt="">
+                                    <img src="assets/images//shop-sidebar.jpg" alt="">
                                 </a>
                             </div>
                         </div>
