@@ -282,47 +282,7 @@ class MainController extends Controller {
                  
 				 return view("shop",compact($compact));		 
     }
-	
-	
-	/**
-	 * Show the application welcome screen to the user.
-	 *
-	 * @return Response
-	 */
-	public function getReviews(Request $request)
-    {
-		$hasUnpaidOrders = null;
-		$user = null;
-		if(Auth::check())
-		{
-			$user = Auth::user();
-			#$hasUnpaidOrders = $this->helpers->checkForUnpaidOrders($user);
-		}
-		
-		$req = $request->all();
-		$gid = isset($_COOKIE['gid']) ? $_COOKIE['gid'] : "";
-		$cart = $this->helpers->getCart($user,$gid);
-		
-		$c = $this->helpers->getCategories();
-		
-		$signals = $this->helpers->signals;
-		$reviews = $this->helpers->getOrderReviews(['order' => true]);
-		#dd($reviews);
-		
-		$ads = $this->helpers->getAds("wide-ad");
-		$banners = $this->helpers->getBanners();
-		$plugins = $this->helpers->getPlugins();
-		
-		#dd($hasUnpaidOrders);
-		
-		shuffle($ads);
-		shuffle($banners);
-		$ad = count($ads) < 1 ? "images/inner-ad-2.png" : $ads[0]['img'];
 
-    	return view("reviews",compact(['user','cart','c','banners','reviews','ad','signals','plugins']));
-    }
-	
-	
 	/**
 	 * Show the application welcome screen to the user.
 	 *
@@ -337,19 +297,11 @@ class MainController extends Controller {
 			$user = Auth::user();
 		}
 		$req = $request->all();
-		$gid = isset($_COOKIE['gid']) ? $_COOKIE['gid'] : "";
-		$cart = $this->helpers->getCart($user,$gid);
-		$c = $this->helpers->getCategories();
-		$cc = $this->helpers->categories_2;
+		$cart = $this->helpers->getCart($user);
+		$categories = $this->helpers->getCategories();
 		$signals = $this->helpers->signals;
 		$plugins = $this->helpers->getPlugins();
-		$ads = $this->helpers->getAds();
-		shuffle($ads);
-		$ad = count($ads) < 1 ? "images/inner-ad-2.png" : $ads[0]['img'];
 		
-    	
-		
-		$req = $request->all();
 	    //dd($secure);
 		$validator = Validator::make($req, [
                              'sku' => 'required'
@@ -357,7 +309,7 @@ class MainController extends Controller {
          
                  if($validator->fails())
                   {
-					  $uu = "shop?category=necklaces";
+					  $uu = "shop";
                       return redirect()->intended($uu);
                        
                  }
@@ -411,12 +363,58 @@ class MainController extends Controller {
 					}
 					else
 					{
-						return view("product",compact(['user','cart','c','cc','ad','reviews','related','product','discounts','signals','plugins']));
+						return view("product",compact([
+							'user','cart','categories',
+							'product','reviews','discounts',
+							'signals','plugins'
+						]));
 					}
                     			 
                  }			 
     	
     }
+	
+	
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function getReviews(Request $request)
+    {
+		$hasUnpaidOrders = null;
+		$user = null;
+		if(Auth::check())
+		{
+			$user = Auth::user();
+			#$hasUnpaidOrders = $this->helpers->checkForUnpaidOrders($user);
+		}
+		
+		$req = $request->all();
+		$gid = isset($_COOKIE['gid']) ? $_COOKIE['gid'] : "";
+		$cart = $this->helpers->getCart($user,$gid);
+		
+		$c = $this->helpers->getCategories();
+		
+		$signals = $this->helpers->signals;
+		$reviews = $this->helpers->getOrderReviews(['order' => true]);
+		#dd($reviews);
+		
+		$ads = $this->helpers->getAds("wide-ad");
+		$banners = $this->helpers->getBanners();
+		$plugins = $this->helpers->getPlugins();
+		
+		#dd($hasUnpaidOrders);
+		
+		shuffle($ads);
+		shuffle($banners);
+		$ad = count($ads) < 1 ? "images/inner-ad-2.png" : $ads[0]['img'];
+
+    	return view("reviews",compact(['user','cart','c','banners','reviews','ad','signals','plugins']));
+    }
+	
+	
+	
 	
 	/**
 	 * Show the application welcome screen to the user.

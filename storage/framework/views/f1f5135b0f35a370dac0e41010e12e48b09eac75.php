@@ -1,4 +1,4 @@
-@extends('layout')
+
 
  <?php
 				   $sku = $product['sku'];
@@ -30,9 +30,9 @@
 
 
 
-@section('title',$product['name'])
+<?php $__env->startSection('title',$product['name']); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
   <!-- Single Product Section Start -->
   <div class="single-product-section section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-100 pb-lg-80 pb-md-70 pb-sm-30 pb-xs-20">
             <div class="container">
@@ -867,4 +867,5 @@
         <!--Product section end-->
 
 
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/mac/repos/fairyskin/resources/views/product.blade.php ENDPATH**/ ?>
