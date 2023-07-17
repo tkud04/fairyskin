@@ -355,7 +355,7 @@ class MainController extends Controller {
 					 #dd($discounts);
 					 $reviews = $this->helpers->getReviews($req["sku"]);
 					 $related = $this->helpers->getProducts();
-					// dd($product);
+					 #dd($reviews);
 					
 					if(isset($req['type']) && $req['type'] == "json")
 					{
@@ -372,6 +372,41 @@ class MainController extends Controller {
                     			 
                  }			 
     	
+    }
+
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+    public function postAddReview(Request $request)
+    {
+		$user = null;
+    	if(Auth::check())
+		{
+			$user = Auth::user();
+		}
+		
+        $req = $request->all();
+        //dd($req);
+		$ret = ['status' => 'error','message' => 'nothing happened'];
+        
+        $validator = Validator::make($req, [
+                             'rating' => 'required',
+							 'sku' => 'required',
+                             'name' => 'required',
+							 'review' => 'required'
+         ]);
+         
+         if($validator->fails())
+         {
+			$ret = ['status' => 'error','message' => 'validation'];
+         }
+         
+         else
+         {
+         	$ret = ['status' => 'ok'];
+         }        
     }
 	
 	
@@ -1440,42 +1475,7 @@ class MainController extends Controller {
          }        
     }
 	
-	/**
-	 * Show the application welcome screen to the user.
-	 *
-	 * @return Response
-	 */
-    public function postAddReview(Request $request)
-    {
-		$user = null;
-    	if(Auth::check())
-		{
-			$user = Auth::user();
-		}
-		
-        $req = $request->all();
-        //dd($req);
-        
-        $validator = Validator::make($req, [
-                             'rating' => 'required',
-                             'name' => 'required',
-							 'review' => 'required'
-         ]);
-         
-         if($validator->fails())
-         {
-             $messages = $validator->messages();
-             return redirect()->back()->withInput()->with('errors',$messages);
-             //dd($messages);
-         }
-         
-         else
-         {
-         	$this->helpers->createReview($user,$req);
-	        session()->flash("add-review-status","ok");
-			return redirect()->back();
-         }        
-    }
+	
 	
 	
 	/**

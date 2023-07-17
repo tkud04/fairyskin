@@ -99,9 +99,9 @@ const requestClan = (req,okCallback,errorCallback) => {
 	fetch(req)
 	   .then(response => {
 		   if(response.status === 200){
-			   //console.log(response);
+			   console.log(response.html());
 			   
-			   return response.json()
+			   //return response.json()
 		   }
 		   else{
 			   return {status: response.status,  message: "Failed to fetch"}

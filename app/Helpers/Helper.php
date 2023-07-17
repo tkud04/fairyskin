@@ -1139,6 +1139,7 @@ if($reviews != null)
     $temp['rating'] = $r->rating;
      $temp['name'] = $r->name;
      $temp['review'] = $r->review;
+     $temp['date'] = $r->created_at->format("jS F, Y");
      array_push($ret,$temp);
  }
 }                         

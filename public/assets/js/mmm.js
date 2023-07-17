@@ -411,6 +411,50 @@ $(document).ready(() => {
     }
 })
 
+$('#add-review-btn').click(e => {
+  e.preventDefault()
+ 
+  const name = $('#add-review-name').val(), rating = $('#add-review-rating').val(),
+               comment = $('#add-review-comment').val(), sku = $('#add-review-product').val()
+
+  const v = name === '' || rating === '' || comment === ''
+
+  if(v){
+      displayError('Required fields are missing')
+  }
+  else{
+     hideElem(`#add-review-btn`)
+      showElem(`#add-review-loading`)
+
+    const fd = new FormData()
+     fd.append("_token",$('#skf').val())
+     fd.append('name',name)
+     fd.append('rating',rating)
+     fd.append('comment',comment)
+
+    const onSuccess = () => {
+      displaySuccess('Review submitted! Your comment would be displayed after review by our admins.')
+      window.location = `product?sku=${sku}`
+    }
+
+    const onError = () => {
+      displayError('Failed to add your review, please try again')
+      hideElem(`#add-review-loading`)
+      showElem(`#add-review-btn`)
+    }
+
+    const u = `add-review`
+
+    const req = new Request(u,{
+      method: 'post',
+      body: fd
+    });
+
+    requestClan(req,onSuccess,onError)
+
+  }
+})
+
 
 
 })

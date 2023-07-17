@@ -10,6 +10,7 @@
 			   $pd = $product['pd'];
 			   $description = $pd['description'];
 			   $category = $pd['category'];
+         $categoryUrl = url('shop')."?category={$category}";
 			   $in_stock = $pd['in_stock'];
 			   $iss = ['in_stock' => "in stock",'out_of_stock' => "out of stock",'new' => "available for order"];
 			   $amount = $pd['amount'];
@@ -32,6 +33,14 @@
 
 <?php $__env->startSection('title',$product['name']); ?>
 
+<?php $__env->startSection('scripts'); ?>
+<script>
+  $(document).ready(() => {
+    hideElem(['#add-review-loading'])
+  })
+</script>
+<?php $__env->stopSection(); ?>
+
 <?php $__env->startSection('content'); ?>
   <!-- Single Product Section Start -->
   <div class="single-product-section section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-100 pb-lg-80 pb-md-70 pb-sm-30 pb-xs-20">
@@ -49,26 +58,16 @@
                                 "prevArrow": {"buttonClass": "slick-btn slick-prev", "iconClass": "fa fa-angle-left" },
                                 "nextArrow": {"buttonClass": "slick-btn slick-next", "iconClass": "fa fa-angle-right" }
                                 }'>
+                                <?php
+                                 foreach($imggs as $img){
+                                ?>
                                 <div class="lg-image">
-                                    <img src="./assets/images/product/large-product/l-product-1.jpg" alt="">
-                                    <a href="./assets/images/product/large-product/l-product-1.jpg" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-expand"></i></a>
+                                    <img src="<?php echo e($img); ?>" alt="">
+                                    <a href="<?php echo e($img); ?>" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-expand"></i></a>
                                 </div>
-                                <div class="lg-image">
-                                    <img src="./assets/images/product/large-product/l-product-2.jpg" alt="">
-                                    <a href="./assets/images/product/large-product/l-product-2.jpg" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-expand"></i></a>
-                                </div>
-                                <div class="lg-image">
-                                    <img src="./assets/images/product/large-product/l-product-3.jpg" alt="">
-                                    <a href="./assets/images/product/large-product/l-product-3.jpg" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-expand"></i></a>
-                                </div>
-                                <div class="lg-image">
-                                    <img src="./assets/images/product/large-product/l-product-4.jpg" alt="">
-                                    <a href="./assets/images/product/large-product/l-product-4.jpg" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-expand"></i></a>
-                                </div>
-                                <div class="lg-image">
-                                    <img src="./assets/images/product/large-product/l-product-5.jpg" alt="">
-                                    <a href="./assets/images/product/large-product/l-product-5.jpg" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-expand"></i></a>
-                                </div>
+                                <?php
+                                }
+                                ?>
                             </div>
                             <div class="product-details-thumbs slider-thumbs-1 tf-element-carousel" data-slick-options='{
                                 "slidesToShow": 4,
@@ -89,12 +88,14 @@
                                 {"breakpoint":479, "settings": {
                                     "slidesToShow": 2
                                 }}
-                            ]'>										
-                                <div class="sm-image"><img src="./assets/images/product/small-product/s-product-1.jpg" alt="product image thumb"></div>
-                                <div class="sm-image"><img src="./assets/images/product/small-product/s-product-2.jpg" alt="product image thumb"></div>
-                                <div class="sm-image"><img src="./assets/images/product/small-product/s-product-3.jpg" alt="product image thumb"></div>
-                                <div class="sm-image"><img src="./assets/images/product/small-product/s-product-4.jpg" alt="product image thumb"></div>
-                                <div class="sm-image"><img src="./assets/images/product/small-product/s-product-5.jpg" alt="product image thumb"></div>
+                            ]'>			
+                               <?php
+                                foreach($imggs as $img){
+                               ?>							
+                                <div class="sm-image"><img src="<?php echo e($img); ?>" alt="product image thumb"></div>
+                                <?php
+                                }
+                                ?>
                             </div>
                         </div>
                         <!--Product Details Left -->
@@ -108,7 +109,7 @@
                                 <a href="#"><i class="fa fa-angle-right"></i></a>
                             </div>
                             <!--Product Nav End-->
-		                    <h2>White Shave Brux</h2>
+		                    <h2><?php echo e($product['name']); ?></h2>
 		                    <div class="single-product-reviews">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -118,11 +119,11 @@
                                 <a class="review-link" href="#">(1 customer review)</a>
                             </div>
                             <div class="single-product-price">
-                                <span class="price new-price">$66.00</span>
-                                <span class="regular-price">$77.00</span>
+                                <span class="price new-price">&#8358;<?php echo e(number_format($product['pd']['amount'],2)); ?></span>
+                                <!--<span class="regular-price">$77.00</span>-->
                             </div>
                             <div class="product-description">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus</p>
+                                <p><?php echo e($product['pd']['description']); ?></p>
                             </div>
                             <div class="single-product-quantity">
                                 <form class="add-quantity" action="#">
@@ -140,9 +141,8 @@
                             </div>
                             <div class="product-meta">
                                 <span class="posted-in">
-                                        Categories: 
-		                                <a href="#">Accessories</a>,
-		                                <a href="#">Electronics</a>
+                                        Category: 
+		                                <a href="<?php echo e($categoryUrl); ?>"><?php echo e($category); ?></a>
 		                            </span>
                             </div>
                             <div class="single-product-sharing">
@@ -150,10 +150,7 @@
                                 <ul>
                                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
                                     <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
                                 </ul>
                             </div>
 		                </div>
@@ -176,7 +173,7 @@
                                 <a class="active" data-bs-toggle="tab" href="#description">Description</a>
                                 </li>
                                 <li>
-                                <a data-bs-toggle="tab" href="#reviews">Reviews (1)</a>
+                                <a data-bs-toggle="tab" href="#reviews">Reviews (<?php echo e(count($reviews)); ?>)</a>
                                 </li>
                             </ul>
                             <!--Review And Description Tab Menu End-->
@@ -184,38 +181,62 @@
                             <div class="tab-content product-review-content-tab" id="myTabContent-4">
                                 <div class="tab-pane fade active show" id="description">
                                     <div class="single-product-description">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla.</p>
-                                        <p>Pellentesque aliquet, sem eget laoreet ultrices, ipsum metus feugiat sem, quis fermentum turpis eros eget velit. Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus eget sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, lorem et placerat vestibulum, metus nisi posuere nisl, in accumsan elit odio quis mi. Cras neque metus, consequat et blandit et, luctus a nunc. Etiam gravida vehicula tellus, in imperdiet ligula euismod eget.</p>
+                                    <p><?php echo e($product['pd']['description']); ?></p>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="reviews">
                                     <div class="review-page-comment">
-                                    <h2>1 review for Sit voluptatem</h2>
+                                    <h2><?php echo e(count($reviews)); ?> review(s) for <?php echo e($product['name']); ?></h2>
+                                    <?php
+                                     if(count($reviews) > 0){
+                                    ?>
                                     <ul>
+                                      <?php
+                                       foreach($reviews as $review){
+                                      ?>
                                         <li>
                                             <div class="product-comment">
                                                 <img src="./assets/images/icons/author.png" alt="">
                                                 <div class="product-comment-content">
                                                     <div class="product-reviews">
+                                                      <?php
+                                                       for($i = 0; $i < $review['rating']; $i++){
+                                                      ?>
                                                         <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
+                                                      <?php
+                                                       }
+                                                      for($i = 0; $i < 5 - $reviews['rating']; $i++){
+                                                      ?>
                                                         <i class="fa fa-star-o"></i>
+                                                      <?php
+                                                       }
+                                                      ?>
+                                                      
                                                     </div>
                                                     <p class="meta">
-                                                        <strong>admin</strong> - <span>November 22, 2018</span>
+                                                        <strong><?php echo e($review['name']); ?></strong> - <span><?php echo e($review['date']); ?></span>
                                                     <div class="description">
-                                                        <p>Good Product</p>
+                                                        <p><?php echo e($review['review']); ?></p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </li>
+                                        <?php
+                                       }
+                                        ?>
                                     </ul>
+                                    <?php
+                                    }
+                                    ?>
                                     <div class="review-form-wrapper">
                                         <div class="review-form">
                                             <span class="comment-reply-title">Add a review </span>
+                                            <?php
+                                            if(isset($user)){
+                                            ?>
                                             <form action="#">
+                                               <input type="hidden" id="product" value="<?php echo e($product['sku']); ?>"/>
+                                               <input type="hidden" id="skf" value="<?php echo e(csrf_token()); ?>"/>
                                                 <p class="comment-notes">
                                                     <span id="email-notes">Your email address will not be published.</span>
                                                         Required fields are marked
@@ -224,31 +245,42 @@
                                                 <div class="comment-form-rating">
                                                     <label>Your rating</label>
                                                     <div class="rating">
-                                                        <i class="fa fa-star-o"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                        <i class="fa fa-star-o"></i>
+                                                        <select id="add-review-rating">
+                                                          <?php
+                                                           for($i = 1; $i < 6; $i++){
+                                                          ?>
+                                                          <option value="<?php echo e($i); ?>"><?php echo e($i); ?></option>
+                                                          <?php
+                                                           }
+                                                          ?>
+                                                        </select>
                                                     </div>
-                                                </div>
-                                                <div class="input-element">
+                                                 </div>
+                                                <div class="input-element" style="margin-top: 40px;">
                                                     <div class="comment-form-comment">
                                                         <label>Comment</label>
-                                                        <textarea name="message" cols="40" rows="8"></textarea>
+                                                        <textarea name="message" id="add-review-review" placeholder="Your comment.." cols="40" rows="8"></textarea>
                                                     </div>
                                                     <div class="review-comment-form-author">
                                                         <label>Name </label>
-                                                        <input required="required" type="text">
+                                                        <input required="required" id="add-review-name" type="text" value="<?php echo e(isset($user) ? $user->fname.' '.$user->lname : ''); ?>"/>
                                                     </div>
-                                                    <div class="review-comment-form-email">
-                                                        <label>Email </label>
-                                                        <input required="required" type="text">
-                                                    </div>
+                                                   
                                                     <div class="comment-submit">
-                                                        <button type="submit" class="form-button">Submit</button>
+                                                    <p id="add-review-loading"> <img src="assets/images/loading.gif" alt="Loading" style="width: 70px; height: 70px;"/> Processing your request</p>
+                                                        <button id="add-review-btn" class="form-button">Submit</button>
                                                     </div>
                                                 </div>
                                             </form>
+                                            <?php
+                                            }
+                                            else{
+                                            ?>
+                                             <h4>You must be signed in to add a review.</h4>
+                                             <a href="#">Sign in</a>
+                                            <?php
+                                            }
+                                            ?>
                                         </div>
                                     </div>
                                     </div>
