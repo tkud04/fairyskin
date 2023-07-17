@@ -237,7 +237,7 @@ class MainController extends Controller {
 		$products = [];
 		$samba = "Shop";
 		
-                 if(isset($req['type']) || isset($req['category']))
+                 if(isset($req['type']) || isset($req['category'])|| isset($req['price']))
 				 {
                     if(isset($req['type']))
                      {
@@ -256,6 +256,15 @@ class MainController extends Controller {
 					 // dd($products);
 					 $samba = $this->helpers->getFriendlyName($category);
                     }
+
+					if(isset($req['price']))
+                    {
+					   
+					   $price = $req['price'];
+					   $products = $this->helpers->getProductsByPrice($price);
+					 // dd($products);
+					 $samba = "Products ".$this->helpers->getFriendlyName($price);
+                    }
 				 }
                  else
 				 {
@@ -270,7 +279,7 @@ class MainController extends Controller {
 				 ];
 	
 				 array_push($compact,'products','samba','sidebarData');
-
+                 
 				 return view("shop",compact($compact));		 
     }
 	

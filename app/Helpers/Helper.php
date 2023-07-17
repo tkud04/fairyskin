@@ -651,11 +651,7 @@ function getProducts($c="all")
 {
 $ret = [];
 $rr = [];
-/**
-$products = Products::where('qty','>',"0")
-                  ->where('status',"enabled")->get();
-**/				
-#dd($rr);			   
+		   
 $products = null;
 
 if($c === "all"){
@@ -691,6 +687,39 @@ function getProductsByCategory($cat)
 $ret = [];
 $pds = ProductData::where('category',$cat)->get();
 $pds = $pds->sortByDesc('created_at');	
+
+if($pds !== null)
+{
+ foreach($pds as $p)
+ {
+     $pp = $this->getProduct($p->sku);
+     if($pp['status'] === "enabled" && $pp['qty'] > 0) array_push($ret,$pp);
+ }
+}                         
+                 
+return $ret;
+}
+
+function getProductsByPrice($amount)
+{
+
+$ret = [];
+$pds = null;
+
+switch($amount){
+ case 'below-20k':
+  $pds = ProductData::where('amount','<',20000)->get();
+ break;
+
+ case 'below-100k':
+  $pds = ProductData::where('amount','>=',20000)
+                    ->where('amount','<',100000)->get();
+ break;
+
+ case 'above-100k':
+  $pds = ProductData::where('amount','>=',100000)->get();
+ break;
+}
 
 if($pds !== null)
 {
