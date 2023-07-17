@@ -1107,9 +1107,8 @@ if($pds != null && $pds->count() > 0)
 return $ret;
 }
 
-function createReview($user,$data)
+function addReview($userId,$data)
 {
-$userId = $user == null ? $this->generateTempUserID() : $user->id;
 $ret = Reviews::create(['user_id' => $userId, 
                                      'sku' => $data['sku'], 
                                      'rating' => $data['rating'],
@@ -1125,7 +1124,7 @@ function getReviews($sku)
 {
 $ret = [];
 $reviews = Reviews::where('sku',$sku)
-               ->where('status',"enabled")->get();
+              /* ->where('status',"enabled")->*/->get();
 $reviews = $reviews->sortByDesc('created_at');	
 
 if($reviews != null)

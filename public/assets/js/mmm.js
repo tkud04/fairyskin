@@ -415,9 +415,9 @@ $('#add-review-btn').click(e => {
   e.preventDefault()
  
   const name = $('#add-review-name').val(), rating = $('#add-review-rating').val(),
-               comment = $('#add-review-comment').val(), sku = $('#add-review-product').val()
+               review = $('#add-review-review').val(), sku = $('#add-review-product').val()
 
-  const v = name === '' || rating === '' || comment === ''
+  const v = name === '' || rating === '' || review === ''
 
   if(v){
       displayError('Required fields are missing')
@@ -429,8 +429,9 @@ $('#add-review-btn').click(e => {
     const fd = new FormData()
      fd.append("_token",$('#skf').val())
      fd.append('name',name)
+     fd.append('sku',sku)
      fd.append('rating',rating)
-     fd.append('comment',comment)
+     fd.append('review',review)
 
     const onSuccess = () => {
       displaySuccess('Review submitted! Your comment would be displayed after review by our admins.')

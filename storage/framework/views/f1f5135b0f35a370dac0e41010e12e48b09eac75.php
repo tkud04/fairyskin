@@ -205,7 +205,7 @@
                                                         <i class="fa fa-star"></i>
                                                       <?php
                                                        }
-                                                      for($i = 0; $i < 5 - $reviews['rating']; $i++){
+                                                      for($i = 0; $i < 5 - $review['rating']; $i++){
                                                       ?>
                                                         <i class="fa fa-star-o"></i>
                                                       <?php
@@ -235,7 +235,7 @@
                                             if(isset($user)){
                                             ?>
                                             <form action="#">
-                                               <input type="hidden" id="product" value="<?php echo e($product['sku']); ?>"/>
+                                               <input type="hidden" id="add-review-product" value="<?php echo e($product['sku']); ?>"/>
                                                <input type="hidden" id="skf" value="<?php echo e(csrf_token()); ?>"/>
                                                 <p class="comment-notes">
                                                     <span id="email-notes">Your email address will not be published.</span>

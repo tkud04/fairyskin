@@ -405,8 +405,11 @@ class MainController extends Controller {
          
          else
          {
+			$this->helpers->addReview($user->id,$req);
          	$ret = ['status' => 'ok'];
-         }        
+         }
+		 
+		 return json_encode($ret);
     }
 	
 	
