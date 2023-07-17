@@ -467,31 +467,8 @@ return $ret;
 function getCart($user,$r="")
 {
 $ret = [];
-$uu = "";		
 
-if(is_null($user))
-{
-$uu = $r;
-}
-else
-{
-$uu = $user->id;
-
-//check if guest mode has any cart items
-$guestCart = Carts::where('user_id',$r)->get();
-//dd($guestCart);
-if(count($guestCart) > 0)
-{
-   foreach($guestCart as $gc)
-   {
-       $temp = ['user_id' => $uu,'sku' => $gc->sku,'qty' => $gc->qty];
-       $this->addToCart($temp);
-       $gc->delete();
-   }
-}				
-}
-
-$cart = Carts::where('user_id',$uu)->get();
+$cart = Carts::where('user_id',$user->id)->get();
 #dd($uu);
 if($cart != null)
 {

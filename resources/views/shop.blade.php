@@ -158,7 +158,7 @@ if(count($products) > 0){
                                                                 <span class="descount-sticker">-10%</span>
                                                                 <span class="sticker">New</span>
                                                                 <div class="product-action d-flex justify-content-between">
-                                                                    <a class="product-btn" href="{{$p['cart-url']}}">Add to Cart</a>
+                                                                    <a class="product-btn" id="add-to-cart-btn" href="#" data-cu="{{$p['cart-url']}}">Add to Cart</a>
                                                                     <ul class="d-flex">
 																	    <li><a href="#" onclick="quickViewProduct({{$productData}}); return false;" title="Quick View"><i class="fa fa-eye"></i></a></li>
                                                                         <li><a href="#"><i class="fa fa-heart-o"></i></a></li>

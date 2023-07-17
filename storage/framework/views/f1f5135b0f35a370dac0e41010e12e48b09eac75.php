@@ -128,10 +128,10 @@
                             <div class="single-product-quantity">
                                 <form class="add-quantity" action="#">
                                      <div class="product-quantity">
-                                         <input value="1" type="number">
+                                         <input value="1" id="add-to-cart-qty" type="number">
                                      </div>
                                     <div class="add-to-link">
-                                        <button class="product-add-btn" data-text="add to cart">add to cart</button>
+                                        <button id="add-to-cart-btn" class="product-add-btn" data-cu="<?php echo e($cu); ?>" data-text="add to cart">add to cart</button>
                                     </div>
                                 </form>
                            </div>

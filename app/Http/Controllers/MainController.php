@@ -411,6 +411,61 @@ class MainController extends Controller {
 		 
 		 return json_encode($ret);
     }
+
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+    public function getAddToCart(Request $request)
+    {
+		$user = null;
+		$cart = [];
+		
+    	if(Auth::check())
+		{
+			$user = Auth::user();
+			
+		}
+		$req = $request->all();
+		$cart = $this->helpers->getCart($user);
+        $req = $request->all();
+        #dd($req);
+        
+        $validator = Validator::make($req, [
+                             'sku' => 'required',
+                             'qty' => 'required|numeric'
+         ]);
+         
+         if($validator->fails())
+         {
+             $messages = $validator->messages();
+             return redirect()->back()->withInput()->with('errors',$messages);
+             //dd($messages);
+         }
+         
+         else
+         {
+			 $req['user_id'] = $user->id;
+         	$ret = $this->helpers->addToCart($req);
+			//dd($ret);
+			session()->flash("add-to-cart-status",$ret);
+			
+			if($ret == "ok")
+			{
+				if(isset($req['from_wishlist']) && $req['from_wishlist'] == "yes")
+			    {
+				  $this->helpers->removeFromWishlist($req);
+		   	    }
+				
+				return redirect()->intended('cart');
+			}
+			elseif($ret == "error")
+			{
+				return redirect()->back();
+			}
+         }        
+    }
 	
 	
 	/**
@@ -1481,61 +1536,7 @@ class MainController extends Controller {
 	
 	
 	
-	/**
-	 * Show the application welcome screen to the user.
-	 *
-	 * @return Response
-	 */
-    public function getAddToCart(Request $request)
-    {
-		$user = null;
-		$cart = [];
-		
-    	if(Auth::check())
-		{
-			$user = Auth::user();
-			
-		}
-		$req = $request->all();
-		$gid = isset($_COOKIE['gid']) ? $_COOKIE['gid'] : "";
-		$cart = $this->helpers->getCart($user,$gid);
-        $req = $request->all();
-        //dd($req);
-        
-        $validator = Validator::make($req, [
-                             'sku' => 'required',
-                             'qty' => 'required|numeric'
-         ]);
-         
-         if($validator->fails())
-         {
-             $messages = $validator->messages();
-             return redirect()->back()->withInput()->with('errors',$messages);
-             //dd($messages);
-         }
-         
-         else
-         {
-			 $req['user_id'] = is_null($user) ? $gid : $user->id;
-         	$ret = $this->helpers->addToCart($req);
-			//dd($ret);
-			session()->flash("add-to-cart-status",$ret);
-			
-			if($ret == "ok")
-			{
-				if(isset($req['from_wishlist']) && $req['from_wishlist'] == "yes")
-			    {
-				  $this->helpers->removeFromWishlist($req);
-		   	    }
-				
-				return redirect()->intended('cart');
-			}
-			elseif($ret == "error")
-			{
-				return redirect()->back();
-			}
-         }        
-    }
+	
 	
 	/**
 	 * Show the application welcome screen to the user.

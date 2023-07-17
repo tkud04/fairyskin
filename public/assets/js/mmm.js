@@ -456,6 +456,16 @@ $('#add-review-btn').click(e => {
   }
 })
 
+$('#add-to-cart-btn').click(e => {
+  e.preventDefault()
+ 
+  let cu = $('#add-to-cart-btn').attr('data-cu'), qty = $('#add-to-cart-qty').val()
+
+  if(!qty || qty < 1) qty = 1
+  window.location = `${cu}&qty=${qty}`
+
+})
+
 
 
 })
