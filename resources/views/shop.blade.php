@@ -53,6 +53,9 @@ if(count($products) > 0){
                         <!-- Single Sidebar End  -->
                     </div>
                     <div class="col-lg-9 order-lg-2 order-1">
+					  <?php
+					  if(count($products) > 0){
+					  ?>
                         <div class="row">
                             <div class="col-12">
                                 <div class="shop-banner mb-35 mb-xs-20">
@@ -283,6 +286,25 @@ if(count($products) > 0){
                                 </ul>
                             </div>
                         </div>
+						<?php
+						}
+						else{
+						?>
+                         <div class="row">
+						   <div class="col-12">
+						     <div class="shop-banner mb-35 mb-xs-20">
+                                    <img src="assets/images/no-products.jpg" style="width: 871px; height: 459px;" alt="">
+                                </div>
+                                <div class="shop-banner-title">
+                                    <h2>{{$samba}}</h2>
+                                </div>
+                             <h5>No products were found that match your search</h5>
+							 <a href="{{url('shop')}}" class="btn" style="margin-top: 20px;">View all products</a>
+						   </div>
+						 </div>
+						<?php
+						}
+						?>
                     </div>
                 </div>
             </div>
