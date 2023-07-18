@@ -284,6 +284,7 @@
                                                                     <p>SKU: <b><?php echo e($sku); ?></b></p>
                                                                     <p>Name: <b><?php echo e($p['name']); ?></b></p>
                                                                     <p>Price: <b>&#8358;<?php echo e(number_format($pd['amount'],2)); ?></b></p>
+                                                                    <p>Weight: <b><?php echo e($pd['weight']); ?>kg</b></p>
                                                                     <p>Description: <em><?php echo e($pd['description']); ?></em></p>
                                                                 </div>
                                                                 <div class="col-md-5">
@@ -329,6 +330,7 @@
                                     <th>Product name</th>
                                     <th>Description</th>
                                     <th>Price(&#8358;)</th>
+                                    <th>Weight(kg)</th>
                                     <th>Current stock</th>
                                     <th>Category</th>
                                     <th>Tag</th>

@@ -222,14 +222,17 @@
                                     </form>
                                 </div>
                             </div>
+                            <?php
+                             $cc = (isset($cart)) ? count($cart) : 0;
+                            ?>
                             <div class="header-cart color-white">
-                                <a href="<?php echo e(url('cart')); ?>"><i class="fa fa-shopping-cart"></i><span>3</span></a>
+                                <a href="<?php echo e(url('cart')); ?>"><i class="fa fa-shopping-cart"></i><span><?php echo e($cc); ?></span></a>
                                 <!--Mini Cart Dropdown Start-->
                                 <div class="header-cart-dropdown">
                                     <ul class="cart-items">
                                     <?php
-			                               $cc = (isset($cart)) ? count($cart) : 0;
-
+			                              
+                                     $subtotal = 0;
                                      for($a = 0; $a < $cc; $a++)
 			                              	{
                                         $c = $cart[$a];
@@ -239,6 +242,7 @@
                                         $img = $item['imggs'][0];
                                         $pu = url('product')."?xf=".$item['sku'];
                                         $ru = url('remove-from-cart')."?xf=".$item['sku'];
+                                        $subtotal += ($itemAmount * $qty);
 		                                ?>
                                         <li class="single-cart-item">
                                             <div class="cart-img">
@@ -258,8 +262,8 @@
                                       ?>
                                     </ul>
                                     <div class="cart-total">
-                                        <h5>Subtotal :<span class="float-right">$39.79</span></h5>
-                                        <h5>Total : <span class="float-right">$46.79</span></h5>
+                                        <h5>Subtotal :<span class="float-right">&#8358;<?php echo e(number_format($subtotal,2)); ?></span></h5>
+                                        <h5>Total : <span class="float-right">&#8358;<?php echo e(number_format($subtotal,2)); ?></span></h5>
                                     </div>
                                     <div class="cart-btn">
                                         <a href="<?php echo e(url('cart')); ?>">View Cart</a>

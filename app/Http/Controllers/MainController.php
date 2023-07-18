@@ -1590,10 +1590,8 @@ class MainController extends Controller {
 			
 		}
 		$req = $request->all();
-		$gid = isset($_COOKIE['gid']) ? $_COOKIE['gid'] : "";
-		$cart = $this->helpers->getCart($user,$gid);
+		$cart = $this->helpers->getCart($user);
         $req = $request->all();
-        #dd($gid);
         
         $validator = Validator::make($req, [
                              'sku' => 'required',
@@ -1609,7 +1607,7 @@ class MainController extends Controller {
          
          else
          {
-			$req['user_id'] = is_null($user) ? $gid : $user->id;
+			$req['user_id'] =  $user->id;
          	$ret = $this->helpers->updateCart($req);
 			//dd($ret);
 			session()->flash("update-cart-status",$ret);

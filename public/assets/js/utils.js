@@ -133,6 +133,7 @@ const BUUPAddRow = () => {
 	 <td><input type="text" placeholder="Product name" class="pname"></td>
 	   <td width="40%"><input type="text" placeholder="Product description" class=" desc"></td>
 	   <td><input type="number"  placeholder="Price in NGN" class=" price"></td>
+	   <td><input type="number"  placeholder="Weight in kg" class=" weight"></td>
 	   <td><input type="number"  placeholder="Stock" class=" stock"></td>
 	   <td>
 	     <select class="category" >
@@ -262,17 +263,19 @@ const BUUP = () => {
 		pname = $(`${BUPitem} input.pname`).val();
 		desc = $(`${BUPitem} input.desc`).val();
 		price = $(`${BUPitem} input.price`).val();
+		weight = $(`${BUPitem} input.weight`).val();
 		stock = $(`${BUPitem} input.stock`).val();
 		category = $(`${BUPitem} select.category`).val();
 		productStatus = $(`${BUPitem} select.status`).val();
 		
-			if(pname !== "" && desc !== "" && parseInt(price) > 0 && parseInt(stock) > 0 && category !== "none" && productStatus !== "none"){
+			if(pname !== "" && desc !== "" && parseInt(price) > 0 && parseInt(weight) > 0 && parseInt(stock) > 0 && category !== "none" && productStatus !== "none"){
 				let temp = {
 					id: BUPitem,
 					data:{
 					  name: pname,
 					  desc: desc,
 					  price: price,
+					  weight: weight,
 					  stock: stock,
 					  category: category,
 					  status: productStatus,
@@ -284,6 +287,7 @@ const BUUP = () => {
 				if(pname === "") err.push("pname");
 				if(desc === "") err.push("desc");
 				if( parseInt(price) < 1) err.push("price");
+				if( parseInt(weight) < 1) err.push("weight");
 				if( parseInt(stock) < 1) err.push("stock");
 				if(category === "none") err.push("category");
 				if(productStatus === "none") err.push("status");

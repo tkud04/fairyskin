@@ -907,6 +907,7 @@ if($pd != null)
  $temp['id'] = $pd->id;
  $temp['sku'] = $pd->sku;
  $temp['amount'] = $pd->amount;
+ $temp['weight'] = $pd->weight;
  $temp['formattedAmount'] = number_format($pd->amount,2);
  $temp['description'] = $pd->description;
  $temp['in_stock'] = $pd->in_stock;
@@ -1412,22 +1413,7 @@ if($cart != null && count($cart) > 0)
    }
    
     $u = User::where('id',$userId)->first();
-   #dd([$u,$userId]);
-   if($u != null && $u->account_status == "new")
-         {
-             $newDiscount = $this->getSetting('nud');
-             #dd($newDiscount);
-           if($ret['subtotal'] > $newDiscount['value'])
-           {
-               $ret['subtotal'] -= $newDiscount['value'];
-               array_push($ret['discounts'],$newDiscount['value']);	
-           } 
-           
-         }
-   
- 
-         //$ret['delivery'] = $this->getDeliveryFee($u);
-         $ret['delivery'] = 0;
+   $ret['delivery'] = 0;
  
 }                                 
  # dd($ret);                                  
@@ -2901,6 +2887,7 @@ function createProductData($data){
     'sku' => $data['sku'],      
     'description' => $data['description'], 
     'amount' => $data['amount'],    
+    'weight' => $data['weight'],    
     'category' => $data['category'],    
     'tag' => $data['tag'],    
     'in_stock' => $in_stock                                              

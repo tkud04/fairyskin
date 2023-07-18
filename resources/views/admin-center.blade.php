@@ -286,6 +286,7 @@
                                                                     <p>SKU: <b>{{$sku}}</b></p>
                                                                     <p>Name: <b>{{$p['name']}}</b></p>
                                                                     <p>Price: <b>&#8358;{{number_format($pd['amount'],2)}}</b></p>
+                                                                    <p>Weight: <b>{{$pd['weight']}}kg</b></p>
                                                                     <p>Description: <em>{{$pd['description']}}</em></p>
                                                                 </div>
                                                                 <div class="col-md-5">
@@ -331,6 +332,7 @@
                                     <th>Product name</th>
                                     <th>Description</th>
                                     <th>Price(&#8358;)</th>
+                                    <th>Weight(kg)</th>
                                     <th>Current stock</th>
                                     <th>Category</th>
                                     <th>Tag</th>

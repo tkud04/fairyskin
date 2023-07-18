@@ -5,20 +5,25 @@
 @section('scripts')
 <script>
   $(document).ready(() => {
-    hideElem(['#cart-state'])
-    removeClass('#cart-state','nice-select')
+    hideElem(['#cart-state-div'])
 
     $('#cart-country').change((e) => {
       e.preventDefault()
       const target = e.target
       if(target.value === 'nigeria'){
-        showElem('#cart-state')
-        $('#cart-state').niceSelect()
+        showElem('#cart-state-div')
       }
       else{
-        hideElem('#cart-state')
-        removeClass('#cart-state','nice-select')
+        hideElem('#cart-state-div')
       }
+    })
+
+    $('.update-cart-btn').click(e => {
+      e.preventDefault()
+      const target = e.target,xf = target.getAttribute('data-xf')
+      const qty = $(`#cart-qty-${xf}`).val()
+      console.log({xf,qty})   
+      window.location = `update-cart?sku=${xf}&qty=${qty}` 
     })
   })
 </script>
@@ -59,9 +64,12 @@
                                         <td class="pro-thumbnail"><a href="{{$vu}}"><img src="{{$imggs[0]}}" alt="{{$product['name']}}"></a></td>
                                         <td class="pro-title"><a href="{{$vu}}">{{$product['name']}}</a></td>
                                         <td class="pro-price"><span>&#8358;{{number_format($pd['amount'],2)}}</span></td>
-                                        <td class="pro-quantity"><div class="pro-qty"><input type="number" value="{{$c['qty']}}"></div></td>
+                                        <td class="pro-quantity"><div class="pro-qty"><input id="cart-qty-{{$product['sku']}}" type="number" value="{{$c['qty']}}"></div></td>
                                         <td class="pro-subtotal"><span>&#8358;{{number_format($subtotal,2)}}</span></td>
-                                        <td class="pro-remove"><a href="{{$ru}}"><i class="fa fa-trash-o"></i></a></td>
+                                        <td class="pro-remove">
+                                          <a href="{{$ru}}"><i class="fa fa-trash-o"></i></a>
+                                          <a href="#" class="update-cart-btn"><i class="fa fa-upload" data-xf="{{$product['sku']}}"></i></a>
+                                        </td>
                                     </tr>
                                     <?php
                                    }
@@ -85,7 +93,7 @@
                                                     <option value="others">Other countries</option>
                                                 </select>
                                             </div>
-                                            <div class="col-md-6 col-12 mb-25">
+                                            <div class="col-md-6 col-12 mb-25" id="cart-state-div">
                                                 <select class="nice-select" id="cart-state">
                                                     <?php
                                                      foreach($states as $key => $value){
@@ -95,9 +103,6 @@
                                                      }
                                                     ?>
                                                 </select>
-                                            </div>
-                                            <div class="col-md-6 col-12 mb-25">
-                                                <input type="text" placeholder="Postcode / Zip">
                                             </div>
                                             <div class="col-md-6 col-12 mb-25">
                                                 <button class="btn">Estimate</button>
@@ -126,13 +131,13 @@
                                 <div class="cart-summary">
                                     <div class="cart-summary-wrap">
                                         <h4>Cart Summary</h4>
-                                        <p>Sub Total <span>&#8358;{{number_format($subtotal,2)}}</span></p>
+                                        <p>Sub Total <span>&#8358;{{number_format($totals['subtotal'],2)}}</span></p>
                                         <p>Shipping Cost <span>&#8358;{{number_format($shipping,2)}}</span></p>
-                                        <h2>Grand Total <span>&#8358;{{number_format($shipping + $subtotal,2)}}</span></h2>
+                                        <h2>Grand Total <span>&#8358;{{number_format($shipping + $totals['subtotal'],2)}}</span></h2>
                                     </div>
                                     <div class="cart-summary-button">
                                         <button class="btn">Checkout</button>
-                                        <button class="btn">Update Cart</button>
+            
                                     </div>
                                 </div>
                             </div>

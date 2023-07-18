@@ -62,7 +62,7 @@
                                     </a>
                                 </div>
                                 <div class="product-content">
-                                    <h3><a href="single-product.html"><?php echo e($p['name']); ?></a></h3>
+                                    <h3><a href="single-<?php echo e($p['url']); ?>"><?php echo e($p['name']); ?></a></h3>
                                     <h4 class="price"><span class="new">&#8358;<?php echo e(number_format($p['amount'],2)); ?></span></h4>
                                 </div>
                             </div>
@@ -137,7 +137,7 @@
                                     </a>
                                 </div>
                                 <div class="product-content">
-                                    <h3><a href="single-product.html"><?php echo e($p['name']); ?></a></h3>
+                                    <h3><a href="single-<?php echo e($p['url']); ?>"><?php echo e($p['name']); ?></a></h3>
                                     <h4 class="price"><span class="new">&#8358;<?php echo e(number_format($p['amount'],2)); ?></span></h4>
                                 </div>
                             </div>
@@ -212,7 +212,7 @@
                                     </a>
                                 </div>
                                 <div class="product-content">
-                                    <h3><a href="single-product.html"><?php echo e($p['name']); ?></a></h3>
+                                    <h3><a href="single-<?php echo e($p['url']); ?>"><?php echo e($p['name']); ?></a></h3>
                                     <h4 class="price"><span class="new">&#8358;<?php echo e(number_format($p['amount'],2)); ?></span></h4>
                                 </div>
                             </div>
