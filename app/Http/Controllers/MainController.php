@@ -466,6 +466,45 @@ class MainController extends Controller {
 			}
          }        
     }
+
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+    public function getRemoveFromCart(Request $request)
+    {
+		$user = null;
+		$cart = [];
+		
+    	if(Auth::check())
+		{
+			$user = Auth::user();	
+		}
+		
+        $req = $request->all();
+		$cart = $this->helpers->getCart($user);
+        
+        $validator = Validator::make($req, [
+                             'sku' => 'required'
+         ]);
+         
+         if($validator->fails())
+         {
+             $messages = $validator->messages();
+             return redirect()->back()->withInput()->with('errors',$messages);
+             //dd($messages);
+         }
+         
+         else
+         {
+			 $req['user_id'] = $user->id;
+         	$this->helpers->removeFromCart($req);
+	        session()->flash("remove-from-cart-status","ok");
+			return redirect()->intended('cart');
+         }       
+    }
+	
 	
 	
 	/**
@@ -517,14 +556,16 @@ class MainController extends Controller {
 	public function getCart(Request $request)
     {
         $user = null;
-		$cart = [];
+		
 		if(Auth::check())
 		{
 			$user = Auth::user();
 		}
 		$req = $request->all();
-		$gid = isset($_COOKIE['gid']) ? $_COOKIE['gid'] : "";
-		$cart = $this->helpers->getCart($user,$gid);
+		$cart = $this->helpers->getCart($user);
+		$categories = $this->helpers->getCategories();
+		$signals = $this->helpers->signals;
+		$plugins = $this->helpers->getPlugins();
 		
 		$ddxf = [];
 		$dxf = "";
@@ -536,15 +577,10 @@ class MainController extends Controller {
 		
 		$totals = $this->helpers->getCartTotals($cart,$ddxf);
 		if(isset($req['rr'])) dd($totals);
-		$c = $this->helpers->getCategories();
-		$signals = $this->helpers->signals;
-		$ads = $this->helpers->getAds();
-		$plugins = $this->helpers->getPlugins();
-		shuffle($ads);
-		$ad = count($ads) < 1 ? "images/inner-ad-2.png" : $ads[0]['img'];
-		#session()->reflash();
+		#dd($totals);
+		$states = $this->helpers->states;
 		
-		return view("cart",compact(['user','cart','totals','dxf','c','ad','signals','plugins']));					 
+		return view("cart",compact(['user','cart','totals','states','dxf','categories','signals','plugins']));					 
     }
 	
 	/**
@@ -1589,46 +1625,7 @@ class MainController extends Controller {
          }        
     }
     
-    /**
-	 * Show the application welcome screen to the user.
-	 *
-	 * @return Response
-	 */
-    public function getRemoveFromCart(Request $request)
-    {
-		$user = null;
-		$cart = [];
-		
-    	if(Auth::check())
-		{
-			$user = Auth::user();
-			
-		}
-		
-        $req = $request->all();
-		$gid = isset($_COOKIE['gid']) ? $_COOKIE['gid'] : "";
-		$cart = $this->helpers->getCart($user,$gid);
-        
-        $validator = Validator::make($req, [
-                             'sku' => 'required'
-         ]);
-         
-         if($validator->fails())
-         {
-             $messages = $validator->messages();
-             return redirect()->back()->withInput()->with('errors',$messages);
-             //dd($messages);
-         }
-         
-         else
-         {
-			 $req['user_id'] = is_null($user) ? $gid : $user->id;
-         	$this->helpers->removeFromCart($req);
-	        session()->flash("remove-from-cart-status","ok");
-			return redirect()->intended('cart');
-         }       
-    }
-	
+    
 	/**
 	 * Show the application welcome screen to the user.
 	 *

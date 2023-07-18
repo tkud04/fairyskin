@@ -1311,7 +1311,10 @@ if(!is_null($cc))
 {
 foreach($cc as $c)
            {
-               if($c->sku == $data['sku'] || $c->id == $data['sku']){$c->delete(); break; }
+               if($c->sku == $data['sku'] || $c->id == $data['sku']){
+                 $c->delete(); 
+                 break; 
+               }
            }
 }
                     
@@ -1423,7 +1426,8 @@ if($cart != null && count($cart) > 0)
          }
    
  
-  $ret['delivery'] = $this->getDeliveryFee($u);
+         //$ret['delivery'] = $this->getDeliveryFee($u);
+         $ret['delivery'] = 0;
  
 }                                 
  # dd($ret);                                  
